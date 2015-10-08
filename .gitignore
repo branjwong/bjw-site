@@ -1,0 +1,5 @@
+src/node_modules
+dist
+src/trash
+src/elm-stuff
+src/Gruntfile.js

@@ -1,0 +1,17 @@
+html, head, body {
+  /*margin: 0;*/
+  /*height: 100%;*/
+}
+
+body {
+  padding-top: 80px;
+  background: #eaeaea;
+  /*color: #4f4f4f;*/
+  /*font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*line-height: 1.4em;*/
+}
+
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
