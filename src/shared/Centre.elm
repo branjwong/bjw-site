@@ -1,4 +1,4 @@
-module Center where
+module Centre where
 
 import Html exposing (..)
 import Html.Attributes as Attr exposing (..)
@@ -14,6 +14,14 @@ markdown string =
     [ div
       [ class "starter-template" ]
       [ Markdown.toHtml string ]
+    ]
+
+element html =
+    div
+    [ class "container" ]
+    [ div
+      [ class "starter-template" ]
+      [ html ]
     ]
 
 

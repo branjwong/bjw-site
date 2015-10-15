@@ -1,7 +1,11 @@
+-- TODO: Dropdown for current tab
+
 module TopBar where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+
+
 
 
 topBar : String -> Html
@@ -12,7 +16,7 @@ topBar currentName =
 
 
 navbarFixed currentName =
-  nav [ class "navbar navbar-inverse navbar-fixed-top" ]
+  header [ class "navbar navbar-inverse navbar-fixed-top", id "top", attribute "role" "banner" ]
     [ div [ class "container" ]
       [ navbarHeader
       , navbar currentName
@@ -20,17 +24,17 @@ navbarFixed currentName =
     ]
 
 
-navbarStatic currentName =
-  div [ class "navbar-wrapper" ]
-    [ div [ class "container" ]
-      [ nav [ class "navbar navbar-inverse navbar-static-top" ]
-        [ div [ class "container" ]
-          [ navbarHeader
-          , navbar currentName
-          ]
-        ]
-      ]
-    ]
+--navbarStatic currentName =
+--  div [ class "navbar-wrapper" ]
+--    [ div [ class "container" ]
+--      [ nav [ class "navbar navbar-inverse navbar-static-top" ]
+--        [ div [ class "container" ]
+--          [ navbarHeader
+--          , navbar currentName
+--          ]
+--        ]
+--      ]
+--    ]
 
 
 navbarHeader : Html
@@ -49,6 +53,7 @@ navbarHeader =
       , span [ class "icon-bar"] []
       , span [ class "icon-bar"] []
       ]
+    --, a [ class "navbar-brand", href "index.html" ] [ img [ src "../../resources/sign.png" ] [] ]
     , a [ class "navbar-brand", href "index.html" ] [ text "BW" ]
     ]
 

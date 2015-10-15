@@ -1,7 +1,4 @@
--- Needs to be longer so that there is a scroll bar on the right.
--- http://getbootstrap.com/examples/cover/
-
-module Home where
+module Programming where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -14,9 +11,10 @@ type alias Model =
     { currentPage : String
     }
 
+
 model : Model
 model =
-    { currentPage = "Home"
+    { currentPage = "Programming"
     }
 
 -- VIEW
@@ -24,15 +22,15 @@ model =
 displayPage : Html
 displayPage =
     div [ ]
-        [ text "honey i'm home"
+        [ text "i shall mould your mind"
         ]
 
 view : Model -> Html
 view model =
     div []
         [ TopBar.topBar model.currentPage
-        --, displayPage
         ]
+
 
 main : Html
 main =

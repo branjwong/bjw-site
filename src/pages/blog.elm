@@ -6,7 +6,8 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import TopBar
-import Center
+import Centre
+
 
 port title: String
 port title =
@@ -70,8 +71,8 @@ view : Model -> Html
 view model =
   div []
     [ TopBar.topBar model.currentPage
-    , Center.markdown crossGame
-    , Center.markdown venting
+    , Centre.markdown crossGame
+    --, Centre.markdown venting
     ]
 
 main : Html
