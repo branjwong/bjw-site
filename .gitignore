@@ -2,3 +2,4 @@ node_modules
 elm-stuff
 Gruntfile.js
 npm-debug.log
+dist/js
