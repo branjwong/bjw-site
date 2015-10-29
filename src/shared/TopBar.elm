@@ -52,7 +52,7 @@ navbarHeader =
       --  , href "index.html"
       --  ]
       --  [ img [ class "img-responsive", src "../../resources/sign_vector.fw.png" ] [] ]
-    , a [ class "navbar-brand", href "index.html" ] [ text "BJW" ]
+    , a [ class "navbar-brand", href "index.html" ] [ text "BJ" ]
     ]
 
 

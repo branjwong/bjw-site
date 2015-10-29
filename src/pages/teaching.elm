@@ -26,12 +26,12 @@ view model =
   div [ attribute "role" "elm-app" ]
     [ TopBar.topBar model.currentPage links
     , TopBar.topBarPadding
-    -- Body
-    , header
+    --, Body
+    --, header
     , takafumiImg
     , bio
     , Markdown.toHtml experience
-    , List.map Markdown.toHtml subjects
+    --, List.map Markdown.toHtml subjects
     ]
 
 -- MODEL
