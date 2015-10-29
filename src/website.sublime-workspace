@@ -1,0 +1,908 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bio",
+				"bioText"
+			],
+			[
+				"co",
+				"container"
+			],
+			[
+				"prec",
+				"precalc11"
+			],
+			[
+				"preca",
+				"precalc12"
+			],
+			[
+				"topBar",
+				"topBarPadding"
+			],
+			[
+				"nav",
+				"navbarRight"
+			],
+			[
+				"current",
+				"currentDropdown"
+			],
+			[
+				"teaching",
+				"teachingHeader"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"style",
+				"style-teaching-masthead"
+			],
+			[
+				"bt",
+				"btn-lg"
+			],
+			[
+				"btn",
+				"btn-info"
+			],
+			[
+				"col",
+				"col-md-offset-2"
+			],
+			[
+				"intro",
+				"intro-body"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"centr",
+				"center-block"
+			],
+			[
+				"scale",
+				"scaleFactorBio"
+			],
+			[
+				"navbar",
+				"navbarLeft"
+			],
+			[
+				"dropdown",
+				"dropdown"
+			],
+			[
+				"curre",
+				"currentName"
+			],
+			[
+				"curr",
+				"currentName"
+			],
+			[
+				"json",
+				"json_string"
+			],
+			[
+				"monst",
+				"monster"
+			],
+			[
+				"pointsInput",
+				"pointsInput"
+			],
+			[
+				"phrase",
+				"phraseInput"
+			],
+			[
+				"in",
+				"in"
+			],
+			[
+				"Upd",
+				"UpdatePointsInput"
+			],
+			[
+				"Update",
+				"UpdatePhraseInput"
+			],
+			[
+				"points",
+				"pointsInput"
+			],
+			[
+				"total",
+				"totalItem"
+			],
+			[
+				"int",
+				"initialModel"
+			],
+			[
+				"page",
+				"pageHeader"
+			],
+			[
+				"entries",
+				"entries"
+			],
+			[
+				"update",
+				"updateEntry"
+			],
+			[
+				"markedEntr",
+				"markedEntry"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "shared/Style.elm",
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "shared/TopBar.elm",
+			"settings":
+			{
+				"buffer_size": 3388,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages/teaching.elm",
+			"settings":
+			{
+				"buffer_size": 7649,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "shared/Centre.elm",
+			"settings":
+			{
+				"buffer_size": 496,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Brandon/GitHub/website/assets/style.css",
+			"settings":
+			{
+				"buffer_size": 929,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: p",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: Install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Brandon/GitHub/website/README.md",
+		"/C/Brandon/GitHub/website/src/pages/home.elm",
+		"/C/Brandon/GitHub/website/src/pages/blog.elm",
+		"/C/Brandon/GitHub/website/src/shared/TopBar.elm",
+		"/C/Brandon/GitHub/website/src/elm-stuff/packages/krisajenkins/elm-exts/10.1.0/src/Exts/Html/Bootstrap.elm",
+		"/C/Brandon/GitHub/website/src/pages/programming.elm",
+		"/C/Brandon/GitHub/website/src/shared/Centre.elm",
+		"/C/Brandon/GitHub/website/assets/style.elm",
+		"/C/Brandon/GitHub/website/dist/html/teaching.html",
+		"/C/Brandon/GitHub/website/dist/html/blog.html",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/dist/css/bootstrap.css",
+		"/C/Brandon/GitHub/website/resources/sign.png",
+		"/C/Brandon/GitHub/website/src/elm-package.json",
+		"/C/Brandon/GitHub/website/src/elm-stuff/packages/krisajenkins/elm-exts/10.1.0/src/Exts/Http.elm",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Brandon/GitHub/website/dist/js/home.js",
+		"/C/Brandon/GitHub/website/dist/html/programming.html",
+		"/C/Brandon/GitHub/website/dist/html/index.html",
+		"/C/Brandon/GitHub/website/assets/style.css",
+		"/C/Brandon/GitHub/website/src/pages/teaching.elm",
+		"/C/Brandon/GitHub/portfolio/elm/bingo/Bingo.elm",
+		"/C/Brandon/GitHub/portfolio/elm/bingo/Bingo.js",
+		"/C/Brandon/GitHub/website/src/pages/elm-lang.sublime-workspace",
+		"/C/Brandon/GitHub/website/src/pages/elm-lang.sublime-project",
+		"/C/Brandon/GitHub/portfolio/README.md",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/less/bootstrap.less",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/less/mixins/reset-filter.less",
+		"/C/Brandon/GitHub/website/assets/carousel.css",
+		"/C/Brandon/GitHub/elm-lang.org/src/shared/Center.elm",
+		"/C/Brandon/Image/Camera Uploads/2015/1506/samarth/grad res app",
+		"/C/Brandon/GitHub/website/src/shared/Center.elm",
+		"/C/Brandon/GitHub/website/src/Gruntfile.js",
+		"/C/Brandon/Dropbox/Work/Interview/interview_relic.md",
+		"/C/Brandon/Dropbox/Work/Interview/job-desc_relic.md",
+		"/C/Brandon/GitHub/portfolio/.gitignore",
+		"/C/Brandon/GitHub/portfolio/front-end web/README.md",
+		"/C/Brandon/Dropbox/Work/Interview/interview_cs.md",
+		"/C/Brandon/GitHub/portfolio/c/POSIX Threads and The Producer-Consumer Problem/a3.c",
+		"/C/Brandon/GitHub/portfolio/c/An Extended Case of the Producer-Consumer Problem/hw2b.c",
+		"/C/Brandon/GitHub/portfolio/elm/bingo/README.md",
+		"/C/Brandon/GitHub/portfolio/actionscript/Zelda/README.md",
+		"/C/Brandon/GitHub/portfolio/elm/bingo/dist/index.html",
+		"/C/Brandon/Dropbox/Work/Interview/interview_SAP.md",
+		"/C/Brandon/Dropbox/Work/Interview/job-desc_SAP.md",
+		"/C/Brandon/Dropbox/Work/Interview/interview_gen.md",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/less/navbar.less",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/less/variables.less",
+		"/C/Brandon/GitHub/website/src/node_modules/bootstrap/less/breadcrumbs.less",
+		"/C/Brandon/GitHub/elm-lang.org/src/shared/TopBar.elm",
+		"/C/Brandon/GitHub/elm-lang.org/src/pages/home.elm",
+		"/C/Brandon/GitHub/website/dist/html/Home.html",
+		"/C/Brandon/GitHub/website/dist/html/Blog.html",
+		"/C/Brandon/GitHub/website/dist/html/Teaching.html",
+		"/C/Brandon/GitHub/website/src/elm-stuff/packages/evancz/elm-html/4.0.1/src/Html/Attributes.elm",
+		"/C/Brandon/GitHub/website/src/shared/BootstrapAttributes.elm",
+		"/C/Brandon/GitHub/website/src/pages/Blog.elm",
+		"/C/Brandon/GitHub/website/dist/js/Blog.js",
+		"/C/Users/Admin/Desktop/lol.html",
+		"/C/Brandon/GitHub/website/src/pages/Teaching.elm",
+		"/C/Brandon/GitHub/website/assets/starter-template.css",
+		"/C/Brandon/GitHub/website/src/trash/TopBarPureElm.elm",
+		"/C/Brandon/Dropbox/Work/Interview/CS Interview Questions.md",
+		"/C/Brandon/GitHub/elm-lang.org/src/pages/community.elm",
+		"/C/Brandon/Dropbox/Work/Interview/Relic Job Description.md",
+		"/C/Brandon/GitHub/elm-lang.org/src/pages/blog.elm",
+		"/C/Brandon/GitHub/portfolio/java/Wizards, Witches, and Horcruxes/README.md",
+		"/C/Brandon/GitHub/website/Gruntfile.js",
+		"/C/Brandon/GitHub/website/elm-package.json",
+		"/C/Brandon/GitHub/website/package.json",
+		"/C/Brandon/GitHub/website/src/Main.elm",
+		"/C/Brandon/GitHub/website/portfolio/src/node_modules/grunt-elm/Gruntfile.js",
+		"/C/Brandon/GitHub/website/portfolio/src/node_modules/grunt-elm/README.md",
+		"/C/Brandon/GitHub/website/portfolio/src/.gitignore",
+		"/C/Brandon/GitHub/website/portfolio/src/node_modules/grunt-elm/test/fixtures/TestA.elm",
+		"/C/Brandon/GitHub/website/portfolio/src/node_modules/grunt-elm/test/ElmTest.js",
+		"/C/Brandon/GitHub/website/portfolio/src/node_modules/grunt-elm/elm-package.json",
+		"/C/Brandon/GitHub/elm-lang.org/src/shared/ColorScheme.elm",
+		"/C/Brandon/GitHub/elm-lang.org/src/shared/Message.elm",
+		"/C/Brandon/GitHub/website/portfolio/src/Main.html",
+		"/C/Brandon/GitHub/website/portfolio/src/pages/Home.elm",
+		"/C/Brandon/GitHub/website/portfolio/src/shared/TopBar.elm",
+		"/C/Brandon/GitHub/website/portfolio/src/elm-package.json",
+		"/C/Brandon/GitHub/elm-lang.org/elm-package.json",
+		"/C/Brandon/GitHub/website/portfolio/src/Main.elm",
+		"/C/Brandon/GitHub/elm-lang.org/Setup.hs",
+		"/C/Brandon/GitHub/website/portfolio/src/pages/home.elm",
+		"/C/Brandon/Dropbox/VSWHack/index.html",
+		"/C/Brandon/GitHub/portfolio/actionscript/Megaman/README.md",
+		"/C/Brandon/Projects/Unity/BattleNetwork/Web Player/Web Player.html",
+		"/C/Brandon/Dropbox/VSWHack/addbook.php",
+		"/C/Brandon/GitHub/elm-lang.org/assets/style.css",
+		"/C/Brandon/Dropbox/VSWHack/user.class.php",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/3_advanced/Wizardry.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/Bingo.elm",
+		"/C/Brandon/Dropbox/VSWHack/landingpageTemplate.html",
+		"/C/Brandon/Dropbox/VSWHack/style.css",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/Spells.elm",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/Monsters.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/style.css",
+		"/C/Brandon/GitHub/portfolio/html-css/Awesome Domain/index.html",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/bingo.js",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/2_intermediate/Wizardry.elm",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/2_intermediate/index.html",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/Wizardry.elm",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/elm-stuff/packages/elm-lang/core/2.1.0/src/Json/Decode.elm",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/elm-stuff/packages/elm-lang/core/2.1.0/src/Native/Color.js",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/elm-stuff/packages/elm-lang/core/2.1.0/src/Native/Signal.js",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/elm-package.json",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/elm-stuff/packages/evancz/virtual-dom/1.2.3/src/VirtualDom.elm",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/1_basic/index.html",
+		"/C/Brandon/GitHub/mloc-2015-elm-workshop/README.md",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/index.html",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/BingoUtils.elm",
+		"/C/Brandon/Projects/PragmaticStudios/pragstudio-elm-code/video-code/17-type-annotations/bingo/Bingo.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/elm-stuff/packages/evancz/start-app/2.0.0/src/StartApp/Simple.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/elm-stuff/packages/evancz/start-app/2.0.0/src/StartApp.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/elm-stuff/packages/evancz/start-app/1.0.1/src/StartApp.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/elm-package.json",
+		"/C/Brandon/Projects/PragmaticStudios/pragstudio-elm-code/video-code/10-rendering-the-model/bingo/Bingo.elm",
+		"/C/Brandon/Projects/PragmaticStudios/pragstudio-elm-code/video-code/05-importing-modules/bingo/Bingo.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/Bingo9.elm",
+		"/C/Brandon/Projects/PragmaticStudios/pragstudio-elm-code/video-code/04-defining-functions/bingo/Bingo.elm",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/Bingo9",
+		"/C/Brandon/Dropbox/Work/Cover Letters/notes_EA3.txt",
+		"/C/Brandon/Dropbox/Work/Cover Letters/notes_capcom.txt",
+		"/C/Brandon/Projects/PragmaticStudios/bingo/elm.js"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"style",
+			"currentDropdown",
+			"dropdown",
+			"=>",
+			"takafumi",
+			"teachingHeader",
+			"teaching",
+			"short",
+			"data-",
+			"scaleFactorBio",
+			"Center",
+			"teaching",
+			"Teaching",
+			"generator",
+			"pagefooter",
+			"link",
+			"@grid-float-breakpoint",
+			"grid-float-breakpoint",
+			"grid-float",
+			"navbar-static",
+			"Home",
+			"data-toggle",
+			"Blog",
+			"Blogk",
+			"Blog",
+			"draw white space",
+			"}\n",
+			"JSON",
+			"php",
+			"maybe",
+			"style",
+			"Simple",
+			"..",
+			"  ",
+			"tab_size",
+			"v1.3"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"currentLinks",
+			"bioScaleFactor",
+			"Centre",
+			"programming",
+			"Programming",
+			"Blog",
+			"Teaching",
+			"TeachingTeaching",
+			"Teaching",
+			"HomTeachingTeaching",
+			"HomTeaching",
+			"Home",
+			"",
+			"\\t",
+			"v3.1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "shared/Style.elm",
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "shared/TopBar.elm",
+					"settings":
+					{
+						"buffer_size": 3388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3062,
+								3062
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1305.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "pages/teaching.elm",
+					"settings":
+					{
+						"buffer_size": 7649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "shared/Centre.elm",
+					"settings":
+					{
+						"buffer_size": 496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								265
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Brandon/GitHub/website/assets/style.css",
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true
+}

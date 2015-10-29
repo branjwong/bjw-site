@@ -30,7 +30,7 @@ displayPage =
 view : Model -> Html
 view model =
     div []
-        [ TopBar.topBar model.currentPage
+        [ TopBar.topBar model.currentPage []
         --, displayPage
         ]
 

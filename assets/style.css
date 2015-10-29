@@ -1,11 +1,13 @@
 html, head, body {
-  /*margin: 0;*/
-  /*height: 100%;*/
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 0px;
 }
 
 body {
-  padding-top: 50px;
-  background: #eaeaea;
+  padding-top: 30px;
+  /*background: #eaeaea;*/
   /*color: #4f4f4f;*/
   /*font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   /*line-height: 1.4em;*/
@@ -15,8 +17,9 @@ body {
 	margin-top: 10px;
 }
 
-.style-masthead {
-	background-color: #222222;
+.style-teaching-masthead {
+	height: 639px;
+/*	background-color: #222222;
 	background-repeat: repeat-x;
 	margin-left: 0;
 	margin-right: 0;
@@ -26,7 +29,7 @@ body {
 	text-align: center;
 	text-shadow: rgba(0, 0, 0, 0.1);
 	color: white;
-	position: relative;
+	position: relative;*/
 }
 
 .banner .overlay {
@@ -37,3 +40,14 @@ body {
 	top: 100px;
 	width: 100%;
 }
+
+.style-teaching-masthead-image {
+	background-image: url(../resources/takafumi_720x405.jpg);
+	background-size: cover;
+	box-sizing: border-box;
+	display: table;
+	min-height: 200px;
+	z-index: 0;
+	width: 100%;
+}
+

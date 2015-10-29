@@ -70,7 +70,7 @@ Usually I'm not the type to go blabbing about my problems to all my friends, but
 view : Model -> Html
 view model =
   div []
-    [ TopBar.topBar model.currentPage
+    [ TopBar.topBar model.currentPage currentLinks
     , Centre.markdown crossGame
     --, Centre.markdown venting
     ]
@@ -78,3 +78,8 @@ view model =
 main : Html
 main =
   view model
+
+currentLinks =
+  [ li [] [ a [ href "https://ca.linkedin.com/pub/brandon-j-wong/54/43/500" ] [ text "LinkedIn" ] ]
+  , li [] [ a [ href "https://github.com/branjwong/portfolio" ] [ text "Portfolio" ] ]
+  ]

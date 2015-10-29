@@ -6,36 +6,20 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
+(=>) = (,)
 
+topBar : String -> List Html -> Html
+topBar currentName currentLinks =
+  navbarFixed currentName currentLinks
 
-topBar : String -> Html
-topBar currentName =
-  navbarFixed currentName
-
-
-
-
-navbarFixed currentName =
-  header [ class "navbar navbar-inverse navbar-fixed-top", id "top", attribute "role" "banner" ]
+navbarFixed : String -> List Html -> Html
+navbarFixed currentName currentLinks =
+  div [ class "navbar navbar-inverse navbar-fixed-top", id "top", attribute "role" "banner" ]
     [ div [ class "container" ]
       [ navbarHeader
-      , navbar currentName
+      , navbar currentName currentLinks
       ]
     ]
-
-
---navbarStatic currentName =
---  div [ class "navbar-wrapper" ]
---    [ div [ class "container" ]
---      [ nav [ class "navbar navbar-inverse navbar-static-top" ]
---        [ div [ class "container" ]
---          [ navbarHeader
---          , navbar currentName
---          ]
---        ]
---      ]
---    ]
-
 
 navbarHeader : Html
 navbarHeader =
@@ -53,47 +37,74 @@ navbarHeader =
       , span [ class "icon-bar"] []
       , span [ class "icon-bar"] []
       ]
-    --, a [ class "navbar-brand", href "index.html" ] [ img [ src "../../resources/sign.png" ] [] ]
-    , a [ class "navbar-brand", href "index.html" ] [ text "BW" ]
+    --, a
+    --  [ class "navbar-brand"
+    --  , href "index.html"
+    --  , style
+    --    [ "background-image" => "url(../../resources/sign_vector.fw.png)"
+    --    , "background-size" => "cover"
+    --    , "padding-right" => "90px"
+    --    ]
+    --  ]
+    --  []
+      --, a
+      --  [ class "navbar-brand"
+      --  , href "index.html"
+      --  ]
+      --  [ img [ class "img-responsive", src "../../resources/sign_vector.fw.png" ] [] ]
+    , a [ class "navbar-brand", href "index.html" ] [ text "BJW" ]
     ]
 
 
-navbar : String -> Html
-navbar currentName =
+navbar : String -> List Html -> Html
+navbar currentName currentLinks =
   div [ id "navbar", class "navbar-collapse collapse" ]
-    [ navbarLeft currentName
+    [ navbarLeft currentName currentLinks
     , navbarRight
     ]
 
 
-navbarLeft currentName =
+navbarLeft : String -> List Html -> Html
+navbarLeft currentName currentLinks =
   ul [ class "nav navbar-nav" ]
-      [ tab currentName "Teaching" "teaching.html"
-      , tab currentName "Programming" "programming.html"
-      , tab currentName "Blog" "blog.html"
+      [ tab currentName currentLinks "Teaching" "teaching.html"
+      , tab currentName currentLinks "Programming" "programming.html"
+      , tab currentName currentLinks "Blog" "blog.html"
       ]
 
 
-tab : String -> String -> String -> Html
-tab currentName name link =
+tab : String -> List Html -> String -> String -> Html
+tab currentName currentLinks name link =
   if currentName == name then
-    li [ class "active" ]
-      [ a [ href link ] [ text name ]
+    li [ class "dropdown" ]
+    [ a
+      [ href ""
+      , class "dropdown-toggle"
+      , attribute "data-toggle" "dropdown"
+      , attribute "role" "button"
+      , attribute "aria-haspopup" "true"
+      , attribute "aria-expanded" "false"
       ]
+      [ text name ]
+    , ul
+      [ class "dropdown-menu" ]
+      currentLinks
+    ]
   else
     li []
       [ a [ href link ] [ text name ]
       ]
 
 
+navbarRight : Html
 navbarRight =
   ul [ class "nav navbar-nav navbar-right" ]
-    [ dropdown
+    [ outsideLinks
     ]
 
 
-dropdown : Html
-dropdown =
+outsideLinks : Html
+outsideLinks =
   li [ class "dropdown" ]
     [ a
       [ href ""
@@ -111,5 +122,14 @@ dropdown =
       ]
     ]
 
+topBarPadding : Html
+topBarPadding =
+  div
+    [ style
+      [ "height" => "30px"
+      , "width" => "100%"
+      ]
+    ]
+    []
 
 
