@@ -2,9 +2,9 @@
 
 ## Development Environment Requirements
 
-1. [npm](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
-2. [elm](http://elm-lang.org/install) - [install on ubuntu](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
-3. [grunt](https://www.youtube.com/watch?v=TMKj0BxzVgw)
+1. [npm](https://www.npmjs.com/) - [usage tutorial](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
+2. [elm](http://elm-lang.org/install) - [installation tutorial](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
+3. [grunt](http://gruntjs.com/) - [usage tutorial](https://www.youtube.com/watch?v=TMKj0BxzVgw)
 
 ## Setup
 
