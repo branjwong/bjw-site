@@ -1,6 +1,6 @@
 # Personal Website
 
-## Development Environment
+## Development Environment Requirements
 
 1. [npm](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
 2. [elm](http://elm-lang.org/install) - [install on ubuntu](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
@@ -8,13 +8,14 @@
 
 ## Setup
 
-1. Clone this git to a directory of your choosing.
-2. Run `npm install`.
-3. Run `elm make`.
-4. Run `grunt elm`.
-5. Open `dist/html/home.html`.
-6. ????
-7. PROFIT!!!
+1. Make sure npm and elm are installed on your system.
+2. Clone this to a directory of your choosing.
+3. Run `npm install`.
+4. Run `elm make`.
+5. Run `grunt elm`.
+6. Open `dist/html/home.html`.
+7. ????
+8. PROFIT!!!
 
 ## Content
 
