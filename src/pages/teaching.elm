@@ -26,12 +26,8 @@ view model =
   div [ attribute "role" "elm-app" ]
     [ TopBar.topBar model.currentPage links
     , TopBar.topBarPadding
-    --, Body
-    --, header
-    , takafumiImg
-    , bio
-    , Markdown.toHtml experience
-    --, List.map Markdown.toHtml subjects
+    , sectionLanding
+    , sectionBio
     ]
 
 -- MODEL
@@ -55,6 +51,14 @@ links =
   , li [] [ a [ href "#" ] [ text "Reviews" ] ]
   , li [] [ a [ href "#" ] [ text "Contact Me" ] ]
   ]
+
+sectionLanding = landing
+
+sectionBio =
+  div [ class "container" ]
+    [ bio
+    ]
+
 
 landing =
   div [ class "container" ]
@@ -84,29 +88,27 @@ bio =
     bioPicHeight = 1978
     bioScaleFactor = 10
   in
-    div
-      [ class "container", Style.bio ]
-      [ div []
-        [ div [ class "media" ]
-          [ div [ class "media-left" ]
-            [ img
-              [ class "media-object"
-              , src "../../resources/gradphoto.jpg"
-              , width (bioPicWidth//bioScaleFactor)
-              , height (bioPicHeight//bioScaleFactor)
-              ]
-              []
+    div []
+      [ div [ class "media" ]
+        [ div [ class "media-left" ]
+          [ img
+            [ class "media-object"
+            , src "../../resources/gradphoto.jpg"
+            , width (bioPicWidth//bioScaleFactor)
+            , height (bioPicHeight//bioScaleFactor)
             ]
-          , div
-            [ class "media-body" ]
-            [ h1 [] [ text "Brandon J Wong" ]
-            , h4 [] [ text "Age: 22" ]
-            , text bioText
-            , text experience
-            ]
+            []
+          ]
+        , div
+          [ class "media-body" ]
+          [ h1 [] [ text "Brandon J Wong" ]
+          , h4 [] [ text "Age: 22" ]
+          , Markdown.toHtml bioText
+          , Markdown.toHtml experience
           ]
         ]
       ]
+
 
 bioText : String
 bioText =

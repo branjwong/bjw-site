@@ -1866,6 +1866,10 @@ Elm.Exts.Html.Bootstrap.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var Left = {ctor: "Left"};
+   var Bottom = {ctor: "Bottom"};
+   var Right = {ctor: "Right"};
+   var Top = {ctor: "Top"};
    var glyphicon = function (name) {
       return A2($Html.span,
       _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
@@ -1903,6 +1907,56 @@ Elm.Exts.Html.Bootstrap.make = function (_elm) {
    var empty = A2($Html.span,
    _L.fromArray([]),
    _L.fromArray([]));
+   var popover = F5(function (direction,
+   isShown,
+   styles,
+   title,
+   body) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.classList(_L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: "popover fade"
+                                                             ,_1: true}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: "in"
+                                                             ,_1: isShown}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: "top"
+                                                             ,_1: _U.eq(direction,
+                                                             Top)}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: "right"
+                                                             ,_1: _U.eq(direction,
+                                                             Right)}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: "bottom"
+                                                             ,_1: _U.eq(direction,
+                                                             Bottom)}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: "left"
+                                                             ,_1: _U.eq(direction,
+                                                             Left)}]))
+                   ,$Html$Attributes.style(A2($Basics._op["++"],
+                   styles,
+                   _L.fromArray([{ctor: "_Tuple2"
+                                 ,_0: "display"
+                                 ,_1: "block"}])))]),
+      _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("arrow")]),
+                   _L.fromArray([]))
+                   ,function () {
+                      switch (title.ctor)
+                      {case "Just":
+                         return A2($Html.h3,
+                           _L.fromArray([$Html$Attributes.$class("popover-title")]),
+                           _L.fromArray([$Html.text(title._0)]));
+                         case "Nothing": return empty;}
+                      _U.badCase($moduleName,
+                      "between lines 81 and 85");
+                   }()
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("popover-content")]),
+                   body)]));
+   });
    var row = $Html.div(_L.fromArray([$Html$Attributes.$class("row")]));
    var twoColumns = F2(function (left,
    right) {
@@ -1924,7 +1978,12 @@ Elm.Exts.Html.Bootstrap.make = function (_elm) {
                                      ,SixteenByNine: SixteenByNine
                                      ,FourByThree: FourByThree
                                      ,video: video
-                                     ,glyphicon: glyphicon};
+                                     ,glyphicon: glyphicon
+                                     ,Top: Top
+                                     ,Right: Right
+                                     ,Bottom: Bottom
+                                     ,Left: Left
+                                     ,popover: popover};
    return _elm.Exts.Html.Bootstrap.values;
 };
 Elm.Graphics = Elm.Graphics || {};
@@ -12869,7 +12928,6 @@ Elm.Teaching.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Style = Elm.Style.make(_elm),
    $TopBar = Elm.TopBar.make(_elm);
    var layout = "\n\n  # Landing Page\n\n  - introductory tagline\n  - img = \"teaching\"\n  - button -> contact me today! -> #contactme\n\n  # Bio\n\n  - img = \"gradphoto\"\n\n  # Reviews\n\n  # Map\n\n  # Contact Me\n\n  - anchor: #contactme\n\n  ";
    var phys12 = "\n\n  ";
@@ -12889,9 +12947,6 @@ Elm.Teaching.make = function (_elm) {
       var bioPicHeight = 1978;
       var bioPicWidth = 1594;
       return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")
-                   ,$Style.bio]),
-      _L.fromArray([A2($Html.div,
       _L.fromArray([]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("media")]),
@@ -12911,8 +12966,8 @@ Elm.Teaching.make = function (_elm) {
                                 ,A2($Html.h4,
                                 _L.fromArray([]),
                                 _L.fromArray([$Html.text("Age: 22")]))
-                                ,$Html.text(bioText)
-                                ,$Html.text(experience)]))]))]))]));
+                                ,$Markdown.toHtml(bioText)
+                                ,$Markdown.toHtml(experience)]))]))]));
    }();
    var takafumiImg = A2($Html.img,
    _L.fromArray([$Html$Attributes.src("../../resources/takafumi_720x405.jpg")
@@ -12930,6 +12985,10 @@ Elm.Teaching.make = function (_elm) {
    _L.fromArray([$Html$Attributes.$class("container")]),
    _L.fromArray([jumbotron
                 ,takafumiImg]));
+   var sectionBio = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("container")]),
+   _L.fromArray([bio]));
+   var sectionLanding = landing;
    var links = _L.fromArray([A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
@@ -12975,9 +13034,8 @@ Elm.Teaching.make = function (_elm) {
                    model.currentPage,
                    links)
                    ,$TopBar.topBarPadding
-                   ,takafumiImg
-                   ,bio
-                   ,$Markdown.toHtml(experience)]));
+                   ,sectionLanding
+                   ,sectionBio]));
    };
    var main = view(model);
    _elm.Teaching.values = {_op: _op
@@ -12986,6 +13044,8 @@ Elm.Teaching.make = function (_elm) {
                           ,Model: Model
                           ,model: model
                           ,links: links
+                          ,sectionLanding: sectionLanding
+                          ,sectionBio: sectionBio
                           ,landing: landing
                           ,jumbotron: jumbotron
                           ,takafumiImg: takafumiImg
