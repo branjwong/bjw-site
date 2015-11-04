@@ -8,7 +8,7 @@
 - Install Public Key to a user you have login credentials for: `ssh-copy-id demo@SERVER_IP_ADDRESS`
 - `nano /etc/ssh/sshd_config`, `PermitRootLogin yes` --> `PermitRootLogin no`, `service ssh restart`
 
-- Refer to personal-site/README.md for dev env requirements
+- Refer to bjw-site/README.md for dev env requirements
 
 ## Install Nginx
 
@@ -20,7 +20,9 @@
 - editing config: `sudo nano /etc/nginx/sites-available/default`
 - making directories: `sudo mkdir NAME`
 - deleting [directories]: `sudo rm [-r] NAME`
-- main directory: `/usr/share/nginx/bjw-site/`
+- main directory: `/data/www/bjw-site/`
+
+## Use Nginx
 
 
 ### Tutorials

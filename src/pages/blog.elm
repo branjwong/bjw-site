@@ -80,6 +80,5 @@ main =
   view model
 
 currentLinks =
-  [ li [] [ a [ href "https://ca.linkedin.com/pub/brandon-j-wong/54/43/500" ] [ text "LinkedIn" ] ]
-  , li [] [ a [ href "https://github.com/branjwong/portfolio" ] [ text "Portfolio" ] ]
+  [
   ]

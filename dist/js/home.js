@@ -12712,8 +12712,8 @@ Elm.TopBar.make = function (_elm) {
                              ,A2($Html.li,
                              _L.fromArray([]),
                              _L.fromArray([A2($Html.a,
-                             _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/portfolio")]),
-                             _L.fromArray([$Html.text("Portfolio")]))]))]))]));
+                             _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
+                             _L.fromArray([$Html.text("GitHub")]))]))]))]));
    var navbarRight = A2($Html.ul,
    _L.fromArray([$Html$Attributes.$class("nav navbar-nav navbar-right")]),
    _L.fromArray([outsideLinks]));
@@ -12810,7 +12810,7 @@ Elm.TopBar.make = function (_elm) {
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
                              ,$Html$Attributes.href("index.html")]),
-                _L.fromArray([$Html.text("BJ")]))]));
+                _L.fromArray([$Html.text("BJW")]))]));
    var navbarFixed = F2(function (currentName,
    currentLinks) {
       return A2($Html.div,

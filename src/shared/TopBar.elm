@@ -52,7 +52,7 @@ navbarHeader =
       --  , href "index.html"
       --  ]
       --  [ img [ class "img-responsive", src "../../resources/sign_vector.fw.png" ] [] ]
-    , a [ class "navbar-brand", href "index.html" ] [ text "BJ" ]
+    , a [ class "navbar-brand", href "index.html" ] [ text "BJW" ]
     ]
 
 
@@ -118,7 +118,7 @@ outsideLinks =
     , ul
       [ class "dropdown-menu" ]
       [ li [] [ a [ href "https://ca.linkedin.com/pub/brandon-j-wong/54/43/500" ] [ text "LinkedIn" ] ]
-      , li [] [ a [ href "https://github.com/branjwong/portfolio" ] [ text "Portfolio" ] ]
+      , li [] [ a [ href "https://github.com/branjwong/" ] [ text "GitHub" ] ]
       ]
     ]
 
