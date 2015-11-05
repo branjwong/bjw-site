@@ -17,17 +17,17 @@
 
 ## Configure Nginx
 
-- editing config: `sudo nano /etc/nginx/sites-available/default`
+- editing config: `sudo nano /etc/nginx/nginx.conf`
+- main directory: `/usr/share/nginx/bjw-site/`
+
 - making directories: `sudo mkdir NAME`
 - deleting [directories]: `sudo rm [-r] NAME`
-- main directory: `/data/www/bjw-site/`
-
-## Use Nginx
-
 
 ### Tutorials
 
 - [connect to droplet](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh)
 - [init server](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
-- [nginx](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts?utm_source=Customerio&utm_medium=Email_Internal&utm_campaign=Email_UbuntuDistroApacheWelcome)
+- [install nginx](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts?utm_source=Customerio&utm_medium=Email_Internal&utm_campaign=Email_UbuntuDistroApacheWelcome)
+- [congfigure nginx](https://www.youtube.com/watch?v=7QXnk8emzOU)
+
 
