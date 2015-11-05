@@ -8,20 +8,30 @@
 - Install Public Key to a user you have login credentials for: `ssh-copy-id demo@SERVER_IP_ADDRESS`
 - `nano /etc/ssh/sshd_config`, `PermitRootLogin yes` --> `PermitRootLogin no`, `service ssh restart`
 
-- Refer to bjw-site/README.md for dev env requirements
+
 
 ## Install Nginx
 
-- `sudo apt-get update`
-- `sudo apt-get install nginx`
+- `apt-get update`
+- `apt-get install nginx`
 
 ## Configure Nginx
 
-- editing config: `sudo nano /etc/nginx/nginx.conf`
-- main directory: `/usr/share/nginx/bjw-site/`
+- EDITING CONFIG: `nano /etc/nginx/nginx.conf`
+- MAIN_DIR: `/usr/share/nginx/bjw-site/`
 
-- making directories: `sudo mkdir NAME`
-- deleting [directories]: `sudo rm [-r] NAME`
+- making directories: `mkdir NAME`
+- deleting [directories]: `rm [-r] NAME`
+
+## Install Site
+
+- Make sure npm is installed on your system.
+- Clone this MAIN_DIR.
+- Run `npm install`.
+- Configure nginx to point at `bjw-site/dist/html/index.html`
+- ????
+- PROFIT!!!
+
 
 ### Tutorials
 
