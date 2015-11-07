@@ -9,11 +9,12 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Exts.Html.Bootstrap exposing (..)
 
-import TopBar exposing (..)
-import Centre exposing (..)
-import Style exposing (..)
-
+import NavBar
+import Style
 import Markdown
+
+port title: String
+port title =  "Teaching · BJW"
 
 main : Html
 main =
@@ -23,9 +24,9 @@ main =
 
 view : Model -> Html
 view model =
-  div [ attribute "role" "elm-app" ]
-    [ TopBar.topBar model.currentPage links
-    , TopBar.topBarPadding
+  div
+    [ attribute "role" "elm-app" ]
+    [ NavBar.navBar model.currentPage links
     , sectionLanding
     , sectionBio
     ]
@@ -55,20 +56,23 @@ links =
 sectionLanding = landing
 
 sectionBio =
-  div [ class "container" ]
+  div
+    [ class "container" ]
     [ bio
     ]
 
 
 landing =
-  div [ class "container" ]
-    [ jumbotron
-    , takafumiImg
+  div
+    [ Style.teachLanding
+    , class "container" ]
+    [ takafumiImg
     ]
 
 
 jumbotron =
-  div [ class "jumbotron" ]
+  div
+    [ class "jumbotron" ]
     [ h1 [] [ text "I actually teach." ]
     , p [] [ text "With me, the students of today are able to taught how to learn for tomorrow." ]
     ]
@@ -89,8 +93,10 @@ bio =
     bioScaleFactor = 10
   in
     div []
-      [ div [ class "media" ]
-        [ div [ class "media-left" ]
+      [ div
+        [ class "media" ]
+        [ div
+          [ class "media-left" ]
           [ img
             [ class "media-object"
             , src "../../resources/gradphoto.jpg"
@@ -136,6 +142,14 @@ experience =
   Calculus Tutor
   Dug deep to find out the root cause of the difficulties his students were having.
   Challenged the students who were succeeding.
+
+  """
+
+teachingStyle =
+  """
+  - building Foundations
+  - don't test applications of concepts without learning the concepts before
+  - physics 11: don't work on p/v/a/t graphs without learning p,v,a respectively
 
   """
 

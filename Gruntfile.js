@@ -14,8 +14,8 @@ grunt.initConfig({
   elm: {
     compile: {
       files: {
-        'dist/js/blog.js': 'src/pages/blog.elm',
         'dist/js/home.js': 'src/pages/home.elm',
+        'dist/js/writing.js': 'src/pages/writing.elm',
         'dist/js/teaching.js': 'src/pages/teaching.elm',
         'dist/js/programming.js': 'src/pages/programming.elm'
       }

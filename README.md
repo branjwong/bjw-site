@@ -23,9 +23,15 @@
 - visual programming portfolio
 - blog
 - my own space?
+- article share
+- book talk
+
 
 ## Design Decisions
+
+## Development Decisions
 
 - purely client-side driven app
 - elm to html/js compilation
 - static css in .css stylesheet
+- nginx server

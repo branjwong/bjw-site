@@ -270,50 +270,6 @@ Elm.Basics.make = function (_elm) {
                         ,GT: GT};
    return _elm.Basics.values;
 };
-Elm.Centre = Elm.Centre || {};
-Elm.Centre.make = function (_elm) {
-   "use strict";
-   _elm.Centre = _elm.Centre || {};
-   if (_elm.Centre.values)
-   return _elm.Centre.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "Centre",
-   $Basics = Elm.Basics.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var element = function (html) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("starter-template")]),
-      _L.fromArray([html]))]));
-   };
-   var markdown = function (string) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("starter-template")]),
-      _L.fromArray([$Markdown.toHtml(string)]))]));
-   };
-   _op["=>"] = F2(function (v0,
-   v1) {
-      return {ctor: "_Tuple2"
-             ,_0: v0
-             ,_1: v1};
-   });
-   _elm.Centre.values = {_op: _op
-                        ,markdown: markdown
-                        ,element: element};
-   return _elm.Centre.values;
-};
 Elm.Char = Elm.Char || {};
 Elm.Char.make = function (_elm) {
    "use strict";
@@ -12165,6 +12121,179 @@ Elm.Native.VirtualDom.make = function(elm)
 
 },{"virtual-dom/vdom/create-element":6,"virtual-dom/vdom/patch":9,"virtual-dom/vnode/is-vhook":13,"virtual-dom/vnode/vnode":18,"virtual-dom/vnode/vtext":20,"virtual-dom/vtree/diff":22}]},{},[23]);
 
+Elm.NavBar = Elm.NavBar || {};
+Elm.NavBar.make = function (_elm) {
+   "use strict";
+   _elm.NavBar = _elm.NavBar || {};
+   if (_elm.NavBar.values)
+   return _elm.NavBar.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "NavBar",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style = Elm.Style.make(_elm);
+   var outsideLinks = A2($Html.li,
+   _L.fromArray([$Html$Attributes.$class("dropdown")]),
+   _L.fromArray([A2($Html.a,
+                _L.fromArray([$Html$Attributes.href("")
+                             ,$Html$Attributes.$class("dropdown-toggle")
+                             ,A2($Html$Attributes.attribute,
+                             "data-toggle",
+                             "dropdown")
+                             ,A2($Html$Attributes.attribute,
+                             "role",
+                             "button")
+                             ,A2($Html$Attributes.attribute,
+                             "aria-haspopup",
+                             "true")
+                             ,A2($Html$Attributes.attribute,
+                             "aria-expanded",
+                             "false")]),
+                _L.fromArray([$Html.text("Elsewhere")]))
+                ,A2($Html.ul,
+                _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
+                _L.fromArray([A2($Html.li,
+                             _L.fromArray([]),
+                             _L.fromArray([A2($Html.a,
+                             _L.fromArray([$Html$Attributes.href("https://ca.linkedin.com/pub/brandon-j-wong/54/43/500")]),
+                             _L.fromArray([$Html.text("LinkedIn")]))]))
+                             ,A2($Html.li,
+                             _L.fromArray([]),
+                             _L.fromArray([A2($Html.a,
+                             _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
+                             _L.fromArray([$Html.text("GitHub")]))]))]))]));
+   var tab = F4(function (currentName,
+   currentLinks,
+   name,
+   link) {
+      return _U.eq(currentName,
+      name) ? A2($Html.li,
+      _L.fromArray([$Html$Attributes.$class("dropdown")]),
+      _L.fromArray([A2($Html.a,
+                   _L.fromArray([$Html$Attributes.href("")
+                                ,$Html$Attributes.$class("dropdown-toggle")
+                                ,A2($Html$Attributes.attribute,
+                                "data-toggle",
+                                "dropdown")
+                                ,A2($Html$Attributes.attribute,
+                                "role",
+                                "button")
+                                ,A2($Html$Attributes.attribute,
+                                "aria-haspopup",
+                                "true")
+                                ,A2($Html$Attributes.attribute,
+                                "aria-expanded",
+                                "false")]),
+                   _L.fromArray([$Html.text(name)]))
+                   ,A2($Html.ul,
+                   _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
+                   currentLinks)])) : A2($Html.li,
+      _L.fromArray([]),
+      _L.fromArray([A2($Html.a,
+      _L.fromArray([$Html$Attributes.href(link)]),
+      _L.fromArray([$Html.text(name)]))]));
+   });
+   var navbarTabs = F2(function (currentName,
+   currentLinks) {
+      return A2($Html.ul,
+      _L.fromArray([$Html$Attributes.$class("nav navbar-nav navbar-right")]),
+      _L.fromArray([A4(tab,
+                   currentName,
+                   currentLinks,
+                   "Teaching",
+                   "teaching.html")
+                   ,A4(tab,
+                   currentName,
+                   currentLinks,
+                   "Programming",
+                   "programming.html")
+                   ,A4(tab,
+                   currentName,
+                   currentLinks,
+                   "Writing",
+                   "writing.html")]));
+   });
+   var navbarExpandComponent = F2(function (currentName,
+   currentLinks) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.id("navbar")
+                   ,$Html$Attributes.$class("navbar-collapse collapse")]),
+      _L.fromArray([A2(navbarTabs,
+      currentName,
+      currentLinks)]));
+   });
+   var navbarCollapseComponent = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("navbar-header")]),
+   _L.fromArray([A2($Html.button,
+                _L.fromArray([$Html$Attributes.type$("button")
+                             ,$Html$Attributes.$class("navbar-toggle collapsed")
+                             ,A2($Html$Attributes.attribute,
+                             "data-toggle",
+                             "collapse")
+                             ,A2($Html$Attributes.attribute,
+                             "data-target",
+                             "#navbar")
+                             ,A2($Html$Attributes.attribute,
+                             "aria-expanded",
+                             "false")
+                             ,A2($Html$Attributes.attribute,
+                             "aria-controls",
+                             "navbar")]),
+                _L.fromArray([A2($Html.span,
+                             _L.fromArray([$Html$Attributes.$class("sr-only")]),
+                             _L.fromArray([$Html.text("Toggle navigation")]))
+                             ,A2($Html.span,
+                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([]))
+                             ,A2($Html.span,
+                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([]))
+                             ,A2($Html.span,
+                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([]))]))
+                ,A2($Html.a,
+                _L.fromArray([$Html$Attributes.$class("navbar-brand")
+                             ,$Html$Attributes.href("index.html")]),
+                _L.fromArray([$Html.text("BJW")]))]));
+   var navBar = F2(function (currentName,
+   currentLinks) {
+      return A2($Html.nav,
+      _L.fromArray([$Style.topBar
+                   ,$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")
+                   ,$Html$Attributes.id("top")
+                   ,A2($Html$Attributes.attribute,
+                   "role",
+                   "banner")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([navbarCollapseComponent
+                   ,A2(navbarExpandComponent,
+                   currentName,
+                   currentLinks)]))]));
+   });
+   _op["=>"] = F2(function (v0,
+   v1) {
+      return {ctor: "_Tuple2"
+             ,_0: v0
+             ,_1: v1};
+   });
+   _elm.NavBar.values = {_op: _op
+                        ,navBar: navBar
+                        ,navbarCollapseComponent: navbarCollapseComponent
+                        ,navbarExpandComponent: navbarExpandComponent
+                        ,navbarTabs: navbarTabs
+                        ,tab: tab
+                        ,outsideLinks: outsideLinks};
+   return _elm.NavBar.values;
+};
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
    "use strict";
@@ -12671,17 +12800,59 @@ Elm.Style.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var writingContainer = $Html$Attributes.style(_L.fromArray([]));
+   var text2Color = "#999";
+   var text1Color = "#333";
+   var bgColor = "#2C1E1E";
    _op["=>"] = F2(function (v0,
    v1) {
       return {ctor: "_Tuple2"
              ,_0: v0
              ,_1: v1};
    });
-   var bio = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "margin-top",
+   var topBar = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                    "background-color",
+                                                    bgColor)
+                                                    ,A2(_op["=>"],
+                                                    "color",
+                                                    text1Color)]));
+   var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                           "padding-top",
+                                                           "20px")
+                                                           ,A2(_op["=>"],
+                                                           "padding-bottom",
+                                                           "20px")]));
+   var writingTitle = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                          "margin-top",
+                                                          "30px")
+                                                          ,A2(_op["=>"],
+                                                          "margin-bottom",
+                                                          "0px")
+                                                          ,A2(_op["=>"],
+                                                          "font-size",
+                                                          "60px")
+                                                          ,A2(_op["=>"],
+                                                          "font-weight",
+                                                          "normal")]));
+   var writingDescription = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                                "font-size",
+                                                                "20px")
+                                                                ,A2(_op["=>"],
+                                                                "color",
+                                                                text2Color)]));
+   var teachLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "padding-top",
    "10px")]));
    _elm.Style.values = {_op: _op
-                       ,bio: bio};
+                       ,bgColor: bgColor
+                       ,text1Color: text1Color
+                       ,text2Color: text2Color
+                       ,topBar: topBar
+                       ,writingContainer: writingContainer
+                       ,writingHeader: writingHeader
+                       ,writingTitle: writingTitle
+                       ,writingDescription: writingDescription
+                       ,teachLanding: teachLanding};
    return _elm.Style.values;
 };
 Elm.Task = Elm.Task || {};
@@ -12926,9 +13097,10 @@ Elm.Teaching.make = function (_elm) {
    $List = Elm.List.make(_elm),
    $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
+   $NavBar = Elm.NavBar.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $TopBar = Elm.TopBar.make(_elm);
+   $Style = Elm.Style.make(_elm);
    var layout = "\n\n  # Landing Page\n\n  - introductory tagline\n  - img = \"teaching\"\n  - button -> contact me today! -> #contactme\n\n  # Bio\n\n  - img = \"gradphoto\"\n\n  # Reviews\n\n  # Map\n\n  # Contact Me\n\n  - anchor: #contactme\n\n  ";
    var phys12 = "\n\n  ";
    var phys11 = "\n\n\n  ";
@@ -12940,6 +13112,7 @@ Elm.Teaching.make = function (_elm) {
                                ,math11
                                ,precalc11
                                ,precalc12]);
+   var teachingStyle = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n\n  ";
    var experience = "\n\n  Oxford learning\n  Aug 2014 – Present\n  Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English\n  Develop appropriate curricula to supplement what students are currently learning at school\n  Train students to understanding the underlying concepts before trying to apply the mechanics\n  Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n\n  Magee Secondary School\n  February 2013 – July 2013\n  Calculus Tutor\n  Dug deep to find out the root cause of the difficulties his students were having.\n  Challenged the students who were succeeding.\n\n  ";
    var bioText = "\n\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n\n  ";
    var bio = function () {
@@ -12982,9 +13155,9 @@ Elm.Teaching.make = function (_elm) {
                 _L.fromArray([]),
                 _L.fromArray([$Html.text("With me, the students of today are able to taught how to learn for tomorrow.")]))]));
    var landing = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container")]),
-   _L.fromArray([jumbotron
-                ,takafumiImg]));
+   _L.fromArray([$Style.teachLanding
+                ,$Html$Attributes.$class("container")]),
+   _L.fromArray([takafumiImg]));
    var sectionBio = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("container")]),
    _L.fromArray([bio]));
@@ -13030,14 +13203,18 @@ Elm.Teaching.make = function (_elm) {
       _L.fromArray([A2($Html$Attributes.attribute,
       "role",
       "elm-app")]),
-      _L.fromArray([A2($TopBar.topBar,
+      _L.fromArray([A2($NavBar.navBar,
                    model.currentPage,
                    links)
-                   ,$TopBar.topBarPadding
                    ,sectionLanding
                    ,sectionBio]));
    };
    var main = view(model);
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   "Teaching · BJW");
    _elm.Teaching.values = {_op: _op
                           ,main: main
                           ,view: view
@@ -13052,6 +13229,7 @@ Elm.Teaching.make = function (_elm) {
                           ,bio: bio
                           ,bioText: bioText
                           ,experience: experience
+                          ,teachingStyle: teachingStyle
                           ,subjects: subjects
                           ,math10: math10
                           ,math11: math11
@@ -13147,198 +13325,6 @@ Elm.Text.make = function (_elm) {
                       ,Over: Over
                       ,Through: Through};
    return _elm.Text.values;
-};
-Elm.TopBar = Elm.TopBar || {};
-Elm.TopBar.make = function (_elm) {
-   "use strict";
-   _elm.TopBar = _elm.TopBar || {};
-   if (_elm.TopBar.values)
-   return _elm.TopBar.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "TopBar",
-   $Basics = Elm.Basics.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var outsideLinks = A2($Html.li,
-   _L.fromArray([$Html$Attributes.$class("dropdown")]),
-   _L.fromArray([A2($Html.a,
-                _L.fromArray([$Html$Attributes.href("")
-                             ,$Html$Attributes.$class("dropdown-toggle")
-                             ,A2($Html$Attributes.attribute,
-                             "data-toggle",
-                             "dropdown")
-                             ,A2($Html$Attributes.attribute,
-                             "role",
-                             "button")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-haspopup",
-                             "true")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")]),
-                _L.fromArray([$Html.text("Outside Links")]))
-                ,A2($Html.ul,
-                _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
-                _L.fromArray([A2($Html.li,
-                             _L.fromArray([]),
-                             _L.fromArray([A2($Html.a,
-                             _L.fromArray([$Html$Attributes.href("https://ca.linkedin.com/pub/brandon-j-wong/54/43/500")]),
-                             _L.fromArray([$Html.text("LinkedIn")]))]))
-                             ,A2($Html.li,
-                             _L.fromArray([]),
-                             _L.fromArray([A2($Html.a,
-                             _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
-                             _L.fromArray([$Html.text("GitHub")]))]))]))]));
-   var navbarRight = A2($Html.ul,
-   _L.fromArray([$Html$Attributes.$class("nav navbar-nav navbar-right")]),
-   _L.fromArray([outsideLinks]));
-   var tab = F4(function (currentName,
-   currentLinks,
-   name,
-   link) {
-      return _U.eq(currentName,
-      name) ? A2($Html.li,
-      _L.fromArray([$Html$Attributes.$class("dropdown")]),
-      _L.fromArray([A2($Html.a,
-                   _L.fromArray([$Html$Attributes.href("")
-                                ,$Html$Attributes.$class("dropdown-toggle")
-                                ,A2($Html$Attributes.attribute,
-                                "data-toggle",
-                                "dropdown")
-                                ,A2($Html$Attributes.attribute,
-                                "role",
-                                "button")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-haspopup",
-                                "true")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-expanded",
-                                "false")]),
-                   _L.fromArray([$Html.text(name)]))
-                   ,A2($Html.ul,
-                   _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
-                   currentLinks)])) : A2($Html.li,
-      _L.fromArray([]),
-      _L.fromArray([A2($Html.a,
-      _L.fromArray([$Html$Attributes.href(link)]),
-      _L.fromArray([$Html.text(name)]))]));
-   });
-   var navbarLeft = F2(function (currentName,
-   currentLinks) {
-      return A2($Html.ul,
-      _L.fromArray([$Html$Attributes.$class("nav navbar-nav")]),
-      _L.fromArray([A4(tab,
-                   currentName,
-                   currentLinks,
-                   "Teaching",
-                   "teaching.html")
-                   ,A4(tab,
-                   currentName,
-                   currentLinks,
-                   "Programming",
-                   "programming.html")
-                   ,A4(tab,
-                   currentName,
-                   currentLinks,
-                   "Blog",
-                   "blog.html")]));
-   });
-   var navbar = F2(function (currentName,
-   currentLinks) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.id("navbar")
-                   ,$Html$Attributes.$class("navbar-collapse collapse")]),
-      _L.fromArray([A2(navbarLeft,
-                   currentName,
-                   currentLinks)
-                   ,navbarRight]));
-   });
-   var navbarHeader = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("navbar-header")]),
-   _L.fromArray([A2($Html.button,
-                _L.fromArray([$Html$Attributes.type$("button")
-                             ,$Html$Attributes.$class("navbar-toggle collapsed")
-                             ,A2($Html$Attributes.attribute,
-                             "data-toggle",
-                             "collapse")
-                             ,A2($Html$Attributes.attribute,
-                             "data-target",
-                             "#navbar")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-controls",
-                             "navbar")]),
-                _L.fromArray([A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("sr-only")]),
-                             _L.fromArray([$Html.text("Toggle navigation")]))
-                             ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
-                             _L.fromArray([]))
-                             ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
-                             _L.fromArray([]))
-                             ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
-                             _L.fromArray([]))]))
-                ,A2($Html.a,
-                _L.fromArray([$Html$Attributes.$class("navbar-brand")
-                             ,$Html$Attributes.href("index.html")]),
-                _L.fromArray([$Html.text("BJW")]))]));
-   var navbarFixed = F2(function (currentName,
-   currentLinks) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")
-                   ,$Html$Attributes.id("top")
-                   ,A2($Html$Attributes.attribute,
-                   "role",
-                   "banner")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([navbarHeader
-                   ,A2(navbar,
-                   currentName,
-                   currentLinks)]))]));
-   });
-   var topBar = F2(function (currentName,
-   currentLinks) {
-      return A2(navbarFixed,
-      currentName,
-      currentLinks);
-   });
-   _op["=>"] = F2(function (v0,
-   v1) {
-      return {ctor: "_Tuple2"
-             ,_0: v0
-             ,_1: v1};
-   });
-   var topBarPadding = A2($Html.div,
-   _L.fromArray([$Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                     "height",
-                                                     "30px")
-                                                     ,A2(_op["=>"],
-                                                     "width",
-                                                     "100%")]))]),
-   _L.fromArray([]));
-   _elm.TopBar.values = {_op: _op
-                        ,topBar: topBar
-                        ,navbarFixed: navbarFixed
-                        ,navbarHeader: navbarHeader
-                        ,navbar: navbar
-                        ,navbarLeft: navbarLeft
-                        ,tab: tab
-                        ,navbarRight: navbarRight
-                        ,outsideLinks: outsideLinks
-                        ,topBarPadding: topBarPadding};
-   return _elm.TopBar.values;
 };
 Elm.Transform2D = Elm.Transform2D || {};
 Elm.Transform2D.make = function (_elm) {

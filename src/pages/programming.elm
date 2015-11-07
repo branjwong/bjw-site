@@ -3,9 +3,11 @@ module Programming where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import TopBar
+import NavBar
 
--- MODEL
+port title: String
+port title =  "Programming · BJW"
+
 
 type alias Model =
     { currentPage : String
@@ -28,7 +30,7 @@ displayPage =
 view : Model -> Html
 view model =
     div []
-        [ TopBar.topBar model.currentPage []
+        [ NavBar.navBar model.currentPage []
         ]
 
 

@@ -1,5 +1,12 @@
 # Web Hosting
 
+## Links & Proxies
+
+- ./ website
+- ./git/ -> github
+- ./linkedin -> linkedin
+
+
 ## Intial Server Setup
 
 - Login: `ssh root@SERVER_IP_ADDRESS`
@@ -7,8 +14,6 @@
 - Give Root Priviledges: `gpasswd -a demo sudo`
 - Install Public Key to a user you have login credentials for: `ssh-copy-id demo@SERVER_IP_ADDRESS`
 - `nano /etc/ssh/sshd_config`, `PermitRootLogin yes` --> `PermitRootLogin no`, `service ssh restart`
-
-
 
 ## Install Nginx
 
