@@ -7,6 +7,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
+import Style
 
 port title : String
 port title = "Home · BJW"
@@ -25,14 +26,27 @@ view : Model -> Html
 view model =
     div []
         [ NavBar.navBar model.currentPage []
-        , homeHeader
+        , home
         ]
 
 main : Html
 main =
     view model
 
-homeHeader =
+
+home =
+  div
+    [ class "container"
+    , Style.homeContainer
+    ]
+    [ div
+      [ class "row" ]
+      [ header
+      ]
+    ]
+
+
+header =
   div
     [ Style.writingHeader ]
     [ h1 [ Style.writingTitle ] [ text "Brandon's Niche in the Net." ]

@@ -1,6 +1,6 @@
 {
   "name": "bjw-site",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A landing site for all things Brandon J Wong.",
   "main": "dist/html/index.html",
   "scripts": {

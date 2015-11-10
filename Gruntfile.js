@@ -17,7 +17,7 @@ grunt.initConfig({
         'dist/js/home.js': 'src/pages/home.elm',
         'dist/js/writing.js': 'src/pages/writing.elm',
         'dist/js/teaching.js': 'src/pages/teaching.elm',
-        'dist/js/programming.js': 'src/pages/programming.elm'
+        'dist/js/programming.js': 'src/pages/programming.elm',
       }
     }
   }

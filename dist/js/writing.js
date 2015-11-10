@@ -12067,17 +12067,17 @@ Elm.NavBar.make = function (_elm) {
                    currentName,
                    currentLinks,
                    "Teaching",
-                   "teaching.html")
+                   "../../dist/html/teaching.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Programming",
-                   "programming.html")
+                   "../../dist/html/programming.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Writing",
-                   "writing.html")]));
+                   "../../dist/html/writing.html")]));
    });
    var navbarExpandComponent = F2(function (currentName,
    currentLinks) {
@@ -12119,7 +12119,7 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([]))]))
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
-                             ,$Html$Attributes.href("index.html")]),
+                             ,$Html$Attributes.href("../../dist/html/index.html")]),
                 _L.fromArray([$Html.text("BJW")]))]));
    var navBar = F2(function (currentName,
    currentLinks) {
@@ -12658,6 +12658,8 @@ Elm.Style.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var teachingBio = $Html$Attributes.style(_L.fromArray([]));
+   var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
    var writingContainer = $Html$Attributes.style(_L.fromArray([]));
    var text2Color = "#999";
    var text1Color = "#333";
@@ -12674,6 +12676,9 @@ Elm.Style.make = function (_elm) {
                                                     ,A2(_op["=>"],
                                                     "color",
                                                     text1Color)]));
+   var homeContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                            "padding-top",
                                                            "20px")
@@ -12698,19 +12703,26 @@ Elm.Style.make = function (_elm) {
                                                                 ,A2(_op["=>"],
                                                                 "color",
                                                                 text2Color)]));
-   var teachLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   var teachingLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "padding-top",
    "10px")]));
+   var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    _elm.Style.values = {_op: _op
                        ,bgColor: bgColor
                        ,text1Color: text1Color
                        ,text2Color: text2Color
                        ,topBar: topBar
+                       ,homeContainer: homeContainer
                        ,writingContainer: writingContainer
                        ,writingHeader: writingHeader
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
-                       ,teachLanding: teachLanding};
+                       ,teachingContainer: teachingContainer
+                       ,teachingLanding: teachingLanding
+                       ,teachingBio: teachingBio
+                       ,programmingContainer: programmingContainer};
    return _elm.Style.values;
 };
 Elm.Task = Elm.Task || {};
@@ -13178,7 +13190,7 @@ Elm.Writing.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Style = Elm.Style.make(_elm);
    var ventingMarkdown = "\n  # Venting\n  #### July-02-12: 11:44pm\n  Usually I\'m not the type to go blabbing about my problems to all my friends, but lately I\'ve felt the need to vent a lot. Recently, I\'ve felt the need to enlighten most of my close friends about the shit-show that is my current relationship standing with my father. I mean, I just did it to my cousin five minutes ago. Perhaps this is a better place to vent though. Sure, it\'s the internet, and sure, everyone can access it, but I want to learn HTML and webdesign anyway; I can kill two birds with one stone. And honestly, if you\'re this interested in my personal life to come to this site (if you can even call it that, I mean I\'m currently running this off Dropbox,) by all means, listen.\n  ";
-   var crossGameMarkdown = "\n  # Cross Game\n  #### July-13-12: 12:47pm\n  ![Cross Game](http://cdn.myanimelist.net/images/anime/6/22103l.jpg)\n\n  I finished Cross Game yesterday. Sam had suggested it to me. I\'m surprised how heavily Sam\'s invested himself into anime. It\'s awesome having a close friend in real life I can talk to anime. David and Samarth have gotten into it too, it\'s awesome.\n  Being a sports anime, I was kind of iffy about starting it before. I put it off for awhile. When Sam suggested it, I was like, \"hey I recognize that name, if you say it\'s good, I guess I\'ll give it a shot.\" Man, am I glad I did.\n  ### Synopsis:\n  Cross Game started very strong.\n  At first they introduced us to two very important characters: Kou, the protragonist, and his childhood friend, Wakaba. Despite having only 20min to work with, Wakaba\'s character captivated all of us (David, Samarth, Sam and I). She was very likable to begin with, she appeared to be strong and kind right from the get-go. We see that she is interested in Kou as more than a friend, despite them only being in the 5th grade. We\'re also introduced to Aoba, the main heroine of the story, and Akaishi, his best friend.\n  They kill off Wakaba in the first episode.\n  After building up Wakaba to be such a likable character, she dies, and the first episode ends with both Kou and Akaishi crying about losing someone they both loved. They play it off brilliantly. Kou wanders around the Summer Festival (that him and Wakaba were supposed to attend together after she got back from the swimming camp that ended up being her demise) wondering what to do with himself, and only after seeing Akaishi preying for her and crying, does he realize that all he can really do right now is cry as well.\n  The second episode resumes some 6 years after that summer, and the story revolves around Kou, Aoba, Akaishi (to a lesser extent), and the people they meet through baseball.\n  This isn\'t the first story I\'ve done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I\'m not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that\'s only a personal preference, and in no way should be a fault to the show.  \n  ### Characters:\n  First off, I loved Kou. While he wasn\'t the hardest character to figure out, he definitely wasn\'t the easiest. Too many times in anime, I see characters that are defined (through obvious means) at the beginning, with a linear line of character development (cough: Clannad). Kou wasn\'t like that. He didn\'t need to explicitly say how he felt to get the audience to understand. In Cross Game, actions spoke a lot louder than words; the two main characters weren\'t outwardly honest about their feelings for one another. It was only through speculation of the other characters and what you could see from the way they acted could the audience know the reality of what Aoba and Kou felt for one another.\n  Aoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn\'t help but smile when her and Kou butted heads. Ichiyou knew her shit, so I\'m echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I\'ve come to know. She\'s definitey up there with Kurisu, Ami, and Ohana.  \n  ### Verdict: 10/10\n  ";
+   var crossGameMarkdown = "\n  # Cross Game\n  #### July-13-12: 12:47pm\n  ![Cross Game](http://cdn.myanimelist.net/images/anime/6/22103l.jpg)\n\n  I finished Cross Game yesterday. Sam had suggested it to me. I\'m surprised how heavily Sam\'s invested himself into anime. It\'s awesome having a close friend in real life I can talk to anime. David and Samarth have gotten into it too, it\'s awesome.\n  Being a sports anime, I was kind of iffy about starting it before. I put it off for awhile. When Sam suggested it, I was like, \"hey I recognize that name, if you say it\'s good, I guess I\'ll give it a shot.\" Man, am I glad I did.\n  ### Synopsis:\n  Cross Game started very strong.\n  At first they introduced us to two very important characters: Kou, the protragonist, and his childhood friend, Wakaba. Despite having only 20min to work with, Wakaba\'s character captivated all of us (David, Samarth, Sam and I). She was very likable to begin with, she appeared to be strong and kind right from the get-go. We see that she is interested in Kou as more than a friend, despite them only being in the 5th grade. We\'re also introduced to Aoba, the main heroine of the story, and Akaishi, his best friend.\n  They kill off Wakaba in the first episode.\n  After building up Wakaba to be such a likable character, she dies, and the first episode ends with both Kou and Akaishi crying about losing someone they both loved. They play it off brilliantly. Kou wanders around the Summer Festival (that him and Wakaba were supposed to attend together after she got back from the swimming camp that ended up being her demise) wondering what to do with himself, and only after seeing Akaishi preying for her and crying, does he realize that all he can really do right now is cry as well.\n  The second episode resumes some 6 years after that summer, and the story revolves around Kou, Aoba, Akaishi (to a lesser extent), and the people they meet through baseball.\n  This isn\'t the first story I\'ve done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I\'m not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that\'s only a personal preference, and in no way should be a fault to the show.\n  ### Characters:\n  First off, I loved Kou. While he wasn\'t the hardest character to figure out, he definitely wasn\'t the easiest. Too many times in anime, I see characters that are defined (through obvious means) at the beginning, with a linear line of character development (cough: Clannad). Kou wasn\'t like that. He didn\'t need to explicitly say how he felt to get the audience to understand. In Cross Game, actions spoke a lot louder than words; the two main characters weren\'t outwardly honest about their feelings for one another. It was only through speculation of the other characters and what you could see from the way they acted could the audience know the reality of what Aoba and Kou felt for one another.\n  Aoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn\'t help but smile when her and Kou butted heads. Ichiyou knew her shit, so I\'m echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I\'ve come to know. She\'s definitey up there with Kurisu, Ami, and Ohana.\n  ### Verdict: 10/10\n  ";
    var crossGame = A2($Html.div,
    _L.fromArray([]),
    _L.fromArray([$Markdown.toHtml(crossGameMarkdown)]));
@@ -13189,7 +13201,8 @@ Elm.Writing.make = function (_elm) {
    _L.fromArray([$Html$Attributes.$class("col-md-8")]),
    _L.fromArray([crossGame]));
    var writingHeader = A2($Html.div,
-   _L.fromArray([$Style.writingHeader]),
+   _L.fromArray([$Html$Attributes.$class("col-mid-12")
+                ,$Style.writingHeader]),
    _L.fromArray([A2($Html.h1,
                 _L.fromArray([$Style.writingTitle]),
                 _L.fromArray([$Html.text("The Archive")]))
@@ -13205,33 +13218,33 @@ Elm.Writing.make = function (_elm) {
    _L.fromArray([writingHeader
                 ,writingPosts
                 ,sideBar]))]));
-   var currentLinks = _L.fromArray([]);
-   var model = {_: {}
-               ,currentPage: "Writing"};
+   var links = _L.fromArray([]);
    var view = function (model) {
       return A2($Html.div,
       _L.fromArray([]),
       _L.fromArray([A2($NavBar.navBar,
                    model.currentPage,
-                   currentLinks)
+                   links)
                    ,writing]));
    };
-   var main = view(model);
+   var model = {_: {}
+               ,currentPage: "Writing"};
    var Model = function (a) {
       return {_: {}
              ,currentPage: a};
    };
+   var main = view(model);
    var title = Elm.Native.Port.make(_elm).outbound("title",
    function (v) {
       return v;
    },
    "Writing · BJW");
    _elm.Writing.values = {_op: _op
-                         ,Model: Model
                          ,main: main
-                         ,view: view
+                         ,Model: Model
                          ,model: model
-                         ,currentLinks: currentLinks
+                         ,view: view
+                         ,links: links
                          ,writing: writing
                          ,writingHeader: writingHeader
                          ,writingPosts: writingPosts

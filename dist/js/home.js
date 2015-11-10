@@ -2701,21 +2701,36 @@ Elm.Home.make = function (_elm) {
    $moduleName = "Home",
    $Basics = Elm.Basics.make(_elm),
    $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
+   $Signal = Elm.Signal.make(_elm),
+   $Style = Elm.Style.make(_elm);
+   var header = A2($Html.div,
+   _L.fromArray([$Style.writingHeader]),
+   _L.fromArray([A2($Html.h1,
+                _L.fromArray([$Style.writingTitle]),
+                _L.fromArray([$Html.text("Brandon\'s Niche in the Net.")]))
+                ,A2($Html.p,
+                _L.fromArray([$Html$Attributes.$class("lead")
+                             ,$Style.writingDescription]),
+                _L.fromArray([$Html.text("Sup Internet. Now I am here too.")]))]));
+   var home = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("container")
+                ,$Style.homeContainer]),
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("row")]),
+   _L.fromArray([header]))]));
    var view = function (model) {
       return A2($Html.div,
       _L.fromArray([]),
       _L.fromArray([A2($NavBar.navBar,
-      model.currentPage,
-      _L.fromArray([]))]));
+                   model.currentPage,
+                   _L.fromArray([]))
+                   ,home]));
    };
-   var displayPage = A2($Html.div,
-   _L.fromArray([]),
-   _L.fromArray([$Html.text("honey i\'m home")]));
    var model = {_: {}
                ,currentPage: "Home"};
    var main = view(model);
@@ -2731,9 +2746,10 @@ Elm.Home.make = function (_elm) {
    _elm.Home.values = {_op: _op
                       ,Model: Model
                       ,model: model
-                      ,displayPage: displayPage
                       ,view: view
-                      ,main: main};
+                      ,main: main
+                      ,home: home
+                      ,header: header};
    return _elm.Home.values;
 };
 Elm.Html = Elm.Html || {};
@@ -11959,17 +11975,17 @@ Elm.NavBar.make = function (_elm) {
                    currentName,
                    currentLinks,
                    "Teaching",
-                   "teaching.html")
+                   "../../dist/html/teaching.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Programming",
-                   "programming.html")
+                   "../../dist/html/programming.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Writing",
-                   "writing.html")]));
+                   "../../dist/html/writing.html")]));
    });
    var navbarExpandComponent = F2(function (currentName,
    currentLinks) {
@@ -12011,7 +12027,7 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([]))]))
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
-                             ,$Html$Attributes.href("index.html")]),
+                             ,$Html$Attributes.href("../../dist/html/index.html")]),
                 _L.fromArray([$Html.text("BJW")]))]));
    var navBar = F2(function (currentName,
    currentLinks) {
@@ -12550,6 +12566,8 @@ Elm.Style.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var teachingBio = $Html$Attributes.style(_L.fromArray([]));
+   var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
    var writingContainer = $Html$Attributes.style(_L.fromArray([]));
    var text2Color = "#999";
    var text1Color = "#333";
@@ -12566,6 +12584,9 @@ Elm.Style.make = function (_elm) {
                                                     ,A2(_op["=>"],
                                                     "color",
                                                     text1Color)]));
+   var homeContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                            "padding-top",
                                                            "20px")
@@ -12590,19 +12611,26 @@ Elm.Style.make = function (_elm) {
                                                                 ,A2(_op["=>"],
                                                                 "color",
                                                                 text2Color)]));
-   var teachLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   var teachingLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "padding-top",
    "10px")]));
+   var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    _elm.Style.values = {_op: _op
                        ,bgColor: bgColor
                        ,text1Color: text1Color
                        ,text2Color: text2Color
                        ,topBar: topBar
+                       ,homeContainer: homeContainer
                        ,writingContainer: writingContainer
                        ,writingHeader: writingHeader
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
-                       ,teachLanding: teachLanding};
+                       ,teachingContainer: teachingContainer
+                       ,teachingLanding: teachingLanding
+                       ,teachingBio: teachingBio
+                       ,programmingContainer: programmingContainer};
    return _elm.Style.values;
 };
 Elm.Task = Elm.Task || {};

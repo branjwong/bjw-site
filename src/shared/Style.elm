@@ -15,6 +15,11 @@ topBar =
     , "color" => text1Color
     ]
 
+homeContainer =
+  style
+    [ "height" => "1000px"
+    ]
+
 writingContainer =
   style
     [ -- "margin-top" => "20px"
@@ -43,7 +48,20 @@ writingDescription =
     , "color" => text2Color
     ]
 
-teachLanding =
+teachingContainer =
+  style
+    []
+
+teachingLanding =
   style
     [ "padding-top" => "10px"
+    ]
+
+teachingBio =
+  style
+    []
+
+programmingContainer =
+  style
+    [ "height" => "1000px"
     ]

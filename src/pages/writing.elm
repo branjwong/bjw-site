@@ -7,23 +7,20 @@ import Markdown exposing (..)
 import NavBar
 import Style
 
+
+
 port title: String
 port title =  "Writing · BJW"
 
-type alias Model =
-  { currentPage : String
-  }
 
 main : Html
 main =
   view model
 
-view : Model -> Html
-view model =
-  div []
-    [ NavBar.navBar model.currentPage currentLinks
-    , writing
-    ]
+
+type alias Model =
+  { currentPage : String
+  }
 
 
 model : Model
@@ -31,9 +28,19 @@ model =
   { currentPage = "Writing"
   }
 
-currentLinks =
+
+view : Model -> Html
+view model =
+  div []
+    [ NavBar.navBar model.currentPage links
+    , writing
+    ]
+
+
+links =
   [
   ]
+
 
 writing =
   div
@@ -46,9 +53,10 @@ writing =
       ]
     ]
 
+
 writingHeader =
   div
-    [ Style.writingHeader ]
+    [ class "col-mid-12", Style.writingHeader ]
     [ h1 [ Style.writingTitle ] [ text "The Archive" ]
     , p [ class "lead", Style.writingDescription ] [ text "A place for the written word." ]
     --, h1 [ Style.writingTitle ] [ text "A Rotten Register" ]
@@ -86,10 +94,10 @@ crossGameMarkdown =
   They kill off Wakaba in the first episode.
   After building up Wakaba to be such a likable character, she dies, and the first episode ends with both Kou and Akaishi crying about losing someone they both loved. They play it off brilliantly. Kou wanders around the Summer Festival (that him and Wakaba were supposed to attend together after she got back from the swimming camp that ended up being her demise) wondering what to do with himself, and only after seeing Akaishi preying for her and crying, does he realize that all he can really do right now is cry as well.
   The second episode resumes some 6 years after that summer, and the story revolves around Kou, Aoba, Akaishi (to a lesser extent), and the people they meet through baseball.
-  This isn't the first story I've done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I'm not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that's only a personal preference, and in no way should be a fault to the show.  
+  This isn't the first story I've done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I'm not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that's only a personal preference, and in no way should be a fault to the show.
   ### Characters:
   First off, I loved Kou. While he wasn't the hardest character to figure out, he definitely wasn't the easiest. Too many times in anime, I see characters that are defined (through obvious means) at the beginning, with a linear line of character development (cough: Clannad). Kou wasn't like that. He didn't need to explicitly say how he felt to get the audience to understand. In Cross Game, actions spoke a lot louder than words; the two main characters weren't outwardly honest about their feelings for one another. It was only through speculation of the other characters and what you could see from the way they acted could the audience know the reality of what Aoba and Kou felt for one another.
-  Aoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn't help but smile when her and Kou butted heads. Ichiyou knew her shit, so I'm echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I've come to know. She's definitey up there with Kurisu, Ami, and Ohana.  
+  Aoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn't help but smile when her and Kou butted heads. Ichiyou knew her shit, so I'm echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I've come to know. She's definitey up there with Kurisu, Ami, and Ohana.
   ### Verdict: 10/10
   """
 

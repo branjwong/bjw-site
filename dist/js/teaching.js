@@ -12209,17 +12209,17 @@ Elm.NavBar.make = function (_elm) {
                    currentName,
                    currentLinks,
                    "Teaching",
-                   "teaching.html")
+                   "../../dist/html/teaching.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Programming",
-                   "programming.html")
+                   "../../dist/html/programming.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Writing",
-                   "writing.html")]));
+                   "../../dist/html/writing.html")]));
    });
    var navbarExpandComponent = F2(function (currentName,
    currentLinks) {
@@ -12261,7 +12261,7 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([]))]))
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
-                             ,$Html$Attributes.href("index.html")]),
+                             ,$Html$Attributes.href("../../dist/html/index.html")]),
                 _L.fromArray([$Html.text("BJW")]))]));
    var navBar = F2(function (currentName,
    currentLinks) {
@@ -12800,6 +12800,8 @@ Elm.Style.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var teachingBio = $Html$Attributes.style(_L.fromArray([]));
+   var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
    var writingContainer = $Html$Attributes.style(_L.fromArray([]));
    var text2Color = "#999";
    var text1Color = "#333";
@@ -12816,6 +12818,9 @@ Elm.Style.make = function (_elm) {
                                                     ,A2(_op["=>"],
                                                     "color",
                                                     text1Color)]));
+   var homeContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                            "padding-top",
                                                            "20px")
@@ -12840,19 +12845,26 @@ Elm.Style.make = function (_elm) {
                                                                 ,A2(_op["=>"],
                                                                 "color",
                                                                 text2Color)]));
-   var teachLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   var teachingLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "padding-top",
    "10px")]));
+   var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "height",
+   "1000px")]));
    _elm.Style.values = {_op: _op
                        ,bgColor: bgColor
                        ,text1Color: text1Color
                        ,text2Color: text2Color
                        ,topBar: topBar
+                       ,homeContainer: homeContainer
                        ,writingContainer: writingContainer
                        ,writingHeader: writingHeader
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
-                       ,teachLanding: teachLanding};
+                       ,teachingContainer: teachingContainer
+                       ,teachingLanding: teachingLanding
+                       ,teachingBio: teachingBio
+                       ,programmingContainer: programmingContainer};
    return _elm.Style.values;
 };
 Elm.Task = Elm.Task || {};
@@ -13101,26 +13113,29 @@ Elm.Teaching.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Style = Elm.Style.make(_elm);
-   var layout = "\n\n  # Landing Page\n\n  - introductory tagline\n  - img = \"teaching\"\n  - button -> contact me today! -> #contactme\n\n  # Bio\n\n  - img = \"gradphoto\"\n\n  # Reviews\n\n  # Map\n\n  # Contact Me\n\n  - anchor: #contactme\n\n  ";
-   var phys12 = "\n\n  ";
-   var phys11 = "\n\n\n  ";
-   var precalc12 = "\n\n  ";
-   var precalc11 = "\n\n\n  ";
-   var math11 = "\n\n  ### Foundations of Mathematics 11\n\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n\n  ";
-   var math10 = "\n  ### Foundations of Mathematics and Pre-calculus 10\n\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n\n  ";
+   var layout = "\n  # Landing Page\n  - introductory tagline\n  - img = \"teaching\"\n  - button -> contact me today! -> #contactme\n  # Bio\n  - img = \"gradphoto\"\n  # Reviews\n  # Map\n  # Contact Me\n  - anchor: #contactme\n  ";
+   var phys12 = "\n  ";
+   var phys11 = "\n  ";
+   var precalc12 = "\n  ";
+   var precalc11 = "\n  ";
+   var math11 = "\n  ### Foundations of Mathematics 11\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n  ";
+   var math10 = "\n  ### Foundations of Mathematics and Pre-calculus 10\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n  ";
    var subjects = _L.fromArray([math10
                                ,math11
                                ,precalc11
                                ,precalc12]);
-   var teachingStyle = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n\n  ";
-   var experience = "\n\n  Oxford learning\n  Aug 2014 – Present\n  Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English\n  Develop appropriate curricula to supplement what students are currently learning at school\n  Train students to understanding the underlying concepts before trying to apply the mechanics\n  Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n\n  Magee Secondary School\n  February 2013 – July 2013\n  Calculus Tutor\n  Dug deep to find out the root cause of the difficulties his students were having.\n  Challenged the students who were succeeding.\n\n  ";
-   var bioText = "\n\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n\n  ";
+   var teachingStyle = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n  ";
+   var experience = "\n  Oxford learning\n  Aug 2014 – Present\n  Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English\n  Develop appropriate curricula to supplement what students are currently learning at school\n  Train students to understanding the underlying concepts before trying to apply the mechanics\n  Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n\n  Magee Secondary School\n  February 2013 – July 2013\n  Calculus Tutor\n  Dug deep to find out the root cause of the difficulties his students were having.\n  Challenged the students who were succeeding.\n  ";
+   var bioText = "\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n  ";
    var bio = function () {
       var bioScaleFactor = 10;
       var bioPicHeight = 1978;
       var bioPicWidth = 1594;
       return A2($Html.div,
-      _L.fromArray([]),
+      _L.fromArray([$Html$Attributes.$class("row")
+                   ,$Style.teachingBio]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("media")]),
       _L.fromArray([A2($Html.div,
@@ -13140,28 +13155,34 @@ Elm.Teaching.make = function (_elm) {
                                 _L.fromArray([]),
                                 _L.fromArray([$Html.text("Age: 22")]))
                                 ,$Markdown.toHtml(bioText)
-                                ,$Markdown.toHtml(experience)]))]))]));
+                                ,$Markdown.toHtml(experience)]))]))]))]));
    }();
    var takafumiImg = A2($Html.img,
    _L.fromArray([$Html$Attributes.src("../../resources/takafumi_720x405.jpg")
                 ,$Html$Attributes.$class("img-responsive")]),
    _L.fromArray([]));
-   var jumbotron = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("jumbotron")]),
-   _L.fromArray([A2($Html.h1,
-                _L.fromArray([]),
-                _L.fromArray([$Html.text("I actually teach.")]))
-                ,A2($Html.p,
-                _L.fromArray([]),
-                _L.fromArray([$Html.text("With me, the students of today are able to taught how to learn for tomorrow.")]))]));
    var landing = A2($Html.div,
-   _L.fromArray([$Style.teachLanding
-                ,$Html$Attributes.$class("container")]),
-   _L.fromArray([takafumiImg]));
-   var sectionBio = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container")]),
-   _L.fromArray([bio]));
-   var sectionLanding = landing;
+   _L.fromArray([$Html$Attributes.$class("row")]),
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("col-md-12")
+                ,$Style.teachingLanding]),
+   _L.fromArray([takafumiImg]))]));
+   var header = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("col-mid-12")
+                ,$Style.writingHeader]),
+   _L.fromArray([A2($Html.h1,
+                _L.fromArray([$Style.writingTitle]),
+                _L.fromArray([$Html.text("The Classroom")]))
+                ,A2($Html.p,
+                _L.fromArray([$Html$Attributes.$class("lead")
+                             ,$Style.writingDescription]),
+                _L.fromArray([$Html.text("I am an educator, and a damn good one at that.")]))]));
+   var teaching = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("container")
+                ,$Style.teachingContainer]),
+   _L.fromArray([header
+                ,landing
+                ,bio]));
    var links = _L.fromArray([A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
@@ -13192,12 +13213,6 @@ Elm.Teaching.make = function (_elm) {
                             _L.fromArray([A2($Html.a,
                             _L.fromArray([$Html$Attributes.href("#")]),
                             _L.fromArray([$Html.text("Contact Me")]))]))]);
-   var model = {_: {}
-               ,currentPage: "Teaching"};
-   var Model = function (a) {
-      return {_: {}
-             ,currentPage: a};
-   };
    var view = function (model) {
       return A2($Html.div,
       _L.fromArray([A2($Html$Attributes.attribute,
@@ -13206,8 +13221,13 @@ Elm.Teaching.make = function (_elm) {
       _L.fromArray([A2($NavBar.navBar,
                    model.currentPage,
                    links)
-                   ,sectionLanding
-                   ,sectionBio]));
+                   ,teaching]));
+   };
+   var model = {_: {}
+               ,currentPage: "Teaching"};
+   var Model = function (a) {
+      return {_: {}
+             ,currentPage: a};
    };
    var main = view(model);
    var title = Elm.Native.Port.make(_elm).outbound("title",
@@ -13217,14 +13237,13 @@ Elm.Teaching.make = function (_elm) {
    "Teaching · BJW");
    _elm.Teaching.values = {_op: _op
                           ,main: main
-                          ,view: view
                           ,Model: Model
                           ,model: model
+                          ,view: view
                           ,links: links
-                          ,sectionLanding: sectionLanding
-                          ,sectionBio: sectionBio
+                          ,teaching: teaching
+                          ,header: header
                           ,landing: landing
-                          ,jumbotron: jumbotron
                           ,takafumiImg: takafumiImg
                           ,bio: bio
                           ,bioText: bioText
