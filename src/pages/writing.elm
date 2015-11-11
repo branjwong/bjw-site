@@ -1,3 +1,5 @@
+-- TODO: add Discus functionality
+
 module Writing where
 
 import Html exposing (..)

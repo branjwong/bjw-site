@@ -1,5 +1,3 @@
--- TODO: Dropdown for current tab
-
 module NavBar where
 
 import Html exposing (..)
