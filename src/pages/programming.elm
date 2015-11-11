@@ -55,5 +55,5 @@ programmingHeader =
   div
     [ class "col-mid-12", Style.writingHeader ]
     [ h1 [ Style.writingTitle ] [ text "The Laboratory" ]
-    , p [ class "lead", Style.writingDescription ] [ text "Where my programming experience is here for the taking." ]
+    , p [ class "lead", Style.writingDescription ] [ text "Where my programming experience is here for viewing." ]
     ]

@@ -49,8 +49,8 @@ home =
 header =
   div
     [ Style.writingHeader ]
-    [ h1 [ Style.writingTitle ] [ text "Brandon's Niche in the Net." ]
-    , p [ class "lead", Style.writingDescription ] [ text "Sup Internet. Now I am here too." ]
+    [ h1 [ Style.writingTitle ] [ text "Brandon's Niche on the Net." ]
+    , p [ class "lead", Style.writingDescription ] [ text "Sup Internet. I am here too." ]
     --, h1 [ Style.writingTitle ] [ text "A Rotten Register" ]
     --, p [ class "lead", Style.writingDescription ] [ text "Everything that you thought you didn't want to hear." ]
     ]

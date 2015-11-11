@@ -15,7 +15,7 @@ navBar currentName currentLinks =
     [ Style.topBar
     , class "navbar navbar-inverse navbar-fixed-top"
     , id "top"
-    , attribute "role" "banner"
+    --, attribute "role" "banner"
     ]
     [ div
       [ class "container" ]
@@ -33,8 +33,8 @@ navbarCollapseComponent =
       , class "navbar-toggle collapsed"
       , attribute "data-toggle" "collapse"
       , attribute "data-target" "#navbar"
-      , attribute "aria-expanded" "false"
-      , attribute "aria-controls" "navbar"
+      --, attribute "aria-expanded" "false"
+      --, attribute "aria-controls" "navbar"
       ]
       [ span [ class "sr-only" ] [ text "Toggle navigation" ]
       --, span [ class "glyphicon glyphicon-hand-down" ] []
@@ -75,9 +75,9 @@ tab currentName currentLinks name link =
         [ href ""
         , class "dropdown-toggle"
         , attribute "data-toggle" "dropdown"
-        , attribute "role" "button"
-        , attribute "aria-haspopup" "true"
-        , attribute "aria-expanded" "false"
+        --, attribute "role" "button"
+        --, attribute "aria-haspopup" "true"
+        --, attribute "aria-expanded" "false"
         ]
         [ text name ]
 
@@ -100,9 +100,9 @@ outsideLinks =
       [ href ""
       , class "dropdown-toggle"
       , attribute "data-toggle" "dropdown"
-      , attribute "role" "button"
-      , attribute "aria-haspopup" "true"
-      , attribute "aria-expanded" "false"
+      --, attribute "role" "button"
+      --, attribute "aria-haspopup" "true"
+      --, attribute "aria-expanded" "false"
       ]
       [ text "Elsewhere" ]
     , ul

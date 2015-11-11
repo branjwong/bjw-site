@@ -270,6 +270,75 @@ Elm.Basics.make = function (_elm) {
                         ,GT: GT};
    return _elm.Basics.values;
 };
+Elm.Bootstrap = Elm.Bootstrap || {};
+Elm.Bootstrap.make = function (_elm) {
+   "use strict";
+   _elm.Bootstrap = _elm.Bootstrap || {};
+   if (_elm.Bootstrap.values)
+   return _elm.Bootstrap.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Bootstrap",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style = Elm.Style.make(_elm);
+   var accordion = F2(function (column,
+   panels) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(column)]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel-group")
+                   ,$Html$Attributes.id("accordion")
+                   ,$Style.teachingAccordion]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel panel-default")]),
+      panels)]))]));
+   });
+   var panelBody = F2(function (idName,
+   panelContent) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                   "collapse",
+                   idName))
+                   ,$Html$Attributes.$class("panel-collapse collapse")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel-body")]),
+      _L.fromArray([panelContent]))]));
+   });
+   var panelHeading = F2(function (idName,
+   panelName) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel-heading")
+                   ,$Html$Attributes.id(A2($Basics._op["++"],
+                   "heading",
+                   idName))]),
+      _L.fromArray([A2($Html.h4,
+      _L.fromArray([$Html$Attributes.$class("panel-title")]),
+      _L.fromArray([A2($Html.a,
+      _L.fromArray([$Html$Attributes.href(A2($Basics._op["++"],
+                   "#collapse",
+                   idName))
+                   ,A2($Html$Attributes.attribute,
+                   "data-toggle",
+                   "collapse")
+                   ,A2($Html$Attributes.attribute,
+                   "data-parent",
+                   "#accordion")]),
+      _L.fromArray([$Html.text(panelName)]))]))]));
+   });
+   _elm.Bootstrap.values = {_op: _op
+                           ,panelHeading: panelHeading
+                           ,panelBody: panelBody
+                           ,accordion: accordion};
+   return _elm.Bootstrap.values;
+};
 Elm.Char = Elm.Char || {};
 Elm.Char.make = function (_elm) {
    "use strict";
@@ -1799,148 +1868,6 @@ Elm.Dict.make = function (_elm) {
                       ,toList: toList
                       ,fromList: fromList};
    return _elm.Dict.values;
-};
-Elm.Exts = Elm.Exts || {};
-Elm.Exts.Html = Elm.Exts.Html || {};
-Elm.Exts.Html.Bootstrap = Elm.Exts.Html.Bootstrap || {};
-Elm.Exts.Html.Bootstrap.make = function (_elm) {
-   "use strict";
-   _elm.Exts = _elm.Exts || {};
-   _elm.Exts.Html = _elm.Exts.Html || {};
-   _elm.Exts.Html.Bootstrap = _elm.Exts.Html.Bootstrap || {};
-   if (_elm.Exts.Html.Bootstrap.values)
-   return _elm.Exts.Html.Bootstrap.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "Exts.Html.Bootstrap",
-   $Basics = Elm.Basics.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var Left = {ctor: "Left"};
-   var Bottom = {ctor: "Bottom"};
-   var Right = {ctor: "Right"};
-   var Top = {ctor: "Top"};
-   var glyphicon = function (name) {
-      return A2($Html.span,
-      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-      "glyphicon glyphicon-",
-      name))]),
-      _L.fromArray([]));
-   };
-   var video = F2(function (ratio,
-   url) {
-      return function () {
-         var ratioClass = function () {
-            switch (ratio.ctor)
-            {case "FourByThree":
-               return "embed-responsive-4by3";
-               case "SixteenByNine":
-               return "embed-responsive-16by9";}
-            _U.badCase($moduleName,
-            "between lines 41 and 44");
-         }();
-         return A2($Html.div,
-         _L.fromArray([]),
-         _L.fromArray([A2($Html.h1,
-                      _L.fromArray([]),
-                      _L.fromArray([$Html.text("About")]))
-                      ,A2($Html.div,
-                      _L.fromArray([$Html$Attributes.$class("embed-responsive")]),
-                      _L.fromArray([A2($Html.iframe,
-                      _L.fromArray([$Html$Attributes.$class("embed-responsive-item")
-                                   ,$Html$Attributes.src(url)]),
-                      _L.fromArray([]))]))]));
-      }();
-   });
-   var FourByThree = {ctor: "FourByThree"};
-   var SixteenByNine = {ctor: "SixteenByNine"};
-   var empty = A2($Html.span,
-   _L.fromArray([]),
-   _L.fromArray([]));
-   var popover = F5(function (direction,
-   isShown,
-   styles,
-   title,
-   body) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.classList(_L.fromArray([{ctor: "_Tuple2"
-                                                             ,_0: "popover fade"
-                                                             ,_1: true}
-                                                            ,{ctor: "_Tuple2"
-                                                             ,_0: "in"
-                                                             ,_1: isShown}
-                                                            ,{ctor: "_Tuple2"
-                                                             ,_0: "top"
-                                                             ,_1: _U.eq(direction,
-                                                             Top)}
-                                                            ,{ctor: "_Tuple2"
-                                                             ,_0: "right"
-                                                             ,_1: _U.eq(direction,
-                                                             Right)}
-                                                            ,{ctor: "_Tuple2"
-                                                             ,_0: "bottom"
-                                                             ,_1: _U.eq(direction,
-                                                             Bottom)}
-                                                            ,{ctor: "_Tuple2"
-                                                             ,_0: "left"
-                                                             ,_1: _U.eq(direction,
-                                                             Left)}]))
-                   ,$Html$Attributes.style(A2($Basics._op["++"],
-                   styles,
-                   _L.fromArray([{ctor: "_Tuple2"
-                                 ,_0: "display"
-                                 ,_1: "block"}])))]),
-      _L.fromArray([A2($Html.div,
-                   _L.fromArray([$Html$Attributes.$class("arrow")]),
-                   _L.fromArray([]))
-                   ,function () {
-                      switch (title.ctor)
-                      {case "Just":
-                         return A2($Html.h3,
-                           _L.fromArray([$Html$Attributes.$class("popover-title")]),
-                           _L.fromArray([$Html.text(title._0)]));
-                         case "Nothing": return empty;}
-                      _U.badCase($moduleName,
-                      "between lines 81 and 85");
-                   }()
-                   ,A2($Html.div,
-                   _L.fromArray([$Html$Attributes.$class("popover-content")]),
-                   body)]));
-   });
-   var row = $Html.div(_L.fromArray([$Html$Attributes.$class("row")]));
-   var twoColumns = F2(function (left,
-   right) {
-      return row(_L.fromArray([A2($Html.div,
-                              _L.fromArray([$Html$Attributes.$class("col-xs-6")]),
-                              left)
-                              ,A2($Html.div,
-                              _L.fromArray([$Html$Attributes.$class("col-xs-6")]),
-                              right)]));
-   });
-   var containerFluid = $Html.div(_L.fromArray([$Html$Attributes.$class("container-fluid")]));
-   var container = $Html.div(_L.fromArray([$Html$Attributes.$class("container")]));
-   _elm.Exts.Html.Bootstrap.values = {_op: _op
-                                     ,container: container
-                                     ,containerFluid: containerFluid
-                                     ,row: row
-                                     ,empty: empty
-                                     ,twoColumns: twoColumns
-                                     ,SixteenByNine: SixteenByNine
-                                     ,FourByThree: FourByThree
-                                     ,video: video
-                                     ,glyphicon: glyphicon
-                                     ,Top: Top
-                                     ,Right: Right
-                                     ,Bottom: Bottom
-                                     ,Left: Left
-                                     ,popover: popover};
-   return _elm.Exts.Html.Bootstrap.values;
 };
 Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Collage = Elm.Graphics.Collage || {};
@@ -12147,16 +12074,7 @@ Elm.NavBar.make = function (_elm) {
                              ,$Html$Attributes.$class("dropdown-toggle")
                              ,A2($Html$Attributes.attribute,
                              "data-toggle",
-                             "dropdown")
-                             ,A2($Html$Attributes.attribute,
-                             "role",
-                             "button")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-haspopup",
-                             "true")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")]),
+                             "dropdown")]),
                 _L.fromArray([$Html.text("Elsewhere")]))
                 ,A2($Html.ul,
                 _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
@@ -12182,16 +12100,7 @@ Elm.NavBar.make = function (_elm) {
                                 ,$Html$Attributes.$class("dropdown-toggle")
                                 ,A2($Html$Attributes.attribute,
                                 "data-toggle",
-                                "dropdown")
-                                ,A2($Html$Attributes.attribute,
-                                "role",
-                                "button")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-haspopup",
-                                "true")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-expanded",
-                                "false")]),
+                                "dropdown")]),
                    _L.fromArray([$Html.text(name)]))
                    ,A2($Html.ul,
                    _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
@@ -12240,13 +12149,7 @@ Elm.NavBar.make = function (_elm) {
                              "collapse")
                              ,A2($Html$Attributes.attribute,
                              "data-target",
-                             "#navbar")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-controls",
-                             "navbar")]),
+                             "#navbar")]),
                 _L.fromArray([A2($Html.span,
                              _L.fromArray([$Html$Attributes.$class("sr-only")]),
                              _L.fromArray([$Html.text("Toggle navigation")]))
@@ -12268,10 +12171,7 @@ Elm.NavBar.make = function (_elm) {
       return A2($Html.nav,
       _L.fromArray([$Style.topBar
                    ,$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")
-                   ,$Html$Attributes.id("top")
-                   ,A2($Html$Attributes.attribute,
-                   "role",
-                   "banner")]),
+                   ,$Html$Attributes.id("top")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("container")]),
       _L.fromArray([navbarCollapseComponent
@@ -12801,11 +12701,15 @@ Elm.Style.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var teachingBio = $Html$Attributes.style(_L.fromArray([]));
+   var teachingTakafumiImg = $Html$Attributes.style(_L.fromArray([]));
    var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
    var writingContainer = $Html$Attributes.style(_L.fromArray([]));
    var text2Color = "#999";
    var text1Color = "#333";
-   var bgColor = "#2C1E1E";
+   var subheadingColor = "#999";
+   var headingColor = "#FFF";
+   var bodyColor = "#302C2C";
+   var navBarColor = "#2C1E1E";
    _op["=>"] = F2(function (v0,
    v1) {
       return {ctor: "_Tuple2"
@@ -12814,7 +12718,7 @@ Elm.Style.make = function (_elm) {
    });
    var topBar = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                     "background-color",
-                                                    bgColor)
+                                                    navBarColor)
                                                     ,A2(_op["=>"],
                                                     "color",
                                                     text1Color)]));
@@ -12845,14 +12749,23 @@ Elm.Style.make = function (_elm) {
                                                                 ,A2(_op["=>"],
                                                                 "color",
                                                                 text2Color)]));
-   var teachingLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "padding-top",
-   "10px")]));
+   var teachingAccordion = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                               "color",
+                                                               bodyColor)
+                                                               ,A2(_op["=>"],
+                                                               "padding-top",
+                                                               "20px")]));
+   var teachingCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "margin-top",
+   "20px")]));
    var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "height",
    "1000px")]));
    _elm.Style.values = {_op: _op
-                       ,bgColor: bgColor
+                       ,navBarColor: navBarColor
+                       ,bodyColor: bodyColor
+                       ,headingColor: headingColor
+                       ,subheadingColor: subheadingColor
                        ,text1Color: text1Color
                        ,text2Color: text2Color
                        ,topBar: topBar
@@ -12862,8 +12775,10 @@ Elm.Style.make = function (_elm) {
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
                        ,teachingContainer: teachingContainer
-                       ,teachingLanding: teachingLanding
+                       ,teachingTakafumiImg: teachingTakafumiImg
                        ,teachingBio: teachingBio
+                       ,teachingAccordion: teachingAccordion
+                       ,teachingCallToAction: teachingCallToAction
                        ,programmingContainer: programmingContainer};
    return _elm.Style.values;
 };
@@ -13104,6 +13019,7 @@ Elm.Teaching.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Teaching",
    $Basics = Elm.Basics.make(_elm),
+   $Bootstrap = Elm.Bootstrap.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
@@ -13118,55 +13034,129 @@ Elm.Teaching.make = function (_elm) {
    var phys11 = "\n  ";
    var precalc12 = "\n  ";
    var precalc11 = "\n  ";
-   var math11 = "\n  ### Foundations of Mathematics 11\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n  ";
-   var math10 = "\n  ### Foundations of Mathematics and Pre-calculus 10\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n  ";
-   var subjects = _L.fromArray([math10
-                               ,math11
-                               ,precalc11
-                               ,precalc12]);
-   var teachingStyle = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n  ";
-   var experience = "\n  Oxford learning\n  Aug 2014 – Present\n  Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English\n  Develop appropriate curricula to supplement what students are currently learning at school\n  Train students to understanding the underlying concepts before trying to apply the mechanics\n  Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n\n  Magee Secondary School\n  February 2013 – July 2013\n  Calculus Tutor\n  Dug deep to find out the root cause of the difficulties his students were having.\n  Challenged the students who were succeeding.\n  ";
+   var math11 = "\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n  ";
+   var math10 = "\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n  ";
+   var subjectsList = _L.fromArray([math10
+                                   ,math11
+                                   ,precalc11
+                                   ,precalc12]);
+   var subjectsAccordion = A2($Bootstrap.accordion,
+   "col-md-12",
+   _L.fromArray([A2($Bootstrap.panelHeading,
+                "subj1",
+                "Foundations of Mathematics and Pre-calculus 10")
+                ,A2($Bootstrap.panelBody,
+                "subj1",
+                $Markdown.toHtml(math10))
+                ,A2($Bootstrap.panelHeading,
+                "subj2",
+                "Foundations of Mathematics 11")
+                ,A2($Bootstrap.panelBody,
+                "subj2",
+                $Markdown.toHtml(math11))]));
+   var subjects = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("page-header")]),
+                _L.fromArray([A2($Html.h1,
+                _L.fromArray([]),
+                _L.fromArray([$Html.text("Subjects Offered")]))]))]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([subjectsAccordion]))]));
+   var teachingStyleText = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n  - pragmatic\n  ";
+   var mageeText = "\n  - Dug deep to find out the root cause of the difficulties his students were having.\n  - Challenged the students who were succeeding.\n  ";
+   var magee = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-md-9")]),
+                             _L.fromArray([$Html.text("Magee Secondary School")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-md-3")]),
+                             _L.fromArray([$Html.text("February 2013 – July 2013")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                _L.fromArray([$Html.text("Calculus Tutor")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                _L.fromArray([$Markdown.toHtml(mageeText)]))]))]));
+   var oxfordText = "  \n  - Develop appropriate curricula to supplement what students are currently learning at school\n  - Train students to understanding the underlying concepts before trying to apply the mechanics\n  - Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n  ";
+   var oxford = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-md-9")]),
+                             _L.fromArray([$Html.text("Oxford Learning")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-md-3")]),
+                             _L.fromArray([$Html.text("Aug 2014 – Present")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                _L.fromArray([$Html.text("Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                _L.fromArray([$Markdown.toHtml(oxfordText)]))]))]));
+   var resume = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([oxford,magee]));
    var bioText = "\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n  ";
-   var bio = function () {
-      var bioScaleFactor = 10;
-      var bioPicHeight = 1978;
-      var bioPicWidth = 1594;
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")
-                   ,$Style.teachingBio]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("media")]),
-      _L.fromArray([A2($Html.div,
-                   _L.fromArray([$Html$Attributes.$class("media-left")]),
-                   _L.fromArray([A2($Html.img,
-                   _L.fromArray([$Html$Attributes.$class("media-object")
-                                ,$Html$Attributes.src("../../resources/gradphoto.jpg")
-                                ,$Html$Attributes.width(bioPicWidth / bioScaleFactor | 0)
-                                ,$Html$Attributes.height(bioPicHeight / bioScaleFactor | 0)]),
-                   _L.fromArray([]))]))
-                   ,A2($Html.div,
-                   _L.fromArray([$Html$Attributes.$class("media-body")]),
-                   _L.fromArray([A2($Html.h1,
-                                _L.fromArray([]),
-                                _L.fromArray([$Html.text("Brandon J Wong")]))
-                                ,A2($Html.h4,
-                                _L.fromArray([]),
-                                _L.fromArray([$Html.text("Age: 22")]))
-                                ,$Markdown.toHtml(bioText)
-                                ,$Markdown.toHtml(experience)]))]))]))]));
-   }();
-   var takafumiImg = A2($Html.img,
-   _L.fromArray([$Html$Attributes.src("../../resources/takafumi_720x405.jpg")
-                ,$Html$Attributes.$class("img-responsive")]),
-   _L.fromArray([]));
-   var landing = A2($Html.div,
+   var callToAction = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("col-md-2")]),
+   _L.fromArray([A2($Html.p,
+   _L.fromArray([]),
+   _L.fromArray([A2($Html.button,
+   _L.fromArray([$Style.teachingCallToAction
+                ,$Html$Attributes.$class("btn btn-lg btn-primary")
+                ,$Html$Attributes.type$("button")]),
+   _L.fromArray([$Html.text("Contact Me!")]))]))]));
+   var bioAccordion = A2($Bootstrap.accordion,
+   "col-md-10",
+   _L.fromArray([A2($Bootstrap.panelHeading,
+                "bio1",
+                "Personal Profile")
+                ,A2($Bootstrap.panelBody,
+                "bio1",
+                $Html.text(bioText))
+                ,A2($Bootstrap.panelHeading,
+                "bio2",
+                "Experience")
+                ,A2($Bootstrap.panelBody,
+                "bio2",
+                resume)
+                ,A2($Bootstrap.panelHeading,
+                "bio3",
+                "Teaching Style")
+                ,A2($Bootstrap.panelBody,
+                "bio3",
+                $Markdown.toHtml(teachingStyleText))]));
+   var bioAndCallToAction = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("row")]),
+   _L.fromArray([bioAccordion
+                ,callToAction]));
+   var takafumiImg = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("row")]),
    _L.fromArray([A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("col-md-12")
-                ,$Style.teachingLanding]),
-   _L.fromArray([takafumiImg]))]));
+                ,$Style.teachingTakafumiImg]),
+   _L.fromArray([A2($Html.img,
+   _L.fromArray([$Html$Attributes.src("../../resources/takafumi_720x405.jpg")
+                ,$Html$Attributes.$class("img-responsive")]),
+   _L.fromArray([]))]))]));
    var header = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("col-mid-12")
                 ,$Style.writingHeader]),
@@ -13181,8 +13171,9 @@ Elm.Teaching.make = function (_elm) {
    _L.fromArray([$Html$Attributes.$class("container")
                 ,$Style.teachingContainer]),
    _L.fromArray([header
-                ,landing
-                ,bio]));
+                ,takafumiImg
+                ,bioAndCallToAction
+                ,subjects]));
    var links = _L.fromArray([A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
@@ -13215,9 +13206,7 @@ Elm.Teaching.make = function (_elm) {
                             _L.fromArray([$Html.text("Contact Me")]))]))]);
    var view = function (model) {
       return A2($Html.div,
-      _L.fromArray([A2($Html$Attributes.attribute,
-      "role",
-      "elm-app")]),
+      _L.fromArray([]),
       _L.fromArray([A2($NavBar.navBar,
                    model.currentPage,
                    links)
@@ -13243,13 +13232,20 @@ Elm.Teaching.make = function (_elm) {
                           ,links: links
                           ,teaching: teaching
                           ,header: header
-                          ,landing: landing
                           ,takafumiImg: takafumiImg
-                          ,bio: bio
+                          ,bioAndCallToAction: bioAndCallToAction
+                          ,bioAccordion: bioAccordion
+                          ,callToAction: callToAction
                           ,bioText: bioText
-                          ,experience: experience
-                          ,teachingStyle: teachingStyle
+                          ,resume: resume
+                          ,oxford: oxford
+                          ,oxfordText: oxfordText
+                          ,magee: magee
+                          ,mageeText: mageeText
+                          ,teachingStyleText: teachingStyleText
                           ,subjects: subjects
+                          ,subjectsAccordion: subjectsAccordion
+                          ,subjectsList: subjectsList
                           ,math10: math10
                           ,math11: math11
                           ,precalc11: precalc11

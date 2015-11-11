@@ -11849,16 +11849,7 @@ Elm.NavBar.make = function (_elm) {
                              ,$Html$Attributes.$class("dropdown-toggle")
                              ,A2($Html$Attributes.attribute,
                              "data-toggle",
-                             "dropdown")
-                             ,A2($Html$Attributes.attribute,
-                             "role",
-                             "button")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-haspopup",
-                             "true")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")]),
+                             "dropdown")]),
                 _L.fromArray([$Html.text("Elsewhere")]))
                 ,A2($Html.ul,
                 _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
@@ -11884,16 +11875,7 @@ Elm.NavBar.make = function (_elm) {
                                 ,$Html$Attributes.$class("dropdown-toggle")
                                 ,A2($Html$Attributes.attribute,
                                 "data-toggle",
-                                "dropdown")
-                                ,A2($Html$Attributes.attribute,
-                                "role",
-                                "button")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-haspopup",
-                                "true")
-                                ,A2($Html$Attributes.attribute,
-                                "aria-expanded",
-                                "false")]),
+                                "dropdown")]),
                    _L.fromArray([$Html.text(name)]))
                    ,A2($Html.ul,
                    _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
@@ -11942,13 +11924,7 @@ Elm.NavBar.make = function (_elm) {
                              "collapse")
                              ,A2($Html$Attributes.attribute,
                              "data-target",
-                             "#navbar")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-expanded",
-                             "false")
-                             ,A2($Html$Attributes.attribute,
-                             "aria-controls",
-                             "navbar")]),
+                             "#navbar")]),
                 _L.fromArray([A2($Html.span,
                              _L.fromArray([$Html$Attributes.$class("sr-only")]),
                              _L.fromArray([$Html.text("Toggle navigation")]))
@@ -11970,10 +11946,7 @@ Elm.NavBar.make = function (_elm) {
       return A2($Html.nav,
       _L.fromArray([$Style.topBar
                    ,$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")
-                   ,$Html$Attributes.id("top")
-                   ,A2($Html$Attributes.attribute,
-                   "role",
-                   "banner")]),
+                   ,$Html$Attributes.id("top")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("container")]),
       _L.fromArray([navbarCollapseComponent
@@ -12025,7 +11998,7 @@ Elm.Programming.make = function (_elm) {
                 ,A2($Html.p,
                 _L.fromArray([$Html$Attributes.$class("lead")
                              ,$Style.writingDescription]),
-                _L.fromArray([$Html.text("Where my programming experience is here for the taking.")]))]));
+                _L.fromArray([$Html.text("Where my programming experience is here for viewing.")]))]));
    var programming = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("container")
                 ,$Style.programmingContainer]),
@@ -12572,11 +12545,15 @@ Elm.Style.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var teachingBio = $Html$Attributes.style(_L.fromArray([]));
+   var teachingTakafumiImg = $Html$Attributes.style(_L.fromArray([]));
    var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
    var writingContainer = $Html$Attributes.style(_L.fromArray([]));
    var text2Color = "#999";
    var text1Color = "#333";
-   var bgColor = "#2C1E1E";
+   var subheadingColor = "#999";
+   var headingColor = "#FFF";
+   var bodyColor = "#302C2C";
+   var navBarColor = "#2C1E1E";
    _op["=>"] = F2(function (v0,
    v1) {
       return {ctor: "_Tuple2"
@@ -12585,7 +12562,7 @@ Elm.Style.make = function (_elm) {
    });
    var topBar = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                     "background-color",
-                                                    bgColor)
+                                                    navBarColor)
                                                     ,A2(_op["=>"],
                                                     "color",
                                                     text1Color)]));
@@ -12616,14 +12593,23 @@ Elm.Style.make = function (_elm) {
                                                                 ,A2(_op["=>"],
                                                                 "color",
                                                                 text2Color)]));
-   var teachingLanding = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "padding-top",
-   "10px")]));
+   var teachingAccordion = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                               "color",
+                                                               bodyColor)
+                                                               ,A2(_op["=>"],
+                                                               "padding-top",
+                                                               "20px")]));
+   var teachingCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "margin-top",
+   "20px")]));
    var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "height",
    "1000px")]));
    _elm.Style.values = {_op: _op
-                       ,bgColor: bgColor
+                       ,navBarColor: navBarColor
+                       ,bodyColor: bodyColor
+                       ,headingColor: headingColor
+                       ,subheadingColor: subheadingColor
                        ,text1Color: text1Color
                        ,text2Color: text2Color
                        ,topBar: topBar
@@ -12633,8 +12619,10 @@ Elm.Style.make = function (_elm) {
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
                        ,teachingContainer: teachingContainer
-                       ,teachingLanding: teachingLanding
+                       ,teachingTakafumiImg: teachingTakafumiImg
                        ,teachingBio: teachingBio
+                       ,teachingAccordion: teachingAccordion
+                       ,teachingCallToAction: teachingCallToAction
                        ,programmingContainer: programmingContainer};
    return _elm.Style.values;
 };
