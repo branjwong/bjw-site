@@ -5,7 +5,11 @@ import Html.Attributes exposing (..)
 
 import Style
 
+(=>) : a -> b -> (a, b)
 (=>) = (,)
+
+
+-- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
 
 navBar : String -> List Html -> Html
 navBar currentName currentLinks =

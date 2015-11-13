@@ -289,54 +289,72 @@ Elm.Bootstrap.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Style = Elm.Style.make(_elm);
-   var accordion = F2(function (column,
+   var panelBody = F3(function (acName,
+   pnID,
+   panelContent) {
+      return function () {
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                      "collapse",
+                      pnName))
+                      ,$Html$Attributes.$class("panel-collapse collapse")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-body")]),
+         _L.fromArray([panelContent]))]));
+      }();
+   });
+   var panelHeading = F3(function (acName,
+   pnID,
+   panelTitle) {
+      return function () {
+         var newAcName = acName;
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-heading")
+                      ,$Html$Attributes.id(A2($Basics._op["++"],
+                      "heading",
+                      pnName))]),
+         _L.fromArray([A2($Html.h4,
+         _L.fromArray([$Html$Attributes.$class("panel-title")]),
+         _L.fromArray([A2($Html.a,
+         _L.fromArray([$Html$Attributes.href(A2($Basics._op["++"],
+                      "#collapse",
+                      pnName))
+                      ,A2($Html$Attributes.attribute,
+                      "data-toggle",
+                      "collapse")
+                      ,A2($Html$Attributes.attribute,
+                      "data-parent",
+                      A2($Basics._op["++"],
+                      "#accordion",
+                      newAcName))]),
+         _L.fromArray([$Html.text(panelTitle)]))]))]));
+      }();
+   });
+   var accordion = F3(function (acName,
+   column,
    panels) {
       return A2($Html.div,
       _L.fromArray([$Html$Attributes.$class(column)]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("panel-group")
-                   ,$Html$Attributes.id("accordion")
+                   ,$Html$Attributes.id(A2($Basics._op["++"],
+                   "accordion",
+                   acName))
                    ,$Style.teachingAccordion]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("panel panel-default")]),
       panels)]))]));
    });
-   var panelBody = F2(function (idName,
-   panelContent) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
-                   "collapse",
-                   idName))
-                   ,$Html$Attributes.$class("panel-collapse collapse")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("panel-body")]),
-      _L.fromArray([panelContent]))]));
-   });
-   var panelHeading = F2(function (idName,
-   panelName) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("panel-heading")
-                   ,$Html$Attributes.id(A2($Basics._op["++"],
-                   "heading",
-                   idName))]),
-      _L.fromArray([A2($Html.h4,
-      _L.fromArray([$Html$Attributes.$class("panel-title")]),
-      _L.fromArray([A2($Html.a,
-      _L.fromArray([$Html$Attributes.href(A2($Basics._op["++"],
-                   "#collapse",
-                   idName))
-                   ,A2($Html$Attributes.attribute,
-                   "data-toggle",
-                   "collapse")
-                   ,A2($Html$Attributes.attribute,
-                   "data-parent",
-                   "#accordion")]),
-      _L.fromArray([$Html.text(panelName)]))]))]));
-   });
    _elm.Bootstrap.values = {_op: _op
+                           ,accordion: accordion
                            ,panelHeading: panelHeading
-                           ,panelBody: panelBody
-                           ,accordion: accordion};
+                           ,panelBody: panelBody};
    return _elm.Bootstrap.values;
 };
 Elm.Char = Elm.Char || {};
@@ -13030,30 +13048,77 @@ Elm.Teaching.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Style = Elm.Style.make(_elm);
    var layout = "\n  # Landing Page\n  - introductory tagline\n  - img = \"teaching\"\n  - button -> contact me today! -> #contactme\n  # Bio\n  - img = \"gradphoto\"\n  # Reviews\n  # Map\n  # Contact Me\n  - anchor: #contactme\n  ";
-   var phys12 = "\n  ";
-   var phys11 = "\n  ";
-   var precalc12 = "\n  ";
-   var precalc11 = "\n  ";
-   var math11 = "\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n  ";
-   var math10 = "\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n  ";
-   var subjectsList = _L.fromArray([math10
-                                   ,math11
-                                   ,precalc11
-                                   ,precalc12]);
-   var subjectsAccordion = A2($Bootstrap.accordion,
+   var phys12 = function () {
+      var string = "\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: ""};
+   }();
+   var phys11 = function () {
+      var string = "\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: ""};
+   }();
+   var precalc12 = function () {
+      var string = "\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: ""};
+   }();
+   var precalc11 = function () {
+      var string = "\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: ""};
+   }();
+   var math11 = function () {
+      var string = "\n  - Measurement\n    - Problems that involve the application of rates\n    - Problems that involve scale diagrams, using proportional reasoning\n  - Geometry\n    - Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n    - Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n  - Logical Reasoning\n    - Analyze and prove conjectures, using inductive and deductive reasoning\n    - Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n  - Statistics\n    - Normal distributions, standard deviation, z-scores\n    - Interpret statistical data using confidence intervals, confidence levels, and margins of error\n  - Relations and Functions\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: "Foundations of Mathematics 11"};
+   }();
+   var math10 = function () {
+      var string = "\n  - Measurement\n    - Unit conversion\n    - Surface Area and Volume of common shapes\n    - Primary Trigonometric Relations\n  - Algebra and Number\n    - Prime Factors, Greast Common Factor, Least Comon Multiple\n    - Understanding Number Systems\n      - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n    - Powers with Integral and Rational Exponents\n    - Polynomial Expressions\n      - Expanding\n      - Factoring\n  - Relations and Functions\n    - Relationships among data, graphs, and situations\n    - Slope\n    - Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n    - Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n    - Different forms of expressing linear relations\n      - slope-intercept form\n      - general form\n      - slope-point form\n    - Determining the equation of a linear relation given limited information\n    - Function notation\n    - Problem solving that are linear in nature graphically and algebraically\n  - http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: "Foundations of Mathematics and Pre-calculus 10"};
+   }();
+   var subjectsAccordion = A3($Bootstrap.accordion,
+   "subj",
    "col-md-12",
-   _L.fromArray([A2($Bootstrap.panelHeading,
-                "subj1",
-                "Foundations of Mathematics and Pre-calculus 10")
-                ,A2($Bootstrap.panelBody,
-                "subj1",
-                $Markdown.toHtml(math10))
-                ,A2($Bootstrap.panelHeading,
-                "subj2",
-                "Foundations of Mathematics 11")
-                ,A2($Bootstrap.panelBody,
-                "subj2",
-                $Markdown.toHtml(math11))]));
+   _L.fromArray([A3($Bootstrap.panelHeading,
+                "subj",
+                1,
+                math10.title)
+                ,A3($Bootstrap.panelBody,
+                "subj",
+                1,
+                math10.content)
+                ,A3($Bootstrap.panelHeading,
+                "subj",
+                2,
+                math11.title)
+                ,A3($Bootstrap.panelBody,
+                "subj",
+                2,
+                math11.content)
+                ,A3($Bootstrap.panelHeading,
+                "subj",
+                3,
+                precalc11.title)
+                ,A3($Bootstrap.panelHeading,
+                "subj",
+                4,
+                precalc12.title)
+                ,A3($Bootstrap.panelHeading,
+                "subj",
+                5,
+                phys11.title)
+                ,A3($Bootstrap.panelHeading,
+                "subj",
+                6,
+                phys12.title)]));
    var subjects = A2($Html.div,
    _L.fromArray([]),
    _L.fromArray([A2($Html.div,
@@ -13068,53 +13133,84 @@ Elm.Teaching.make = function (_elm) {
                 ,A2($Html.div,
                 _L.fromArray([$Html$Attributes.$class("row")]),
                 _L.fromArray([subjectsAccordion]))]));
-   var teachingStyleText = "\n  - building Foundations\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n  - pragmatic\n  ";
-   var mageeText = "\n  - Dug deep to find out the root cause of the difficulties his students were having.\n  - Challenged the students who were succeeding.\n  ";
-   var magee = A2($Html.div,
-   _L.fromArray([]),
+   var approaches = {_: {}
+                    ,content: ""
+                    ,image: ""
+                    ,title: "Approaching from all Angles"};
+   var foundations = {_: {}
+                     ,content: "Finding"
+                     ,image: ""
+                     ,title: "Building Foundations"};
+   var advertise = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("row")]),
    _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                             _L.fromArray([$Html$Attributes.$class("col-md-9")]),
-                             _L.fromArray([$Html.text("Magee Secondary School")]))
-                             ,A2($Html.div,
-                             _L.fromArray([$Html$Attributes.$class("col-md-3")]),
-                             _L.fromArray([$Html.text("February 2013 – July 2013")]))]))
+                _L.fromArray([$Html$Attributes.$class("col-md-6")]),
+                _L.fromArray([$Markdown.toHtml(foundations.content)]))
                 ,A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
-                _L.fromArray([$Html.text("Calculus Tutor")]))]))
-                ,A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
-                _L.fromArray([$Markdown.toHtml(mageeText)]))]))]));
-   var oxfordText = "  \n  - Develop appropriate curricula to supplement what students are currently learning at school\n  - Train students to understanding the underlying concepts before trying to apply the mechanics\n  - Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n  ";
-   var oxford = A2($Html.div,
-   _L.fromArray([]),
-   _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                             _L.fromArray([$Html$Attributes.$class("col-md-9")]),
-                             _L.fromArray([$Html.text("Oxford Learning")]))
-                             ,A2($Html.div,
-                             _L.fromArray([$Html$Attributes.$class("col-md-3")]),
-                             _L.fromArray([$Html.text("Aug 2014 – Present")]))]))
-                ,A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
-                _L.fromArray([$Html.text("Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English")]))]))
-                ,A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
-                _L.fromArray([A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("col-md-12")]),
-                _L.fromArray([$Markdown.toHtml(oxfordText)]))]))]));
-   var resume = A2($Html.div,
-   _L.fromArray([]),
-   _L.fromArray([oxford,magee]));
-   var bioText = "\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n  ";
+                _L.fromArray([$Html$Attributes.$class("col-md-6")]),
+                _L.fromArray([$Markdown.toHtml(approaches.content)]))]));
+   var bio3 = function () {
+      var string = "\n  - building FOUDNATIONS\n  - APPROACHES from all ANGLES\n    - pattern recognition\n    - concept definition\n  - don\'t test applications of concepts without learning the concepts before\n  - physics 11: don\'t work on p/v/a/t graphs without learning p,v,a respectively\n  - pragmatic\n\n     ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: "Teaching Style"};
+   }();
+   var bio2 = function () {
+      var mageeText = "\n  - Dug deep to find out the root cause of the difficulties his students were having.\n  - Challenged the students who were succeeding.\n      ";
+      var magee = A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                                _L.fromArray([$Html$Attributes.$class("col-md-9")]),
+                                _L.fromArray([$Html.text("Magee Secondary School")]))
+                                ,A2($Html.div,
+                                _L.fromArray([$Html$Attributes.$class("col-md-3")]),
+                                _L.fromArray([$Html.text("February 2013 – July 2013")]))]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                   _L.fromArray([$Html.text("Calculus Tutor")]))]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                   _L.fromArray([$Markdown.toHtml(mageeText)]))]))]));
+      var oxfordText = "  \n  - Develop appropriate curricula to supplement what students are currently learning at school\n  - Train students to understanding the underlying concepts before trying to apply the mechanics\n  - Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n      ";
+      var oxford = A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                                _L.fromArray([$Html$Attributes.$class("col-md-9")]),
+                                _L.fromArray([$Html.text("Oxford Learning")]))
+                                ,A2($Html.div,
+                                _L.fromArray([$Html$Attributes.$class("col-md-3")]),
+                                _L.fromArray([$Html.text("Aug 2014 – Present")]))]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                   _L.fromArray([$Html.text("Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English")]))]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+                   _L.fromArray([$Markdown.toHtml(oxfordText)]))]))]));
+      var resume = A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([oxford,magee]));
+      return {_: {}
+             ,content: resume
+             ,title: "Experience"};
+   }();
+   var bio1 = function () {
+      var string = "\n  Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n      ";
+      return {_: {}
+             ,content: $Markdown.toHtml(string)
+             ,title: "Personal Profile"};
+   }();
    var callToAction = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("col-md-2")]),
    _L.fromArray([A2($Html.p,
@@ -13124,26 +13220,29 @@ Elm.Teaching.make = function (_elm) {
                 ,$Html$Attributes.$class("btn btn-lg btn-primary")
                 ,$Html$Attributes.type$("button")]),
    _L.fromArray([$Html.text("Contact Me!")]))]))]));
-   var bioAccordion = A2($Bootstrap.accordion,
-   "col-md-10",
-   _L.fromArray([A2($Bootstrap.panelHeading,
-                "bio1",
-                "Personal Profile")
-                ,A2($Bootstrap.panelBody,
-                "bio1",
-                $Html.text(bioText))
-                ,A2($Bootstrap.panelHeading,
-                "bio2",
-                "Experience")
-                ,A2($Bootstrap.panelBody,
-                "bio2",
-                resume)
-                ,A2($Bootstrap.panelHeading,
-                "bio3",
-                "Teaching Style")
-                ,A2($Bootstrap.panelBody,
-                "bio3",
-                $Markdown.toHtml(teachingStyleText))]));
+   var bioAccordion = function () {
+      var $class = "col-md-10";
+      var acName = "bio";
+      return A3($Bootstrap.accordion,
+      acName,
+      $class,
+      _L.fromArray([A3($Bootstrap.panelHeading,
+                   acName,
+                   1,
+                   bio1.title)
+                   ,A3($Bootstrap.panelBody,
+                   acName,
+                   1,
+                   bio1.content)
+                   ,A3($Bootstrap.panelHeading,
+                   acName,
+                   2,
+                   bio2.title)
+                   ,A3($Bootstrap.panelBody,
+                   acName,
+                   2,
+                   bio2.content)]));
+   }();
    var bioAndCallToAction = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("row")]),
    _L.fromArray([bioAccordion
@@ -13154,7 +13253,7 @@ Elm.Teaching.make = function (_elm) {
    _L.fromArray([$Html$Attributes.$class("col-md-12")
                 ,$Style.teachingTakafumiImg]),
    _L.fromArray([A2($Html.img,
-   _L.fromArray([$Html$Attributes.src("../../resources/takafumi_720x405.jpg")
+   _L.fromArray([$Html$Attributes.src("../../resources/takafumi_1170x658.jpg")
                 ,$Html$Attributes.$class("img-responsive")]),
    _L.fromArray([]))]))]));
    var header = A2($Html.div,
@@ -13173,6 +13272,7 @@ Elm.Teaching.make = function (_elm) {
    _L.fromArray([header
                 ,takafumiImg
                 ,bioAndCallToAction
+                ,advertise
                 ,subjects]));
    var links = _L.fromArray([A2($Html.li,
                             _L.fromArray([]),
@@ -13214,19 +13314,34 @@ Elm.Teaching.make = function (_elm) {
    };
    var model = {_: {}
                ,currentPage: "Teaching"};
+   var main = view(model);
+   var Panel = F2(function (a,b) {
+      return {_: {}
+             ,content: b
+             ,title: a};
+   });
+   var AdvPoint = F3(function (a,
+   b,
+   c) {
+      return {_: {}
+             ,content: c
+             ,image: b
+             ,title: a};
+   });
    var Model = function (a) {
       return {_: {}
              ,currentPage: a};
    };
-   var main = view(model);
    var title = Elm.Native.Port.make(_elm).outbound("title",
    function (v) {
       return v;
    },
    "Teaching · BJW");
    _elm.Teaching.values = {_op: _op
-                          ,main: main
                           ,Model: Model
+                          ,AdvPoint: AdvPoint
+                          ,Panel: Panel
+                          ,main: main
                           ,model: model
                           ,view: view
                           ,links: links
@@ -13236,16 +13351,14 @@ Elm.Teaching.make = function (_elm) {
                           ,bioAndCallToAction: bioAndCallToAction
                           ,bioAccordion: bioAccordion
                           ,callToAction: callToAction
-                          ,bioText: bioText
-                          ,resume: resume
-                          ,oxford: oxford
-                          ,oxfordText: oxfordText
-                          ,magee: magee
-                          ,mageeText: mageeText
-                          ,teachingStyleText: teachingStyleText
+                          ,bio1: bio1
+                          ,bio2: bio2
+                          ,bio3: bio3
+                          ,advertise: advertise
+                          ,foundations: foundations
+                          ,approaches: approaches
                           ,subjects: subjects
                           ,subjectsAccordion: subjectsAccordion
-                          ,subjectsList: subjectsList
                           ,math10: math10
                           ,math11: math11
                           ,precalc11: precalc11

@@ -6,38 +6,13 @@ import Html.Attributes exposing (..)
 import Style
 
 
-panelHeading idName panelName = 
-  div
-    [ class "panel-heading"
-    , id ("heading" ++ idName )
-    ]
-    [ h4
-      [ class "panel-title" ]
-      [ a
-        [ href ("#collapse" ++ idName)
-        , attribute "data-toggle" "collapse"
-        , attribute "data-parent" "#accordion"
-        ]
-        [ text panelName ]
-      ]
-    ]
-
-panelBody idName panelContent =
-  div
-    [ id ("collapse" ++ idName)
-    , class "panel-collapse collapse" -- .collapse hides content // .collapse.in shows content
-    ]
-    [ div
-      [ class "panel-body" ]
-      [ panelContent ]
-    ]
-
-accordion column panels =
+accordion : String -> String -> List Html -> Html
+accordion acName column panels =
   div
     [ class column ]
     [ div
       [ class "panel-group"
-      , id "accordion"
+      , id ("accordion" ++ acName)
       , Style.teachingAccordion
       ]
       [ div 
@@ -45,3 +20,38 @@ accordion column panels =
         panels
       ]
     ]
+
+panelHeading : String -> Int -> String -> Html
+panelHeading acName pnID panelTitle = 
+  let 
+    pnName = acName ++ (toString pnID)
+    newAcName = acName
+  in
+    div
+      [ class "panel-heading"
+      , id ("heading" ++ pnName )
+      ]
+      [ h4
+        [ class "panel-title" ]
+        [ a
+          [ href ("#collapse" ++ pnName)
+          , attribute "data-toggle" "collapse"
+          , attribute "data-parent" ("#accordion" ++ newAcName)
+          ]
+          [ text panelTitle ]
+        ]
+      ]
+
+panelBody : String -> Int -> Html -> Html
+panelBody acName pnID panelContent =
+  let 
+    pnName = acName ++ (toString pnID)
+  in
+    div
+      [ id ("collapse" ++ pnName)
+      , class "panel-collapse collapse" -- .collapse hides content // .collapse.in shows content
+      ]
+      [ div
+        [ class "panel-body" ]
+        [ panelContent ]
+      ]

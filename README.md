@@ -29,6 +29,13 @@
 
 ## Design Decisions
 
+#### Friend Feedback
+
+- David: Color -> Bad
+- Sam: Font -> Bad
+- Both: daringfireball -> college kid feeling
+- David: bootstrap.com -> more professional feeling
+
 ## Development Decisions
 
 - purely client-side driven app
