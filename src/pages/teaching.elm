@@ -7,7 +7,9 @@ import NavBar
 import Style
 import Markdown
 import Bootstrap
+import Paths
 
+----------------------------------------------------------------------------------------------------------------
 
 port title: String
 port title =  "Teaching · BJW"
@@ -24,12 +26,13 @@ type alias AdvPoint =
   , content     : String
   }
 
+
 type alias Panel =
   { title       : String
   , content     : Html
   }
 
-
+----------------------------------------------------------------------------------------------------------------
 
 main : Html
 main =
@@ -45,13 +48,14 @@ model =
 view : Model -> Html
 view model =
   div
-    [ -- attribute "role" "elm-app"
-    ]
+    [ Style.body ]
     [ NavBar.navBar model.currentPage links
+    , NavBar.navBarSpace
+    , header
     , teaching
-    --, subjectContainer
     ]
 
+----------------------------------------------------------------------------------------------------------------
 
 links : List Html
 links =
@@ -63,6 +67,7 @@ links =
   , li [] [ a [ href "#" ] [ text "Contact Me" ] ]
   ]
 
+----------------------------------------------------------------------------------------------------------------
 
 teaching : Html
 teaching =
@@ -70,44 +75,41 @@ teaching =
     [ class "container"
     , Style.teachingContainer
     ]
-    [ header
-    , takafumiImg
-    , bioAndCallToAction
+    [ bioAndCallToAction
+    , imgTakafumi
     , advertise
     , subjects
+    , area
     ]
 
+----------------------------------------------------------------------------------------------------------------
 
 header : Html
 header =
   div
-    [ class "col-mid-12", Style.writingHeader ]
-    [ h1 [ Style.writingTitle ] [ text "The Classroom" ]
-    , p [ class "lead", Style.writingDescription ] [ text "I am an educator, and a damn good one at that." ]
-    ]
-
-
-takafumiImg : Html
-takafumiImg =
-  div
-    [ class "row" ]
-    [ div
-      [ class "col-md-12"
-      , Style.teachingTakafumiImg
+    [ Style.teachingHeader ]
+    [ div 
+      [ class "container"
+      , Style.teachingInnerHeader 
       ]
-      [ img
-        [ src "../../resources/takafumi_1170x658.jpg"
-        , class "img-responsive"
-        ]
-        []
+      [ h1 [ Style.teachingTitle ] [ text "The Classroom" ]
+      , p [ class "lead", Style.teachingTitleDesc ] [ text "I am an educator, and a damn good one at that." ]
       ]
     ]
 
+----------------------------------------------------------------------------------------------------------------
+
+imgTakafumi : Html
+imgTakafumi = Bootstrap.image Style.teachingImgTakafumi <| Paths.resources ++ "takafumi_1170x658.jpg"
+
+----------------------------------------------------------------------------------------------------------------
 
 bioAndCallToAction : Html
 bioAndCallToAction =
   div
-    [ class "row" ]
+    [ class "row" 
+    , Style.teachingBioAndCallToAction
+    ]
     [ bioAccordion
     , callToAction
     ]
@@ -121,9 +123,9 @@ bioAccordion =
   in
     Bootstrap.accordion acName class
       [ Bootstrap.panelHeading acName 1 bio1.title
-      , Bootstrap.panelBody acName 1 bio1.content
+      , Bootstrap.panelBody acName 1 True bio1.content
       , Bootstrap.panelHeading acName 2 bio2.title
-      , Bootstrap.panelBody acName 2 bio2.content
+      , Bootstrap.panelBody acName 2 False bio2.content
       ]
 
 
@@ -258,6 +260,7 @@ bio3 =
     , content = Markdown.toHtml string
     }
 
+----------------------------------------------------------------------------------------------------------------
 
 advertise : Html
 advertise =
@@ -276,7 +279,7 @@ foundations : AdvPoint
 foundations = 
   { title = "Building Foundations"
   , image = ""
-  , content = "Finding"
+  , content = loremipsum
   }
 
 
@@ -284,24 +287,15 @@ approaches : AdvPoint
 approaches = 
   { title = "Approaching from all Angles"
   , image = ""
-  , content = ""
+  , content = loremipsum
   }
 
-
-
+----------------------------------------------------------------------------------------------------------------
 
 subjects : Html
 subjects = 
   div []
-  [ div 
-    [ class "row" ]
-    [ div 
-      [ class "col-md-12" ]
-      [ div 
-        [ class "page-header" ]
-        [ h1 [] [ text "Subjects Offered" ] ]
-      ]
-    ]
+  [ Bootstrap.pageHeader Style.teachingSubjectsHeader "Subjects Offered"
   , div
     [ class "row" ]
     [ subjectsAccordion ]
@@ -312,13 +306,17 @@ subjectsAccordion : Html
 subjectsAccordion = 
   Bootstrap.accordion "subj" "col-md-12"
     [ Bootstrap.panelHeading "subj" 1 math10.title
-    , Bootstrap.panelBody "subj" 1 math10.content
+    , Bootstrap.panelBody "subj" 1 False math10.content
     , Bootstrap.panelHeading "subj" 2 math11.title
-    , Bootstrap.panelBody "subj" 2 math11.content
+    , Bootstrap.panelBody "subj" 2 False math11.content
     , Bootstrap.panelHeading "subj" 3 precalc11.title
+    , Bootstrap.panelBody "subj" 3 False precalc11.content
     , Bootstrap.panelHeading "subj" 4 precalc12.title
+    , Bootstrap.panelBody "subj" 4 False precalc12.content
     , Bootstrap.panelHeading "subj" 5 phys11.title
+    , Bootstrap.panelBody "subj" 5 False phys11.content
     , Bootstrap.panelHeading "subj" 6 phys12.title
+    , Bootstrap.panelBody "subj" 6 False phys12.content
     ]
 
 
@@ -388,11 +386,9 @@ math11 =
 precalc11 : Panel
 precalc11 =
   let
-    string = 
-      """
-      """
+    string = loremipsum
   in
-    { title = ""
+    { title = "Pre-calculus 11"
     , content = Markdown.toHtml string
     }
 
@@ -400,11 +396,9 @@ precalc11 =
 precalc12 : Panel
 precalc12 =
   let
-    string = 
-      """
-      """
+    string = loremipsum
   in
-    { title = ""
+    { title = "Pre-calculus 12"
     , content = Markdown.toHtml string
     }
 
@@ -412,24 +406,36 @@ precalc12 =
 phys11 : Panel
 phys11 =
   let
-    string = 
-      """
-      """
+    string = loremipsum
   in
-    { title = ""
+    { title = "Physics 11"
     , content = Markdown.toHtml string
     }
 
 phys12 : Panel
 phys12 =
   let
-    string = 
-      """
-      """
+    string = loremipsum
   in
-    { title = ""
+    { title = "Physics 12"
     , content = Markdown.toHtml string
     }
+
+----------------------------------------------------------------------------------------------------------------
+
+area : Html
+area = 
+  let 
+    imgArea = Bootstrap.image Style.teachingImgArea <| Paths.resources ++ "metrovan.fw.png"
+  in
+    div []
+    [ Bootstrap.pageHeader Style.teachingAreaHeader "Location"
+    , div
+      [ class "row" ]
+      [ imgArea ]
+    ]
+
+----------------------------------------------------------------------------------------------------------------
 
 
 layout : String
@@ -446,3 +452,7 @@ layout =
   # Contact Me
   - anchor: #contactme
   """
+
+loremipsum : String
+loremipsum = 
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

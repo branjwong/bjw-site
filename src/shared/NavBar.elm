@@ -14,13 +14,17 @@ import Style
 navBar : String -> List Html -> Html
 navBar currentName currentLinks =
   nav
-    [ Style.topBar
-    , class "navbar navbar-inverse navbar-fixed-top"
+    [ class "navbar navbar-fixed-top" --navbar-inverse
+    , Style.navBarMain
     , id "top"
     --, attribute "role" "banner"
     ]
     [ div
-      [ class "container" ]
+      [ Style.navBarTop ]
+      []
+    , div
+      [ class "container"
+      ]
       [ navbarCollapseComponent
       , navbarExpandComponent currentName currentLinks
       ]
@@ -92,6 +96,12 @@ tab currentName currentLinks name link =
       [ a [ href link ] [ text name ]
       ]
 
+
+navBarSpace : Html
+navBarSpace = 
+  div 
+    [ Style.navBarSpace ]
+    []
 
 -- Currently Unused
 outsideLinks : Html

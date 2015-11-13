@@ -5,6 +5,7 @@ import Html.Attributes exposing (..)
 
 import Style
 
+----------------------------------------------------------------------------------------------------------------
 
 accordion : String -> String -> List Html -> Html
 accordion acName column panels =
@@ -13,13 +14,15 @@ accordion acName column panels =
     [ div
       [ class "panel-group"
       , id ("accordion" ++ acName)
-      , Style.teachingAccordion
+      , Style.bootstrapAccordion
       ]
       [ div 
         [ class "panel panel-default" ]
         panels
       ]
     ]
+
+
 
 panelHeading : String -> Int -> String -> Html
 panelHeading acName pnID panelTitle = 
@@ -42,16 +45,68 @@ panelHeading acName pnID panelTitle =
         ]
       ]
 
-panelBody : String -> Int -> Html -> Html
-panelBody acName pnID panelContent =
+panelBody : String -> Int -> Bool -> Html -> Html
+panelBody acName pnID panelHide panelContent =
   let 
     pnName = acName ++ (toString pnID)
   in
-    div
-      [ id ("collapse" ++ pnName)
-      , class "panel-collapse collapse" -- .collapse hides content // .collapse.in shows content
+    if panelHide == True
+    then
+      div
+        [ id ("collapse" ++ pnName)
+        , class "panel-collapse collapse in" -- .collapse hides content // .collapse.in shows content
+        ]
+        [ div
+          [ class "panel-body" ]
+          [ panelContent ]
+        ]
+    else
+      div
+        [ id ("collapse" ++ pnName)
+        , class "panel-collapse collapse" -- .collapse hides content // .collapse.in shows content
+        ]
+        [ div
+          [ class "panel-body" ]
+          [ panelContent ]
+        ]
+
+
+----------------------------------------------------------------------------------------------------------------
+
+image styleCust path =
+  div
+    [ class "row" ]
+    [ div
+      [ class "col-md-12"
       ]
-      [ div
-        [ class "panel-body" ]
-        [ panelContent ]
+      [ img
+        [ src path
+        , styleCust
+        , class "img-responsive"
+        ]
+        []
       ]
+    ]
+
+pageHeader styleCust title =
+  div 
+    [ class "row" ]
+    [ div 
+      [ class "col-md-12" ]
+      [ div 
+        [ class "page-header" 
+        , styleCust
+        ]
+        [ h1 [] [ text title ] ]
+      ]
+    ]
+
+----------------------------------------------------------------------------------------------------------------
+-- Doesn't work
+
+panel acName pnID panelTitle panelHide panelContent =
+  div 
+    []
+    [ panelHeading acName pnID panelTitle
+    , panelBody acName pnID panelHide panelContent
+    ]

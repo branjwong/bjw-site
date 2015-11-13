@@ -31,7 +31,7 @@ model =
 view : Model -> Html
 view model =
   div
-    [ attribute "role" "elm-app" ]
+    [ Style.body ]
     [ NavBar.navBar model.currentPage links
     , programming
     ]

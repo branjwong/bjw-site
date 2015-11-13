@@ -33,7 +33,8 @@ model =
 
 view : Model -> Html
 view model =
-  div []
+  div 
+    [ Style.body ]
     [ NavBar.navBar model.currentPage links
     , writing
     ]

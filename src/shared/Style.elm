@@ -5,42 +5,110 @@ import Html.Attributes exposing (..)
 
 (=>) = (,)
 
+
+
+----------------------------------------------------------------------------------------------------------------
+-- COLOUR
+-- http://webdesign.tutsplus.com/tutorials/6-beginner-safety-first-color-guidelines-for-the-web--cms-21462
+
 -- Background Colors
 
-navBarColor = "#2C1E1E"
-bodyColor = "#302C2C"
+colorHighlight = "#2B74C6"
+colorBodyBackground = "#DDD"
+colorNavBarBackground = "#FFF"
 
 
 -- Text Colors Against Site Background
 
-headingColor = "#FFF"
-subheadingColor = "#999"
-
-text1Color = "#333"
-text2Color = "#999"
-
--- Text Colors Against White
-
---text1ColorAlt = "#555"
---text2ColorAlt = "#777"
---text3ColorAlt = "#999"
+colorHeading = "#333"
+subcolorHeading = "#999"
+colorStandardText = colorHeading
 
 
 
-topBar =
+-- Trash
+
+{-}
+colorNavBarBackground_ThemeDark = "#2C1E1E"
+colorBodyBackground_ThemeDark = "#302C2C"
+
+colorHeading_ThemeDark = "#FFF"
+subcolorHeading_ThemeDark = "#999"
+
+text1Color_ThemeDark = "#333"
+text2Color_ThemeDark = "#999"
+-}
+
+----------------------------------------------------------------------------------------------------------------
+
+heightNavBarTop = 5
+heightNavBar = 50 + heightNavBarTop
+
+heightAsusScreen = 1080
+heightAsusBrowser = 951
+heightHpScreen = 768
+heightHpBrowser = 639
+
+widthBoarder = 15
+heightTeachingHeader = heightHpBrowser - heightNavBar - 2*widthBoarder
+
+sizeTitleText = 60
+sizeTitleDescText = 20
+
+spaceInnerHeader = round(heightTeachingHeader/2 - (sizeTitleText + sizeTitleDescText)/2)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+toPx : Int -> String
+toPx x = 
+  (toString x) ++ "px"
+
+
+----------------------------------------------------------------------------------------------------------------
+
+body = 
   style
-    [ "background-color" => navBarColor
-    , "color" => text1Color
+    [ "margin-top" => "0"
+    , "color" => colorHeading
+    , "background-color" => colorBodyBackground
+    , "font-family" => "Verdana, 'Bitstream Vera Sans', sans-serif"
     ]
+
+----------------------------------------------------------------------------------------------------------------
+
+navBarTop =
+  style
+    [ "background-color" => colorHighlight
+    , "height" => (toPx heightNavBarTop)
+    ]
+
+navBarMain =
+  style
+    [ "background-color" => colorNavBarBackground
+    , "color" => colorHighlight
+    , "margin-bottom" => "0"
+    ]
+
+navBarSpace = 
+  style
+    [ "height" => (toPx heightNavBar)
+    , "background-color" => colorHighlight
+    ]
+
+----------------------------------------------------------------------------------------------------------------
 
 homeContainer =
   style
-    [ "height" => "1000px"
+    [ "padding-top" => "30px"
+    , "height" => "1000px"
     ]
+
+----------------------------------------------------------------------------------------------------------------
 
 writingContainer =
   style
-    [ -- "margin-top" => "20px"
+    [ "padding-top" => "30px"
     --, "color" => "#333"
     --, "font-family" => "'Helvetica Neue', Helvetica, Arial, sans-serif"
     --, "font-size" => "14px"
@@ -49,7 +117,6 @@ writingContainer =
 writingHeader =
   style
     [ "padding-top" => "20px"
-    , "padding-bottom" => "20px"
     ]
 
 writingTitle =
@@ -63,26 +130,54 @@ writingTitle =
 writingDescription =
   style
     [ "font-size" => "20px"
-    , "color" => text2Color
+    , "color" => subcolorHeading
+    ]
+
+----------------------------------------------------------------------------------------------------------------
+
+teachingHeader =
+  style 
+  [ "background-color" => colorHighlight
+  , "padding-top" => (toPx widthBoarder)
+  , "padding-bottom" => (toPx widthBoarder)
+  ]
+
+teachingInnerHeader =
+  style
+    [ "padding-top" => (toPx spaceInnerHeader)
+    , "height" => (toPx heightTeachingHeader)
+    , "background-color" => colorHighlight
+    , "text-align" => "center"
+    ]
+
+teachingTitle =
+  style
+    [ "margin-top" => "0"
+    , "margin-bottom" => "0"
+    , "font-size" => (toPx sizeTitleText)
+    , "font-weight" => "normal"
+    ]
+
+teachingTitleDesc =
+  style
+    [ "font-size" => (toPx sizeTitleDescText)
+    , "color" => subcolorHeading
     ]
 
 teachingContainer =
   style
     []
 
-teachingTakafumiImg =
+teachingBioAndCallToAction =
   style
-    [ -- "padding-top" => "10px"
+    [ "padding-top" => "20px"
+    , "padding-bottom" => "20px"
     ]
 
-teachingBio =
+teachingImgTakafumi =
   style
-    []
-
-teachingAccordion =
-  style
-    [ "color" => bodyColor
-    , "padding-top" => "20px"
+    [ "margin-top" => "40px"
+    , "margin-bottom" => "40px"
     ]
 
 teachingCallToAction =
@@ -90,27 +185,36 @@ teachingCallToAction =
     [ "margin-top" => "20px"
     ]
 
-{-
-teachingResumeH1 = 
+teachingSubjectsHeader =
   style
-    [ "font-size" => "2em"
-    , "color" => text1ColorAlt
-    , "margin-bottom" => "0px"
+    [ "border-bottom-color" => colorHighlight
     ]
 
-teachingResumeH2 = 
+teachingAreaHeader =
   style
-    [ "font-size" => "1.1em"
-    , "margin-bottom" => "0px"
+    [ "border-bottom-color" => colorHighlight
     ]
 
-teachingResumeH3 = 
+teachingImgArea =
   style
-    [ "font-size" => "1.3em"
+    [ "padding-bottom" => "100px"
     ]
--}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
 
 programmingContainer =
   style
-    [ "height" => "1000px"
+    [ "padding-top" => "30px"
+    , "height" => "1000px"
+    ]
+
+----------------------------------------------------------------------------------------------------------------
+
+bootstrapAccordion =
+  style
+    [ "color" => colorStandardText
+    , "padding-top" => "20px"
     ]

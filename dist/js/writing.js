@@ -12019,6 +12019,9 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([A2($Html.a,
                              _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
                              _L.fromArray([$Html.text("GitHub")]))]))]))]));
+   var navBarSpace = A2($Html.div,
+   _L.fromArray([$Style.navBarSpace]),
+   _L.fromArray([]));
    var tab = F4(function (currentName,
    currentLinks,
    name,
@@ -12100,15 +12103,18 @@ Elm.NavBar.make = function (_elm) {
    var navBar = F2(function (currentName,
    currentLinks) {
       return A2($Html.nav,
-      _L.fromArray([$Style.topBar
-                   ,$Html$Attributes.$class("navbar navbar-inverse navbar-fixed-top")
+      _L.fromArray([$Html$Attributes.$class("navbar navbar-fixed-top")
+                   ,$Style.navBarMain
                    ,$Html$Attributes.id("top")]),
       _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([navbarCollapseComponent
-                   ,A2(navbarExpandComponent,
-                   currentName,
-                   currentLinks)]))]));
+                   _L.fromArray([$Style.navBarTop]),
+                   _L.fromArray([]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container")]),
+                   _L.fromArray([navbarCollapseComponent
+                                ,A2(navbarExpandComponent,
+                                currentName,
+                                currentLinks)]))]));
    });
    _op["=>"] = F2(function (v0,
    v1) {
@@ -12122,6 +12128,7 @@ Elm.NavBar.make = function (_elm) {
                         ,navbarExpandComponent: navbarExpandComponent
                         ,navbarTabs: navbarTabs
                         ,tab: tab
+                        ,navBarSpace: navBarSpace
                         ,outsideLinks: outsideLinks};
    return _elm.NavBar.values;
 };
@@ -12631,37 +12638,80 @@ Elm.Style.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
-   var teachingBio = $Html$Attributes.style(_L.fromArray([]));
-   var teachingTakafumiImg = $Html$Attributes.style(_L.fromArray([]));
    var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
-   var writingContainer = $Html$Attributes.style(_L.fromArray([]));
-   var text2Color = "#999";
-   var text1Color = "#333";
-   var subheadingColor = "#999";
-   var headingColor = "#FFF";
-   var bodyColor = "#302C2C";
-   var navBarColor = "#2C1E1E";
+   var toPx = function (x) {
+      return A2($Basics._op["++"],
+      $Basics.toString(x),
+      "px");
+   };
+   var sizeTitleDescText = 20;
+   var sizeTitleText = 60;
+   var widthBoarder = 15;
+   var heightHpBrowser = 639;
+   var heightHpScreen = 768;
+   var heightAsusBrowser = 951;
+   var heightAsusScreen = 1080;
+   var heightNavBarTop = 5;
+   var heightNavBar = 50 + heightNavBarTop;
+   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
+   var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
+   var subcolorHeading = "#999";
+   var colorHeading = "#333";
+   var colorStandardText = colorHeading;
+   var colorNavBarBackground = "#FFF";
+   var colorBodyBackground = "#DDD";
+   var colorHighlight = "#2B74C6";
    _op["=>"] = F2(function (v0,
    v1) {
       return {ctor: "_Tuple2"
              ,_0: v0
              ,_1: v1};
    });
-   var topBar = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                    "background-color",
-                                                    navBarColor)
-                                                    ,A2(_op["=>"],
-                                                    "color",
-                                                    text1Color)]));
+   var body = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                  "margin-top",
+                                                  "0")
+                                                  ,A2(_op["=>"],
+                                                  "color",
+                                                  colorHeading)
+                                                  ,A2(_op["=>"],
+                                                  "background-color",
+                                                  colorBodyBackground)
+                                                  ,A2(_op["=>"],
+                                                  "font-family",
+                                                  "Verdana, \'Bitstream Vera Sans\', sans-serif")]));
+   var navBarTop = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                       "background-color",
+                                                       colorHighlight)
+                                                       ,A2(_op["=>"],
+                                                       "height",
+                                                       toPx(heightNavBarTop))]));
+   var navBarMain = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                        "background-color",
+                                                        colorNavBarBackground)
+                                                        ,A2(_op["=>"],
+                                                        "color",
+                                                        colorHighlight)
+                                                        ,A2(_op["=>"],
+                                                        "margin-bottom",
+                                                        "0")]));
+   var navBarSpace = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                         "height",
+                                                         toPx(heightNavBar))
+                                                         ,A2(_op["=>"],
+                                                         "background-color",
+                                                         colorHighlight)]));
    var homeContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "height",
-   "1000px")]));
-   var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                            "padding-top",
-                                                           "20px")
+                                                           "30px")
                                                            ,A2(_op["=>"],
-                                                           "padding-bottom",
-                                                           "20px")]));
+                                                           "height",
+                                                           "1000px")]));
+   var writingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "padding-top",
+   "30px")]));
+   var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "padding-top",
+   "20px")]));
    var writingTitle = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
                                                           "margin-top",
                                                           "30px")
@@ -12679,38 +12729,123 @@ Elm.Style.make = function (_elm) {
                                                                 "20px")
                                                                 ,A2(_op["=>"],
                                                                 "color",
-                                                                text2Color)]));
-   var teachingAccordion = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                               "color",
-                                                               bodyColor)
+                                                                subcolorHeading)]));
+   var teachingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                            "background-color",
+                                                            colorHighlight)
+                                                            ,A2(_op["=>"],
+                                                            "padding-top",
+                                                            toPx(widthBoarder))
+                                                            ,A2(_op["=>"],
+                                                            "padding-bottom",
+                                                            toPx(widthBoarder))]));
+   var teachingInnerHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                                 "padding-top",
+                                                                 toPx(spaceInnerHeader))
+                                                                 ,A2(_op["=>"],
+                                                                 "height",
+                                                                 toPx(heightTeachingHeader))
+                                                                 ,A2(_op["=>"],
+                                                                 "background-color",
+                                                                 colorHighlight)
+                                                                 ,A2(_op["=>"],
+                                                                 "text-align",
+                                                                 "center")]));
+   var teachingTitle = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                           "margin-top",
+                                                           "0")
+                                                           ,A2(_op["=>"],
+                                                           "margin-bottom",
+                                                           "0")
+                                                           ,A2(_op["=>"],
+                                                           "font-size",
+                                                           toPx(sizeTitleText))
+                                                           ,A2(_op["=>"],
+                                                           "font-weight",
+                                                           "normal")]));
+   var teachingTitleDesc = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                               "font-size",
+                                                               toPx(sizeTitleDescText))
                                                                ,A2(_op["=>"],
-                                                               "padding-top",
-                                                               "20px")]));
+                                                               "color",
+                                                               subcolorHeading)]));
+   var teachingBioAndCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                                        "padding-top",
+                                                                        "20px")
+                                                                        ,A2(_op["=>"],
+                                                                        "padding-bottom",
+                                                                        "20px")]));
+   var teachingImgTakafumi = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                                 "margin-top",
+                                                                 "40px")
+                                                                 ,A2(_op["=>"],
+                                                                 "margin-bottom",
+                                                                 "40px")]));
    var teachingCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
    "margin-top",
    "20px")]));
+   var teachingSubjectsHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "border-bottom-color",
+   colorHighlight)]));
+   var teachingAreaHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "border-bottom-color",
+   colorHighlight)]));
+   var teachingImgArea = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   "padding-bottom",
+   "100px")]));
    var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "height",
-   "1000px")]));
+                                                                  "padding-top",
+                                                                  "30px")
+                                                                  ,A2(_op["=>"],
+                                                                  "height",
+                                                                  "1000px")]));
+   var bootstrapAccordion = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+                                                                "color",
+                                                                colorStandardText)
+                                                                ,A2(_op["=>"],
+                                                                "padding-top",
+                                                                "20px")]));
    _elm.Style.values = {_op: _op
-                       ,navBarColor: navBarColor
-                       ,bodyColor: bodyColor
-                       ,headingColor: headingColor
-                       ,subheadingColor: subheadingColor
-                       ,text1Color: text1Color
-                       ,text2Color: text2Color
-                       ,topBar: topBar
+                       ,colorHighlight: colorHighlight
+                       ,colorBodyBackground: colorBodyBackground
+                       ,colorNavBarBackground: colorNavBarBackground
+                       ,colorHeading: colorHeading
+                       ,subcolorHeading: subcolorHeading
+                       ,colorStandardText: colorStandardText
+                       ,heightNavBarTop: heightNavBarTop
+                       ,heightNavBar: heightNavBar
+                       ,heightAsusScreen: heightAsusScreen
+                       ,heightAsusBrowser: heightAsusBrowser
+                       ,heightHpScreen: heightHpScreen
+                       ,heightHpBrowser: heightHpBrowser
+                       ,widthBoarder: widthBoarder
+                       ,heightTeachingHeader: heightTeachingHeader
+                       ,sizeTitleText: sizeTitleText
+                       ,sizeTitleDescText: sizeTitleDescText
+                       ,spaceInnerHeader: spaceInnerHeader
+                       ,toPx: toPx
+                       ,body: body
+                       ,navBarTop: navBarTop
+                       ,navBarMain: navBarMain
+                       ,navBarSpace: navBarSpace
                        ,homeContainer: homeContainer
                        ,writingContainer: writingContainer
                        ,writingHeader: writingHeader
                        ,writingTitle: writingTitle
                        ,writingDescription: writingDescription
+                       ,teachingHeader: teachingHeader
+                       ,teachingInnerHeader: teachingInnerHeader
+                       ,teachingTitle: teachingTitle
+                       ,teachingTitleDesc: teachingTitleDesc
                        ,teachingContainer: teachingContainer
-                       ,teachingTakafumiImg: teachingTakafumiImg
-                       ,teachingBio: teachingBio
-                       ,teachingAccordion: teachingAccordion
+                       ,teachingBioAndCallToAction: teachingBioAndCallToAction
+                       ,teachingImgTakafumi: teachingImgTakafumi
                        ,teachingCallToAction: teachingCallToAction
-                       ,programmingContainer: programmingContainer};
+                       ,teachingSubjectsHeader: teachingSubjectsHeader
+                       ,teachingAreaHeader: teachingAreaHeader
+                       ,teachingImgArea: teachingImgArea
+                       ,programmingContainer: programmingContainer
+                       ,bootstrapAccordion: bootstrapAccordion};
    return _elm.Style.values;
 };
 Elm.Task = Elm.Task || {};
@@ -13212,7 +13347,7 @@ Elm.Writing.make = function (_elm) {
    var links = _L.fromArray([]);
    var view = function (model) {
       return A2($Html.div,
-      _L.fromArray([]),
+      _L.fromArray([$Style.body]),
       _L.fromArray([A2($NavBar.navBar,
                    model.currentPage,
                    links)

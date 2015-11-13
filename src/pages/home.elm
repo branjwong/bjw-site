@@ -13,25 +13,26 @@ port title : String
 port title = "Home · BJW"
 
 type alias Model =
-    { currentPage : String
-    }
+  { currentPage : String
+  }
 
 model : Model
 model =
-    { currentPage = "Home"
-    }
+  { currentPage = "Home"
+  }
 
 
 view : Model -> Html
 view model =
-    div []
-        [ NavBar.navBar model.currentPage []
-        , home
-        ]
+  div 
+    [ Style.body ]
+    [ NavBar.navBar model.currentPage []
+    , home
+    ]
 
 main : Html
 main =
-    view model
+  view model
 
 
 home =
