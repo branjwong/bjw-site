@@ -120,6 +120,7 @@ picks =
   ]
 
 
+bestWayToTeach : String
 bestWayToTeach = 
   """
   [13:39] <EmptyMemory> pattern recognition can only take you so far when learning

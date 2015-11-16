@@ -13,18 +13,27 @@
 3. Run `npm install`.
 4. Run `elm make`.
 5. Run `grunt elm`.
-6. Open `dist/html/home.html`.
+6. Open `dist/html/index.html`.
 7. ????
 8. PROFIT!!!
 
 ## Content
 
-- teaching services advertising
-- visual programming portfolio
-- blog
+- Teaching
+	- teaching services advertising
+	- 
+- Programming
+	- visual programming portfolio
+	- latest blog about the making of this site
+- Writing
+	- blog
+		- blogging about the making of this site
+		- book talk
+		- article share
+	- guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
+	- favourite quotes
+
 - my own space?
-- article share
-- book talk
 
 
 ## Design Decisions

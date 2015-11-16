@@ -100,7 +100,7 @@ header =
 ----------------------------------------------------------------------------------------------------------------
 
 imgTakafumi : Html
-imgTakafumi = Bootstrap.image Style.teachingImgTakafumi <| Paths.resources ++ "takafumi_1170x658.jpg"
+imgTakafumi = Bootstrap.image Style.teachingImgTakafumi (Paths.resources ++ "takafumi_1170x658.jpg")
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -426,7 +426,7 @@ phys12 =
 area : Html
 area = 
   let 
-    imgArea = Bootstrap.image Style.teachingImgArea <| Paths.resources ++ "metrovan.fw.png"
+    imgArea = Bootstrap.image Style.teachingImgArea (Paths.resources ++ "metrovan.fw.png")
   in
     div []
     [ Bootstrap.pageHeader Style.teachingAreaHeader "Location"
