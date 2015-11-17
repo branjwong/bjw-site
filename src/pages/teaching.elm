@@ -4,10 +4,13 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
-import Style
 import Markdown
 import Bootstrap
 import Paths
+
+import SharedStyles
+import PrintStyle
+
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -41,15 +44,16 @@ main =
 
 model : Model
 model =
-  { currentPage = "Teaching"
+  { currentPage = "Teaching | BJW"
   }
 
 
 view : Model -> Html
 view model =
   div
-    [ Style.body ]
-    [ NavBar.navBar model.currentPage links
+    []
+    [ PrintStyle.stylesheet SharedStyles.exports
+    , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , header
     , teaching
@@ -72,8 +76,7 @@ links =
 teaching : Html
 teaching =
   div
-    [ class "container"
-    , Style.teachingContainer
+    [ class "container TeachingContainer"
     ]
     [ bioAndCallToAction
     , imgTakafumi
@@ -87,28 +90,26 @@ teaching =
 header : Html
 header =
   div
-    [ Style.teachingHeader ]
+    [ class "TeachingHeader" ]
     [ div 
-      [ class "container"
-      , Style.teachingInnerHeader 
+      [ class "container TeachingInnerHeader" 
       ]
-      [ h1 [ Style.teachingTitle ] [ text "The Classroom" ]
-      , p [ class "lead", Style.teachingTitleDesc ] [ text "I am an educator, and a damn good one at that." ]
+      [ h1 [ class "TeachingTitle" ] [ text "The Classroom" ]
+      , p [ class "lead TeachingTitleDesc" ] [ text "I am an educator, and a damn good one at that." ]
       ]
     ]
 
 ----------------------------------------------------------------------------------------------------------------
 
 imgTakafumi : Html
-imgTakafumi = Bootstrap.image Style.teachingImgTakafumi (Paths.resources ++ "takafumi_1170x658.jpg")
+imgTakafumi = Bootstrap.image "TeachingImgTakafumi" (Paths.resources ++ "takafumi_1170x658.jpg")
 
 ----------------------------------------------------------------------------------------------------------------
 
 bioAndCallToAction : Html
 bioAndCallToAction =
   div
-    [ class "row" 
-    , Style.teachingBioAndCallToAction
+    [ class "row TeachingBioAndCallToAction"
     ]
     [ bioAccordion
     , callToAction
@@ -135,7 +136,7 @@ callToAction =
     [ class "col-md-2" ] 
     [ p []
       [ button
-        [ Style.teachingCallToAction
+        [ class "TeachingCallToAction"
         , class "btn btn-lg btn-primary"
         , type' "button"
         ]
@@ -170,22 +171,16 @@ bio2 =
         [ div
           [ class "row" ]
           [ div
-            [ class "col-md-9"
-            --, Style.teachingResumeH1 
-            ]
+            [ class "col-md-9" ]
             [ text "Oxford Learning" ]
           , div
-            [ class "col-md-3" 
-            --, Style.teachingResumeH2 
-            ]
+            [ class "col-md-3" ]
             [ text "Aug 2014 – Present" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12"
-            --, Style.teachingResumeH3 
-            ]
+            [ class "col-md-12" ]
             [ text "Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English" ]
           ]
         , div
@@ -206,22 +201,16 @@ bio2 =
         [ div
           [ class "row" ]
           [ div
-            [ class "col-md-9"
-            --, Style.teachingResumeH1 
-            ]
+            [ class "col-md-9" ]
             [ text "Magee Secondary School" ]
           , div
-            [ class "col-md-3" 
-            --, Style.teachingResumeH2 
-            ]
+            [ class "col-md-3" ]
             [ text "February 2013 – July 2013" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12"
-            --, Style.teachingResumeH3 
-            ]
+            [ class "col-md-12" ]
             [ text "Calculus Tutor" ]
           ]
         , div
@@ -295,7 +284,7 @@ approaches =
 subjects : Html
 subjects = 
   div []
-  [ Bootstrap.pageHeader Style.teachingSubjectsHeader "Subjects Offered"
+  [ Bootstrap.pageHeader "TeachingSubjectsHeader" "Subjects Offered"
   , div
     [ class "row" ]
     [ subjectsAccordion ]
@@ -426,10 +415,10 @@ phys12 =
 area : Html
 area = 
   let 
-    imgArea = Bootstrap.image Style.teachingImgArea (Paths.resources ++ "metrovan.fw.png")
+    imgArea = Bootstrap.image "TeachingImgArea" (Paths.resources ++ "metrovan.fw.png")
   in
     div []
-    [ Bootstrap.pageHeader Style.teachingAreaHeader "Location"
+    [ Bootstrap.pageHeader "TeachingAreaHeader" "Location"
     , div
       [ class "row" ]
       [ imgArea ]

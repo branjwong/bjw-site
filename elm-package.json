@@ -4,8 +4,10 @@
     "repository": "https://github.com/branjwong/bjw-site.git",
     "license": "BSD3",
     "source-directories": [
+        "src/pages",
         "src/shared",
-        "src/pages"
+        "src/style",
+        "young-packages/elm-stylesheets/src"
     ],
     "exposed-modules": [],
     "dependencies": {

@@ -7,12 +7,13 @@ import Html.Attributes exposing (..)
 import Markdown exposing (..)
 
 import NavBar
-import Style
 
+import SharedStyles
+import PrintStyle
 
 
 port title: String
-port title =  "Writing · BJW"
+port title =  "Writing | BJW"
 
 
 main : Html
@@ -34,8 +35,9 @@ model =
 view : Model -> Html
 view model =
   div 
-    [ Style.body ]
-    [ NavBar.navBar model.currentPage links
+    []
+    [ PrintStyle.stylesheet SharedStyles.exports
+    , NavBar.navBar model.currentPage links
     , writing
     ]
 
@@ -47,7 +49,7 @@ links =
 
 writing =
   div
-    [ class "container", Style.writingContainer ]
+    [ class "container WritingContainer" ]
     [ div
       [ class "row" ]
       [ writingHeader
@@ -59,9 +61,9 @@ writing =
 
 writingHeader =
   div
-    [ class "col-mid-12", Style.writingHeader ]
-    [ h1 [ Style.writingTitle ] [ text "The Archive" ]
-    , p [ class "lead", Style.writingDescription ] [ text "A place for the written word." ]
+    [ class "col-mid-12 WritingHeader" ]
+    [ h1 [ class "WritingTitle" ] [ text "The Archive" ]
+    , p [ class "lead WritingDescription" ] [ text "A place for the written word." ]
     --, h1 [ Style.writingTitle ] [ text "A Rotten Register" ]
     --, p [ class "lead", Style.writingDescription ] [ text "Everything that you thought you didn't want to hear." ]
     ]

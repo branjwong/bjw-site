@@ -3,8 +3,6 @@ module Bootstrap where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Style
-
 ----------------------------------------------------------------------------------------------------------------
 
 accordion : String -> String -> List Html -> Html
@@ -12,9 +10,8 @@ accordion acName column panels =
   div
     [ class column ]
     [ div
-      [ class "panel-group"
+      [ class "panel-group BootstrapAccordion"
       , id ("accordion" ++ acName)
-      , Style.bootstrapAccordion
       ]
       [ div 
         [ class "panel panel-default" ]
@@ -81,8 +78,7 @@ image styleCust path =
       ]
       [ img
         [ src path
-        , styleCust
-        , class "img-responsive"
+        , class ("img-responsive " ++ styleCust)
         ]
         []
       ]
@@ -94,8 +90,7 @@ pageHeader styleCust title =
     [ div 
       [ class "col-md-12" ]
       [ div 
-        [ class "page-header" 
-        , styleCust
+        [ class ("page-header " ++ styleCust)
         ]
         [ h1 [] [ text title ] ]
       ]

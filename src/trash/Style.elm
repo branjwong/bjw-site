@@ -200,7 +200,13 @@ teachingImgArea =
     [ "padding-bottom" => "100px"
     ]
 
-
+teachingArrow =
+  style
+    [ "border-top-color" => colorHighlight
+    , "content" => ""
+    , "position" => "absolute"
+    , "margin" => "auto"
+    ]
 
 
 ----------------------------------------------------------------------------------------------------------------
@@ -218,3 +224,4 @@ bootstrapAccordion =
     [ "color" => colorStandardText
     , "padding-top" => "20px"
     ]
+

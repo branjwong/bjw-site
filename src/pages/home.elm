@@ -7,10 +7,12 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
-import Style
+
+import SharedStyles
+import PrintStyle
 
 port title : String
-port title = "Home · BJW"
+port title = "Home | BJW"
 
 type alias Model =
   { currentPage : String
@@ -25,10 +27,12 @@ model =
 view : Model -> Html
 view model =
   div 
-    [ Style.body ]
-    [ NavBar.navBar model.currentPage []
+    []
+    [ PrintStyle.stylesheet SharedStyles.exports
+    , NavBar.navBar model.currentPage []
     , home
     ]
+
 
 main : Html
 main =
@@ -37,8 +41,7 @@ main =
 
 home =
   div
-    [ class "container"
-    , Style.homeContainer
+    [ class "container HomeContainer"
     ]
     [ div
       [ class "row" ]
@@ -49,9 +52,9 @@ home =
 
 header =
   div
-    [ Style.writingHeader ]
-    [ h1 [ Style.writingTitle ] [ text "Brandon's Niche on the Net." ]
-    , p [ class "lead", Style.writingDescription ] [ text "Sup Internet. I am here too." ]
+    [ class "WritingHeader" ]
+    [ h1 [ class "WritingTitle" ] [ text "Brandon's Net Niche" ]
+    , p [ class "lead", class "WritingDescription" ] [ text "Sup Internet. I am here too." ]
     --, h1 [ Style.writingTitle ] [ text "A Rotten Register" ]
     --, p [ class "lead", Style.writingDescription ] [ text "Everything that you thought you didn't want to hear." ]
     ]

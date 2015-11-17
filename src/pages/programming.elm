@@ -4,8 +4,9 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
-import Style
 
+import SharedStyles
+import PrintStyle
 
 
 port title: String
@@ -24,15 +25,16 @@ type alias Model =
 
 model : Model
 model =
-  { currentPage = "Programming"
+  { currentPage = "Programming | BJW"
   }
 
 
 view : Model -> Html
 view model =
   div
-    [ Style.body ]
-    [ NavBar.navBar model.currentPage links
+    [ ]
+    [ PrintStyle.stylesheet SharedStyles.exports
+    , NavBar.navBar model.currentPage links
     , programming
     ]
 
@@ -45,8 +47,7 @@ links =
 programming : Html
 programming =
   div
-    [ class "container"
-    , Style.programmingContainer
+    [ class "container ProgrammingContainer"
     ]
     [ div
       [ class "row" ]
@@ -58,9 +59,9 @@ programming =
 programmingHeader : Html
 programmingHeader =
   div
-    [ class "col-mid-12", Style.writingHeader ]
-    [ h1 [ Style.writingTitle ] [ text "The Laboratory" ]
-    , p [ class "lead", Style.writingDescription ] [ text "Where my programming experience is here for viewing." ]
+    [ class "col-mid-12 WritingHeader" ]
+    [ h1 [ class "WritingTitle" ] [ text "The Laboratory" ]
+    , p [ class "lead", class "WritingDescription" ] [ text "Where my Programming experience is here for viewing." ]
     ]
 
 

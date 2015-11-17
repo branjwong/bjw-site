@@ -3,24 +3,17 @@ module NavBar where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Style
-
-(=>) : a -> b -> (a, b)
-(=>) = (,)
-
-
 -- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
 
 navBar : String -> List Html -> Html
 navBar currentName currentLinks =
   nav
-    [ class "navbar navbar-fixed-top" --navbar-inverse
-    , Style.navBarMain
+    [ class "navbar navbar-fixed-top NavBar" --navbar-inverse
     , id "top"
     --, attribute "role" "banner"
     ]
     [ div
-      [ Style.navBarTop ]
+      [ class "NavBarTop" ]
       []
     , div
       [ class "container"
@@ -44,9 +37,9 @@ navbarCollapseComponent =
       ]
       [ span [ class "sr-only" ] [ text "Toggle navigation" ]
       --, span [ class "glyphicon glyphicon-hand-down" ] []
-      , span [ class "icon-bar"] []
-      , span [ class "icon-bar"] []
-      , span [ class "icon-bar"] []
+      , span [ class "icon-bar NavBarIconBar" ] []
+      , span [ class "icon-bar NavBarIconBar" ] []
+      , span [ class "icon-bar NavBarIconBar" ] []
       ]
     , a [ class "navbar-brand", href "../../dist/html/index.html" ] [ text "BJW" ]
     ]
@@ -100,7 +93,7 @@ tab currentName currentLinks name link =
 navBarSpace : Html
 navBarSpace = 
   div 
-    [ Style.navBarSpace ]
+    [ class "NavBarSpace" ]
     []
 
 -- Currently Unused

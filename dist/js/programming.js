@@ -11840,8 +11840,7 @@ Elm.NavBar.make = function (_elm) {
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style = Elm.Style.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var outsideLinks = A2($Html.li,
    _L.fromArray([$Html$Attributes.$class("dropdown")]),
    _L.fromArray([A2($Html.a,
@@ -11864,7 +11863,7 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
                              _L.fromArray([$Html.text("GitHub")]))]))]))]));
    var navBarSpace = A2($Html.div,
-   _L.fromArray([$Style.navBarSpace]),
+   _L.fromArray([$Html$Attributes.$class("NavBarSpace")]),
    _L.fromArray([]));
    var tab = F4(function (currentName,
    currentLinks,
@@ -11932,13 +11931,13 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([$Html$Attributes.$class("sr-only")]),
                              _L.fromArray([$Html.text("Toggle navigation")]))
                              ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([$Html$Attributes.$class("icon-bar NavBarIconBar")]),
                              _L.fromArray([]))
                              ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([$Html$Attributes.$class("icon-bar NavBarIconBar")]),
                              _L.fromArray([]))
                              ,A2($Html.span,
-                             _L.fromArray([$Html$Attributes.$class("icon-bar")]),
+                             _L.fromArray([$Html$Attributes.$class("icon-bar NavBarIconBar")]),
                              _L.fromArray([]))]))
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
@@ -11947,11 +11946,10 @@ Elm.NavBar.make = function (_elm) {
    var navBar = F2(function (currentName,
    currentLinks) {
       return A2($Html.nav,
-      _L.fromArray([$Html$Attributes.$class("navbar navbar-fixed-top")
-                   ,$Style.navBarMain
+      _L.fromArray([$Html$Attributes.$class("navbar navbar-fixed-top NavBar")
                    ,$Html$Attributes.id("top")]),
       _L.fromArray([A2($Html.div,
-                   _L.fromArray([$Style.navBarTop]),
+                   _L.fromArray([$Html$Attributes.$class("NavBarTop")]),
                    _L.fromArray([]))
                    ,A2($Html.div,
                    _L.fromArray([$Html$Attributes.$class("container")]),
@@ -11959,12 +11957,6 @@ Elm.NavBar.make = function (_elm) {
                                 ,A2(navbarExpandComponent,
                                 currentName,
                                 currentLinks)]))]));
-   });
-   _op["=>"] = F2(function (v0,
-   v1) {
-      return {ctor: "_Tuple2"
-             ,_0: v0
-             ,_1: v1};
    });
    _elm.NavBar.values = {_op: _op
                         ,navBar: navBar
@@ -11975,6 +11967,43 @@ Elm.NavBar.make = function (_elm) {
                         ,navBarSpace: navBarSpace
                         ,outsideLinks: outsideLinks};
    return _elm.NavBar.values;
+};
+Elm.PrintStyle = Elm.PrintStyle || {};
+Elm.PrintStyle.make = function (_elm) {
+   "use strict";
+   _elm.PrintStyle = _elm.PrintStyle || {};
+   if (_elm.PrintStyle.values)
+   return _elm.PrintStyle.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "PrintStyle",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Json$Encode = Elm.Json.Encode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var stylesheet = function (exports) {
+      return A2($Html.div,
+      _L.fromArray([A2($Html$Attributes.property,
+      "innerHTML",
+      $Json$Encode.string(A2($Basics._op["++"],
+      "<style>",
+      A2($Basics._op["++"],
+      A2($Stylesheets.prettyPrint,
+      4,
+      exports),
+      "</style>"))))]),
+      _L.fromArray([]));
+   };
+   _elm.PrintStyle.values = {_op: _op
+                            ,stylesheet: stylesheet};
+   return _elm.PrintStyle.values;
 };
 Elm.Programming = Elm.Programming || {};
 Elm.Programming.make = function (_elm) {
@@ -11993,37 +12022,37 @@ Elm.Programming.make = function (_elm) {
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
+   $PrintStyle = Elm.PrintStyle.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style = Elm.Style.make(_elm);
+   $SharedStyles = Elm.SharedStyles.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
    var richardFeldmanQuote = "\n  One of my coworkers had a great term for this. She said that learning a particular framework is horizontal growth. You get more familiar with that framework but it doesn\'t enrich your understanding of programming, give you more techniques that you can use in other places. But learning a different paradigm like functional programming is vertical growth. Because not only does it teach you how to use this new particular tool but it also gives you new tools that you can use then bring to other projects with different frameworks, different languages, et cetera. And it\'s definitely been true in my experience.\n  ";
    var programmingHeader = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-mid-12")
-                ,$Style.writingHeader]),
+   _L.fromArray([$Html$Attributes.$class("col-mid-12 WritingHeader")]),
    _L.fromArray([A2($Html.h1,
-                _L.fromArray([$Style.writingTitle]),
+                _L.fromArray([$Html$Attributes.$class("WritingTitle")]),
                 _L.fromArray([$Html.text("The Laboratory")]))
                 ,A2($Html.p,
                 _L.fromArray([$Html$Attributes.$class("lead")
-                             ,$Style.writingDescription]),
-                _L.fromArray([$Html.text("Where my programming experience is here for viewing.")]))]));
+                             ,$Html$Attributes.$class("WritingDescription")]),
+                _L.fromArray([$Html.text("Where my Programming experience is here for viewing.")]))]));
    var programming = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container")
-                ,$Style.programmingContainer]),
+   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
    _L.fromArray([A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("row")]),
    _L.fromArray([programmingHeader]))]));
    var links = _L.fromArray([]);
    var view = function (model) {
       return A2($Html.div,
-      _L.fromArray([$Style.body]),
-      _L.fromArray([A2($NavBar.navBar,
+      _L.fromArray([]),
+      _L.fromArray([$PrintStyle.stylesheet($SharedStyles.exports)
+                   ,A2($NavBar.navBar,
                    model.currentPage,
                    links)
                    ,programming]));
    };
    var model = {_: {}
-               ,currentPage: "Programming"};
+               ,currentPage: "Programming | BJW"};
    var Model = function (a) {
       return {_: {}
              ,currentPage: a};
@@ -12289,6 +12318,338 @@ Elm.Result.make = function (_elm) {
                         ,Err: Err};
    return _elm.Result.values;
 };
+Elm.SharedStyles = Elm.SharedStyles || {};
+Elm.SharedStyles.make = function (_elm) {
+   "use strict";
+   _elm.SharedStyles = _elm.SharedStyles || {};
+   if (_elm.SharedStyles.values)
+   return _elm.SharedStyles.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "SharedStyles",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var borderBottomColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-bottom-color",
+      $Stylesheets.colorToString,
+      value);
+   };
+   var textAlign = function (value) {
+      return A3($Stylesheets.attr1,
+      "text-align",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var fontFamily = function (value) {
+      return A3($Stylesheets.attr1,
+      "font-family",
+      $Basics.toString,
+      value);
+   };
+   var fontWeight = function (value) {
+      return A3($Stylesheets.attr1,
+      "font-weight",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var fontSize = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "font-size",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var sizeTitleDescText = 20;
+   var sizeTitleText = 60;
+   var widthBoarder = 15;
+   var heightHpBrowser = 639;
+   var heightHpScreen = 768;
+   var heightAsusBrowser = 951;
+   var heightAsusScreen = 1080;
+   var heightNavBarTop = 5;
+   var heightNavBar = 50 + heightNavBarTop;
+   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
+   var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
+   var colorSubHeading = $Stylesheets.hex("999");
+   var colorHeading = $Stylesheets.hex("333");
+   var colorStandardText = colorHeading;
+   var colorNavBarBackground = $Stylesheets.hex("FFF");
+   var colorBodyBackground = $Stylesheets.hex("DDD");
+   var colorHighlight = $Stylesheets.hex("2B74C6");
+   var ProgrammingHeader = {ctor: "ProgrammingHeader"};
+   var ProgrammingContainer = {ctor: "ProgrammingContainer"};
+   var TeachingAreaHeader = {ctor: "TeachingAreaHeader"};
+   var TeachingSubjectsHeader = {ctor: "TeachingSubjectsHeader"};
+   var TeachingCallToAction = {ctor: "TeachingCallToAction"};
+   var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
+   var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
+   var TeachingTitleDesc = {ctor: "TeachingTitleDesc"};
+   var TeachingTitle = {ctor: "TeachingTitle"};
+   var TeachingInnerHeader = {ctor: "TeachingInnerHeader"};
+   var TeachingHeader = {ctor: "TeachingHeader"};
+   var WritingDescription = {ctor: "WritingDescription"};
+   var WritingTitle = {ctor: "WritingTitle"};
+   var WritingHeader = {ctor: "WritingHeader"};
+   var WritingContainer = {ctor: "WritingContainer"};
+   var HomeContainer = {ctor: "HomeContainer"};
+   var BootstrapAccordion = {ctor: "BootstrapAccordion"};
+   var NavBarIconBar = {ctor: "NavBarIconBar"};
+   var NavBarSpace = {ctor: "NavBarSpace"};
+   var NavBarTop = {ctor: "NavBarTop"};
+   var NavBar = {ctor: "NavBar"};
+   var exports = A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|%|"],
+   $Stylesheets.css,
+   $Stylesheets.body),
+   A2($Stylesheets.marginTop,
+   0,
+   $Stylesheets.px)),
+   $Stylesheets.color(colorHeading)),
+   $Stylesheets.backgroundColor(colorBodyBackground)),
+   fontFamily("Verdana, \'Bitstream Vera Sans\', sans-serif")),
+   NavBar),
+   $Stylesheets.backgroundColor(colorNavBarBackground)),
+   $Stylesheets.color(colorHighlight)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   NavBarTop),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   A2($Stylesheets.height,
+   heightNavBarTop,
+   $Stylesheets.px)),
+   NavBarSpace),
+   A2($Stylesheets.height,
+   heightNavBar,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   NavBarIconBar),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   HomeContainer),
+   A2($Stylesheets.paddingTop,
+   30,
+   $Stylesheets.px)),
+   A2($Stylesheets.height,
+   1000,
+   $Stylesheets.px)),
+   WritingContainer),
+   A2($Stylesheets.paddingTop,
+   30,
+   $Stylesheets.px)),
+   WritingHeader),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   WritingTitle),
+   A2($Stylesheets.marginTop,
+   50,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   A2(fontSize,
+   60,
+   $Stylesheets.px)),
+   fontWeight("normal")),
+   WritingDescription),
+   A2(fontSize,
+   20,
+   $Stylesheets.px)),
+   $Stylesheets.color(colorSubHeading)),
+   TeachingHeader),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   widthBoarder,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   widthBoarder,
+   $Stylesheets.px)),
+   TeachingInnerHeader),
+   A2($Stylesheets.paddingTop,
+   spaceInnerHeader,
+   $Stylesheets.px)),
+   A2($Stylesheets.height,
+   heightTeachingHeader,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   textAlign("center")),
+   TeachingTitle),
+   A2($Stylesheets.marginTop,
+   0,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   A2(fontSize,
+   sizeTitleText,
+   $Stylesheets.px)),
+   fontWeight("normal")),
+   TeachingTitleDesc),
+   A2(fontSize,
+   sizeTitleDescText,
+   $Stylesheets.px)),
+   $Stylesheets.color(colorSubHeading)),
+   TeachingBioAndCallToAction),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   20,
+   $Stylesheets.px)),
+   TeachingImgTakafumi),
+   A2($Stylesheets.marginTop,
+   40,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   40,
+   $Stylesheets.px)),
+   TeachingCallToAction),
+   A2($Stylesheets.marginTop,
+   20,
+   $Stylesheets.px)),
+   TeachingSubjectsHeader),
+   borderBottomColor(colorHighlight)),
+   TeachingAreaHeader),
+   A2($Stylesheets.paddingBottom,
+   100,
+   $Stylesheets.px)),
+   ProgrammingContainer),
+   A2($Stylesheets.paddingTop,
+   30,
+   $Stylesheets.px)),
+   A2($Stylesheets.height,
+   1000,
+   $Stylesheets.px)),
+   BootstrapAccordion),
+   $Stylesheets.color(colorStandardText)),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px));
+   _elm.SharedStyles.values = {_op: _op
+                              ,NavBar: NavBar
+                              ,NavBarTop: NavBarTop
+                              ,NavBarSpace: NavBarSpace
+                              ,NavBarIconBar: NavBarIconBar
+                              ,BootstrapAccordion: BootstrapAccordion
+                              ,HomeContainer: HomeContainer
+                              ,WritingContainer: WritingContainer
+                              ,WritingHeader: WritingHeader
+                              ,WritingTitle: WritingTitle
+                              ,WritingDescription: WritingDescription
+                              ,TeachingHeader: TeachingHeader
+                              ,TeachingInnerHeader: TeachingInnerHeader
+                              ,TeachingTitle: TeachingTitle
+                              ,TeachingTitleDesc: TeachingTitleDesc
+                              ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
+                              ,TeachingImgTakafumi: TeachingImgTakafumi
+                              ,TeachingCallToAction: TeachingCallToAction
+                              ,TeachingSubjectsHeader: TeachingSubjectsHeader
+                              ,TeachingAreaHeader: TeachingAreaHeader
+                              ,ProgrammingContainer: ProgrammingContainer
+                              ,ProgrammingHeader: ProgrammingHeader
+                              ,colorHighlight: colorHighlight
+                              ,colorBodyBackground: colorBodyBackground
+                              ,colorNavBarBackground: colorNavBarBackground
+                              ,colorHeading: colorHeading
+                              ,colorSubHeading: colorSubHeading
+                              ,colorStandardText: colorStandardText
+                              ,heightNavBarTop: heightNavBarTop
+                              ,heightNavBar: heightNavBar
+                              ,heightAsusScreen: heightAsusScreen
+                              ,heightAsusBrowser: heightAsusBrowser
+                              ,heightHpScreen: heightHpScreen
+                              ,heightHpBrowser: heightHpBrowser
+                              ,widthBoarder: widthBoarder
+                              ,heightTeachingHeader: heightTeachingHeader
+                              ,sizeTitleText: sizeTitleText
+                              ,sizeTitleDescText: sizeTitleDescText
+                              ,spaceInnerHeader: spaceInnerHeader
+                              ,exports: exports
+                              ,fontSize: fontSize
+                              ,fontWeight: fontWeight
+                              ,fontFamily: fontFamily
+                              ,textAlign: textAlign
+                              ,borderBottomColor: borderBottomColor};
+   return _elm.SharedStyles.values;
+};
 Elm.Signal = Elm.Signal || {};
 Elm.Signal.make = function (_elm) {
    "use strict";
@@ -12534,232 +12895,931 @@ Elm.String.make = function (_elm) {
                         ,all: all};
    return _elm.String.values;
 };
-Elm.Style = Elm.Style || {};
-Elm.Style.make = function (_elm) {
+Elm.Stylesheets = Elm.Stylesheets || {};
+Elm.Stylesheets.make = function (_elm) {
    "use strict";
-   _elm.Style = _elm.Style || {};
-   if (_elm.Style.values)
-   return _elm.Style.values;
+   _elm.Stylesheets = _elm.Stylesheets || {};
+   if (_elm.Stylesheets.values)
+   return _elm.Stylesheets.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "Style",
+   $moduleName = "Stylesheets",
    $Basics = Elm.Basics.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var teachingContainer = $Html$Attributes.style(_L.fromArray([]));
-   var toPx = function (x) {
-      return A2($Basics._op["++"],
-      $Basics.toString(x),
-      "px");
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var splitStartLast = function (list) {
+      return function () {
+         switch (list.ctor)
+         {case "::":
+            switch (list._1.ctor)
+              {case "[]":
+                 return {ctor: "_Tuple2"
+                        ,_0: _L.fromArray([])
+                        ,_1: $Maybe.Just(list._0)};}
+              return function () {
+                 var $ = splitStartLast(list._1),
+                 start = $._0,
+                 last = $._1;
+                 return {ctor: "_Tuple2"
+                        ,_0: A2($List._op["::"],
+                        list._0,
+                        start)
+                        ,_1: last};
+              }();
+            case "[]":
+            return {ctor: "_Tuple2"
+                   ,_0: _L.fromArray([])
+                   ,_1: $Maybe.Nothing};}
+         _U.badCase($moduleName,
+         "between lines 583 and 595");
+      }();
    };
-   var sizeTitleDescText = 20;
-   var sizeTitleText = 60;
-   var widthBoarder = 15;
-   var heightHpBrowser = 639;
-   var heightHpScreen = 768;
-   var heightAsusBrowser = 951;
-   var heightAsusScreen = 1080;
-   var heightNavBarTop = 5;
-   var heightNavBar = 50 + heightNavBarTop;
-   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
-   var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
-   var subcolorHeading = "#999";
-   var colorHeading = "#333";
-   var colorStandardText = colorHeading;
-   var colorNavBarBackground = "#FFF";
-   var colorBodyBackground = "#DDD";
-   var colorHighlight = "#2B74C6";
-   _op["=>"] = F2(function (v0,
-   v1) {
-      return {ctor: "_Tuple2"
-             ,_0: v0
-             ,_1: v1};
+   var Attribute = function (a) {
+      return {ctor: "Attribute"
+             ,_0: a};
+   };
+   var Style = F3(function (a,
+   b,
+   c) {
+      return {ctor: "Style"
+             ,_0: a
+             ,_1: b
+             ,_2: c};
    });
-   var body = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                  "margin-top",
-                                                  "0")
-                                                  ,A2(_op["=>"],
-                                                  "color",
-                                                  colorHeading)
-                                                  ,A2(_op["=>"],
-                                                  "background-color",
-                                                  colorBodyBackground)
-                                                  ,A2(_op["=>"],
-                                                  "font-family",
-                                                  "Verdana, \'Bitstream Vera Sans\', sans-serif")]));
-   var navBarTop = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                       "background-color",
-                                                       colorHighlight)
-                                                       ,A2(_op["=>"],
-                                                       "height",
-                                                       toPx(heightNavBarTop))]));
-   var navBarMain = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                        "background-color",
-                                                        colorNavBarBackground)
-                                                        ,A2(_op["=>"],
-                                                        "color",
-                                                        colorHighlight)
-                                                        ,A2(_op["=>"],
-                                                        "margin-bottom",
-                                                        "0")]));
-   var navBarSpace = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                         "height",
-                                                         toPx(heightNavBar))
-                                                         ,A2(_op["=>"],
-                                                         "background-color",
-                                                         colorHighlight)]));
-   var homeContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                           "padding-top",
-                                                           "30px")
-                                                           ,A2(_op["=>"],
-                                                           "height",
-                                                           "1000px")]));
-   var writingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   var css = A3(Style,
+   "",
+   _L.fromArray([]),
+   _L.fromArray([]));
+   var styleWithPrefix = F3(function (prefix,
+   _v3,
+   childSelector) {
+      return function () {
+         switch (_v3.ctor)
+         {case "Style": return A2(Style,
+              _v3._0,
+              _v3._1)(A2($Basics._op["++"],
+              _v3._2,
+              _L.fromArray([A3(Style,
+              A2($Basics._op["++"],
+              prefix,
+              $Basics.toString(childSelector)),
+              _L.fromArray([]),
+              _L.fromArray([]))])));}
+         _U.badCase($moduleName,
+         "between lines 479 and 480");
+      }();
+   });
+   _op["|@|"] = styleWithPrefix("@");
+   _op["|::|"] = styleWithPrefix("::");
+   _op["|.|"] = styleWithPrefix(".");
+   _op["|#|"] = styleWithPrefix("#");
+   _op["|>.|"] = styleWithPrefix(">.");
+   var addAttr = F2(function (attr,
+   _v8) {
+      return function () {
+         switch (_v8.ctor)
+         {case "Style": return A3(Style,
+              _v8._0,
+              A2($Basics._op["++"],
+              _v8._1,
+              _L.fromArray([attr])),
+              _v8._2);}
+         _U.badCase($moduleName,
+         "on line 565, column 5 to 48");
+      }();
+   });
+   var transformActiveChild = F2(function (transform,
+   _v13) {
+      return function () {
+         switch (_v13.ctor)
+         {case "Style":
+            return function () {
+                 var _v18 = splitStartLast(_v13._2);
+                 switch (_v18.ctor)
+                 {case "_Tuple2":
+                    switch (_v18._1.ctor)
+                      {case "Just": return A3(Style,
+                           _v13._0,
+                           _v13._1,
+                           A2($Basics._op["++"],
+                           _v18._0,
+                           _L.fromArray([transform(_v18._1._0)])));
+                         case "Nothing":
+                         return transform(_v13);}
+                      break;}
+                 _U.badCase($moduleName,
+                 "between lines 570 and 578");
+              }();}
+         _U.badCase($moduleName,
+         "between lines 570 and 578");
+      }();
+   });
+   _op["|!|"] = F2(function (style,
+   _v22) {
+      return function () {
+         switch (_v22.ctor)
+         {case "Attribute":
+            return A2(transformActiveChild,
+              addAttr(Attribute(A2($Basics._op["++"],
+              _v22._0,
+              " !important"))),
+              style);}
+         _U.badCase($moduleName,
+         "on line 555, column 5 to 83");
+      }();
+   });
+   _op["|-|"] = F2(function (style,
+   attr) {
+      return A2(transformActiveChild,
+      addAttr(attr),
+      style);
+   });
+   var media = function (value) {
+      return A2($Basics._op["++"],
+      "media ",
+      $Basics.toString(value));
+   };
+   var attr5 = function (name) {
+      return function (translateA) {
+         return function (translateB) {
+            return function (translateC) {
+               return function (translateD) {
+                  return function (translateE) {
+                     return function (valueA) {
+                        return function (valueB) {
+                           return function (valueC) {
+                              return function (valueD) {
+                                 return function (valueE) {
+                                    return Attribute(A2($Basics._op["++"],
+                                    name,
+                                    A2($Basics._op["++"],
+                                    ": ",
+                                    A2($Basics._op["++"],
+                                    translateA(valueA),
+                                    A2($Basics._op["++"],
+                                    translateB(valueB),
+                                    A2($Basics._op["++"],
+                                    translateC(valueC),
+                                    A2($Basics._op["++"],
+                                    translateD(valueD),
+                                    translateE(valueE))))))));
+                                 };
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   var attr4 = F9(function (name,
+   translateA,
+   translateB,
+   translateC,
+   translateD,
+   valueA,
+   valueB,
+   valueC,
+   valueD) {
+      return Attribute(A2($Basics._op["++"],
+      name,
+      A2($Basics._op["++"],
+      ": ",
+      A2($Basics._op["++"],
+      translateA(valueA),
+      A2($Basics._op["++"],
+      translateB(valueB),
+      A2($Basics._op["++"],
+      translateC(valueC),
+      translateD(valueD)))))));
+   });
+   var attr3 = F7(function (name,
+   translateA,
+   translateB,
+   translateC,
+   valueA,
+   valueB,
+   valueC) {
+      return Attribute(A2($Basics._op["++"],
+      name,
+      A2($Basics._op["++"],
+      ": ",
+      A2($Basics._op["++"],
+      translateA(valueA),
+      A2($Basics._op["++"],
+      translateB(valueB),
+      translateC(valueC))))));
+   });
+   var attr2 = F5(function (name,
+   translateA,
+   translateB,
+   valueA,
+   valueB) {
+      return Attribute(A2($Basics._op["++"],
+      name,
+      A2($Basics._op["++"],
+      ": ",
+      A2($Basics._op["++"],
+      translateA(valueA),
+      translateB(valueB)))));
+   });
+   var attr1 = F3(function (name,
+   translate,
+   value) {
+      return Attribute(A2($Basics._op["++"],
+      name,
+      A2($Basics._op["++"],
+      ": ",
+      translate(value))));
+   });
+   var opacity = A2(attr1,
+   "opacity",
+   $Basics.toString);
+   var NoTextShadow = {ctor: "NoTextShadow"};
+   var OpacityStyle = function (a) {
+      return {ctor: "OpacityStyle"
+             ,_0: a};
+   };
+   var transparent = OpacityStyle("transparent");
+   var OutlineStyle = function (a) {
+      return {ctor: "OutlineStyle"
+             ,_0: a};
+   };
+   var solid = OutlineStyle("solid");
+   var ExplicitOutline = F4(function (a,
+   b,
+   c,
+   d) {
+      return {ctor: "ExplicitOutline"
+             ,_0: a
+             ,_1: b
+             ,_2: c
+             ,_3: d};
+   });
+   var ExplicitVerticalAlign = function (a) {
+      return {ctor: "ExplicitVerticalAlign"
+             ,_0: a};
+   };
+   var ExplicitColor = function (a) {
+      return {ctor: "ExplicitColor"
+             ,_0: a};
+   };
+   var ExplicitWhiteSpace = function (a) {
+      return {ctor: "ExplicitWhiteSpace"
+             ,_0: a};
+   };
+   var ExplicitDisplay = function (a) {
+      return {ctor: "ExplicitDisplay"
+             ,_0: a};
+   };
+   var ExplicitOverflow = function (a) {
+      return {ctor: "ExplicitOverflow"
+             ,_0: a};
+   };
+   var ExplicitBoxSizing = function (a) {
+      return {ctor: "ExplicitBoxSizing"
+             ,_0: a};
+   };
+   var ExplicitUnits = function (a) {
+      return {ctor: "ExplicitUnits"
+             ,_0: a};
+   };
+   var NotNone = function (a) {
+      return {ctor: "NotNone"
+             ,_0: a};
+   };
+   var None = {ctor: "None"};
+   var NotAuto = function (a) {
+      return {ctor: "NotAuto"
+             ,_0: a};
+   };
+   var Auto = {ctor: "Auto"};
+   var NotInherit = function (a) {
+      return {ctor: "NotInherit"
+             ,_0: a};
+   };
+   var hex = function (str) {
+      return NotInherit(NotAuto(ExplicitColor(A2($Basics._op["++"],
+      "#",
+      str))));
+   };
+   var pct = NotInherit(ExplicitUnits("%"));
+   var em = NotInherit(ExplicitUnits("em"));
+   var px = NotInherit(ExplicitUnits("px"));
+   var borderBox = NotInherit(ExplicitBoxSizing("border-box"));
+   var visible = NotInherit(NotNone(ExplicitDisplay("visible")));
+   var block = NotInherit(NotNone(ExplicitDisplay("block")));
+   var inlineBlock = NotInherit(NotNone(ExplicitDisplay("inline-block")));
+   var inline = NotInherit(NotNone(ExplicitDisplay("inline")));
+   var none = NotInherit(None);
+   var auto = NotInherit(Auto);
+   var noWrap = NotInherit(NotAuto(ExplicitWhiteSpace("no-wrap")));
+   var top = NotInherit(ExplicitVerticalAlign("top"));
+   var middle = NotInherit(ExplicitVerticalAlign("middle"));
+   var bottom = NotInherit(ExplicitVerticalAlign("bottom"));
+   var Inherit = {ctor: "Inherit"};
+   var inherit = Inherit;
+   var Tag = function (a) {
+      return {ctor: "Tag",_0: a};
+   };
+   var opacityStyleToString = function (_v25) {
+      return function () {
+         switch (_v25.ctor)
+         {case "OpacityStyle":
+            return _v25._0;}
+         _U.badCase($moduleName,
+         "on line 197, column 43 to 46");
+      }();
+   };
+   var outlineStyleToString = function (_v28) {
+      return function () {
+         switch (_v28.ctor)
+         {case "OutlineStyle":
+            return _v28._0;}
+         _U.badCase($moduleName,
+         "on line 193, column 43 to 46");
+      }();
+   };
+   var explicitTextShadowToString = function (value) {
+      return function () {
+         switch (value.ctor)
+         {case "NoTextShadow":
+            return "TODO";}
+         _U.badCase($moduleName,
+         "between lines 188 and 190");
+      }();
+   };
+   var numberToString = function (num) {
+      return $Basics.toString(num + 0);
+   };
+   var rgb = F3(function (r,g,b) {
+      return NotInherit(NotAuto(ExplicitColor(A2($Basics._op["++"],
+      "rgb(",
+      A2($Basics._op["++"],
+      numberToString(r),
+      A2($Basics._op["++"],
+      ", ",
+      A2($Basics._op["++"],
+      numberToString(g),
+      A2($Basics._op["++"],
+      ", ",
+      A2($Basics._op["++"],
+      numberToString(b),
+      ")")))))))));
+   });
+   var rgba = F4(function (r,
+   g,
+   b,
+   a) {
+      return NotInherit(NotAuto(ExplicitColor(A2($Basics._op["++"],
+      "rgba(",
+      A2($Basics._op["++"],
+      numberToString(r),
+      A2($Basics._op["++"],
+      ", ",
+      A2($Basics._op["++"],
+      numberToString(g),
+      A2($Basics._op["++"],
+      ", ",
+      A2($Basics._op["++"],
+      numberToString(b),
+      A2($Basics._op["++"],
+      ", ",
+      A2($Basics._op["++"],
+      numberToString(a),
+      ")")))))))))));
+   });
+   var noneToString = F2(function (translate,
+   value) {
+      return function () {
+         switch (value.ctor)
+         {case "None": return "none";
+            case "NotNone":
+            return translate(value._0);}
+         _U.badCase($moduleName,
+         "between lines 121 and 126");
+      }();
+   });
+   var autoToString = F2(function (translate,
+   value) {
+      return function () {
+         switch (value.ctor)
+         {case "Auto": return "auto";
+            case "NotAuto":
+            return translate(value._0);}
+         _U.badCase($moduleName,
+         "between lines 112 and 117");
+      }();
+   });
+   var inheritToString = F2(function (translate,
+   value) {
+      return function () {
+         switch (value.ctor)
+         {case "Inherit":
+            return "inherit";
+            case "NotInherit":
+            return translate(value._0);}
+         _U.badCase($moduleName,
+         "between lines 102 and 107");
+      }();
+   });
+   var unitsToString = inheritToString(function (_v38) {
+      return function () {
+         switch (_v38.ctor)
+         {case "ExplicitUnits":
+            return _v38._0;}
+         _U.badCase($moduleName,
+         "on line 131, column 30 to 33");
+      }();
+   });
+   var width = A3(attr2,
+   "width",
+   numberToString,
+   unitsToString);
+   var minWidth = A3(attr2,
+   "min-width",
+   numberToString,
+   unitsToString);
+   var height = A3(attr2,
+   "height",
+   numberToString,
+   unitsToString);
+   var minHeight = A3(attr2,
+   "min-height",
+   numberToString,
+   unitsToString);
+   var padding = A3(attr2,
+   "padding",
+   numberToString,
+   unitsToString);
+   var paddingTop = A3(attr2,
    "padding-top",
-   "30px")]));
-   var writingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "padding-top",
-   "20px")]));
-   var writingTitle = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                          "margin-top",
-                                                          "30px")
-                                                          ,A2(_op["=>"],
-                                                          "margin-bottom",
-                                                          "0px")
-                                                          ,A2(_op["=>"],
-                                                          "font-size",
-                                                          "60px")
-                                                          ,A2(_op["=>"],
-                                                          "font-weight",
-                                                          "normal")]));
-   var writingDescription = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                "font-size",
-                                                                "20px")
-                                                                ,A2(_op["=>"],
-                                                                "color",
-                                                                subcolorHeading)]));
-   var teachingHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                            "background-color",
-                                                            colorHighlight)
-                                                            ,A2(_op["=>"],
-                                                            "padding-top",
-                                                            toPx(widthBoarder))
-                                                            ,A2(_op["=>"],
-                                                            "padding-bottom",
-                                                            toPx(widthBoarder))]));
-   var teachingInnerHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                 "padding-top",
-                                                                 toPx(spaceInnerHeader))
-                                                                 ,A2(_op["=>"],
-                                                                 "height",
-                                                                 toPx(heightTeachingHeader))
-                                                                 ,A2(_op["=>"],
-                                                                 "background-color",
-                                                                 colorHighlight)
-                                                                 ,A2(_op["=>"],
-                                                                 "text-align",
-                                                                 "center")]));
-   var teachingTitle = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                           "margin-top",
-                                                           "0")
-                                                           ,A2(_op["=>"],
-                                                           "margin-bottom",
-                                                           "0")
-                                                           ,A2(_op["=>"],
-                                                           "font-size",
-                                                           toPx(sizeTitleText))
-                                                           ,A2(_op["=>"],
-                                                           "font-weight",
-                                                           "normal")]));
-   var teachingTitleDesc = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                               "font-size",
-                                                               toPx(sizeTitleDescText))
-                                                               ,A2(_op["=>"],
-                                                               "color",
-                                                               subcolorHeading)]));
-   var teachingBioAndCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                        "padding-top",
-                                                                        "20px")
-                                                                        ,A2(_op["=>"],
-                                                                        "padding-bottom",
-                                                                        "20px")]));
-   var teachingImgTakafumi = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                 "margin-top",
-                                                                 "40px")
-                                                                 ,A2(_op["=>"],
-                                                                 "margin-bottom",
-                                                                 "40px")]));
-   var teachingCallToAction = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "margin-top",
-   "20px")]));
-   var teachingSubjectsHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "border-bottom-color",
-   colorHighlight)]));
-   var teachingAreaHeader = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-   "border-bottom-color",
-   colorHighlight)]));
-   var teachingImgArea = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
+   numberToString,
+   unitsToString);
+   var paddingBottom = A3(attr2,
    "padding-bottom",
-   "100px")]));
-   var programmingContainer = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                  "padding-top",
-                                                                  "30px")
-                                                                  ,A2(_op["=>"],
-                                                                  "height",
-                                                                  "1000px")]));
-   var bootstrapAccordion = $Html$Attributes.style(_L.fromArray([A2(_op["=>"],
-                                                                "color",
-                                                                colorStandardText)
-                                                                ,A2(_op["=>"],
-                                                                "padding-top",
-                                                                "20px")]));
-   _elm.Style.values = {_op: _op
-                       ,colorHighlight: colorHighlight
-                       ,colorBodyBackground: colorBodyBackground
-                       ,colorNavBarBackground: colorNavBarBackground
-                       ,colorHeading: colorHeading
-                       ,subcolorHeading: subcolorHeading
-                       ,colorStandardText: colorStandardText
-                       ,heightNavBarTop: heightNavBarTop
-                       ,heightNavBar: heightNavBar
-                       ,heightAsusScreen: heightAsusScreen
-                       ,heightAsusBrowser: heightAsusBrowser
-                       ,heightHpScreen: heightHpScreen
-                       ,heightHpBrowser: heightHpBrowser
-                       ,widthBoarder: widthBoarder
-                       ,heightTeachingHeader: heightTeachingHeader
-                       ,sizeTitleText: sizeTitleText
-                       ,sizeTitleDescText: sizeTitleDescText
-                       ,spaceInnerHeader: spaceInnerHeader
-                       ,toPx: toPx
-                       ,body: body
-                       ,navBarTop: navBarTop
-                       ,navBarMain: navBarMain
-                       ,navBarSpace: navBarSpace
-                       ,homeContainer: homeContainer
-                       ,writingContainer: writingContainer
-                       ,writingHeader: writingHeader
-                       ,writingTitle: writingTitle
-                       ,writingDescription: writingDescription
-                       ,teachingHeader: teachingHeader
-                       ,teachingInnerHeader: teachingInnerHeader
-                       ,teachingTitle: teachingTitle
-                       ,teachingTitleDesc: teachingTitleDesc
-                       ,teachingContainer: teachingContainer
-                       ,teachingBioAndCallToAction: teachingBioAndCallToAction
-                       ,teachingImgTakafumi: teachingImgTakafumi
-                       ,teachingCallToAction: teachingCallToAction
-                       ,teachingSubjectsHeader: teachingSubjectsHeader
-                       ,teachingAreaHeader: teachingAreaHeader
-                       ,teachingImgArea: teachingImgArea
-                       ,programmingContainer: programmingContainer
-                       ,bootstrapAccordion: bootstrapAccordion};
-   return _elm.Style.values;
+   numberToString,
+   unitsToString);
+   var paddingRight = A3(attr2,
+   "padding-right",
+   numberToString,
+   unitsToString);
+   var paddingLeft = A3(attr2,
+   "padding-left",
+   numberToString,
+   unitsToString);
+   var margin = A3(attr2,
+   "margin",
+   numberToString,
+   unitsToString);
+   var marginTop = A3(attr2,
+   "margin-top",
+   numberToString,
+   unitsToString);
+   var marginBottom = A3(attr2,
+   "margin-bottom",
+   numberToString,
+   unitsToString);
+   var marginRight = A3(attr2,
+   "margin-right",
+   numberToString,
+   unitsToString);
+   var marginLeft = A3(attr2,
+   "margin-left",
+   numberToString,
+   unitsToString);
+   var outline = A5(attr4,
+   "outline",
+   $Basics.toString,
+   unitsToString,
+   function (str) {
+      return A2($Basics._op["++"],
+      " ",
+      A2($Basics._op["++"],
+      outlineStyleToString(str),
+      " "));
+   },
+   opacityStyleToString);
+   var boxSizingToString = inheritToString(function (_v41) {
+      return function () {
+         switch (_v41.ctor)
+         {case "ExplicitBoxSizing":
+            return _v41._0;}
+         _U.badCase($moduleName,
+         "on line 137, column 34 to 37");
+      }();
+   });
+   var boxSizing = A2(attr1,
+   "box-sizing",
+   boxSizingToString);
+   var overflowToString = inheritToString(autoToString(function (_v44) {
+      return function () {
+         switch (_v44.ctor)
+         {case "ExplicitOverflow":
+            return _v44._0;}
+         _U.badCase($moduleName,
+         "on line 143, column 33 to 36");
+      }();
+   }));
+   var overflowX = A2(attr1,
+   "overflow-x",
+   overflowToString);
+   var overflowY = A2(attr1,
+   "overflow-y",
+   overflowToString);
+   var displayToString = inheritToString(noneToString(function (_v47) {
+      return function () {
+         switch (_v47.ctor)
+         {case "ExplicitDisplay":
+            return _v47._0;}
+         _U.badCase($moduleName,
+         "on line 150, column 32 to 35");
+      }();
+   }));
+   var display = A2(attr1,
+   "display",
+   displayToString);
+   var verticalAlignToString = inheritToString(function (_v50) {
+      return function () {
+         switch (_v50.ctor)
+         {case "ExplicitVerticalAlign":
+            return _v50._0;}
+         _U.badCase($moduleName,
+         "on line 157, column 38 to 41");
+      }();
+   });
+   var verticalAlign = A2(attr1,
+   "vertical-align",
+   verticalAlignToString);
+   var whiteSpaceToString = inheritToString(autoToString(function (_v53) {
+      return function () {
+         switch (_v53.ctor)
+         {case "ExplicitWhiteSpace":
+            return _v53._0;}
+         _U.badCase($moduleName,
+         "on line 163, column 35 to 38");
+      }();
+   }));
+   var whiteSpace = A2(attr1,
+   "white-space",
+   whiteSpaceToString);
+   var colorToString = inheritToString(autoToString(function (_v56) {
+      return function () {
+         switch (_v56.ctor)
+         {case "ExplicitColor":
+            return _v56._0;}
+         _U.badCase($moduleName,
+         "on line 169, column 30 to 33");
+      }();
+   }));
+   var backgroundColor = A2(attr1,
+   "background-color",
+   colorToString);
+   var color = A2(attr1,
+   "color",
+   colorToString);
+   var textShadowToString = inheritToString(noneToString(explicitTextShadowToString));
+   var textShadow = A2(attr1,
+   "text-shadow",
+   textShadowToString);
+   var selection = "selection";
+   var print = "print";
+   var screen = "screen";
+   var tagToString = function (_v59) {
+      return function () {
+         switch (_v59.ctor)
+         {case "Tag": return _v59._0;}
+         _U.badCase($moduleName,
+         "on line 87, column 25 to 28");
+      }();
+   };
+   _op["|%|"] = F2(function (_v62,
+   tag) {
+      return function () {
+         switch (_v62.ctor)
+         {case "Style": return A2(Style,
+              _v62._0,
+              _v62._1)(A2($Basics._op["++"],
+              _v62._2,
+              _L.fromArray([A3(Style,
+              tagToString(tag),
+              _L.fromArray([]),
+              _L.fromArray([]))])));}
+         _U.badCase($moduleName,
+         "between lines 485 and 486");
+      }();
+   });
+   _op["|%|="] = F2(function (_v67,
+   tags) {
+      return function () {
+         switch (_v67.ctor)
+         {case "Style":
+            return function () {
+                 var childSelector = $String.join(", ")($List.map(tagToString)(tags));
+                 return A2(Style,
+                 _v67._0,
+                 _v67._1)(A2($Basics._op["++"],
+                 _v67._2,
+                 _L.fromArray([A3(Style,
+                 childSelector,
+                 _L.fromArray([]),
+                 _L.fromArray([]))])));
+              }();}
+         _U.badCase($moduleName,
+         "between lines 491 and 498");
+      }();
+   });
+   _op["|>%|"] = F2(function (_v72,
+   tag) {
+      return function () {
+         switch (_v72.ctor)
+         {case "Style":
+            return function () {
+                 var _v77 = splitStartLast(_v72._2);
+                 switch (_v77.ctor)
+                 {case "_Tuple2":
+                    switch (_v77._1.ctor)
+                      {case "Just":
+                         switch (_v77._1._0.ctor)
+                           {case "Style": return A2(Style,
+                                _v72._0,
+                                _v72._1)(A2($Basics._op["++"],
+                                _v72._2,
+                                _L.fromArray([A3(Style,
+                                A2($Basics._op["++"],
+                                _v77._1._0._0,
+                                A2($Basics._op["++"],
+                                " > ",
+                                tagToString(tag))),
+                                _L.fromArray([]),
+                                _L.fromArray([]))])));}
+                           break;
+                         case "Nothing": return A2(Style,
+                           _v72._0,
+                           _v72._1)(A2($Basics._op["++"],
+                           _v72._2,
+                           _L.fromArray([A3(Style,
+                           A2($Basics._op["++"],
+                           _v72._0,
+                           A2($Basics._op["++"],
+                           " > ",
+                           tagToString(tag))),
+                           _L.fromArray([]),
+                           _L.fromArray([]))])));}
+                      break;}
+                 _U.badCase($moduleName,
+                 "between lines 511 and 518");
+              }();}
+         _U.badCase($moduleName,
+         "between lines 511 and 518");
+      }();
+   });
+   _op["|>%|="] = F2(function (_v84,
+   tags) {
+      return function () {
+         switch (_v84.ctor)
+         {case "Style":
+            return function () {
+                 var selectorFromTag = function (tag) {
+                    return function () {
+                       var _v89 = splitStartLast(_v84._2);
+                       switch (_v89.ctor)
+                       {case "_Tuple2":
+                          switch (_v89._1.ctor)
+                            {case "Just":
+                               switch (_v89._1._0.ctor)
+                                 {case "Style":
+                                    return A2($Basics._op["++"],
+                                      _v89._1._0._0,
+                                      A2($Basics._op["++"],
+                                      " > ",
+                                      tagToString(tag)));}
+                                 break;
+                               case "Nothing":
+                               return A2($Basics._op["++"],
+                                 _v84._0,
+                                 A2($Basics._op["++"],
+                                 " > ",
+                                 tagToString(tag)));}
+                            break;}
+                       _U.badCase($moduleName,
+                       "between lines 525 and 532");
+                    }();
+                 };
+                 var childSelector = $String.join(", ")($List.map(selectorFromTag)(tags));
+                 return A2(Style,
+                 _v84._0,
+                 _v84._1)(A2($Basics._op["++"],
+                 _v84._2,
+                 _L.fromArray([A3(Style,
+                 childSelector,
+                 _L.fromArray([]),
+                 _L.fromArray([]))])));
+              }();}
+         _U.badCase($moduleName,
+         "between lines 523 and 538");
+      }();
+   });
+   var input = Tag("input");
+   var ol = Tag("ol");
+   var p = Tag("p");
+   var h4 = Tag("h4");
+   var h3 = Tag("h3");
+   var h2 = Tag("h2");
+   var h1 = Tag("h1");
+   var button = Tag("button");
+   var nowrap = Tag("nowrap");
+   var img = Tag("img");
+   var span = Tag("span");
+   var div = Tag("div");
+   var nav = Tag("nav");
+   var header = Tag("header");
+   var body = Tag("body");
+   var html = Tag("html");
+   var attributeToString = function (_v96) {
+      return function () {
+         switch (_v96.ctor)
+         {case "Attribute":
+            return A2($Basics._op["++"],
+              _v96._0,
+              ";\n");}
+         _U.badCase($moduleName,
+         "on line 65, column 5 to 17");
+      }();
+   };
+   var prettyPrintHelp = F3(function (indentLevel,
+   indentSpaces,
+   _v99) {
+      return function () {
+         switch (_v99.ctor)
+         {case "Style":
+            return _U.eq(indentLevel,
+              0) && $String.isEmpty(_v99._0) ? $String.join("\n\n")($List.map(A2(prettyPrintHelp,
+              indentLevel,
+              indentSpaces))(_v99._2)) : function () {
+                 var prettyPrintChild = A2(prettyPrintHelp,
+                 indentLevel + 1,
+                 indentSpaces);
+                 var indentStr = A2($String.repeat,
+                 indentSpaces * indentLevel,
+                 " ");
+                 var subIndentStr = A2($Basics._op["++"],
+                 indentStr,
+                 A2($String.repeat,
+                 indentSpaces,
+                 " "));
+                 var attrsStr = $List.isEmpty(_v99._1) ? "" : F2(function (x,
+                 y) {
+                    return A2($Basics._op["++"],
+                    x,
+                    y);
+                 })(subIndentStr)($String.join(subIndentStr)($List.map(attributeToString)(_v99._1)));
+                 var childrenStr = $List.isEmpty(_v99._2) ? "" : F2(function (x,
+                 y) {
+                    return A2($Basics._op["++"],
+                    x,
+                    y);
+                 })(subIndentStr)($String.join(subIndentStr)($List.map(prettyPrintChild)(_v99._2)));
+                 return A2($Basics._op["++"],
+                 indentStr,
+                 A2($Basics._op["++"],
+                 _v99._0,
+                 A2($Basics._op["++"],
+                 " {\n",
+                 A2($Basics._op["++"],
+                 attrsStr,
+                 A2($Basics._op["++"],
+                 childrenStr,
+                 "}")))));
+              }();}
+         _U.badCase($moduleName,
+         "between lines 24 and 60");
+      }();
+   });
+   var prettyPrint = prettyPrintHelp(0);
+   _elm.Stylesheets.values = {_op: _op
+                             ,prettyPrint: prettyPrint
+                             ,prettyPrintHelp: prettyPrintHelp
+                             ,attributeToString: attributeToString
+                             ,html: html
+                             ,body: body
+                             ,header: header
+                             ,nav: nav
+                             ,div: div
+                             ,span: span
+                             ,img: img
+                             ,nowrap: nowrap
+                             ,button: button
+                             ,h1: h1
+                             ,h2: h2
+                             ,h3: h3
+                             ,h4: h4
+                             ,p: p
+                             ,ol: ol
+                             ,input: input
+                             ,tagToString: tagToString
+                             ,screen: screen
+                             ,print: print
+                             ,selection: selection
+                             ,inheritToString: inheritToString
+                             ,autoToString: autoToString
+                             ,noneToString: noneToString
+                             ,unitsToString: unitsToString
+                             ,boxSizingToString: boxSizingToString
+                             ,overflowToString: overflowToString
+                             ,displayToString: displayToString
+                             ,verticalAlignToString: verticalAlignToString
+                             ,whiteSpaceToString: whiteSpaceToString
+                             ,colorToString: colorToString
+                             ,numberToString: numberToString
+                             ,textShadowToString: textShadowToString
+                             ,explicitTextShadowToString: explicitTextShadowToString
+                             ,outlineStyleToString: outlineStyleToString
+                             ,opacityStyleToString: opacityStyleToString
+                             ,Tag: Tag
+                             ,Inherit: Inherit
+                             ,NotInherit: NotInherit
+                             ,Auto: Auto
+                             ,NotAuto: NotAuto
+                             ,None: None
+                             ,NotNone: NotNone
+                             ,ExplicitUnits: ExplicitUnits
+                             ,ExplicitBoxSizing: ExplicitBoxSizing
+                             ,ExplicitOverflow: ExplicitOverflow
+                             ,ExplicitDisplay: ExplicitDisplay
+                             ,ExplicitWhiteSpace: ExplicitWhiteSpace
+                             ,ExplicitColor: ExplicitColor
+                             ,ExplicitVerticalAlign: ExplicitVerticalAlign
+                             ,ExplicitOutline: ExplicitOutline
+                             ,OutlineStyle: OutlineStyle
+                             ,OpacityStyle: OpacityStyle
+                             ,NoTextShadow: NoTextShadow
+                             ,solid: solid
+                             ,transparent: transparent
+                             ,rgb: rgb
+                             ,rgba: rgba
+                             ,hex: hex
+                             ,pct: pct
+                             ,em: em
+                             ,px: px
+                             ,borderBox: borderBox
+                             ,visible: visible
+                             ,block: block
+                             ,inlineBlock: inlineBlock
+                             ,inline: inline
+                             ,none: none
+                             ,auto: auto
+                             ,inherit: inherit
+                             ,noWrap: noWrap
+                             ,top: top
+                             ,middle: middle
+                             ,bottom: bottom
+                             ,attr1: attr1
+                             ,attr2: attr2
+                             ,attr3: attr3
+                             ,attr4: attr4
+                             ,attr5: attr5
+                             ,verticalAlign: verticalAlign
+                             ,display: display
+                             ,opacity: opacity
+                             ,width: width
+                             ,minWidth: minWidth
+                             ,height: height
+                             ,minHeight: minHeight
+                             ,padding: padding
+                             ,paddingTop: paddingTop
+                             ,paddingBottom: paddingBottom
+                             ,paddingRight: paddingRight
+                             ,paddingLeft: paddingLeft
+                             ,margin: margin
+                             ,marginTop: marginTop
+                             ,marginBottom: marginBottom
+                             ,marginRight: marginRight
+                             ,marginLeft: marginLeft
+                             ,boxSizing: boxSizing
+                             ,overflowX: overflowX
+                             ,overflowY: overflowY
+                             ,whiteSpace: whiteSpace
+                             ,backgroundColor: backgroundColor
+                             ,color: color
+                             ,media: media
+                             ,textShadow: textShadow
+                             ,outline: outline
+                             ,Style: Style
+                             ,Attribute: Attribute
+                             ,css: css
+                             ,styleWithPrefix: styleWithPrefix
+                             ,addAttr: addAttr
+                             ,transformActiveChild: transformActiveChild
+                             ,splitStartLast: splitStartLast};
+   return _elm.Stylesheets.values;
 };
 Elm.Task = Elm.Task || {};
 Elm.Task.make = function (_elm) {
