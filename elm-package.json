@@ -7,7 +7,7 @@
         "src/pages",
         "src/shared",
         "src/style",
-        "young-packages/elm-stylesheets/src"
+        "elm-new/elm-stylesheets/src"
     ],
     "exposed-modules": [],
     "dependencies": {

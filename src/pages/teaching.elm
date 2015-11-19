@@ -8,6 +8,7 @@ import Markdown
 import Bootstrap
 import Paths
 
+import Stylesheets
 import SharedStyles
 import PrintStyle
 
@@ -56,7 +57,8 @@ view model =
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , header
-    , teaching
+    , teachingContainer
+    , footer
     ]
 
 ----------------------------------------------------------------------------------------------------------------
@@ -71,19 +73,6 @@ links =
   , li [] [ a [ href "#" ] [ text "Contact Me" ] ]
   ]
 
-----------------------------------------------------------------------------------------------------------------
-
-teaching : Html
-teaching =
-  div
-    [ class "container TeachingContainer"
-    ]
-    [ bioAndCallToAction
-    , imgTakafumi
-    , advertise
-    , subjects
-    , area
-    ]
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -95,9 +84,45 @@ header =
       [ class "container TeachingInnerHeader" 
       ]
       [ h1 [ class "TeachingTitle" ] [ text "The Classroom" ]
-      , p [ class "lead TeachingTitleDesc" ] [ text "I am an educator, and a damn good one at that." ]
+      , p [ class "lead TeachingTitleDesc" ] [ text "Don't hesitate. I'm here to educate." ]
       ]
     ]
+
+----------------------------------------------------------------------------------------------------------------
+
+teachingContainer : Html
+teachingContainer =
+  div
+    [ class "container TeachingContainer" ]
+    [ arrow (Stylesheets.colorToString SharedStyles.colorHighlight)
+    , bioAndCallToAction
+    , imgTakafumi
+    , advertise
+    , subjects
+    , area
+    , contactMe
+    ]
+
+----------------------------------------------------------------------------------------------------------------
+
+arrow color =
+  let
+    addedColor =
+      style
+        [ ("border-top-color", color) ]
+  in
+    div
+      [ class "row" ]
+      [ div
+        [ class "col-md-12" ]
+        [ div 
+          [ class "TeachingArrow"
+          , addedColor
+          ]
+          []
+        ]
+      ]
+      
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -284,7 +309,7 @@ approaches =
 subjects : Html
 subjects = 
   div []
-  [ Bootstrap.pageHeader "TeachingSubjectsHeader" "Subjects Offered"
+  [ Bootstrap.pageHeader "TeachingContainerHeader" "Subjects Offered"
   , div
     [ class "row" ]
     [ subjectsAccordion ]
@@ -417,12 +442,52 @@ area =
   let 
     imgArea = Bootstrap.image "TeachingImgArea" (Paths.resources ++ "metrovan.fw.png")
   in
-    div []
-    [ Bootstrap.pageHeader "TeachingAreaHeader" "Location"
+    div 
+      []
+      [ Bootstrap.pageHeader "TeachingContainerHeader" "Location"
+      , div
+        [ class "row" ]
+        [ div 
+          [ class "col-md-12" ]
+          [ imgArea ]
+        ]
+      ]
+
+----------------------------------------------------------------------------------------------------------------
+
+contactMe : Html
+contactMe =
+  div
+    []
+    [ Bootstrap.pageHeader "TeachingContainerHeader" contactAdv.title
     , div
       [ class "row" ]
-      [ imgArea ]
+      [ div 
+        [ class "col-md-12" ]
+        [ Markdown.toHtml contactAdv.content ]
+      ]
     ]
+
+contactAdv : AdvPoint
+contactAdv =
+  { title = "Contact Me"
+  , image = ""
+  , content =
+      """
+
+Cell: 1800-123-4556  
+Email: lol@idgaf.com
+
+      """
+  }
+
+----------------------------------------------------------------------------------------------------------------
+
+footer : Html
+footer =
+  div
+    [ class "TeachingFooter" ]
+    []
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -433,13 +498,12 @@ layout =
   # Landing Page
   - introductory tagline
   - img = "teaching"
-  - button -> contact me today! -> #contactme
   # Bio
   - img = "gradphoto"
   # Reviews
   # Map
   # Contact Me
-  - anchor: #contactme
+  - anchor: #contact me
   """
 
 loremipsum : String

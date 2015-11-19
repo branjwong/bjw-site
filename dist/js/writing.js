@@ -12422,6 +12422,104 @@ Elm.SharedStyles.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
+   var margin = function (value) {
+      return A3($Stylesheets.attr1,
+      "margin",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var right = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "right",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var left = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "left",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-color",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var borderStyle = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-style",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var position = function (value) {
+      return A3($Stylesheets.attr1,
+      "position",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var content = function (value) {
+      return A3($Stylesheets.attr1,
+      "content",
+      $Basics.toString,
+      value);
+   };
+   var borderLeftWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-left-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderBottomWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-bottom-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderRightWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-right-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderTopWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-top-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderTopColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-top-color",
+      $Stylesheets.colorToString,
+      value);
+   };
    var borderBottomColor = function (value) {
       return A3($Stylesheets.attr1,
       "border-bottom-color",
@@ -12470,7 +12568,7 @@ Elm.SharedStyles.make = function (_elm) {
    var heightNavBar = 50 + heightNavBarTop;
    var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
    var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
-   var colorSubHeading = $Stylesheets.hex("999");
+   var colorSubHeading = $Stylesheets.hex("BBB");
    var colorHeading = $Stylesheets.hex("333");
    var colorStandardText = colorHeading;
    var colorNavBarBackground = $Stylesheets.hex("FFF");
@@ -12478,8 +12576,10 @@ Elm.SharedStyles.make = function (_elm) {
    var colorHighlight = $Stylesheets.hex("2B74C6");
    var ProgrammingHeader = {ctor: "ProgrammingHeader"};
    var ProgrammingContainer = {ctor: "ProgrammingContainer"};
-   var TeachingAreaHeader = {ctor: "TeachingAreaHeader"};
-   var TeachingSubjectsHeader = {ctor: "TeachingSubjectsHeader"};
+   var TeachingFooter = {ctor: "TeachingFooter"};
+   var TeachingArrow = {ctor: "TeachingArrow"};
+   var TeachingImgArea = {ctor: "TeachingImgArea"};
+   var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
    var TeachingCallToAction = {ctor: "TeachingCallToAction"};
    var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
    var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
@@ -12504,6 +12604,22 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
@@ -12672,11 +12788,39 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets.marginTop,
    20,
    $Stylesheets.px)),
-   TeachingSubjectsHeader),
+   TeachingContainerHeader),
    borderBottomColor(colorHighlight)),
-   TeachingAreaHeader),
-   A2($Stylesheets.paddingBottom,
-   100,
+   TeachingImgArea),
+   TeachingArrow),
+   borderStyle("solid")),
+   borderColor("transparent")),
+   borderTopColor(colorHighlight)),
+   A2(borderTopWidth,
+   22,
+   $Stylesheets.px)),
+   A2(borderRightWidth,
+   28,
+   $Stylesheets.px)),
+   A2(borderBottomWidth,
+   0,
+   $Stylesheets.px)),
+   A2(borderLeftWidth,
+   28,
+   $Stylesheets.px)),
+   A2(left,0,$Stylesheets.px)),
+   A2(right,0,$Stylesheets.px)),
+   content("")),
+   margin("auto")),
+   A2($Stylesheets.width,
+   0,
+   $Stylesheets.px)),
+   TeachingFooter),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   A2($Stylesheets.height,
+   60,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginTop,
+   40,
    $Stylesheets.px)),
    ProgrammingContainer),
    A2($Stylesheets.paddingTop,
@@ -12708,8 +12852,10 @@ Elm.SharedStyles.make = function (_elm) {
                               ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
                               ,TeachingImgTakafumi: TeachingImgTakafumi
                               ,TeachingCallToAction: TeachingCallToAction
-                              ,TeachingSubjectsHeader: TeachingSubjectsHeader
-                              ,TeachingAreaHeader: TeachingAreaHeader
+                              ,TeachingContainerHeader: TeachingContainerHeader
+                              ,TeachingImgArea: TeachingImgArea
+                              ,TeachingArrow: TeachingArrow
+                              ,TeachingFooter: TeachingFooter
                               ,ProgrammingContainer: ProgrammingContainer
                               ,ProgrammingHeader: ProgrammingHeader
                               ,colorHighlight: colorHighlight
@@ -12734,7 +12880,19 @@ Elm.SharedStyles.make = function (_elm) {
                               ,fontWeight: fontWeight
                               ,fontFamily: fontFamily
                               ,textAlign: textAlign
-                              ,borderBottomColor: borderBottomColor};
+                              ,borderBottomColor: borderBottomColor
+                              ,borderTopColor: borderTopColor
+                              ,borderTopWidth: borderTopWidth
+                              ,borderRightWidth: borderRightWidth
+                              ,borderBottomWidth: borderBottomWidth
+                              ,borderLeftWidth: borderLeftWidth
+                              ,content: content
+                              ,position: position
+                              ,borderStyle: borderStyle
+                              ,borderColor: borderColor
+                              ,left: left
+                              ,right: right
+                              ,margin: margin};
    return _elm.SharedStyles.values;
 };
 Elm.Signal = Elm.Signal || {};

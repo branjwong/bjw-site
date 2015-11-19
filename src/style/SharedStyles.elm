@@ -24,8 +24,10 @@ type CssClasses
     | TeachingBioAndCallToAction
     | TeachingImgTakafumi
     | TeachingCallToAction
-    | TeachingSubjectsHeader
-    | TeachingAreaHeader
+    | TeachingContainerHeader
+    | TeachingImgArea
+    | TeachingArrow
+    | TeachingFooter
 
     | ProgrammingContainer
     | ProgrammingHeader
@@ -49,7 +51,7 @@ colorNavBarBackground = hex "FFF"
 -- Text Colors Against Site Background
 
 colorHeading = hex "333"
-colorSubHeading = hex "999"
+colorSubHeading = hex "BBB"
 colorStandardText = colorHeading
 
 ---------------------------------------------------------------------------------------------------------
@@ -158,17 +160,33 @@ exports =
         |.| TeachingCallToAction 
             |-| marginTop 20 px
 
-        |.| TeachingSubjectsHeader
+        |.| TeachingContainerHeader
             |-| borderBottomColor colorHighlight
 
-        |.| TeachingAreaHeader
-            |-| paddingBottom 100 px
+        |.| TeachingImgArea
+            --|-| paddingBottom 40 px
 
-        --|.| TeachingArrow
-        --    |-| boarderTopColor colorHighlight
-        --    |-| content ""
-        --    |-| position "absolute"
-        --    |-| margin "auto"
+        |.| TeachingArrow
+            |-| borderStyle "solid"
+            |-| borderColor "transparent"
+            |-| borderTopColor colorHighlight
+            |-| borderTopWidth 22 px
+            |-| borderRightWidth 28 px
+            |-| borderBottomWidth 0 px
+            |-| borderLeftWidth 28 px
+            |-| left 0 px
+            |-| right 0 px
+            |-| content ""
+            |-| margin "auto"
+            |-| width 0 px
+            --|-| position "absolute"
+
+        |.| TeachingFooter
+            |-| backgroundColor colorHighlight
+            |-| height 60 px
+            |-| marginTop 40 px
+            --|-| paddingTop widthBoarder px
+            --|-| paddingBottom widthBoarder px
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -199,3 +217,39 @@ textAlign value =
 borderBottomColor value =
     attr1 "border-bottom-color" colorToString value
 
+borderTopColor value =
+    attr1 "border-top-color" colorToString value
+
+borderTopWidth valueA valueB =
+    attr2 "border-top-width" numberToString unitsToString valueA valueB
+
+borderRightWidth valueA valueB =
+    attr2 "border-right-width" numberToString unitsToString valueA valueB
+
+borderBottomWidth valueA valueB =
+    attr2 "border-bottom-width" numberToString unitsToString valueA valueB
+
+borderLeftWidth valueA valueB =
+    attr2 "border-left-width" numberToString unitsToString valueA valueB
+
+content value =
+    attr1 "content" toString value
+
+position value =
+    attr1 "position" (\a -> a) value
+
+borderStyle value =
+    attr1 "border-style" (\a -> a) value
+
+borderColor value =
+    attr1 "border-color" (\a -> a) value
+
+left valueA valueB =
+    attr2 "left" numberToString unitsToString valueA valueB
+
+right valueA valueB =
+    attr2 "right" numberToString unitsToString valueA valueB
+
+-- Overloaded Function
+margin value =
+    attr1 "margin" (\a -> a) value
