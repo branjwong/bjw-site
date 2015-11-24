@@ -44,8 +44,7 @@ view model =
     [ PrintStyle.stylesheet SharedStyles.exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
-    , Notices.notLive
-    , Header.header "Home" "The Archive" "Except there's only one blog entry so far." True
+    , Header.header "Home" "The Depository" "Yeah, there's only one blog entry here so far."
     , writing
     , Footer.footer "Teaching"
     ]

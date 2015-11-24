@@ -1,5 +1,5 @@
 {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "summary": "A landing site for all things Brandon J Wong.",
     "repository": "https://github.com/branjwong/bjw-site.git",
     "license": "BSD3",
@@ -8,16 +8,14 @@
         "src/shared",
         "src/style",
         "elm-new/elm-stylesheets/src",
-
         "resources/markdown/review/120713",
         "resources/markdown/blog/151120"
-
     ],
     "exposed-modules": [],
     "dependencies": {
         "elm-lang/core": "2.1.0 <= v < 3.0.0",
-        "evancz/elm-html": "4.0.1 <= v < 4.0.2",
-        "evancz/elm-markdown": "1.1.5 <= v < 2.0.0"
+        "evancz/elm-html": "4.0.2 <= v < 5.0.0",
+        "evancz/elm-markdown": "2.0.0 <= v < 3.0.0"
     },
     "elm-version": "0.15.0 <= v < 0.17.0"
 }

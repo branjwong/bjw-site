@@ -35,6 +35,6 @@ grunt.registerTask('yell', function(){
   console.log("I'm yelling.");
 });
 
-grunt.registerTask('default', ['speak', 'yell']);
+grunt.registerTask('default', ['elm']);
 
 }

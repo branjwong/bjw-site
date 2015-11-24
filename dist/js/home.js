@@ -270,6 +270,144 @@ Elm.Basics.make = function (_elm) {
                         ,GT: GT};
    return _elm.Basics.values;
 };
+Elm.Bootstrap = Elm.Bootstrap || {};
+Elm.Bootstrap.make = function (_elm) {
+   "use strict";
+   _elm.Bootstrap = _elm.Bootstrap || {};
+   if (_elm.Bootstrap.values)
+   return _elm.Bootstrap.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Bootstrap",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var pageHeader = F2(function (styleCust,
+   title) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      "page-header ",
+      styleCust))]),
+      _L.fromArray([A2($Html.h1,
+      _L.fromArray([]),
+      _L.fromArray([$Html.text(title)]))]))]))]));
+   });
+   var image = function (path) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+      _L.fromArray([A2($Html.img,
+      _L.fromArray([$Html$Attributes.src(path)
+                   ,$Html$Attributes.$class("img-responsive")]),
+      _L.fromArray([]))]))]));
+   };
+   var panelBody = F4(function (acName,
+   pnID,
+   panelHide,
+   panelContent) {
+      return function () {
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return _U.eq(panelHide,
+         true) ? A2($Html.div,
+         _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                      "collapse",
+                      pnName))
+                      ,$Html$Attributes.$class("panel-collapse collapse in")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-body")]),
+         _L.fromArray([panelContent]))])) : A2($Html.div,
+         _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                      "collapse",
+                      pnName))
+                      ,$Html$Attributes.$class("panel-collapse collapse")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-body")]),
+         _L.fromArray([panelContent]))]));
+      }();
+   });
+   var panelHeading = F3(function (acName,
+   pnID,
+   panelTitle) {
+      return function () {
+         var newAcName = acName;
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-heading")
+                      ,$Html$Attributes.id(A2($Basics._op["++"],
+                      "heading",
+                      pnName))]),
+         _L.fromArray([A2($Html.h4,
+         _L.fromArray([$Html$Attributes.$class("panel-title")]),
+         _L.fromArray([A2($Html.a,
+         _L.fromArray([$Html$Attributes.href(A2($Basics._op["++"],
+                      "#collapse",
+                      pnName))
+                      ,A2($Html$Attributes.attribute,
+                      "data-toggle",
+                      "collapse")
+                      ,A2($Html$Attributes.attribute,
+                      "data-parent",
+                      A2($Basics._op["++"],
+                      "#accordion",
+                      newAcName))]),
+         _L.fromArray([$Html.text(panelTitle)]))]))]));
+      }();
+   });
+   var panel = F5(function (acName,
+   pnID,
+   panelTitle,
+   panelHide,
+   panelContent) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([A3(panelHeading,
+                   acName,
+                   pnID,
+                   panelTitle)
+                   ,A4(panelBody,
+                   acName,
+                   pnID,
+                   panelHide,
+                   panelContent)]));
+   });
+   var accordion = F3(function (acName,
+   column,
+   panels) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(column)]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel-group BootstrapAccordion")
+                   ,$Html$Attributes.id(A2($Basics._op["++"],
+                   "accordion",
+                   acName))]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel panel-default")]),
+      panels)]))]));
+   });
+   _elm.Bootstrap.values = {_op: _op
+                           ,accordion: accordion
+                           ,panelHeading: panelHeading
+                           ,panelBody: panelBody
+                           ,image: image
+                           ,pageHeader: pageHeader
+                           ,panel: panel};
+   return _elm.Bootstrap.values;
+};
 Elm.Char = Elm.Char || {};
 Elm.Char.make = function (_elm) {
    "use strict";
@@ -2735,45 +2873,35 @@ Elm.Header.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
-   var header = F4(function (pageName,
+   var header = F3(function (pageName,
    headText,
-   subText,
-   containerBool) {
-      return function () {
-         var possibleContainer = function () {
-            switch (containerBool)
-            {case false: return "";
-               case true: return "container";}
-            _U.badCase($moduleName,
-            "between lines 10 and 15");
-         }();
-         return A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class("row")]),
-         _L.fromArray([A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
-         _L.fromArray([A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-         pageName,
-         "Header"))]),
-         _L.fromArray([A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class(possibleContainer)]),
-         _L.fromArray([A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-         pageName,
-         "HeaderInner"))]),
-         _L.fromArray([A2($Html.h1,
-                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-                      pageName,
-                      "HeaderTitle"))]),
-                      _L.fromArray([$Html.text(headText)]))
-                      ,A2($Html.p,
-                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-                      "lead ",
-                      A2($Basics._op["++"],
-                      pageName,
-                      "HeaderDesc")))]),
-                      _L.fromArray([$Html.text(subText)]))]))]))]))]))]));
-      }();
+   subText) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      pageName,
+      "Header"))]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      pageName,
+      "HeaderInner"))]),
+      _L.fromArray([A2($Html.h1,
+                   _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                   pageName,
+                   "HeaderTitle"))]),
+                   _L.fromArray([$Html.text(headText)]))
+                   ,A2($Html.p,
+                   _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                   "lead ",
+                   A2($Basics._op["++"],
+                   pageName,
+                   "HeaderDesc")))]),
+                   _L.fromArray([$Html.text(subText)]))]))]))]))]))]));
    });
    _elm.Header.values = {_op: _op
                         ,header: header};
@@ -2791,11 +2919,12 @@ Elm.Home.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Home",
    $Basics = Elm.Basics.make(_elm),
+   $Bootstrap = Elm.Bootstrap.make(_elm),
    $Footer = Elm.Footer.make(_elm),
-   $Header = Elm.Header.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
+   $Lorem = Elm.Lorem.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
    $Notices = Elm.Notices.make(_elm),
@@ -2803,11 +2932,49 @@ Elm.Home.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $SharedStyles = Elm.SharedStyles.make(_elm),
    $Signal = Elm.Signal.make(_elm);
-   var home = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container HomeContainer")]),
+   var home = function () {
+      var col = function (string) {
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("col-sm-4")]),
+         _L.fromArray([$Html.text(string)]));
+      };
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container HomeMainBodyPre")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("HomeMainBody")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([col($Lorem.ipsum)
+                   ,col($Lorem.ipsum)
+                   ,col($Lorem.ipsum)]))]))]));
+   }();
+   var trifecta = function () {
+      var col = function (string) {
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("col-sm-4")]),
+         _L.fromArray([$Html.text(string)]));
+      };
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("HomePaddedContainer")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([col($Lorem.$short)
+                   ,col($Lorem.$short)
+                   ,col($Lorem.$short)]))]))]));
+   }();
+   var introImage = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("container")]),
    _L.fromArray([A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([]))]));
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("HomeIntroImageBorder")]),
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("HomeIntroImage")]),
+   _L.fromArray([$Bootstrap.image("")]))]))]))]))]));
    var view = function (model) {
       return A2($Html.div,
       _L.fromArray([]),
@@ -2817,11 +2984,8 @@ Elm.Home.make = function (_elm) {
                    _L.fromArray([]))
                    ,$NavBar.navBarSpace
                    ,$Notices.notLive
-                   ,A4($Header.header,
-                   "Home",
-                   "Brandon\'s Net Niche",
-                   "Sup Internet. I am here too.",
-                   true)
+                   ,introImage
+                   ,trifecta
                    ,home
                    ,$Footer.footer("Teaching")]));
    };
@@ -2842,6 +3006,8 @@ Elm.Home.make = function (_elm) {
                       ,model: model
                       ,main: main
                       ,view: view
+                      ,introImage: introImage
+                      ,trifecta: trifecta
                       ,home: home};
    return _elm.Home.values;
 };
@@ -3095,6 +3261,11 @@ Elm.Html.Attributes.make = function (_elm) {
    $String = Elm.String.make(_elm),
    $VirtualDom = Elm.VirtualDom.make(_elm);
    var attribute = $VirtualDom.attribute;
+   var contextmenu = function (value) {
+      return A2(attribute,
+      "contextmenu",
+      value);
+   };
    var property = $VirtualDom.property;
    var stringProperty = F2(function (name,
    string) {
@@ -3119,13 +3290,8 @@ Elm.Html.Attributes.make = function (_elm) {
    };
    var accesskey = function ($char) {
       return A2(stringProperty,
-      "accesskey",
-      $String.fromList(_L.fromArray([$char])));
-   };
-   var contextmenu = function (value) {
-      return A2(stringProperty,
-      "contextmenu",
-      value);
+      "accessKey",
+      $String.fromChar($char));
    };
    var dir = function (value) {
       return A2(stringProperty,
@@ -3274,7 +3440,7 @@ Elm.Html.Attributes.make = function (_elm) {
    };
    var formaction = function (value) {
       return A2(stringProperty,
-      "formaction",
+      "formAction",
       value);
    };
    var list = function (value) {
@@ -4203,6 +4369,33 @@ Elm.List.make = function (_elm) {
                       ,sortBy: sortBy
                       ,sortWith: sortWith};
    return _elm.List.values;
+};
+Elm.Lorem = Elm.Lorem || {};
+Elm.Lorem.make = function (_elm) {
+   "use strict";
+   _elm.Lorem = _elm.Lorem || {};
+   if (_elm.Lorem.values)
+   return _elm.Lorem.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Lorem",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var subheader = "Ut enim ad minim";
+   var header = "Duis Aute Irure Dolor";
+   var $short = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+   var ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+   _elm.Lorem.values = {_op: _op
+                       ,ipsum: ipsum
+                       ,$short: $short
+                       ,header: header
+                       ,subheader: subheader};
+   return _elm.Lorem.values;
 };
 Elm.Maybe = Elm.Maybe || {};
 Elm.Maybe.make = function (_elm) {
@@ -12150,7 +12343,9 @@ Elm.Notices.make = function (_elm) {
       _L.fromArray([$Html$Attributes.$class("row")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("NoticesNotLive")]),
-      _L.fromArray([$Html.text(string)]))]));
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([$Html.text(string)]))]))]));
    }();
    _elm.Notices.values = {_op: _op
                          ,notLive: notLive};
@@ -12454,7 +12649,7 @@ Elm.SharedStyles.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
-   var margin = function (value) {
+   var margin2 = function (value) {
       return A3($Stylesheets.attr1,
       "margin",
       function (a) {
@@ -12628,6 +12823,11 @@ Elm.SharedStyles.make = function (_elm) {
    var WritingHeaderInner = {ctor: "WritingHeaderInner"};
    var WritingHeader = {ctor: "WritingHeader"};
    var WritingContainer = {ctor: "WritingContainer"};
+   var HomeMainBody = {ctor: "HomeMainBody"};
+   var HomeMainBodyPre = {ctor: "HomeMainBodyPre"};
+   var HomePaddedContainer = {ctor: "HomePaddedContainer"};
+   var HomeIntroImageBorder = {ctor: "HomeIntroImageBorder"};
+   var HomeIntroImage = {ctor: "HomeIntroImage"};
    var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
    var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
    var HomeHeaderInner = {ctor: "HomeHeaderInner"};
@@ -12699,6 +12899,8 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
@@ -12713,6 +12915,20 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
@@ -12776,8 +12992,36 @@ Elm.SharedStyles.make = function (_elm) {
    $Stylesheets.px)),
    fontWeight("bold")),
    HomeContainer),
+   HomeIntroImageBorder),
+   A2($Stylesheets.padding,
+   5,
+   $Stylesheets.px)),
+   A2($Stylesheets.margin,
+   10,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor(colorContentBackground)),
+   HomeIntroImage),
    A2($Stylesheets.height,
-   1000,
+   300,
+   $Stylesheets.px)),
+   A2($Stylesheets.width,
+   500,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Stylesheets.hex("454545"))),
+   HomeMainBodyPre),
+   A2($Stylesheets.paddingTop,
+   10,
+   $Stylesheets.px)),
+   HomeMainBody),
+   A2($Stylesheets.padding,
+   30,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingTop,
+   50,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor(colorContentBackground)),
+   A2($Stylesheets.height,
+   500,
    $Stylesheets.px)),
    HomeHeader),
    $Stylesheets.backgroundColor(colorHighlight)),
@@ -12805,6 +13049,10 @@ Elm.SharedStyles.make = function (_elm) {
    20,
    $Stylesheets.px)),
    $Stylesheets.color(colorSubHeading)),
+   HomePaddedContainer),
+   A2($Stylesheets.margin,
+   10,
+   $Stylesheets.px)),
    WritingContainer),
    $Stylesheets.backgroundColor(colorContentBackground)),
    A2($Stylesheets.marginTop,
@@ -12887,7 +13135,7 @@ Elm.SharedStyles.make = function (_elm) {
    A2(left,0,$Stylesheets.px)),
    A2(right,0,$Stylesheets.px)),
    content("")),
-   margin("auto")),
+   margin2("auto")),
    A2($Stylesheets.width,
    0,
    $Stylesheets.px)),
@@ -12900,8 +13148,8 @@ Elm.SharedStyles.make = function (_elm) {
    40,
    $Stylesheets.px)),
    ProgrammingContainer),
-   A2($Stylesheets.height,
-   1000,
+   A2($Stylesheets.marginTop,
+   50,
    $Stylesheets.px)),
    ProgrammingHeader),
    $Stylesheets.backgroundColor(colorHighlight)),
@@ -12928,6 +13176,11 @@ Elm.SharedStyles.make = function (_elm) {
                               ,HomeHeaderInner: HomeHeaderInner
                               ,HomeHeaderTitle: HomeHeaderTitle
                               ,HomeHeaderDesc: HomeHeaderDesc
+                              ,HomeIntroImage: HomeIntroImage
+                              ,HomeIntroImageBorder: HomeIntroImageBorder
+                              ,HomePaddedContainer: HomePaddedContainer
+                              ,HomeMainBodyPre: HomeMainBodyPre
+                              ,HomeMainBody: HomeMainBody
                               ,WritingContainer: WritingContainer
                               ,WritingHeader: WritingHeader
                               ,WritingHeaderInner: WritingHeaderInner
@@ -12984,7 +13237,7 @@ Elm.SharedStyles.make = function (_elm) {
                               ,borderColor: borderColor
                               ,left: left
                               ,right: right
-                              ,margin: margin};
+                              ,margin2: margin2};
    return _elm.SharedStyles.values;
 };
 Elm.Signal = Elm.Signal || {};

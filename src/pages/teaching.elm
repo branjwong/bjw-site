@@ -15,6 +15,7 @@ import Stylesheets
 import SharedStyles
 import PrintStyle
 
+import Lorem
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -60,7 +61,7 @@ view model =
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , Notices.notLive
-    , Header.header "Teaching" "The Classroom" "Don't hesitate. I'm here to educate." False
+    , Header.header "Teaching" "The Classroom" "Don't hesitate. I'm here to educate."
     , teachingContainer
     , Footer.footer "Teaching"
     ]
@@ -117,7 +118,10 @@ arrow color =
 ----------------------------------------------------------------------------------------------------------------
 
 imgTakafumi : Html
-imgTakafumi = Bootstrap.image "TeachingImgTakafumi" (Paths.resources ++ "takafumi_1170x658.jpg")
+imgTakafumi = 
+  div 
+    [ class "TeachingImgTakafumi" ]
+    [ Bootstrap.image (Paths.resources ++ "takafumi_1170x658.jpg") ]
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -300,7 +304,7 @@ approaches =
 subjects : Html
 subjects = 
   div []
-  [ Bootstrap.pageHeader "TeachingContainerHeader" "Subjects Offered"
+  [ Bootstrap.pageHeader "TeachingContainerHeader" "Subjects Offered" 
   , div
     [ class "row"
     , id "Subjects"
@@ -433,7 +437,7 @@ phys12 =
 area : Html
 area = 
   let 
-    imgArea = Bootstrap.image "TeachingImgArea" (Paths.resources ++ "metrovan.fw.png")
+    imgArea = Bootstrap.image  (Paths.resources ++ "metrovan.fw.png")
   in
     div 
       [ id "Location" ]
@@ -442,7 +446,10 @@ area =
         [ class "row" ]
         [ div 
           [ class "col-md-12" ]
-          [ imgArea ]
+          [ div 
+            [ class "TeachingImgArea" ]
+            [ imgArea ]
+          ]
         ]
       ]
 
@@ -493,5 +500,4 @@ layout =
   """
 
 loremipsum : String
-loremipsum = 
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+loremipsum = Lorem.ipsum

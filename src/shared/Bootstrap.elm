@@ -70,7 +70,7 @@ panelBody acName pnID panelHide panelContent =
 
 ----------------------------------------------------------------------------------------------------------------
 
-image styleCust path =
+image path =
   div
     [ class "row" ]
     [ div
@@ -78,7 +78,7 @@ image styleCust path =
       ]
       [ img
         [ src path
-        , class ("img-responsive " ++ styleCust)
+        , class "img-responsive"
         ]
         []
       ]

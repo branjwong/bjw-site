@@ -17,6 +17,11 @@ type CssClasses
     | HomeHeaderInner
     | HomeHeaderTitle
     | HomeHeaderDesc
+    | HomeIntroImage
+    | HomeIntroImageBorder
+    | HomePaddedContainer
+    | HomeMainBodyPre
+    | HomeMainBody
 
     | WritingContainer
     | WritingHeader
@@ -126,7 +131,25 @@ exports =
 ---------------------------------------------------------------------------------------------------------
 
         |.| HomeContainer
-            |-| height 1000 px
+
+        |.| HomeIntroImageBorder
+            |-| padding 5 px
+            |-| margin 10 px 
+            |-| backgroundColor colorContentBackground
+
+        |.| HomeIntroImage
+            |-| height 300 px
+            |-| width 500 px
+            |-| backgroundColor (hex "454545")
+
+        |.| HomeMainBodyPre
+            |-| paddingTop 10 px
+
+        |.| HomeMainBody
+            |-| padding 30 px
+            |-| paddingTop 50 px
+            |-| backgroundColor colorContentBackground
+            |-| height 500 px
 
         |.| HomeHeader
             |-| backgroundColor colorHighlight
@@ -145,6 +168,9 @@ exports =
         |.| HomeHeaderDesc
             |-| fontSize 20 px
             |-| color colorSubHeading
+
+        |.| HomePaddedContainer
+            |-| margin 10 px
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -228,7 +254,7 @@ exports =
             |-| left 0 px
             |-| right 0 px
             |-| content ""
-            |-| margin "auto"
+            |-| margin2 "auto"
             |-| width 0 px
             --|-| position "absolute"
 
@@ -242,7 +268,7 @@ exports =
 ---------------------------------------------------------------------------------------------------------
 
         |.| ProgrammingContainer
-            |-| height 1000 px
+            |-| marginTop 50 px
 
         |.| ProgrammingHeader
             |-| backgroundColor colorHighlight
@@ -305,6 +331,6 @@ left valueA valueB =
 right valueA valueB =
     attr2 "right" numberToString unitsToString valueA valueB
 
--- Overloaded Function
-margin value =
+ --Overloaded Function
+margin2 value =
     attr1 "margin" (\a -> a) value
