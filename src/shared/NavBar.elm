@@ -93,7 +93,9 @@ tab currentName currentLinks name link =
 navBarSpace : Html
 navBarSpace = 
   div 
-    [ class "NavBarSpace" ]
+    [ id "Landing"
+    , class "NavBarSpace"
+    ]
     []
 
 -- Currently Unused

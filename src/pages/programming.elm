@@ -4,13 +4,16 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
+import Notices
+import Header
 
 import SharedStyles
 import PrintStyle
+import Footer
 
 
 port title: String
-port title =  "Teaching · BJW"
+port title =  "Programming | BJW"
 
 
 main : Html
@@ -25,7 +28,7 @@ type alias Model =
 
 model : Model
 model =
-  { currentPage = "Programming | BJW"
+  { currentPage = "Programming"
   }
 
 
@@ -35,7 +38,11 @@ view model =
     [ ]
     [ PrintStyle.stylesheet SharedStyles.exports
     , NavBar.navBar model.currentPage links
+    , NavBar.navBarSpace
+    , Notices.notLive
+    , Header.header "Home" "The Laboratory" "Where my Programming experience is here for viewing." True
     , programming
+    , Footer.footer "Teaching"
     ]
 
 
@@ -51,18 +58,11 @@ programming =
     ]
     [ div
       [ class "row" ]
-      [ programmingHeader
-      ]
+      []
     ]
 
 
-programmingHeader : Html
-programmingHeader =
-  div
-    [ class "col-mid-12 WritingHeader" ]
-    [ h1 [ class "WritingTitle" ] [ text "The Laboratory" ]
-    , p [ class "lead", class "WritingDescription" ] [ text "Where my Programming experience is here for viewing." ]
-    ]
+
 
 
 richardFeldmanQuote : String

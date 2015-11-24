@@ -1,19 +1,11 @@
-/*
-html, head, body {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  min-height: 0px;
-  color: #FFF;
-  background-color: #302C2C;
-  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
 }
 
 
-body {
-  padding-top: 50px;
-}
-*/
+
 
 /*
  * For BootstrapIcons

@@ -1800,6 +1800,56 @@ Elm.Dict.make = function (_elm) {
                       ,fromList: fromList};
    return _elm.Dict.values;
 };
+Elm.EntryOne = Elm.EntryOne || {};
+Elm.EntryOne.make = function (_elm) {
+   "use strict";
+   _elm.EntryOne = _elm.EntryOne || {};
+   if (_elm.EntryOne.values)
+   return _elm.EntryOne.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "EntryOne",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var entry = "\n\nWhat I Am Doing With My Life\n============================\n\n###### Posted On: Friday, November 20th 2015: 12:27pm\n\n\nEarlier this September, I had my plan down. Having recently returned from Japan with all of my co-op prerequisites done, I was intending to take a semester off from school to find a co-op placement, while still teaching at Oxford Learning in order to keep a roof over my head. The idea was that I could get a feel for what the tech industry in Vancouver has to offer, while still getting paid for it. \n\nIt\'s now the end of November, and I still don\'t have a job. When boiled down, there are three reasons for this.\n\n1. I am a junior programmer with little to no technical experience.\n2. Though my conceptual understanding of areas within Computing Science is strong, I do not have confidence in the programming languages/technologies required of me to get a job in Vancouver. \n3. I have little desire to learn **these** technologies.\n\nThough my foundations in C, C++, and Java are fairly strong, I don\'t have any experience with a sizeable code base using these languages, and I am a bit rusty with all of them. For jobs in web development, I have little to no desire to learn the current front-end web development technologies currently used in production, as the current paradigm is kind of a headache, and I have absolutely no experience with anything back-end related. Though earlier in September I felt that trying everything out would be for the best, now I am not so sure. I underestimated the time investment involved to try to get jobs that I am not immediately hire-able for. Does it make sense for an employer to hire me into an industry (e.g. Gaming, Bioinformatics, etc.) that I am not even sure about? I am not so sure. When I am told that I need to brush up on my skills with technologies that I am not really all too fond of, is it worth it for me?\n\nI guess all of this doesn\'t make sense if you don\'t know about the alternative that I have been looking at. Since February, I have been looking into a new programming language called [Elm](http://elm-lang.org). Without diving into the technicalities of what Elm is and how it pairs against other currently existing languages and technologies out there, know that besides when I was ActionScript way back in high school in Mr. Yeung-Meadows\' Computer Programming 11 and 12 class, this is the first language that has gotten me really excited about using programming as a means to solve real world problems. When I think about the languages I learned about in University, I have no idea how I can use those languages to build awesome user interfaces that people can interact with in order to solve real world problems that they have. With Elm, that hasn\'t been the case. I have been able to use Elm (and [Bootstrap](http://getbootstrap.com/)) to build this website, and I have been able to code in a way that I have found extremely enjoyable. \n\nAnd while that has been phenomenal and all, the problem is that Elm is still young, and there is no company that I know in Vancouver that using it. This means that I am investing my time in learning a language that, as of right now, won\'t get me hired by anyone local to me. \n\n> An awesome company that builds software for grammar and writing skills called [NoRedInk](https://www.noredink.com/) in San Francisco is, but they are currently one of the only companies in the world that are willing to yolo and give Elm a shot in a professional setting. I know you guys are hiring right now, so if you\'re in the market for some fresh young blood, give me a holler!\n\nOne thing that has been productive about this trimester is that I am a lot more sure about what I want my end goals to be. I am still sure that at the end of the day, I want to be improving the lives of everyday people in an aspect of life (probably education) that is close to me through software, and to be mostly autonomous in how I conduct my career. Whereas before I wanted to try everything to see what I liked, I was overlooking that outside of application development, **everything** doesn\'t necessarily fall under the category of my end goals. Game development, while cool, is not an industry that I think would be as fulfilling to me in that regard as web or native application development.\n\nSo where does that leave me? Well, I think Elm is keeping me on the right track. Since Elm compiles to JavaScript, I am able to use it to build web applications. I am also able to quickly spin up static web pages for clients if I ever decide to start doing freelance work. I am also able to both learn Elm and advertise my teaching services in the area by way of this website, and use tutoring as a means to keep a roof over my head.\n\nThe main problem is that I only have time for so much. Currently, my weekdays go as follows:\n\n 1. Wake up.\n 2. Eat Breakfast.\n 3. Code in Elm, building this site.\n 4. Eat Lunch.\n 5. Code in Elm, building this site.\n 6. Head to Oxford, teach.\n 7. Come home, eat dinner.\n 8. Possibly work a bit more on my site, otherwise chill out.\n 9. Sleep.\n\nWithin that schedule, I don\'t make time for things like applying for jobs, going in for interviews, and brushing up on C++. I think I could be juggling all of it, but it would mean less time on this site, and making less progress towards me privately tutoring again. \n\nFor now, I think I am going to keep an eye out for jobs that I think would be super cool, while not necessarily exhausting over finding just any co-op job. \n\n... I could also be waking up a fair bit earlier too.  \n  \n  \n###### Finished: Friday, November 20th 2015: 1:51pm\n\n";
+   _elm.EntryOne.values = {_op: _op
+                          ,entry: entry};
+   return _elm.EntryOne.values;
+};
+Elm.Footer = Elm.Footer || {};
+Elm.Footer.make = function (_elm) {
+   "use strict";
+   _elm.Footer = _elm.Footer || {};
+   if (_elm.Footer.values)
+   return _elm.Footer.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Footer",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var footer = function (pageName) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      pageName,
+      "Footer"))]),
+      _L.fromArray([]));
+   };
+   _elm.Footer.values = {_op: _op
+                        ,footer: footer};
+   return _elm.Footer.values;
+};
 Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Collage = Elm.Graphics.Collage || {};
 Elm.Graphics.Collage.make = function (_elm) {
@@ -2687,6 +2737,68 @@ Elm.Graphics.Element.make = function (_elm) {
                                   ,Element: Element
                                   ,Position: Position};
    return _elm.Graphics.Element.values;
+};
+Elm.Header = Elm.Header || {};
+Elm.Header.make = function (_elm) {
+   "use strict";
+   _elm.Header = _elm.Header || {};
+   if (_elm.Header.values)
+   return _elm.Header.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Header",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var header = F4(function (pageName,
+   headText,
+   subText,
+   containerBool) {
+      return function () {
+         var possibleContainer = function () {
+            switch (containerBool)
+            {case false: return "";
+               case true: return "container";}
+            _U.badCase($moduleName,
+            "between lines 10 and 15");
+         }();
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("row")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+         pageName,
+         "Header"))]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(possibleContainer)]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+         pageName,
+         "HeaderInner"))]),
+         _L.fromArray([A2($Html.h1,
+                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                      pageName,
+                      "HeaderTitle"))]),
+                      _L.fromArray([$Html.text(headText)]))
+                      ,A2($Html.p,
+                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                      "lead ",
+                      A2($Basics._op["++"],
+                      pageName,
+                      "HeaderDesc")))]),
+                      _L.fromArray([$Html.text(subText)]))]))]))]))]))]));
+      }();
+   });
+   _elm.Header.values = {_op: _op
+                        ,header: header};
+   return _elm.Header.values;
 };
 Elm.Html = Elm.Html || {};
 Elm.Html.make = function (_elm) {
@@ -12019,7 +12131,8 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
                              _L.fromArray([$Html.text("GitHub")]))]))]))]));
    var navBarSpace = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("NavBarSpace")]),
+   _L.fromArray([$Html$Attributes.id("Landing")
+                ,$Html$Attributes.$class("NavBarSpace")]),
    _L.fromArray([]));
    var tab = F4(function (currentName,
    currentLinks,
@@ -12123,6 +12236,36 @@ Elm.NavBar.make = function (_elm) {
                         ,navBarSpace: navBarSpace
                         ,outsideLinks: outsideLinks};
    return _elm.NavBar.values;
+};
+Elm.Notices = Elm.Notices || {};
+Elm.Notices.make = function (_elm) {
+   "use strict";
+   _elm.Notices = _elm.Notices || {};
+   if (_elm.Notices.values)
+   return _elm.Notices.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Notices",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var notLive = function () {
+      var string = "This page has yet to go live! Do not be surprised by dummy text or things that are not looking right.";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("NoticesNotLive")]),
+      _L.fromArray([$Html.text(string)]))]));
+   }();
+   _elm.Notices.values = {_op: _op
+                         ,notLive: notLive};
+   return _elm.Notices.values;
 };
 Elm.PrintStyle = Elm.PrintStyle || {};
 Elm.PrintStyle.make = function (_elm) {
@@ -12557,8 +12700,10 @@ Elm.SharedStyles.make = function (_elm) {
       valueA,
       valueB);
    });
-   var sizeTitleDescText = 20;
-   var sizeTitleText = 60;
+   var postPadding = 30;
+   var sizeHeaderDescText = 20;
+   var sizeHeaderTitleText = 60;
+   var arrowHeight = 30;
    var widthBoarder = 15;
    var heightHpBrowser = 639;
    var heightHpScreen = 768;
@@ -12566,11 +12711,12 @@ Elm.SharedStyles.make = function (_elm) {
    var heightAsusScreen = 1080;
    var heightNavBarTop = 5;
    var heightNavBar = 50 + heightNavBarTop;
-   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
-   var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
+   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder - arrowHeight;
+   var spaceHeaderInner = $Basics.round(heightTeachingHeader / 2 - (sizeHeaderTitleText + sizeHeaderDescText) / 2);
    var colorSubHeading = $Stylesheets.hex("BBB");
    var colorHeading = $Stylesheets.hex("333");
    var colorStandardText = colorHeading;
+   var colorContentBackground = $Stylesheets.hex("FFF");
    var colorNavBarBackground = $Stylesheets.hex("FFF");
    var colorBodyBackground = $Stylesheets.hex("DDD");
    var colorHighlight = $Stylesheets.hex("2B74C6");
@@ -12583,16 +12729,23 @@ Elm.SharedStyles.make = function (_elm) {
    var TeachingCallToAction = {ctor: "TeachingCallToAction"};
    var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
    var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
-   var TeachingTitleDesc = {ctor: "TeachingTitleDesc"};
-   var TeachingTitle = {ctor: "TeachingTitle"};
-   var TeachingInnerHeader = {ctor: "TeachingInnerHeader"};
+   var TeachingHeaderDesc = {ctor: "TeachingHeaderDesc"};
+   var TeachingHeaderTitle = {ctor: "TeachingHeaderTitle"};
+   var TeachingHeaderInner = {ctor: "TeachingHeaderInner"};
    var TeachingHeader = {ctor: "TeachingHeader"};
-   var WritingDescription = {ctor: "WritingDescription"};
-   var WritingTitle = {ctor: "WritingTitle"};
+   var WritingPost = {ctor: "WritingPost"};
+   var WritingHeaderDesc = {ctor: "WritingHeaderDesc"};
+   var WritingHeaderTitle = {ctor: "WritingHeaderTitle"};
+   var WritingHeaderInner = {ctor: "WritingHeaderInner"};
    var WritingHeader = {ctor: "WritingHeader"};
    var WritingContainer = {ctor: "WritingContainer"};
+   var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
+   var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
+   var HomeHeaderInner = {ctor: "HomeHeaderInner"};
+   var HomeHeader = {ctor: "HomeHeader"};
    var HomeContainer = {ctor: "HomeContainer"};
    var BootstrapAccordion = {ctor: "BootstrapAccordion"};
+   var NoticesNotLive = {ctor: "NoticesNotLive"};
    var NavBarIconBar = {ctor: "NavBarIconBar"};
    var NavBarSpace = {ctor: "NavBarSpace"};
    var NavBarTop = {ctor: "NavBarTop"};
@@ -12602,39 +12755,10 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
@@ -12643,8 +12767,23 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
@@ -12657,9 +12796,39 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
@@ -12706,22 +12875,32 @@ Elm.SharedStyles.make = function (_elm) {
    $Stylesheets.backgroundColor(colorHighlight)),
    NavBarIconBar),
    $Stylesheets.backgroundColor(colorHighlight)),
-   HomeContainer),
+   NoticesNotLive),
+   $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
+   $Stylesheets.color($Stylesheets.hex("FFF"))),
+   textAlign("center")),
    A2($Stylesheets.paddingTop,
-   30,
+   10,
    $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   10,
+   $Stylesheets.px)),
+   fontWeight("bold")),
+   HomeContainer),
    A2($Stylesheets.height,
    1000,
    $Stylesheets.px)),
-   WritingContainer),
-   A2($Stylesheets.paddingTop,
-   30,
-   $Stylesheets.px)),
-   WritingHeader),
+   HomeHeader),
+   $Stylesheets.backgroundColor(colorHighlight)),
    A2($Stylesheets.paddingTop,
    20,
    $Stylesheets.px)),
-   WritingTitle),
+   A2($Stylesheets.paddingBottom,
+   30,
+   $Stylesheets.px)),
+   HomeHeaderInner),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   HomeHeaderTitle),
    A2($Stylesheets.marginTop,
    50,
    $Stylesheets.px)),
@@ -12732,11 +12911,20 @@ Elm.SharedStyles.make = function (_elm) {
    60,
    $Stylesheets.px)),
    fontWeight("normal")),
-   WritingDescription),
+   HomeHeaderDesc),
    A2(fontSize,
    20,
    $Stylesheets.px)),
    $Stylesheets.color(colorSubHeading)),
+   WritingContainer),
+   $Stylesheets.backgroundColor(colorContentBackground)),
+   A2($Stylesheets.marginTop,
+   20,
+   $Stylesheets.px)),
+   WritingPost),
+   A2($Stylesheets.padding,
+   postPadding,
+   $Stylesheets.px)),
    TeachingHeader),
    $Stylesheets.backgroundColor(colorHighlight)),
    A2($Stylesheets.paddingTop,
@@ -12745,16 +12933,16 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets.paddingBottom,
    widthBoarder,
    $Stylesheets.px)),
-   TeachingInnerHeader),
+   TeachingHeaderInner),
    A2($Stylesheets.paddingTop,
-   spaceInnerHeader,
+   spaceHeaderInner,
    $Stylesheets.px)),
    A2($Stylesheets.height,
    heightTeachingHeader,
    $Stylesheets.px)),
    $Stylesheets.backgroundColor(colorHighlight)),
    textAlign("center")),
-   TeachingTitle),
+   TeachingHeaderTitle),
    A2($Stylesheets.marginTop,
    0,
    $Stylesheets.px)),
@@ -12762,12 +12950,12 @@ Elm.SharedStyles.make = function (_elm) {
    0,
    $Stylesheets.px)),
    A2(fontSize,
-   sizeTitleText,
+   sizeHeaderTitleText,
    $Stylesheets.px)),
    fontWeight("normal")),
-   TeachingTitleDesc),
+   TeachingHeaderDesc),
    A2(fontSize,
-   sizeTitleDescText,
+   sizeHeaderDescText,
    $Stylesheets.px)),
    $Stylesheets.color(colorSubHeading)),
    TeachingBioAndCallToAction),
@@ -12823,11 +13011,16 @@ Elm.SharedStyles.make = function (_elm) {
    40,
    $Stylesheets.px)),
    ProgrammingContainer),
-   A2($Stylesheets.paddingTop,
-   30,
-   $Stylesheets.px)),
    A2($Stylesheets.height,
    1000,
+   $Stylesheets.px)),
+   ProgrammingHeader),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   30,
    $Stylesheets.px)),
    BootstrapAccordion),
    $Stylesheets.color(colorStandardText)),
@@ -12839,16 +13032,23 @@ Elm.SharedStyles.make = function (_elm) {
                               ,NavBarTop: NavBarTop
                               ,NavBarSpace: NavBarSpace
                               ,NavBarIconBar: NavBarIconBar
+                              ,NoticesNotLive: NoticesNotLive
                               ,BootstrapAccordion: BootstrapAccordion
                               ,HomeContainer: HomeContainer
+                              ,HomeHeader: HomeHeader
+                              ,HomeHeaderInner: HomeHeaderInner
+                              ,HomeHeaderTitle: HomeHeaderTitle
+                              ,HomeHeaderDesc: HomeHeaderDesc
                               ,WritingContainer: WritingContainer
                               ,WritingHeader: WritingHeader
-                              ,WritingTitle: WritingTitle
-                              ,WritingDescription: WritingDescription
+                              ,WritingHeaderInner: WritingHeaderInner
+                              ,WritingHeaderTitle: WritingHeaderTitle
+                              ,WritingHeaderDesc: WritingHeaderDesc
+                              ,WritingPost: WritingPost
                               ,TeachingHeader: TeachingHeader
-                              ,TeachingInnerHeader: TeachingInnerHeader
-                              ,TeachingTitle: TeachingTitle
-                              ,TeachingTitleDesc: TeachingTitleDesc
+                              ,TeachingHeaderInner: TeachingHeaderInner
+                              ,TeachingHeaderTitle: TeachingHeaderTitle
+                              ,TeachingHeaderDesc: TeachingHeaderDesc
                               ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
                               ,TeachingImgTakafumi: TeachingImgTakafumi
                               ,TeachingCallToAction: TeachingCallToAction
@@ -12861,6 +13061,7 @@ Elm.SharedStyles.make = function (_elm) {
                               ,colorHighlight: colorHighlight
                               ,colorBodyBackground: colorBodyBackground
                               ,colorNavBarBackground: colorNavBarBackground
+                              ,colorContentBackground: colorContentBackground
                               ,colorHeading: colorHeading
                               ,colorSubHeading: colorSubHeading
                               ,colorStandardText: colorStandardText
@@ -12871,10 +13072,12 @@ Elm.SharedStyles.make = function (_elm) {
                               ,heightHpScreen: heightHpScreen
                               ,heightHpBrowser: heightHpBrowser
                               ,widthBoarder: widthBoarder
+                              ,arrowHeight: arrowHeight
                               ,heightTeachingHeader: heightTeachingHeader
-                              ,sizeTitleText: sizeTitleText
-                              ,sizeTitleDescText: sizeTitleDescText
-                              ,spaceInnerHeader: spaceInnerHeader
+                              ,sizeHeaderTitleText: sizeHeaderTitleText
+                              ,sizeHeaderDescText: sizeHeaderDescText
+                              ,spaceHeaderInner: spaceHeaderInner
+                              ,postPadding: postPadding
                               ,exports: exports
                               ,fontSize: fontSize
                               ,fontWeight: fontWeight
@@ -14521,12 +14724,16 @@ Elm.Writing.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Writing",
    $Basics = Elm.Basics.make(_elm),
+   $EntryOne = Elm.EntryOne.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
+   $Notices = Elm.Notices.make(_elm),
    $PrintStyle = Elm.PrintStyle.make(_elm),
    $Result = Elm.Result.make(_elm),
    $SharedStyles = Elm.SharedStyles.make(_elm),
@@ -14534,31 +14741,21 @@ Elm.Writing.make = function (_elm) {
    var bestWayToTeach = "\n  [13:39] <EmptyMemory> pattern recognition can only take you so far when learning\n  [13:40] <lostinmetro> pattern recognition is literally all i know how to do\n  [13:42] <EmptyMemory> i think concept definition coupled with examples (i.e. pattern recognition) is the best way to teach\n  [13:42] <EmptyMemory> i should write a blog post about that\n  ";
    var picks = _L.fromArray(["Brandon Sanderson Books"
                             ," "]);
-   var ventingMarkdown = "\n  # Venting\n  #### July-02-12: 11:44pm\n  Usually I\'m not the type to go blabbing about my problems to all my friends, but lately I\'ve felt the need to vent a lot. Recently, I\'ve felt the need to enlighten most of my close friends about the shit-show that is my current relationship standing with my father. I mean, I just did it to my cousin five minutes ago. Perhaps this is a better place to vent though. Sure, it\'s the internet, and sure, everyone can access it, but I want to learn HTML and webdesign anyway; I can kill two birds with one stone. And honestly, if you\'re this interested in my personal life to come to this site (if you can even call it that, I mean I\'m currently running this off Dropbox,) by all means, listen.\n  ";
-   var crossGameMarkdown = "\n  # Cross Game\n  #### July-13-12: 12:47pm\n  ![Cross Game](http://cdn.myanimelist.net/images/anime/6/22103l.jpg)\n\n  I finished Cross Game yesterday. Sam had suggested it to me. I\'m surprised how heavily Sam\'s invested himself into anime. It\'s awesome having a close friend in real life I can talk to anime. David and Samarth have gotten into it too, it\'s awesome.\n  Being a sports anime, I was kind of iffy about starting it before. I put it off for awhile. When Sam suggested it, I was like, \"hey I recognize that name, if you say it\'s good, I guess I\'ll give it a shot.\" Man, am I glad I did.\n  ### Synopsis:\n  Cross Game started very strong.\n  At first they introduced us to two very important characters: Kou, the protragonist, and his childhood friend, Wakaba. Despite having only 20min to work with, Wakaba\'s character captivated all of us (David, Samarth, Sam and I). She was very likable to begin with, she appeared to be strong and kind right from the get-go. We see that she is interested in Kou as more than a friend, despite them only being in the 5th grade. We\'re also introduced to Aoba, the main heroine of the story, and Akaishi, his best friend.\n  They kill off Wakaba in the first episode.\n  After building up Wakaba to be such a likable character, she dies, and the first episode ends with both Kou and Akaishi crying about losing someone they both loved. They play it off brilliantly. Kou wanders around the Summer Festival (that him and Wakaba were supposed to attend together after she got back from the swimming camp that ended up being her demise) wondering what to do with himself, and only after seeing Akaishi preying for her and crying, does he realize that all he can really do right now is cry as well.\n  The second episode resumes some 6 years after that summer, and the story revolves around Kou, Aoba, Akaishi (to a lesser extent), and the people they meet through baseball.\n  This isn\'t the first story I\'ve done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I\'m not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that\'s only a personal preference, and in no way should be a fault to the show.\n  ### Characters:\n  First off, I loved Kou. While he wasn\'t the hardest character to figure out, he definitely wasn\'t the easiest. Too many times in anime, I see characters that are defined (through obvious means) at the beginning, with a linear line of character development (cough: Clannad). Kou wasn\'t like that. He didn\'t need to explicitly say how he felt to get the audience to understand. In Cross Game, actions spoke a lot louder than words; the two main characters weren\'t outwardly honest about their feelings for one another. It was only through speculation of the other characters and what you could see from the way they acted could the audience know the reality of what Aoba and Kou felt for one another.\n  Aoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn\'t help but smile when her and Kou butted heads. Ichiyou knew her shit, so I\'m echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I\'ve come to know. She\'s definitey up there with Kurisu, Ami, and Ohana.\n  ### Verdict: 10/10\n  ";
-   var crossGame = A2($Html.div,
-   _L.fromArray([]),
-   _L.fromArray([$Markdown.toHtml(crossGameMarkdown)]));
+   var ventingMarkdown = "\n  Venting\n  =======\n  July-02-12: 11:44pm\n  -------------------\n  Usually I\'m not the type to go blabbing about my problems to all my friends, but lately I\'ve felt the need to vent a lot. Recently, I\'ve felt the need to enlighten most of my close friends about the shit-show that is my current relationship standing with my father. I mean, I just did it to my cousin five minutes ago. Perhaps this is a better place to vent though. Sure, it\'s the internet, and sure, everyone can access it, but I want to learn HTML and webdesign anyway; I can kill two birds with one stone. And honestly, if you\'re this interested in my personal life to come to this site (if you can even call it that, I mean I\'m currently running this off Dropbox,) by all means, listen.\n  ";
+   var entry = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
+   _L.fromArray([$Markdown.toHtml($EntryOne.entry)]));
    var sideBar = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-md-3 col-md-offset-1")]),
+   _L.fromArray([$Html$Attributes.$class("col-sm-3 col-sm-offset-1")]),
    _L.fromArray([]));
    var writingPosts = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-md-8")]),
-   _L.fromArray([crossGame]));
-   var writingHeader = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-mid-12 WritingHeader")]),
-   _L.fromArray([A2($Html.h1,
-                _L.fromArray([$Html$Attributes.$class("WritingTitle")]),
-                _L.fromArray([$Html.text("The Archive")]))
-                ,A2($Html.p,
-                _L.fromArray([$Html$Attributes.$class("lead WritingDescription")]),
-                _L.fromArray([$Html.text("A place for the written word.")]))]));
+   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+   _L.fromArray([entry]));
    var writing = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
    _L.fromArray([A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([writingHeader
-                ,writingPosts
+   _L.fromArray([writingPosts
                 ,sideBar]))]));
    var links = _L.fromArray([]);
    var view = function (model) {
@@ -14568,7 +14765,15 @@ Elm.Writing.make = function (_elm) {
                    ,A2($NavBar.navBar,
                    model.currentPage,
                    links)
-                   ,writing]));
+                   ,$NavBar.navBarSpace
+                   ,$Notices.notLive
+                   ,A4($Header.header,
+                   "Home",
+                   "The Archive",
+                   "Except there\'s only one blog entry so far.",
+                   true)
+                   ,writing
+                   ,$Footer.footer("Teaching")]));
    };
    var model = {_: {}
                ,currentPage: "Writing"};
@@ -14589,11 +14794,9 @@ Elm.Writing.make = function (_elm) {
                          ,view: view
                          ,links: links
                          ,writing: writing
-                         ,writingHeader: writingHeader
                          ,writingPosts: writingPosts
                          ,sideBar: sideBar
-                         ,crossGame: crossGame
-                         ,crossGameMarkdown: crossGameMarkdown
+                         ,entry: entry
                          ,ventingMarkdown: ventingMarkdown
                          ,picks: picks
                          ,bestWayToTeach: bestWayToTeach};

@@ -7,6 +7,9 @@ import NavBar
 import Markdown
 import Bootstrap
 import Paths
+import Notices
+import Header
+import Footer
 
 import Stylesheets
 import SharedStyles
@@ -16,7 +19,7 @@ import PrintStyle
 ----------------------------------------------------------------------------------------------------------------
 
 port title: String
-port title =  "Teaching · BJW"
+port title =  "Teaching | BJW"
 
 
 type alias Model =
@@ -45,7 +48,7 @@ main =
 
 model : Model
 model =
-  { currentPage = "Teaching | BJW"
+  { currentPage = "Teaching"
   }
 
 
@@ -56,37 +59,24 @@ view model =
     [ PrintStyle.stylesheet SharedStyles.exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
-    , header
+    , Notices.notLive
+    , Header.header "Teaching" "The Classroom" "Don't hesitate. I'm here to educate." False
     , teachingContainer
-    , footer
+    , Footer.footer "Teaching"
     ]
 
 ----------------------------------------------------------------------------------------------------------------
 
 links : List Html
 links =
-  [ li [] [ a [ href "#" ] [ text "Landing" ] ]
-  , li [] [ a [ href "#" ] [ text "Bio" ] ]
-  , li [] [ a [ href "#" ] [ text "Teachables" ] ]
-  , li [] [ a [ href "#" ] [ text "Region" ] ]
+  [ li [] [ a [ href "#Landing" ] [ text "Landing" ] ]
+  , li [] [ a [ href "#Bio" ] [ text "Bio" ] ]
+  , li [] [ a [ href "#Subjects" ] [ text "Subjects" ] ]
+  , li [] [ a [ href "#Region" ] [ text "Region" ] ]
   , li [] [ a [ href "#" ] [ text "Reviews" ] ]
-  , li [] [ a [ href "#" ] [ text "Contact Me" ] ]
+  , li [] [ a [ href "#Contact Me" ] [ text "Contact Me" ] ]
   ]
-
-
-----------------------------------------------------------------------------------------------------------------
-
-header : Html
-header =
-  div
-    [ class "TeachingHeader" ]
-    [ div 
-      [ class "container TeachingInnerHeader" 
-      ]
-      [ h1 [ class "TeachingTitle" ] [ text "The Classroom" ]
-      , p [ class "lead TeachingTitleDesc" ] [ text "Don't hesitate. I'm here to educate." ]
-      ]
-    ]
+  
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -135,6 +125,7 @@ bioAndCallToAction : Html
 bioAndCallToAction =
   div
     [ class "row TeachingBioAndCallToAction"
+    , id "Bio"
     ]
     [ bioAccordion
     , callToAction
@@ -311,7 +302,9 @@ subjects =
   div []
   [ Bootstrap.pageHeader "TeachingContainerHeader" "Subjects Offered"
   , div
-    [ class "row" ]
+    [ class "row"
+    , id "Subjects"
+    ]
     [ subjectsAccordion ]
   ]
 
@@ -443,7 +436,7 @@ area =
     imgArea = Bootstrap.image "TeachingImgArea" (Paths.resources ++ "metrovan.fw.png")
   in
     div 
-      []
+      [ id "Location" ]
       [ Bootstrap.pageHeader "TeachingContainerHeader" "Location"
       , div
         [ class "row" ]
@@ -458,7 +451,7 @@ area =
 contactMe : Html
 contactMe =
   div
-    []
+    [ id "Contact Me" ]
     [ Bootstrap.pageHeader "TeachingContainerHeader" contactAdv.title
     , div
       [ class "row" ]
@@ -475,19 +468,12 @@ contactAdv =
   , content =
       """
 
-Cell: 1800-123-4556  
-Email: lol@idgaf.com
+Brandon J Wong  
+Email: <bjwteaching@gmail.com>
 
       """
   }
 
-----------------------------------------------------------------------------------------------------------------
-
-footer : Html
-footer =
-  div
-    [ class "TeachingFooter" ]
-    []
 
 ----------------------------------------------------------------------------------------------------------------
 

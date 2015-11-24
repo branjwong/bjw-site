@@ -1941,6 +1941,35 @@ Elm.Dict.make = function (_elm) {
                       ,fromList: fromList};
    return _elm.Dict.values;
 };
+Elm.Footer = Elm.Footer || {};
+Elm.Footer.make = function (_elm) {
+   "use strict";
+   _elm.Footer = _elm.Footer || {};
+   if (_elm.Footer.values)
+   return _elm.Footer.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Footer",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var footer = function (pageName) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      pageName,
+      "Footer"))]),
+      _L.fromArray([]));
+   };
+   _elm.Footer.values = {_op: _op
+                        ,footer: footer};
+   return _elm.Footer.values;
+};
 Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Collage = Elm.Graphics.Collage || {};
 Elm.Graphics.Collage.make = function (_elm) {
@@ -2828,6 +2857,68 @@ Elm.Graphics.Element.make = function (_elm) {
                                   ,Element: Element
                                   ,Position: Position};
    return _elm.Graphics.Element.values;
+};
+Elm.Header = Elm.Header || {};
+Elm.Header.make = function (_elm) {
+   "use strict";
+   _elm.Header = _elm.Header || {};
+   if (_elm.Header.values)
+   return _elm.Header.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Header",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var header = F4(function (pageName,
+   headText,
+   subText,
+   containerBool) {
+      return function () {
+         var possibleContainer = function () {
+            switch (containerBool)
+            {case false: return "";
+               case true: return "container";}
+            _U.badCase($moduleName,
+            "between lines 10 and 15");
+         }();
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("row")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+         pageName,
+         "Header"))]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(possibleContainer)]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+         pageName,
+         "HeaderInner"))]),
+         _L.fromArray([A2($Html.h1,
+                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                      pageName,
+                      "HeaderTitle"))]),
+                      _L.fromArray([$Html.text(headText)]))
+                      ,A2($Html.p,
+                      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+                      "lead ",
+                      A2($Basics._op["++"],
+                      pageName,
+                      "HeaderDesc")))]),
+                      _L.fromArray([$Html.text(subText)]))]))]))]))]))]));
+      }();
+   });
+   _elm.Header.values = {_op: _op
+                        ,header: header};
+   return _elm.Header.values;
 };
 Elm.Html = Elm.Html || {};
 Elm.Html.make = function (_elm) {
@@ -12160,7 +12251,8 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([$Html$Attributes.href("https://github.com/branjwong/")]),
                              _L.fromArray([$Html.text("GitHub")]))]))]))]));
    var navBarSpace = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("NavBarSpace")]),
+   _L.fromArray([$Html$Attributes.id("Landing")
+                ,$Html$Attributes.$class("NavBarSpace")]),
    _L.fromArray([]));
    var tab = F4(function (currentName,
    currentLinks,
@@ -12264,6 +12356,36 @@ Elm.NavBar.make = function (_elm) {
                         ,navBarSpace: navBarSpace
                         ,outsideLinks: outsideLinks};
    return _elm.NavBar.values;
+};
+Elm.Notices = Elm.Notices || {};
+Elm.Notices.make = function (_elm) {
+   "use strict";
+   _elm.Notices = _elm.Notices || {};
+   if (_elm.Notices.values)
+   return _elm.Notices.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Notices",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var notLive = function () {
+      var string = "This page has yet to go live! Do not be surprised by dummy text or things that are not looking right.";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("NoticesNotLive")]),
+      _L.fromArray([$Html.text(string)]))]));
+   }();
+   _elm.Notices.values = {_op: _op
+                         ,notLive: notLive};
+   return _elm.Notices.values;
 };
 Elm.Paths = Elm.Paths || {};
 Elm.Paths.make = function (_elm) {
@@ -12719,8 +12841,10 @@ Elm.SharedStyles.make = function (_elm) {
       valueA,
       valueB);
    });
-   var sizeTitleDescText = 20;
-   var sizeTitleText = 60;
+   var postPadding = 30;
+   var sizeHeaderDescText = 20;
+   var sizeHeaderTitleText = 60;
+   var arrowHeight = 30;
    var widthBoarder = 15;
    var heightHpBrowser = 639;
    var heightHpScreen = 768;
@@ -12728,11 +12852,12 @@ Elm.SharedStyles.make = function (_elm) {
    var heightAsusScreen = 1080;
    var heightNavBarTop = 5;
    var heightNavBar = 50 + heightNavBarTop;
-   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder;
-   var spaceInnerHeader = $Basics.round(heightTeachingHeader / 2 - (sizeTitleText + sizeTitleDescText) / 2);
+   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder - arrowHeight;
+   var spaceHeaderInner = $Basics.round(heightTeachingHeader / 2 - (sizeHeaderTitleText + sizeHeaderDescText) / 2);
    var colorSubHeading = $Stylesheets.hex("BBB");
    var colorHeading = $Stylesheets.hex("333");
    var colorStandardText = colorHeading;
+   var colorContentBackground = $Stylesheets.hex("FFF");
    var colorNavBarBackground = $Stylesheets.hex("FFF");
    var colorBodyBackground = $Stylesheets.hex("DDD");
    var colorHighlight = $Stylesheets.hex("2B74C6");
@@ -12745,16 +12870,23 @@ Elm.SharedStyles.make = function (_elm) {
    var TeachingCallToAction = {ctor: "TeachingCallToAction"};
    var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
    var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
-   var TeachingTitleDesc = {ctor: "TeachingTitleDesc"};
-   var TeachingTitle = {ctor: "TeachingTitle"};
-   var TeachingInnerHeader = {ctor: "TeachingInnerHeader"};
+   var TeachingHeaderDesc = {ctor: "TeachingHeaderDesc"};
+   var TeachingHeaderTitle = {ctor: "TeachingHeaderTitle"};
+   var TeachingHeaderInner = {ctor: "TeachingHeaderInner"};
    var TeachingHeader = {ctor: "TeachingHeader"};
-   var WritingDescription = {ctor: "WritingDescription"};
-   var WritingTitle = {ctor: "WritingTitle"};
+   var WritingPost = {ctor: "WritingPost"};
+   var WritingHeaderDesc = {ctor: "WritingHeaderDesc"};
+   var WritingHeaderTitle = {ctor: "WritingHeaderTitle"};
+   var WritingHeaderInner = {ctor: "WritingHeaderInner"};
    var WritingHeader = {ctor: "WritingHeader"};
    var WritingContainer = {ctor: "WritingContainer"};
+   var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
+   var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
+   var HomeHeaderInner = {ctor: "HomeHeaderInner"};
+   var HomeHeader = {ctor: "HomeHeader"};
    var HomeContainer = {ctor: "HomeContainer"};
    var BootstrapAccordion = {ctor: "BootstrapAccordion"};
+   var NoticesNotLive = {ctor: "NoticesNotLive"};
    var NavBarIconBar = {ctor: "NavBarIconBar"};
    var NavBarSpace = {ctor: "NavBarSpace"};
    var NavBarTop = {ctor: "NavBarTop"};
@@ -12764,39 +12896,10 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
@@ -12805,8 +12908,23 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
@@ -12819,9 +12937,39 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
@@ -12868,22 +13016,32 @@ Elm.SharedStyles.make = function (_elm) {
    $Stylesheets.backgroundColor(colorHighlight)),
    NavBarIconBar),
    $Stylesheets.backgroundColor(colorHighlight)),
-   HomeContainer),
+   NoticesNotLive),
+   $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
+   $Stylesheets.color($Stylesheets.hex("FFF"))),
+   textAlign("center")),
    A2($Stylesheets.paddingTop,
-   30,
+   10,
    $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   10,
+   $Stylesheets.px)),
+   fontWeight("bold")),
+   HomeContainer),
    A2($Stylesheets.height,
    1000,
    $Stylesheets.px)),
-   WritingContainer),
-   A2($Stylesheets.paddingTop,
-   30,
-   $Stylesheets.px)),
-   WritingHeader),
+   HomeHeader),
+   $Stylesheets.backgroundColor(colorHighlight)),
    A2($Stylesheets.paddingTop,
    20,
    $Stylesheets.px)),
-   WritingTitle),
+   A2($Stylesheets.paddingBottom,
+   30,
+   $Stylesheets.px)),
+   HomeHeaderInner),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   HomeHeaderTitle),
    A2($Stylesheets.marginTop,
    50,
    $Stylesheets.px)),
@@ -12894,11 +13052,20 @@ Elm.SharedStyles.make = function (_elm) {
    60,
    $Stylesheets.px)),
    fontWeight("normal")),
-   WritingDescription),
+   HomeHeaderDesc),
    A2(fontSize,
    20,
    $Stylesheets.px)),
    $Stylesheets.color(colorSubHeading)),
+   WritingContainer),
+   $Stylesheets.backgroundColor(colorContentBackground)),
+   A2($Stylesheets.marginTop,
+   20,
+   $Stylesheets.px)),
+   WritingPost),
+   A2($Stylesheets.padding,
+   postPadding,
+   $Stylesheets.px)),
    TeachingHeader),
    $Stylesheets.backgroundColor(colorHighlight)),
    A2($Stylesheets.paddingTop,
@@ -12907,16 +13074,16 @@ Elm.SharedStyles.make = function (_elm) {
    A2($Stylesheets.paddingBottom,
    widthBoarder,
    $Stylesheets.px)),
-   TeachingInnerHeader),
+   TeachingHeaderInner),
    A2($Stylesheets.paddingTop,
-   spaceInnerHeader,
+   spaceHeaderInner,
    $Stylesheets.px)),
    A2($Stylesheets.height,
    heightTeachingHeader,
    $Stylesheets.px)),
    $Stylesheets.backgroundColor(colorHighlight)),
    textAlign("center")),
-   TeachingTitle),
+   TeachingHeaderTitle),
    A2($Stylesheets.marginTop,
    0,
    $Stylesheets.px)),
@@ -12924,12 +13091,12 @@ Elm.SharedStyles.make = function (_elm) {
    0,
    $Stylesheets.px)),
    A2(fontSize,
-   sizeTitleText,
+   sizeHeaderTitleText,
    $Stylesheets.px)),
    fontWeight("normal")),
-   TeachingTitleDesc),
+   TeachingHeaderDesc),
    A2(fontSize,
-   sizeTitleDescText,
+   sizeHeaderDescText,
    $Stylesheets.px)),
    $Stylesheets.color(colorSubHeading)),
    TeachingBioAndCallToAction),
@@ -12985,11 +13152,16 @@ Elm.SharedStyles.make = function (_elm) {
    40,
    $Stylesheets.px)),
    ProgrammingContainer),
-   A2($Stylesheets.paddingTop,
-   30,
-   $Stylesheets.px)),
    A2($Stylesheets.height,
    1000,
+   $Stylesheets.px)),
+   ProgrammingHeader),
+   $Stylesheets.backgroundColor(colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   30,
    $Stylesheets.px)),
    BootstrapAccordion),
    $Stylesheets.color(colorStandardText)),
@@ -13001,16 +13173,23 @@ Elm.SharedStyles.make = function (_elm) {
                               ,NavBarTop: NavBarTop
                               ,NavBarSpace: NavBarSpace
                               ,NavBarIconBar: NavBarIconBar
+                              ,NoticesNotLive: NoticesNotLive
                               ,BootstrapAccordion: BootstrapAccordion
                               ,HomeContainer: HomeContainer
+                              ,HomeHeader: HomeHeader
+                              ,HomeHeaderInner: HomeHeaderInner
+                              ,HomeHeaderTitle: HomeHeaderTitle
+                              ,HomeHeaderDesc: HomeHeaderDesc
                               ,WritingContainer: WritingContainer
                               ,WritingHeader: WritingHeader
-                              ,WritingTitle: WritingTitle
-                              ,WritingDescription: WritingDescription
+                              ,WritingHeaderInner: WritingHeaderInner
+                              ,WritingHeaderTitle: WritingHeaderTitle
+                              ,WritingHeaderDesc: WritingHeaderDesc
+                              ,WritingPost: WritingPost
                               ,TeachingHeader: TeachingHeader
-                              ,TeachingInnerHeader: TeachingInnerHeader
-                              ,TeachingTitle: TeachingTitle
-                              ,TeachingTitleDesc: TeachingTitleDesc
+                              ,TeachingHeaderInner: TeachingHeaderInner
+                              ,TeachingHeaderTitle: TeachingHeaderTitle
+                              ,TeachingHeaderDesc: TeachingHeaderDesc
                               ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
                               ,TeachingImgTakafumi: TeachingImgTakafumi
                               ,TeachingCallToAction: TeachingCallToAction
@@ -13023,6 +13202,7 @@ Elm.SharedStyles.make = function (_elm) {
                               ,colorHighlight: colorHighlight
                               ,colorBodyBackground: colorBodyBackground
                               ,colorNavBarBackground: colorNavBarBackground
+                              ,colorContentBackground: colorContentBackground
                               ,colorHeading: colorHeading
                               ,colorSubHeading: colorSubHeading
                               ,colorStandardText: colorStandardText
@@ -13033,10 +13213,12 @@ Elm.SharedStyles.make = function (_elm) {
                               ,heightHpScreen: heightHpScreen
                               ,heightHpBrowser: heightHpBrowser
                               ,widthBoarder: widthBoarder
+                              ,arrowHeight: arrowHeight
                               ,heightTeachingHeader: heightTeachingHeader
-                              ,sizeTitleText: sizeTitleText
-                              ,sizeTitleDescText: sizeTitleDescText
-                              ,spaceInnerHeader: spaceInnerHeader
+                              ,sizeHeaderTitleText: sizeHeaderTitleText
+                              ,sizeHeaderDescText: sizeHeaderDescText
+                              ,spaceHeaderInner: spaceHeaderInner
+                              ,postPadding: postPadding
                               ,exports: exports
                               ,fontSize: fontSize
                               ,fontWeight: fontWeight
@@ -14466,12 +14648,15 @@ Elm.Teaching.make = function (_elm) {
    $moduleName = "Teaching",
    $Basics = Elm.Basics.make(_elm),
    $Bootstrap = Elm.Bootstrap.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
+   $Notices = Elm.Notices.make(_elm),
    $Paths = Elm.Paths.make(_elm),
    $PrintStyle = Elm.PrintStyle.make(_elm),
    $Result = Elm.Result.make(_elm),
@@ -14480,15 +14665,12 @@ Elm.Teaching.make = function (_elm) {
    $Stylesheets = Elm.Stylesheets.make(_elm);
    var loremipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
    var layout = "\n  # Landing Page\n  - introductory tagline\n  - img = \"teaching\"\n  # Bio\n  - img = \"gradphoto\"\n  # Reviews\n  # Map\n  # Contact Me\n  - anchor: #contact me\n  ";
-   var footer = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("TeachingFooter")]),
-   _L.fromArray([]));
    var contactAdv = {_: {}
-                    ,content: "\n\nCell: 1800-123-4556  \nEmail: lol@idgaf.com\n\n      "
+                    ,content: "\n\nBrandon J Wong  \nEmail: <bjwteaching@gmail.com>\n\n      "
                     ,image: ""
                     ,title: "Contact Me"};
    var contactMe = A2($Html.div,
-   _L.fromArray([]),
+   _L.fromArray([$Html$Attributes.id("Contact Me")]),
    _L.fromArray([A2($Bootstrap.pageHeader,
                 "TeachingContainerHeader",
                 contactAdv.title)
@@ -14504,7 +14686,7 @@ Elm.Teaching.make = function (_elm) {
       $Paths.resources,
       "metrovan.fw.png"));
       return A2($Html.div,
-      _L.fromArray([]),
+      _L.fromArray([$Html$Attributes.id("Location")]),
       _L.fromArray([A2($Bootstrap.pageHeader,
                    "TeachingContainerHeader",
                    "Location")
@@ -14613,7 +14795,8 @@ Elm.Teaching.make = function (_elm) {
                 "TeachingContainerHeader",
                 "Subjects Offered")
                 ,A2($Html.div,
-                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([$Html$Attributes.$class("row")
+                             ,$Html$Attributes.id("Subjects")]),
                 _L.fromArray([subjectsAccordion]))]));
    var approaches = {_: {}
                     ,content: loremipsum
@@ -14728,7 +14911,8 @@ Elm.Teaching.make = function (_elm) {
                    bio2.content)]));
    }();
    var bioAndCallToAction = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row TeachingBioAndCallToAction")]),
+   _L.fromArray([$Html$Attributes.$class("row TeachingBioAndCallToAction")
+                ,$Html$Attributes.id("Bio")]),
    _L.fromArray([bioAccordion
                 ,callToAction]));
    var imgTakafumi = A2($Bootstrap.image,
@@ -14760,35 +14944,25 @@ Elm.Teaching.make = function (_elm) {
                 ,subjects
                 ,area
                 ,contactMe]));
-   var header = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("TeachingHeader")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container TeachingInnerHeader")]),
-   _L.fromArray([A2($Html.h1,
-                _L.fromArray([$Html$Attributes.$class("TeachingTitle")]),
-                _L.fromArray([$Html.text("The Classroom")]))
-                ,A2($Html.p,
-                _L.fromArray([$Html$Attributes.$class("lead TeachingTitleDesc")]),
-                _L.fromArray([$Html.text("Don\'t hesitate. I\'m here to educate.")]))]))]));
    var links = _L.fromArray([A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
-                            _L.fromArray([$Html$Attributes.href("#")]),
+                            _L.fromArray([$Html$Attributes.href("#Landing")]),
                             _L.fromArray([$Html.text("Landing")]))]))
                             ,A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
-                            _L.fromArray([$Html$Attributes.href("#")]),
+                            _L.fromArray([$Html$Attributes.href("#Bio")]),
                             _L.fromArray([$Html.text("Bio")]))]))
                             ,A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
-                            _L.fromArray([$Html$Attributes.href("#")]),
-                            _L.fromArray([$Html.text("Teachables")]))]))
+                            _L.fromArray([$Html$Attributes.href("#Subjects")]),
+                            _L.fromArray([$Html.text("Subjects")]))]))
                             ,A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
-                            _L.fromArray([$Html$Attributes.href("#")]),
+                            _L.fromArray([$Html$Attributes.href("#Region")]),
                             _L.fromArray([$Html.text("Region")]))]))
                             ,A2($Html.li,
                             _L.fromArray([]),
@@ -14798,7 +14972,7 @@ Elm.Teaching.make = function (_elm) {
                             ,A2($Html.li,
                             _L.fromArray([]),
                             _L.fromArray([A2($Html.a,
-                            _L.fromArray([$Html$Attributes.href("#")]),
+                            _L.fromArray([$Html$Attributes.href("#Contact Me")]),
                             _L.fromArray([$Html.text("Contact Me")]))]))]);
    var view = function (model) {
       return A2($Html.div,
@@ -14808,12 +14982,17 @@ Elm.Teaching.make = function (_elm) {
                    model.currentPage,
                    links)
                    ,$NavBar.navBarSpace
-                   ,header
+                   ,$Notices.notLive
+                   ,A4($Header.header,
+                   "Teaching",
+                   "The Classroom",
+                   "Don\'t hesitate. I\'m here to educate.",
+                   false)
                    ,teachingContainer
-                   ,footer]));
+                   ,$Footer.footer("Teaching")]));
    };
    var model = {_: {}
-               ,currentPage: "Teaching | BJW"};
+               ,currentPage: "Teaching"};
    var main = view(model);
    var Panel = F2(function (a,b) {
       return {_: {}
@@ -14836,7 +15015,7 @@ Elm.Teaching.make = function (_elm) {
    function (v) {
       return v;
    },
-   "Teaching · BJW");
+   "Teaching | BJW");
    _elm.Teaching.values = {_op: _op
                           ,Model: Model
                           ,AdvPoint: AdvPoint
@@ -14845,7 +15024,6 @@ Elm.Teaching.make = function (_elm) {
                           ,model: model
                           ,view: view
                           ,links: links
-                          ,header: header
                           ,teachingContainer: teachingContainer
                           ,arrow: arrow
                           ,imgTakafumi: imgTakafumi
@@ -14869,7 +15047,6 @@ Elm.Teaching.make = function (_elm) {
                           ,area: area
                           ,contactMe: contactMe
                           ,contactAdv: contactAdv
-                          ,footer: footer
                           ,layout: layout
                           ,loremipsum: loremipsum};
    return _elm.Teaching.values;

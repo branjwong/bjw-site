@@ -8,19 +8,27 @@ type CssClasses
     | NavBarSpace
     | NavBarIconBar
 
+    | NoticesNotLive
+
     | BootstrapAccordion
 
     | HomeContainer
+    | HomeHeader
+    | HomeHeaderInner
+    | HomeHeaderTitle
+    | HomeHeaderDesc
 
     | WritingContainer
     | WritingHeader
-    | WritingTitle
-    | WritingDescription
+    | WritingHeaderInner
+    | WritingHeaderTitle
+    | WritingHeaderDesc
+    | WritingPost
 
     | TeachingHeader
-    | TeachingInnerHeader
-    | TeachingTitle
-    | TeachingTitleDesc
+    | TeachingHeaderInner
+    | TeachingHeaderTitle
+    | TeachingHeaderDesc
     | TeachingBioAndCallToAction
     | TeachingImgTakafumi
     | TeachingCallToAction
@@ -46,6 +54,7 @@ type CssClasses
 colorHighlight = hex "2B74C6"
 colorBodyBackground = hex "DDD"
 colorNavBarBackground = hex "FFF"
+colorContentBackground = hex "FFF"
 
 
 -- Text Colors Against Site Background
@@ -65,13 +74,15 @@ heightHpScreen = 768
 heightHpBrowser = 639
 
 widthBoarder = 15
-heightTeachingHeader = heightHpBrowser - heightNavBar - 2*widthBoarder
+arrowHeight = 30
+heightTeachingHeader = heightHpBrowser - heightNavBar - 2*widthBoarder - arrowHeight
 
-sizeTitleText = 60
-sizeTitleDescText = 20
+sizeHeaderTitleText = 60
+sizeHeaderDescText = 20
 
-spaceInnerHeader = round(heightTeachingHeader/2 - (sizeTitleText + sizeTitleDescText)/2)
+spaceHeaderInner = round(heightTeachingHeader/2 - (sizeHeaderTitleText + sizeHeaderDescText)/2)
 
+postPadding = 30
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -104,27 +115,67 @@ exports =
 
 ---------------------------------------------------------------------------------------------------------
 
-        |.| HomeContainer
-            |-| paddingTop 30 px
-            |-| height 1000 px
+        |.| NoticesNotLive
+            |-| backgroundColor (hex "333")
+            |-| color (hex "FFF")
+            |-| textAlign "center"
+            |-| paddingTop 10 px
+            |-| paddingBottom 10 px
+            |-| fontWeight "bold"
 
 ---------------------------------------------------------------------------------------------------------
 
-        |.| WritingContainer
-            |-| paddingTop 30 px
+        |.| HomeContainer
+            |-| height 1000 px
 
-        |.| WritingHeader
+        |.| HomeHeader
+            |-| backgroundColor colorHighlight
             |-| paddingTop 20 px
+            |-| paddingBottom 30 px
 
-        |.| WritingTitle
+        |.| HomeHeaderInner
+            |-| backgroundColor colorHighlight
+
+        |.| HomeHeaderTitle
             |-| marginTop 50 px
             |-| marginBottom 0 px
             |-| fontSize 60 px
             |-| fontWeight "normal"
 
-        |.| WritingDescription
+        |.| HomeHeaderDesc
             |-| fontSize 20 px
             |-| color colorSubHeading
+
+---------------------------------------------------------------------------------------------------------
+
+        |.| WritingContainer
+            |-| backgroundColor colorContentBackground
+            |-| marginTop 20 px
+
+        --|.| WritingHeader
+        --    |-| backgroundColor colorHighlight
+        --    |-| paddingTop 20 px
+        --    |-| paddingBottom 30 px
+
+        --|.| WritingHeaderInner
+        --    |-| backgroundColor colorHighlight
+        --    |-| textAlign "center"
+
+        --|.| WritingHeaderTitle
+        --    |-| marginTop 50 px
+        --    |-| marginBottom 0 px
+        --    |-| fontSize 60 px
+        --    |-| fontWeight "normal"
+
+        --|.| WritingHeaderDesc
+        --    |-| fontSize 20 px
+        --    |-| color colorSubHeading
+
+        |.| WritingPost
+            |-| padding postPadding px
+            --|-| paddingLeft postPadding px
+            --|-| paddingRight postPadding px
+            --|-| paddingBottom postPadding px
             
 ---------------------------------------------------------------------------------------------------------
 
@@ -133,20 +184,20 @@ exports =
             |-| paddingTop widthBoarder px
             |-| paddingBottom widthBoarder px
 
-        |.| TeachingInnerHeader
-            |-| paddingTop spaceInnerHeader px
+        |.| TeachingHeaderInner
+            |-| paddingTop spaceHeaderInner px
             |-| height heightTeachingHeader px
             |-| backgroundColor colorHighlight
             |-| textAlign "center"
 
-        |.| TeachingTitle 
+        |.| TeachingHeaderTitle 
             |-| marginTop 0 px
             |-| marginBottom 0 px
-            |-| fontSize sizeTitleText px
+            |-| fontSize sizeHeaderTitleText px
             |-| fontWeight "normal"
 
-        |.| TeachingTitleDesc 
-            |-| fontSize sizeTitleDescText px
+        |.| TeachingHeaderDesc 
+            |-| fontSize sizeHeaderDescText px
             |-| color colorSubHeading
 
         |.| TeachingBioAndCallToAction
@@ -191,8 +242,12 @@ exports =
 ---------------------------------------------------------------------------------------------------------
 
         |.| ProgrammingContainer
-            |-| paddingTop 30 px
             |-| height 1000 px
+
+        |.| ProgrammingHeader
+            |-| backgroundColor colorHighlight
+            |-| paddingTop 20 px
+            |-| paddingBottom 30 px
 
 ----------------------------------------------------------------------------------------------------------------
 

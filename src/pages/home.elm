@@ -7,6 +7,9 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
+import Header
+import Notices
+import Footer
 
 import SharedStyles
 import PrintStyle
@@ -23,6 +26,9 @@ model =
   { currentPage = "Home"
   }
 
+main : Html
+main =
+  view model
 
 view : Model -> Html
 view model =
@@ -30,13 +36,14 @@ view model =
     []
     [ PrintStyle.stylesheet SharedStyles.exports
     , NavBar.navBar model.currentPage []
+    , NavBar.navBarSpace
+    , Notices.notLive
+    , Header.header "Home" "Brandon's Net Niche" "Sup Internet. I am here too." True
     , home
+    , Footer.footer "Teaching"
     ]
 
 
-main : Html
-main =
-  view model
 
 
 home =
@@ -45,16 +52,5 @@ home =
     ]
     [ div
       [ class "row" ]
-      [ header
-      ]
-    ]
-
-
-header =
-  div
-    [ class "WritingHeader" ]
-    [ h1 [ class "WritingTitle" ] [ text "Brandon's Net Niche" ]
-    , p [ class "lead", class "WritingDescription" ] [ text "Sup Internet. I am here too." ]
-    --, h1 [ Style.writingTitle ] [ text "A Rotten Register" ]
-    --, p [ class "lead", Style.writingDescription ] [ text "Everything that you thought you didn't want to hear." ]
+      []
     ]
