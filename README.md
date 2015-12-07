@@ -22,19 +22,22 @@ Personal Website
 ## Content
 
 ##### Teaching
-	- teaching services advertising
+
+- teaching services advertising
 
 ##### Programming
-	- visual programming portfolio
-	- latest blog about the making of this site
+
+- visual programming portfolio
+- latest blog about the making of this site
 
 ##### Writing
-	- blog
-		- blogging about the making of this site
-		- book talk
-		- article share
-	- guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
-  - favourite quotes
+
+- blog
+	- blogging about the making of this site
+	- book talk
+	- article share
+- guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
+- favourite quotes
 
 ## Design Decisions
 
