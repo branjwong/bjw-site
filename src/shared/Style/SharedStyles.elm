@@ -1,6 +1,8 @@
-module SharedStyles where
+module Style.SharedStyles where
 
+import Style.SharedValues exposing (..)
 import Stylesheets exposing (..)
+import Style.CssHelpers exposing (..)
 
 type CssClasses 
     = NavBar
@@ -44,52 +46,6 @@ type CssClasses
 
     | ProgrammingContainer
     | ProgrammingHeader
-
-
---type CssIds =
---    None
-
----------------------------------------------------------------------------------------------------------
-
--- COLOUR
--- http://webdesign.tutsplus.com/tutorials/6-beginner-safety-first-color-guidelines-for-the-web--cms-21462
-
--- Background Colors
-
-colorHighlight = hex "2B74C6"
-colorBodyBackground = hex "DDD"
-colorNavBarBackground = hex "FFF"
-colorContentBackground = hex "FFF"
-
-
--- Text Colors Against Site Background
-
-colorHeading = hex "333"
-colorSubHeading = hex "BBB"
-colorStandardText = colorHeading
-
----------------------------------------------------------------------------------------------------------
-
-heightNavBarTop = 5
-heightNavBar = 50 + heightNavBarTop
-
-heightAsusScreen = 1080
-heightAsusBrowser = 951
-heightHpScreen = 768
-heightHpBrowser = 639
-
-widthBoarder = 15
-arrowHeight = 30
-heightTeachingHeader = heightHpBrowser - heightNavBar - 2*widthBoarder - arrowHeight
-
-sizeHeaderTitleText = 60
-sizeHeaderDescText = 20
-
-spaceHeaderInner = round(heightTeachingHeader/2 - (sizeHeaderTitleText + sizeHeaderDescText)/2)
-
-postPadding = 30
-
----------------------------------------------------------------------------------------------------------
 
 
 exports =
@@ -139,7 +95,6 @@ exports =
 
         |.| HomeIntroImage
             |-| height 300 px
-            |-| width 500 px
             |-| backgroundColor (hex "454545")
 
         |.| HomeMainBodyPre
@@ -149,7 +104,6 @@ exports =
             |-| padding 30 px
             |-| paddingTop 50 px
             |-| backgroundColor colorContentBackground
-            |-| height 500 px
 
         |.| HomeHeader
             |-| backgroundColor colorHighlight
@@ -279,58 +233,3 @@ exports =
 
         |.| BootstrapAccordion 
             |-| color colorStandardText
-            |-| paddingTop 20 px
-
-----------------------------------------------------------------------------------------------------------------
-
-fontSize valueA valueB =
-    attr2 "font-size" numberToString unitsToString valueA valueB
-
-fontWeight value =
-    attr1 "font-weight" (\a -> a) value
-
-fontFamily value = 
-    attr1 "font-family" toString value
-
-textAlign value =
-    attr1 "text-align" (\a -> a) value
-
-borderBottomColor value =
-    attr1 "border-bottom-color" colorToString value
-
-borderTopColor value =
-    attr1 "border-top-color" colorToString value
-
-borderTopWidth valueA valueB =
-    attr2 "border-top-width" numberToString unitsToString valueA valueB
-
-borderRightWidth valueA valueB =
-    attr2 "border-right-width" numberToString unitsToString valueA valueB
-
-borderBottomWidth valueA valueB =
-    attr2 "border-bottom-width" numberToString unitsToString valueA valueB
-
-borderLeftWidth valueA valueB =
-    attr2 "border-left-width" numberToString unitsToString valueA valueB
-
-content value =
-    attr1 "content" toString value
-
-position value =
-    attr1 "position" (\a -> a) value
-
-borderStyle value =
-    attr1 "border-style" (\a -> a) value
-
-borderColor value =
-    attr1 "border-color" (\a -> a) value
-
-left valueA valueB =
-    attr2 "left" numberToString unitsToString valueA valueB
-
-right valueA valueB =
-    attr2 "right" numberToString unitsToString valueA valueB
-
- --Overloaded Function
-margin2 value =
-    attr1 "margin" (\a -> a) value

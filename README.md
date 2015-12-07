@@ -51,3 +51,9 @@
 - elm to html/js compilation
 - static css in .css stylesheet
 - nginx server
+
+## Version Numbers
+
+Version numbers are essentially SemVer, except that I use semantic names, for the version roles, e.g. “[Breaking.Feature.Fix][1]” instead of “Major.Minor.Patch”.
+
+[1] https://medium.com/javascript-scene/software-versions-are-broken-3d2dc0da0783#.qgkp9dimp

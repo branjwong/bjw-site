@@ -785,6 +785,50 @@ Elm.Color.make = function (_elm) {
                        ,darkGray: darkGray};
    return _elm.Color.values;
 };
+Elm.CrossGame = Elm.CrossGame || {};
+Elm.CrossGame.make = function (_elm) {
+   "use strict";
+   _elm.CrossGame = _elm.CrossGame || {};
+   if (_elm.CrossGame.values)
+   return _elm.CrossGame.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "CrossGame",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $WritingLibrary = Elm.WritingLibrary.make(_elm);
+   var content = "\n\n![Cross Game](http://cdn.myanimelist.net/images/anime/6/22103l.jpg)\n\nI finished Cross Game yesterday. Sam had suggested it to me. I\'m surprised how heavily Sam\'s invested himself into anime. It\'s awesome having a close friend in real life I can talk to anime. David and Samarth have gotten into it too, it\'s awesome.\nBeing a sports anime, I was kind of iffy about starting it before. I put it off for awhile. When Sam suggested it, I was like, \"hey I recognize that name, if you say it\'s good, I guess I\'ll give it a shot.\" Man, am I glad I did.\nSynopsis\n--------\nCross Game started very strong.\nAt first they introduced us to two very important characters: Kou, the protragonist, and his childhood friend, Wakaba. Despite having only 20min to work with, Wakaba\'s character captivated all of us (David, Samarth, Sam and I). She was very likable to begin with, she appeared to be strong and kind right from the get-go. We see that she is interested in Kou as more than a friend, despite them only being in the 5th grade. We\'re also introduced to Aoba, the main heroine of the story, and Akaishi, his best friend.\nThey kill off Wakaba in the first episode.\nAfter building up Wakaba to be such a likable character, she dies, and the first episode ends with both Kou and Akaishi crying about losing someone they both loved. They play it off brilliantly. Kou wanders around the Summer Festival (that him and Wakaba were supposed to attend together after she got back from the swimming camp that ended up being her demise) wondering what to do with himself, and only after seeing Akaishi preying for her and crying, does he realize that all he can really do right now is cry as well.\nThe second episode resumes some 6 years after that summer, and the story revolves around Kou, Aoba, Akaishi (to a lesser extent), and the people they meet through baseball.\nThis isn\'t the first story I\'ve done a review for for nothing. Despite this being a 50 episode long anime, I was enthralled for the whole ride. While the story is mostly character driven, the plot serves as a great device for character development. Even though I\'m not a huge fan of baseball, they made enjoyable for people on either side of that scale, i.e.: Brandon to David (with regards to their level of understanding/passion for baseball). While perhaps I would have been happy with less baseball, that\'s only a personal preference, and in no way should be a fault to the show.\nCharacters\n----------\nFirst off, I loved Kou. While he wasn\'t the hardest character to figure out, he definitely wasn\'t the easiest. Too many times in anime, I see characters that are defined (through obvious means) at the beginning, with a linear line of character development (cough: Clannad). Kou wasn\'t like that. He didn\'t need to explicitly say how he felt to get the audience to understand. In Cross Game, actions spoke a lot louder than words; the two main characters weren\'t outwardly honest about their feelings for one another. It was only through speculation of the other characters and what you could see from the way they acted could the audience know the reality of what Aoba and Kou felt for one another.\nAoba was phenomenal in her own right. She was cute in an abrasive way, and you couldn\'t help but smile when her and Kou butted heads. Ichiyou knew her shit, so I\'m echoing her when I say that she and Kou were very alike. They had a hard time seeing the light in each other because, honestly, who sees the light in their own character? Aoba was definitely was one of the stronger female characters I\'ve come to know. She\'s definitey up there with Kurisu, Ami, and Ohana.\nVerdict: 10/10\n--------------\n\n";
+   var postTitle = "Cross Game";
+   var main = A4($WritingLibrary.post,
+   postTitle,
+   A3($WritingLibrary.Date,
+   2013,
+   7,
+   12),
+   A3($WritingLibrary.Time,
+   12,
+   47,
+   "pm"),
+   _L.fromArray([$Markdown.toHtml(content)]));
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   A2($Basics._op["++"],
+   postTitle,
+   " | BJW"));
+   _elm.CrossGame.values = {_op: _op
+                           ,postTitle: postTitle
+                           ,main: main
+                           ,content: content};
+   return _elm.CrossGame.values;
+};
 Elm.Debug = Elm.Debug || {};
 Elm.Debug.make = function (_elm) {
    "use strict";
@@ -12233,75 +12277,28 @@ Elm.Notices.make = function (_elm) {
                          ,notLive: notLive};
    return _elm.Notices.values;
 };
-Elm.Programming = Elm.Programming || {};
-Elm.Programming.make = function (_elm) {
+Elm.Paths = Elm.Paths || {};
+Elm.Paths.make = function (_elm) {
    "use strict";
-   _elm.Programming = _elm.Programming || {};
-   if (_elm.Programming.values)
-   return _elm.Programming.values;
+   _elm.Paths = _elm.Paths || {};
+   if (_elm.Paths.values)
+   return _elm.Paths.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "Programming",
+   $moduleName = "Paths",
    $Basics = Elm.Basics.make(_elm),
-   $Footer = Elm.Footer.make(_elm),
-   $Header = Elm.Header.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $NavBar = Elm.NavBar.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
-   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
-   var richardFeldmanQuote = "\n  One of my coworkers had a great term for this. She said that learning a particular framework is horizontal growth. You get more familiar with that framework but it doesn\'t enrich your understanding of programming, give you more techniques that you can use in other places. But learning a different paradigm like functional programming is vertical growth. Because not only does it teach you how to use this new particular tool but it also gives you new tools that you can use then bring to other projects with different frameworks, different languages, et cetera. And it\'s definitely been true in my experience.\n  ";
-   var body = "\n\n[This Site\'s Source Code](https://github.com/branjwong/bjw-site)\n=========================\n\nLanguages: [Elm](http://elm-lang.org/), HTML, CSS  \nFront-end Framework: [Bootstrap](http://getbootstrap.com/)  \nTools Used: [Grunt](http://gruntjs.com/)  \nInitial Commit: September 29th, 2015  \n\n* * *\n\n[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)\n=======\n\nLanguage: [Elm](http://elm-lang.org/)  \nSource Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  \nInstructor: [Pragmatic Studios](https://pragmaticstudio.com/)  \nFinish Date: September 24th, 2015  \n\n### Description\n\n- An web application that enables the user to play bingo.\n- Designed for use in a meeting where buzzwords are thrown about.\n- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.\n\n* * *\n\n[Megaman Project](/dist/html/programming/megaman/megaman.html)\n=================\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Reduce Metalman\'s HP to 0  \n- Use A/S/D/W to move Left/Down/Right/Up  \n- Press the up button to fire your buster  \n- Hold the up button to charge your buster  \n- Move to avoid Metalman\'s attacks  \n\n* * *\n\n[Zelda Project](/dist/html/programming/zelda/zelda.html)\n===============\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Navigate through Hyrule and find the Triforce  \n- Click on arrow buttons to navigate  \n- Click on enemies to defeat them before they attack you  \n\n* * *\n\n[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)\n===============\n\nIT 11  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 11 - Highschool  \n\n### How To Play\n\n- Goal: Shoot ducks by clicking on them with the mouse\n- Don\'t let the dog laugh at you for sucking\n\n* * *\n\n[The Rest of the Portfolio](https://github.com/branjwong/portfolio)\n===========================\n\n- C\n    - Build a Shell\n    - Extended Producer-Consumer Problem\n    - POSIX Threads and Producer-Consumer\n    - Codility Demo Problem\n- C#\n    - Megaman\n- C++\n    - Waiting in Line\n    - Word\n    - Trees\n    - Hash Tables and the Dictionary ADT\n- Elm\n    - Bingo\n    - Online Resume and Portfolio Website\n        - github.com/branjwong/website\n- Fireworks\n    - Personal Logo\n    - Sasaki Logo\n- HTML/CSS\n    - Awesome Domain\n- Java\n    - Wizards, Witches, and Horcruxes\n- Python\n    - Wumpas World\n\n  ";
-   var programming = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([$Markdown.toHtml(body)]))]));
-   var links = _L.fromArray([]);
-   var view = function (model) {
-      return A2($Html.div,
-      _L.fromArray([]),
-      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
-                   ,A2($NavBar.navBar,
-                   model.currentPage,
-                   links)
-                   ,$NavBar.navBarSpace
-                   ,A3($Header.header,
-                   "Home",
-                   "The Laboratory",
-                   "Where my Programming experience is here for viewing.")
-                   ,programming
-                   ,$Footer.footer("Teaching")]));
-   };
-   var model = {_: {}
-               ,currentPage: "Programming"};
-   var Model = function (a) {
-      return {_: {}
-             ,currentPage: a};
-   };
-   var main = view(model);
-   var title = Elm.Native.Port.make(_elm).outbound("title",
-   function (v) {
-      return v;
-   },
-   "Programming | BJW");
-   _elm.Programming.values = {_op: _op
-                             ,main: main
-                             ,Model: Model
-                             ,model: model
-                             ,view: view
-                             ,links: links
-                             ,programming: programming
-                             ,body: body
-                             ,richardFeldmanQuote: richardFeldmanQuote};
-   return _elm.Programming.values;
+   $Signal = Elm.Signal.make(_elm);
+   var writing = "../../dist/html/writing/";
+   var resources = "../../resources/";
+   _elm.Paths.values = {_op: _op
+                       ,resources: resources
+                       ,writing: writing};
+   return _elm.Paths.values;
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
@@ -14851,4 +14848,174 @@ Elm.VirtualDom.make = function (_elm) {
                             ,lazy3: lazy3
                             ,Options: Options};
    return _elm.VirtualDom.values;
+};
+Elm.WritingLibrary = Elm.WritingLibrary || {};
+Elm.WritingLibrary.make = function (_elm) {
+   "use strict";
+   _elm.WritingLibrary = _elm.WritingLibrary || {};
+   if (_elm.WritingLibrary.values)
+   return _elm.WritingLibrary.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "WritingLibrary",
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $NavBar = Elm.NavBar.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
+   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
+   var timeToString = function (time) {
+      return A2($Basics._op["++"],
+      $Basics.toString(time.hour),
+      A2($Basics._op["++"],
+      ":",
+      A2($Basics._op["++"],
+      $Basics.toString(time.minute),
+      time.notation)));
+   };
+   var Time = F3(function (a,b,c) {
+      return {_: {}
+             ,hour: a
+             ,minute: b
+             ,notation: c};
+   });
+   var Date = F3(function (a,b,c) {
+      return {_: {}
+             ,day: c
+             ,month: b
+             ,year: a};
+   });
+   var writing = F3(function (model,
+   links,
+   content) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   model.currentPage,
+                   links)
+                   ,$NavBar.navBarSpace
+                   ,A3($Header.header,
+                   "Home",
+                   "The Depository",
+                   "Yeah, there\'s only one blog entry here so far.")
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([$Markdown.toHtml(content)]))]))]))
+                   ,$Footer.footer("Teaching")]));
+   });
+   var Model = function (a) {
+      return {_: {}
+             ,currentPage: a};
+   };
+   _op["=>"] = F2(function (v0,
+   v1) {
+      return {ctor: "_Tuple2"
+             ,_0: v0
+             ,_1: v1};
+   });
+   var months = $Dict.fromList(_L.fromArray([A2(_op["=>"],
+                                            1,
+                                            "Jan")
+                                            ,A2(_op["=>"],2,"Feb")
+                                            ,A2(_op["=>"],3,"Mar")
+                                            ,A2(_op["=>"],4,"Apr")
+                                            ,A2(_op["=>"],5,"May")
+                                            ,A2(_op["=>"],6,"June")
+                                            ,A2(_op["=>"],7,"July")
+                                            ,A2(_op["=>"],8,"Aug")
+                                            ,A2(_op["=>"],9,"Sep")
+                                            ,A2(_op["=>"],10,"Oct")
+                                            ,A2(_op["=>"],11,"Nov")
+                                            ,A2(_op["=>"],12,"Dec")]));
+   var dateToString = function (date) {
+      return function () {
+         var _v0 = A2($Dict.get,
+         date.month,
+         months);
+         switch (_v0.ctor)
+         {case "Just":
+            return A2($Basics._op["++"],
+              $Basics.toString(date.day),
+              A2($Basics._op["++"],
+              " ",
+              A2($Basics._op["++"],
+              _v0._0,
+              A2($Basics._op["++"],
+              " ",
+              $Basics.toString(date.year)))));
+            case "Nothing":
+            return $Debug.crash("invalid date");}
+         _U.badCase($moduleName,
+         "between lines 93 and 98");
+      }();
+   };
+   var postInfo = F2(function (date,
+   time) {
+      return A2($Basics._op["++"],
+      "Posted On: ",
+      A2($Basics._op["++"],
+      dateToString(date),
+      A2($Basics._op["++"],
+      " - ",
+      timeToString(time))));
+   });
+   var post = F4(function (title,
+   date,
+   time,
+   body) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   "",
+                   _L.fromArray([]))
+                   ,$NavBar.navBarSpace
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
+                   _L.fromArray([A2($Html.h1,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(title)]))
+                                ,A2($Html.h6,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(A2(postInfo,
+                                date,
+                                time))]))
+                                ,A2($Html.div,
+                                _L.fromArray([]),
+                                body)]))]))]))]))
+                   ,$Footer.footer("Teaching")]));
+   });
+   _elm.WritingLibrary.values = {_op: _op
+                                ,Model: Model
+                                ,writing: writing
+                                ,post: post
+                                ,postInfo: postInfo
+                                ,Date: Date
+                                ,dateToString: dateToString
+                                ,months: months
+                                ,Time: Time
+                                ,timeToString: timeToString};
+   return _elm.WritingLibrary.values;
 };

@@ -18,6 +18,8 @@ grunt.initConfig({
         'dist/js/writing.js': 'src/pages/writing.elm',
         'dist/js/teaching.js': 'src/pages/teaching.elm',
         'dist/js/programming.js': 'src/pages/programming.elm',
+        'dist/js/writing/what-i-am-doing-with-my-life.js': 'src/pages/writing/what-i-am-doing-with-my-life.elm',
+        'dist/js/writing/cross-game.js': 'src/pages/writing/cross-game.elm'
       }
     }
   }

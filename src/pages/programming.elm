@@ -3,15 +3,15 @@ module Programming where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+import Markdown
+
+import Style.PrintStyle exposing (stylesheet)
+import Style.SharedStyles exposing (exports)
+
 import NavBar
 import Notices
 import Header
-
-import SharedStyles
-import PrintStyle
 import Footer
-
-import Markdown
 
 
 port title: String
@@ -38,10 +38,9 @@ view : Model -> Html
 view model =
   div
     [ ]
-    [ PrintStyle.stylesheet SharedStyles.exports
+    [ stylesheet exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
-    , Notices.notLive
     , Header.header "Home" "The Laboratory" "Where my Programming experience is here for viewing."
     , programming
     , Footer.footer "Teaching"
@@ -76,7 +75,7 @@ Initial Commit: September 29th, 2015
 
 * * *
 
-[Buzzword Bingo](../../resources/bingo/bingo.html)
+[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)
 =======
 
 Language: [Elm](http://elm-lang.org/)  
@@ -92,7 +91,7 @@ Finish Date: September 24th, 2015
 
 * * *
 
-[Megaman Project](../../resources/megaman/megaman.html)
+[Megaman Project](/dist/html/programming/megaman/megaman.html)
 =================
 
 IT 12  
@@ -111,7 +110,7 @@ Time: Year 12 - Highschool
 
 * * *
 
-[Zelda Project](../../resources/zelda/zelda.html)
+[Zelda Project](/dist/html/programming/zelda/zelda.html)
 ===============
 
 IT 12  
@@ -128,7 +127,7 @@ Time: Year 12 - Highschool
 
 * * *
 
-[Duckhunt Project](../../resources/duckhunt/duckhunt.html)
+[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)
 ===============
 
 IT 11  

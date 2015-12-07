@@ -12233,75 +12233,28 @@ Elm.Notices.make = function (_elm) {
                          ,notLive: notLive};
    return _elm.Notices.values;
 };
-Elm.Programming = Elm.Programming || {};
-Elm.Programming.make = function (_elm) {
+Elm.Paths = Elm.Paths || {};
+Elm.Paths.make = function (_elm) {
    "use strict";
-   _elm.Programming = _elm.Programming || {};
-   if (_elm.Programming.values)
-   return _elm.Programming.values;
+   _elm.Paths = _elm.Paths || {};
+   if (_elm.Paths.values)
+   return _elm.Paths.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "Programming",
+   $moduleName = "Paths",
    $Basics = Elm.Basics.make(_elm),
-   $Footer = Elm.Footer.make(_elm),
-   $Header = Elm.Header.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $NavBar = Elm.NavBar.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
-   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
-   var richardFeldmanQuote = "\n  One of my coworkers had a great term for this. She said that learning a particular framework is horizontal growth. You get more familiar with that framework but it doesn\'t enrich your understanding of programming, give you more techniques that you can use in other places. But learning a different paradigm like functional programming is vertical growth. Because not only does it teach you how to use this new particular tool but it also gives you new tools that you can use then bring to other projects with different frameworks, different languages, et cetera. And it\'s definitely been true in my experience.\n  ";
-   var body = "\n\n[This Site\'s Source Code](https://github.com/branjwong/bjw-site)\n=========================\n\nLanguages: [Elm](http://elm-lang.org/), HTML, CSS  \nFront-end Framework: [Bootstrap](http://getbootstrap.com/)  \nTools Used: [Grunt](http://gruntjs.com/)  \nInitial Commit: September 29th, 2015  \n\n* * *\n\n[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)\n=======\n\nLanguage: [Elm](http://elm-lang.org/)  \nSource Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  \nInstructor: [Pragmatic Studios](https://pragmaticstudio.com/)  \nFinish Date: September 24th, 2015  \n\n### Description\n\n- An web application that enables the user to play bingo.\n- Designed for use in a meeting where buzzwords are thrown about.\n- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.\n\n* * *\n\n[Megaman Project](/dist/html/programming/megaman/megaman.html)\n=================\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Reduce Metalman\'s HP to 0  \n- Use A/S/D/W to move Left/Down/Right/Up  \n- Press the up button to fire your buster  \n- Hold the up button to charge your buster  \n- Move to avoid Metalman\'s attacks  \n\n* * *\n\n[Zelda Project](/dist/html/programming/zelda/zelda.html)\n===============\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Navigate through Hyrule and find the Triforce  \n- Click on arrow buttons to navigate  \n- Click on enemies to defeat them before they attack you  \n\n* * *\n\n[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)\n===============\n\nIT 11  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 11 - Highschool  \n\n### How To Play\n\n- Goal: Shoot ducks by clicking on them with the mouse\n- Don\'t let the dog laugh at you for sucking\n\n* * *\n\n[The Rest of the Portfolio](https://github.com/branjwong/portfolio)\n===========================\n\n- C\n    - Build a Shell\n    - Extended Producer-Consumer Problem\n    - POSIX Threads and Producer-Consumer\n    - Codility Demo Problem\n- C#\n    - Megaman\n- C++\n    - Waiting in Line\n    - Word\n    - Trees\n    - Hash Tables and the Dictionary ADT\n- Elm\n    - Bingo\n    - Online Resume and Portfolio Website\n        - github.com/branjwong/website\n- Fireworks\n    - Personal Logo\n    - Sasaki Logo\n- HTML/CSS\n    - Awesome Domain\n- Java\n    - Wizards, Witches, and Horcruxes\n- Python\n    - Wumpas World\n\n  ";
-   var programming = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([$Markdown.toHtml(body)]))]));
-   var links = _L.fromArray([]);
-   var view = function (model) {
-      return A2($Html.div,
-      _L.fromArray([]),
-      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
-                   ,A2($NavBar.navBar,
-                   model.currentPage,
-                   links)
-                   ,$NavBar.navBarSpace
-                   ,A3($Header.header,
-                   "Home",
-                   "The Laboratory",
-                   "Where my Programming experience is here for viewing.")
-                   ,programming
-                   ,$Footer.footer("Teaching")]));
-   };
-   var model = {_: {}
-               ,currentPage: "Programming"};
-   var Model = function (a) {
-      return {_: {}
-             ,currentPage: a};
-   };
-   var main = view(model);
-   var title = Elm.Native.Port.make(_elm).outbound("title",
-   function (v) {
-      return v;
-   },
-   "Programming | BJW");
-   _elm.Programming.values = {_op: _op
-                             ,main: main
-                             ,Model: Model
-                             ,model: model
-                             ,view: view
-                             ,links: links
-                             ,programming: programming
-                             ,body: body
-                             ,richardFeldmanQuote: richardFeldmanQuote};
-   return _elm.Programming.values;
+   $Signal = Elm.Signal.make(_elm);
+   var writing = "../../dist/html/writing/";
+   var resources = "../../resources/";
+   _elm.Paths.values = {_op: _op
+                       ,resources: resources
+                       ,writing: writing};
+   return _elm.Paths.values;
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
@@ -14851,4 +14804,220 @@ Elm.VirtualDom.make = function (_elm) {
                             ,lazy3: lazy3
                             ,Options: Options};
    return _elm.VirtualDom.values;
+};
+Elm.WhatAmIDoingWithMyLife = Elm.WhatAmIDoingWithMyLife || {};
+Elm.WhatAmIDoingWithMyLife.make = function (_elm) {
+   "use strict";
+   _elm.WhatAmIDoingWithMyLife = _elm.WhatAmIDoingWithMyLife || {};
+   if (_elm.WhatAmIDoingWithMyLife.values)
+   return _elm.WhatAmIDoingWithMyLife.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "WhatAmIDoingWithMyLife",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $WritingLibrary = Elm.WritingLibrary.make(_elm);
+   var takenout = "Game development, while cool, is not an industry that I think would be as fulfilling to me in that regard as web or native application development.";
+   var content = "\n\nEarlier this September, I had my plan down. Having recently returned from Japan with all of my co-op prerequisites done, I was intending to take a semester off from school to find a co-op placement, while still teaching at Oxford Learning in order to keep a roof over my head. The idea was that I could get a feel for what the tech industry in Vancouver has to offer, while still getting paid for it. \n\nIt\'s now the end of November, and I still don\'t have a job. When boiled down, there are three reasons for this.\n\n1. I am a junior programmer with little to no technical experience.\n2. Though my conceptual understanding of areas within Computing Science is strong, I do not have confidence in the programming languages/technologies required of me to get a job in Vancouver. \n3. I have little desire to learn **these** technologies on my own accord.\n\nThough my foundations in C, C++, and Java are fairly strong, I don\'t have any experience with a sizeable code base using these languages, and I am a bit rusty with all of them. For jobs in web development, I have little to no desire to learn the current front-end web development technologies currently used in production, as the current paradigm is (supposedly) kind of a headache, and I have absolutely no experience with anything back-end related. Though earlier in September I felt that trying everything out would be for the best, now I am not so sure. I underestimated the time investment involved to try to get jobs that I am not immediately hire-able for. Does it make sense for an employer to hire me into an industry that I am not even sure about? I am not so sure. When I am told that I need to brush up on my skills with technologies that I am not really all too fond of, is it worth it for me?\n\nI guess all of this doesn\'t make sense if you don\'t know about the alternative that I have been looking at. Since February, I have been looking into a new programming language called [Elm](http://elm-lang.org). Without diving into the technicalities of what Elm is and how it pairs against other currently existing languages and technologies out there, know that besides when I was ActionScript way back in high school in Mr. Yeung-Meadows\' Computer Programming 11 and 12 class, this is the first language that has gotten me really excited about using programming as a means to solve real world problems. When I think about the languages I learned about in university, I have no idea how I can use those languages to build awesome user interfaces that people can interact with in order to solve real world problems that they have. I had been learning how to do all of the underlying business logic that would manipulate data, though I was still without any experience building interfaces that obtain that data in the first place. With Elm, that hasn\'t been the case. I have been able to use Elm (and [Bootstrap](http://getbootstrap.com/)) to build this website, and I have been able to code in a way that I have found extremely enjoyable. \n\nAnd while that has been phenomenal and all, the problem is that Elm is still young, and there is no company that I know in Vancouver that using it. This means that I am investing my time in learning a language that, as of right now, won\'t get me hired by anyone local to me. \n\n> An awesome company that builds software for grammar and writing skills called [NoRedInk](https://www.noredink.com/) in San Francisco is, but they are currently one of the only companies in the world that are willing to yolo and give Elm a shot in a professional setting. I know you guys are hiring right now, so if you\'re in the market for some fresh young blood, give me a holler!\n\nOne thing that has been productive about this trimester is that I am a lot more sure about what I want my end goals to be. I am still sure that at the end of the day, I want to be improving the lives of everyday people in an aspect of life (probably education) that is close to me through software, and to be mostly autonomous in how I conduct my career. Whereas before I wanted to try everything to see what I liked, I was overlooking that outside of application development, **everything** doesn\'t necessarily fall under the category of my end goals. \n\nSo where does that leave me? Well, I think Elm is keeping me on the right track. Since Elm compiles to JavaScript, I am able to use it to build web applications. I am also able to quickly spin up static web pages for clients if I ever decide to start doing freelance work. I am also able to both learn Elm and advertise my teaching services in the area by way of this website, and use tutoring as a means to keep a roof over my head.\n\nThe main problem is that I only have time for so much. Currently, my weekdays go as follows:\n\n 1. Wake up.\n 2. Eat Breakfast.\n 3. Code in Elm, building this site.\n 4. Eat Lunch.\n 5. Code in Elm, building this site.\n 6. Head to Oxford Learning, teach.\n 7. Come home, eat dinner.\n 8. Possibly work a bit more on my site, otherwise chill out.\n 9. Sleep.\n\nWithin that schedule, I don\'t make time for things like applying for jobs, going in for interviews, and brushing up on C++. I think I could be juggling all of it, but it would mean less time on this site, and making less progress towards me privately tutoring again. \n\nFor now, I think I am going to keep an eye out for jobs that I think would be super cool, while not necessarily exhausting over finding just any co-op job. \n\n... I could also be waking up a fair bit earlier too.  \n  \n  \n###### Last Edited: Friday, December 7th 2015: 2:15pm\n\n";
+   var postTitle = "What Am I Doing With My Life";
+   var main = A4($WritingLibrary.post,
+   postTitle,
+   A3($WritingLibrary.Date,
+   2015,
+   11,
+   20),
+   A3($WritingLibrary.Time,
+   12,
+   25,
+   "pm"),
+   _L.fromArray([$Markdown.toHtml(content)]));
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   A2($Basics._op["++"],
+   postTitle,
+   " | BJW"));
+   _elm.WhatAmIDoingWithMyLife.values = {_op: _op
+                                        ,postTitle: postTitle
+                                        ,main: main
+                                        ,content: content
+                                        ,takenout: takenout};
+   return _elm.WhatAmIDoingWithMyLife.values;
+};
+Elm.WritingLibrary = Elm.WritingLibrary || {};
+Elm.WritingLibrary.make = function (_elm) {
+   "use strict";
+   _elm.WritingLibrary = _elm.WritingLibrary || {};
+   if (_elm.WritingLibrary.values)
+   return _elm.WritingLibrary.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "WritingLibrary",
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $NavBar = Elm.NavBar.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
+   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
+   var timeToString = function (time) {
+      return A2($Basics._op["++"],
+      $Basics.toString(time.hour),
+      A2($Basics._op["++"],
+      ":",
+      A2($Basics._op["++"],
+      $Basics.toString(time.minute),
+      time.notation)));
+   };
+   var Time = F3(function (a,b,c) {
+      return {_: {}
+             ,hour: a
+             ,minute: b
+             ,notation: c};
+   });
+   var Date = F3(function (a,b,c) {
+      return {_: {}
+             ,day: c
+             ,month: b
+             ,year: a};
+   });
+   var writing = F3(function (model,
+   links,
+   content) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   model.currentPage,
+                   links)
+                   ,$NavBar.navBarSpace
+                   ,A3($Header.header,
+                   "Home",
+                   "The Depository",
+                   "Yeah, there\'s only one blog entry here so far.")
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([$Markdown.toHtml(content)]))]))]))
+                   ,$Footer.footer("Teaching")]));
+   });
+   var Model = function (a) {
+      return {_: {}
+             ,currentPage: a};
+   };
+   _op["=>"] = F2(function (v0,
+   v1) {
+      return {ctor: "_Tuple2"
+             ,_0: v0
+             ,_1: v1};
+   });
+   var months = $Dict.fromList(_L.fromArray([A2(_op["=>"],
+                                            1,
+                                            "Jan")
+                                            ,A2(_op["=>"],2,"Feb")
+                                            ,A2(_op["=>"],3,"Mar")
+                                            ,A2(_op["=>"],4,"Apr")
+                                            ,A2(_op["=>"],5,"May")
+                                            ,A2(_op["=>"],6,"June")
+                                            ,A2(_op["=>"],7,"July")
+                                            ,A2(_op["=>"],8,"Aug")
+                                            ,A2(_op["=>"],9,"Sep")
+                                            ,A2(_op["=>"],10,"Oct")
+                                            ,A2(_op["=>"],11,"Nov")
+                                            ,A2(_op["=>"],12,"Dec")]));
+   var dateToString = function (date) {
+      return function () {
+         var _v0 = A2($Dict.get,
+         date.month,
+         months);
+         switch (_v0.ctor)
+         {case "Just":
+            return A2($Basics._op["++"],
+              $Basics.toString(date.day),
+              A2($Basics._op["++"],
+              " ",
+              A2($Basics._op["++"],
+              _v0._0,
+              A2($Basics._op["++"],
+              " ",
+              $Basics.toString(date.year)))));
+            case "Nothing":
+            return $Debug.crash("invalid date");}
+         _U.badCase($moduleName,
+         "between lines 93 and 98");
+      }();
+   };
+   var postInfo = F2(function (date,
+   time) {
+      return A2($Basics._op["++"],
+      "Posted On: ",
+      A2($Basics._op["++"],
+      dateToString(date),
+      A2($Basics._op["++"],
+      " - ",
+      timeToString(time))));
+   });
+   var post = F4(function (title,
+   date,
+   time,
+   body) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   "",
+                   _L.fromArray([]))
+                   ,$NavBar.navBarSpace
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
+                   _L.fromArray([A2($Html.h1,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(title)]))
+                                ,A2($Html.h6,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(A2(postInfo,
+                                date,
+                                time))]))
+                                ,A2($Html.div,
+                                _L.fromArray([]),
+                                body)]))]))]))]))
+                   ,$Footer.footer("Teaching")]));
+   });
+   _elm.WritingLibrary.values = {_op: _op
+                                ,Model: Model
+                                ,writing: writing
+                                ,post: post
+                                ,postInfo: postInfo
+                                ,Date: Date
+                                ,dateToString: dateToString
+                                ,months: months
+                                ,Time: Time
+                                ,timeToString: timeToString};
+   return _elm.WritingLibrary.values;
 };

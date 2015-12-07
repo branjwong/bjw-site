@@ -1800,27 +1800,6 @@ Elm.Dict.make = function (_elm) {
                       ,fromList: fromList};
    return _elm.Dict.values;
 };
-Elm.EntryOne = Elm.EntryOne || {};
-Elm.EntryOne.make = function (_elm) {
-   "use strict";
-   _elm.EntryOne = _elm.EntryOne || {};
-   if (_elm.EntryOne.values)
-   return _elm.EntryOne.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "EntryOne",
-   $Basics = Elm.Basics.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var entry = "\n\nWhat I Am Doing With My Life\n============================\n\n###### Posted On: Friday, November 20th 2015: 12:27pm\n\n\nEarlier this September, I had my plan down. Having recently returned from Japan with all of my co-op prerequisites done, I was intending to take a semester off from school to find a co-op placement, while still teaching at Oxford Learning in order to keep a roof over my head. The idea was that I could get a feel for what the tech industry in Vancouver has to offer, while still getting paid for it. \n\nIt\'s now the end of November, and I still don\'t have a job. When boiled down, there are three reasons for this.\n\n1. I am a junior programmer with little to no technical experience.\n2. Though my conceptual understanding of areas within Computing Science is strong, I do not have confidence in the programming languages/technologies required of me to get a job in Vancouver. \n3. I have little desire to learn **these** technologies.\n\nThough my foundations in C, C++, and Java are fairly strong, I don\'t have any experience with a sizeable code base using these languages, and I am a bit rusty with all of them. For jobs in web development, I have little to no desire to learn the current front-end web development technologies currently used in production, as the current paradigm is kind of a headache, and I have absolutely no experience with anything back-end related. Though earlier in September I felt that trying everything out would be for the best, now I am not so sure. I underestimated the time investment involved to try to get jobs that I am not immediately hire-able for. Does it make sense for an employer to hire me into an industry (e.g. Gaming, Bioinformatics, etc.) that I am not even sure about? I am not so sure. When I am told that I need to brush up on my skills with technologies that I am not really all too fond of, is it worth it for me?\n\nI guess all of this doesn\'t make sense if you don\'t know about the alternative that I have been looking at. Since February, I have been looking into a new programming language called [Elm](http://elm-lang.org). Without diving into the technicalities of what Elm is and how it pairs against other currently existing languages and technologies out there, know that besides when I was ActionScript way back in high school in Mr. Yeung-Meadows\' Computer Programming 11 and 12 class, this is the first language that has gotten me really excited about using programming as a means to solve real world problems. When I think about the languages I learned about in University, I have no idea how I can use those languages to build awesome user interfaces that people can interact with in order to solve real world problems that they have. With Elm, that hasn\'t been the case. I have been able to use Elm (and [Bootstrap](http://getbootstrap.com/)) to build this website, and I have been able to code in a way that I have found extremely enjoyable. \n\nAnd while that has been phenomenal and all, the problem is that Elm is still young, and there is no company that I know in Vancouver that using it. This means that I am investing my time in learning a language that, as of right now, won\'t get me hired by anyone local to me. \n\n> An awesome company that builds software for grammar and writing skills called [NoRedInk](https://www.noredink.com/) in San Francisco is, but they are currently one of the only companies in the world that are willing to yolo and give Elm a shot in a professional setting. I know you guys are hiring right now, so if you\'re in the market for some fresh young blood, give me a holler!\n\nOne thing that has been productive about this trimester is that I am a lot more sure about what I want my end goals to be. I am still sure that at the end of the day, I want to be improving the lives of everyday people in an aspect of life (probably education) that is close to me through software, and to be mostly autonomous in how I conduct my career. Whereas before I wanted to try everything to see what I liked, I was overlooking that outside of application development, **everything** doesn\'t necessarily fall under the category of my end goals. Game development, while cool, is not an industry that I think would be as fulfilling to me in that regard as web or native application development.\n\nSo where does that leave me? Well, I think Elm is keeping me on the right track. Since Elm compiles to JavaScript, I am able to use it to build web applications. I am also able to quickly spin up static web pages for clients if I ever decide to start doing freelance work. I am also able to both learn Elm and advertise my teaching services in the area by way of this website, and use tutoring as a means to keep a roof over my head.\n\nThe main problem is that I only have time for so much. Currently, my weekdays go as follows:\n\n 1. Wake up.\n 2. Eat Breakfast.\n 3. Code in Elm, building this site.\n 4. Eat Lunch.\n 5. Code in Elm, building this site.\n 6. Head to Oxford, teach.\n 7. Come home, eat dinner.\n 8. Possibly work a bit more on my site, otherwise chill out.\n 9. Sleep.\n\nWithin that schedule, I don\'t make time for things like applying for jobs, going in for interviews, and brushing up on C++. I think I could be juggling all of it, but it would mean less time on this site, and making less progress towards me privately tutoring again. \n\nFor now, I think I am going to keep an eye out for jobs that I think would be super cool, while not necessarily exhausting over finding just any co-op job. \n\n... I could also be waking up a fair bit earlier too.  \n  \n  \n###### Finished: Friday, November 20th 2015: 1:51pm\n\n";
-   _elm.EntryOne.values = {_op: _op
-                          ,entry: entry};
-   return _elm.EntryOne.values;
-};
 Elm.Footer = Elm.Footer || {};
 Elm.Footer.make = function (_elm) {
    "use strict";
@@ -12135,19 +12114,7 @@ Elm.NavBar.make = function (_elm) {
    currentLinks,
    name,
    link) {
-      return _U.eq(currentName,
-      name) ? A2($Html.li,
-      _L.fromArray([$Html$Attributes.$class("dropdown")]),
-      _L.fromArray([A2($Html.a,
-                   _L.fromArray([$Html$Attributes.href("")
-                                ,$Html$Attributes.$class("dropdown-toggle")
-                                ,A2($Html$Attributes.attribute,
-                                "data-toggle",
-                                "dropdown")]),
-                   _L.fromArray([$Html.text(name)]))
-                   ,A2($Html.ul,
-                   _L.fromArray([$Html$Attributes.$class("dropdown-menu")]),
-                   currentLinks)])) : A2($Html.li,
+      return A2($Html.li,
       _L.fromArray([]),
       _L.fromArray([A2($Html.a,
       _L.fromArray([$Html$Attributes.href(link)]),
@@ -12161,17 +12128,17 @@ Elm.NavBar.make = function (_elm) {
                    currentName,
                    currentLinks,
                    "Teaching",
-                   "../../dist/html/teaching.html")
+                   "/dist/html/teaching.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Programming",
-                   "../../dist/html/programming.html")
+                   "/dist/html/programming.html")
                    ,A4(tab,
                    currentName,
                    currentLinks,
                    "Writing",
-                   "../../dist/html/writing.html")]));
+                   "/dist/html/writing.html")]));
    });
    var navbarExpandComponent = F2(function (currentName,
    currentLinks) {
@@ -12207,7 +12174,7 @@ Elm.NavBar.make = function (_elm) {
                              _L.fromArray([]))]))
                 ,A2($Html.a,
                 _L.fromArray([$Html$Attributes.$class("navbar-brand")
-                             ,$Html$Attributes.href("../../dist/html/index.html")]),
+                             ,$Html$Attributes.href("/dist/html/index.html")]),
                 _L.fromArray([$Html.text("BJW")]))]));
    var navBar = F2(function (currentName,
    currentLinks) {
@@ -12266,42 +12233,28 @@ Elm.Notices.make = function (_elm) {
                          ,notLive: notLive};
    return _elm.Notices.values;
 };
-Elm.PrintStyle = Elm.PrintStyle || {};
-Elm.PrintStyle.make = function (_elm) {
+Elm.Paths = Elm.Paths || {};
+Elm.Paths.make = function (_elm) {
    "use strict";
-   _elm.PrintStyle = _elm.PrintStyle || {};
-   if (_elm.PrintStyle.values)
-   return _elm.PrintStyle.values;
+   _elm.Paths = _elm.Paths || {};
+   if (_elm.Paths.values)
+   return _elm.Paths.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "PrintStyle",
+   $moduleName = "Paths",
    $Basics = Elm.Basics.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $Json$Encode = Elm.Json.Encode.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Stylesheets = Elm.Stylesheets.make(_elm);
-   var stylesheet = function (exports) {
-      return A2($Html.div,
-      _L.fromArray([A2($Html$Attributes.property,
-      "innerHTML",
-      $Json$Encode.string(A2($Basics._op["++"],
-      "<style>",
-      A2($Basics._op["++"],
-      A2($Stylesheets.prettyPrint,
-      4,
-      exports),
-      "</style>"))))]),
-      _L.fromArray([]));
-   };
-   _elm.PrintStyle.values = {_op: _op
-                            ,stylesheet: stylesheet};
-   return _elm.PrintStyle.values;
+   $Signal = Elm.Signal.make(_elm);
+   var writing = "../../dist/html/writing/";
+   var resources = "../../resources/";
+   _elm.Paths.values = {_op: _op
+                       ,resources: resources
+                       ,writing: writing};
+   return _elm.Paths.values;
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
@@ -12547,614 +12500,6 @@ Elm.Result.make = function (_elm) {
                         ,Err: Err};
    return _elm.Result.values;
 };
-Elm.SharedStyles = Elm.SharedStyles || {};
-Elm.SharedStyles.make = function (_elm) {
-   "use strict";
-   _elm.SharedStyles = _elm.SharedStyles || {};
-   if (_elm.SharedStyles.values)
-   return _elm.SharedStyles.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "SharedStyles",
-   $Basics = Elm.Basics.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Stylesheets = Elm.Stylesheets.make(_elm);
-   var margin2 = function (value) {
-      return A3($Stylesheets.attr1,
-      "margin",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var right = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "right",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var left = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "left",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var borderColor = function (value) {
-      return A3($Stylesheets.attr1,
-      "border-color",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var borderStyle = function (value) {
-      return A3($Stylesheets.attr1,
-      "border-style",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var position = function (value) {
-      return A3($Stylesheets.attr1,
-      "position",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var content = function (value) {
-      return A3($Stylesheets.attr1,
-      "content",
-      $Basics.toString,
-      value);
-   };
-   var borderLeftWidth = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "border-left-width",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var borderBottomWidth = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "border-bottom-width",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var borderRightWidth = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "border-right-width",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var borderTopWidth = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "border-top-width",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var borderTopColor = function (value) {
-      return A3($Stylesheets.attr1,
-      "border-top-color",
-      $Stylesheets.colorToString,
-      value);
-   };
-   var borderBottomColor = function (value) {
-      return A3($Stylesheets.attr1,
-      "border-bottom-color",
-      $Stylesheets.colorToString,
-      value);
-   };
-   var textAlign = function (value) {
-      return A3($Stylesheets.attr1,
-      "text-align",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var fontFamily = function (value) {
-      return A3($Stylesheets.attr1,
-      "font-family",
-      $Basics.toString,
-      value);
-   };
-   var fontWeight = function (value) {
-      return A3($Stylesheets.attr1,
-      "font-weight",
-      function (a) {
-         return a;
-      },
-      value);
-   };
-   var fontSize = F2(function (valueA,
-   valueB) {
-      return A5($Stylesheets.attr2,
-      "font-size",
-      $Stylesheets.numberToString,
-      $Stylesheets.unitsToString,
-      valueA,
-      valueB);
-   });
-   var postPadding = 30;
-   var sizeHeaderDescText = 20;
-   var sizeHeaderTitleText = 60;
-   var arrowHeight = 30;
-   var widthBoarder = 15;
-   var heightHpBrowser = 639;
-   var heightHpScreen = 768;
-   var heightAsusBrowser = 951;
-   var heightAsusScreen = 1080;
-   var heightNavBarTop = 5;
-   var heightNavBar = 50 + heightNavBarTop;
-   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder - arrowHeight;
-   var spaceHeaderInner = $Basics.round(heightTeachingHeader / 2 - (sizeHeaderTitleText + sizeHeaderDescText) / 2);
-   var colorSubHeading = $Stylesheets.hex("BBB");
-   var colorHeading = $Stylesheets.hex("333");
-   var colorStandardText = colorHeading;
-   var colorContentBackground = $Stylesheets.hex("FFF");
-   var colorNavBarBackground = $Stylesheets.hex("FFF");
-   var colorBodyBackground = $Stylesheets.hex("DDD");
-   var colorHighlight = $Stylesheets.hex("2B74C6");
-   var ProgrammingHeader = {ctor: "ProgrammingHeader"};
-   var ProgrammingContainer = {ctor: "ProgrammingContainer"};
-   var TeachingFooter = {ctor: "TeachingFooter"};
-   var TeachingArrow = {ctor: "TeachingArrow"};
-   var TeachingImgArea = {ctor: "TeachingImgArea"};
-   var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
-   var TeachingCallToAction = {ctor: "TeachingCallToAction"};
-   var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
-   var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
-   var TeachingHeaderDesc = {ctor: "TeachingHeaderDesc"};
-   var TeachingHeaderTitle = {ctor: "TeachingHeaderTitle"};
-   var TeachingHeaderInner = {ctor: "TeachingHeaderInner"};
-   var TeachingHeader = {ctor: "TeachingHeader"};
-   var WritingPost = {ctor: "WritingPost"};
-   var WritingHeaderDesc = {ctor: "WritingHeaderDesc"};
-   var WritingHeaderTitle = {ctor: "WritingHeaderTitle"};
-   var WritingHeaderInner = {ctor: "WritingHeaderInner"};
-   var WritingHeader = {ctor: "WritingHeader"};
-   var WritingContainer = {ctor: "WritingContainer"};
-   var HomeMainBody = {ctor: "HomeMainBody"};
-   var HomeMainBodyPre = {ctor: "HomeMainBodyPre"};
-   var HomePaddedContainer = {ctor: "HomePaddedContainer"};
-   var HomeIntroImageBorder = {ctor: "HomeIntroImageBorder"};
-   var HomeIntroImage = {ctor: "HomeIntroImage"};
-   var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
-   var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
-   var HomeHeaderInner = {ctor: "HomeHeaderInner"};
-   var HomeHeader = {ctor: "HomeHeader"};
-   var HomeContainer = {ctor: "HomeContainer"};
-   var BootstrapAccordion = {ctor: "BootstrapAccordion"};
-   var NoticesNotLive = {ctor: "NoticesNotLive"};
-   var NavBarIconBar = {ctor: "NavBarIconBar"};
-   var NavBarSpace = {ctor: "NavBarSpace"};
-   var NavBarTop = {ctor: "NavBarTop"};
-   var NavBar = {ctor: "NavBar"};
-   var exports = A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|%|"],
-   $Stylesheets.css,
-   $Stylesheets.body),
-   A2($Stylesheets.marginTop,
-   0,
-   $Stylesheets.px)),
-   $Stylesheets.color(colorHeading)),
-   $Stylesheets.backgroundColor(colorBodyBackground)),
-   fontFamily("Verdana, \'Bitstream Vera Sans\', sans-serif")),
-   NavBar),
-   $Stylesheets.backgroundColor(colorNavBarBackground)),
-   $Stylesheets.color(colorHighlight)),
-   A2($Stylesheets.marginBottom,
-   0,
-   $Stylesheets.px)),
-   NavBarTop),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   A2($Stylesheets.height,
-   heightNavBarTop,
-   $Stylesheets.px)),
-   NavBarSpace),
-   A2($Stylesheets.height,
-   heightNavBar,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   NavBarIconBar),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   NoticesNotLive),
-   $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
-   $Stylesheets.color($Stylesheets.hex("FFF"))),
-   textAlign("center")),
-   A2($Stylesheets.paddingTop,
-   10,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   10,
-   $Stylesheets.px)),
-   fontWeight("bold")),
-   HomeContainer),
-   HomeIntroImageBorder),
-   A2($Stylesheets.padding,
-   5,
-   $Stylesheets.px)),
-   A2($Stylesheets.margin,
-   10,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor(colorContentBackground)),
-   HomeIntroImage),
-   A2($Stylesheets.height,
-   300,
-   $Stylesheets.px)),
-   A2($Stylesheets.width,
-   500,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor($Stylesheets.hex("454545"))),
-   HomeMainBodyPre),
-   A2($Stylesheets.paddingTop,
-   10,
-   $Stylesheets.px)),
-   HomeMainBody),
-   A2($Stylesheets.padding,
-   30,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingTop,
-   50,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor(colorContentBackground)),
-   A2($Stylesheets.height,
-   500,
-   $Stylesheets.px)),
-   HomeHeader),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   A2($Stylesheets.paddingTop,
-   20,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   30,
-   $Stylesheets.px)),
-   HomeHeaderInner),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   HomeHeaderTitle),
-   A2($Stylesheets.marginTop,
-   50,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginBottom,
-   0,
-   $Stylesheets.px)),
-   A2(fontSize,
-   60,
-   $Stylesheets.px)),
-   fontWeight("normal")),
-   HomeHeaderDesc),
-   A2(fontSize,
-   20,
-   $Stylesheets.px)),
-   $Stylesheets.color(colorSubHeading)),
-   HomePaddedContainer),
-   A2($Stylesheets.margin,
-   10,
-   $Stylesheets.px)),
-   WritingContainer),
-   $Stylesheets.backgroundColor(colorContentBackground)),
-   A2($Stylesheets.marginTop,
-   20,
-   $Stylesheets.px)),
-   WritingPost),
-   A2($Stylesheets.padding,
-   postPadding,
-   $Stylesheets.px)),
-   TeachingHeader),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   A2($Stylesheets.paddingTop,
-   widthBoarder,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   widthBoarder,
-   $Stylesheets.px)),
-   TeachingHeaderInner),
-   A2($Stylesheets.paddingTop,
-   spaceHeaderInner,
-   $Stylesheets.px)),
-   A2($Stylesheets.height,
-   heightTeachingHeader,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   textAlign("center")),
-   TeachingHeaderTitle),
-   A2($Stylesheets.marginTop,
-   0,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginBottom,
-   0,
-   $Stylesheets.px)),
-   A2(fontSize,
-   sizeHeaderTitleText,
-   $Stylesheets.px)),
-   fontWeight("normal")),
-   TeachingHeaderDesc),
-   A2(fontSize,
-   sizeHeaderDescText,
-   $Stylesheets.px)),
-   $Stylesheets.color(colorSubHeading)),
-   TeachingBioAndCallToAction),
-   A2($Stylesheets.paddingTop,
-   20,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   20,
-   $Stylesheets.px)),
-   TeachingImgTakafumi),
-   A2($Stylesheets.marginTop,
-   40,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginBottom,
-   40,
-   $Stylesheets.px)),
-   TeachingCallToAction),
-   A2($Stylesheets.marginTop,
-   20,
-   $Stylesheets.px)),
-   TeachingContainerHeader),
-   borderBottomColor(colorHighlight)),
-   TeachingImgArea),
-   TeachingArrow),
-   borderStyle("solid")),
-   borderColor("transparent")),
-   borderTopColor(colorHighlight)),
-   A2(borderTopWidth,
-   22,
-   $Stylesheets.px)),
-   A2(borderRightWidth,
-   28,
-   $Stylesheets.px)),
-   A2(borderBottomWidth,
-   0,
-   $Stylesheets.px)),
-   A2(borderLeftWidth,
-   28,
-   $Stylesheets.px)),
-   A2(left,0,$Stylesheets.px)),
-   A2(right,0,$Stylesheets.px)),
-   content("")),
-   margin2("auto")),
-   A2($Stylesheets.width,
-   0,
-   $Stylesheets.px)),
-   TeachingFooter),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   A2($Stylesheets.height,
-   60,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginTop,
-   40,
-   $Stylesheets.px)),
-   ProgrammingContainer),
-   A2($Stylesheets.marginTop,
-   50,
-   $Stylesheets.px)),
-   ProgrammingHeader),
-   $Stylesheets.backgroundColor(colorHighlight)),
-   A2($Stylesheets.paddingTop,
-   20,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   30,
-   $Stylesheets.px)),
-   BootstrapAccordion),
-   $Stylesheets.color(colorStandardText)),
-   A2($Stylesheets.paddingTop,
-   20,
-   $Stylesheets.px));
-   _elm.SharedStyles.values = {_op: _op
-                              ,NavBar: NavBar
-                              ,NavBarTop: NavBarTop
-                              ,NavBarSpace: NavBarSpace
-                              ,NavBarIconBar: NavBarIconBar
-                              ,NoticesNotLive: NoticesNotLive
-                              ,BootstrapAccordion: BootstrapAccordion
-                              ,HomeContainer: HomeContainer
-                              ,HomeHeader: HomeHeader
-                              ,HomeHeaderInner: HomeHeaderInner
-                              ,HomeHeaderTitle: HomeHeaderTitle
-                              ,HomeHeaderDesc: HomeHeaderDesc
-                              ,HomeIntroImage: HomeIntroImage
-                              ,HomeIntroImageBorder: HomeIntroImageBorder
-                              ,HomePaddedContainer: HomePaddedContainer
-                              ,HomeMainBodyPre: HomeMainBodyPre
-                              ,HomeMainBody: HomeMainBody
-                              ,WritingContainer: WritingContainer
-                              ,WritingHeader: WritingHeader
-                              ,WritingHeaderInner: WritingHeaderInner
-                              ,WritingHeaderTitle: WritingHeaderTitle
-                              ,WritingHeaderDesc: WritingHeaderDesc
-                              ,WritingPost: WritingPost
-                              ,TeachingHeader: TeachingHeader
-                              ,TeachingHeaderInner: TeachingHeaderInner
-                              ,TeachingHeaderTitle: TeachingHeaderTitle
-                              ,TeachingHeaderDesc: TeachingHeaderDesc
-                              ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
-                              ,TeachingImgTakafumi: TeachingImgTakafumi
-                              ,TeachingCallToAction: TeachingCallToAction
-                              ,TeachingContainerHeader: TeachingContainerHeader
-                              ,TeachingImgArea: TeachingImgArea
-                              ,TeachingArrow: TeachingArrow
-                              ,TeachingFooter: TeachingFooter
-                              ,ProgrammingContainer: ProgrammingContainer
-                              ,ProgrammingHeader: ProgrammingHeader
-                              ,colorHighlight: colorHighlight
-                              ,colorBodyBackground: colorBodyBackground
-                              ,colorNavBarBackground: colorNavBarBackground
-                              ,colorContentBackground: colorContentBackground
-                              ,colorHeading: colorHeading
-                              ,colorSubHeading: colorSubHeading
-                              ,colorStandardText: colorStandardText
-                              ,heightNavBarTop: heightNavBarTop
-                              ,heightNavBar: heightNavBar
-                              ,heightAsusScreen: heightAsusScreen
-                              ,heightAsusBrowser: heightAsusBrowser
-                              ,heightHpScreen: heightHpScreen
-                              ,heightHpBrowser: heightHpBrowser
-                              ,widthBoarder: widthBoarder
-                              ,arrowHeight: arrowHeight
-                              ,heightTeachingHeader: heightTeachingHeader
-                              ,sizeHeaderTitleText: sizeHeaderTitleText
-                              ,sizeHeaderDescText: sizeHeaderDescText
-                              ,spaceHeaderInner: spaceHeaderInner
-                              ,postPadding: postPadding
-                              ,exports: exports
-                              ,fontSize: fontSize
-                              ,fontWeight: fontWeight
-                              ,fontFamily: fontFamily
-                              ,textAlign: textAlign
-                              ,borderBottomColor: borderBottomColor
-                              ,borderTopColor: borderTopColor
-                              ,borderTopWidth: borderTopWidth
-                              ,borderRightWidth: borderRightWidth
-                              ,borderBottomWidth: borderBottomWidth
-                              ,borderLeftWidth: borderLeftWidth
-                              ,content: content
-                              ,position: position
-                              ,borderStyle: borderStyle
-                              ,borderColor: borderColor
-                              ,left: left
-                              ,right: right
-                              ,margin2: margin2};
-   return _elm.SharedStyles.values;
-};
 Elm.Signal = Elm.Signal || {};
 Elm.Signal.make = function (_elm) {
    "use strict";
@@ -13399,6 +12744,697 @@ Elm.String.make = function (_elm) {
                         ,any: any
                         ,all: all};
    return _elm.String.values;
+};
+Elm.Style = Elm.Style || {};
+Elm.Style.CssHelpers = Elm.Style.CssHelpers || {};
+Elm.Style.CssHelpers.make = function (_elm) {
+   "use strict";
+   _elm.Style = _elm.Style || {};
+   _elm.Style.CssHelpers = _elm.Style.CssHelpers || {};
+   if (_elm.Style.CssHelpers.values)
+   return _elm.Style.CssHelpers.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Style.CssHelpers",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var margin2 = function (value) {
+      return A3($Stylesheets.attr1,
+      "margin",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var right = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "right",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var left = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "left",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-color",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var borderStyle = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-style",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var position = function (value) {
+      return A3($Stylesheets.attr1,
+      "position",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var content = function (value) {
+      return A3($Stylesheets.attr1,
+      "content",
+      $Basics.toString,
+      value);
+   };
+   var borderLeftWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-left-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderBottomWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-bottom-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderRightWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-right-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderTopWidth = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "border-top-width",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   var borderTopColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-top-color",
+      $Stylesheets.colorToString,
+      value);
+   };
+   var borderBottomColor = function (value) {
+      return A3($Stylesheets.attr1,
+      "border-bottom-color",
+      $Stylesheets.colorToString,
+      value);
+   };
+   var textAlign = function (value) {
+      return A3($Stylesheets.attr1,
+      "text-align",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var fontFamily = function (value) {
+      return A3($Stylesheets.attr1,
+      "font-family",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var fontWeight = function (value) {
+      return A3($Stylesheets.attr1,
+      "font-weight",
+      function (a) {
+         return a;
+      },
+      value);
+   };
+   var fontSize = F2(function (valueA,
+   valueB) {
+      return A5($Stylesheets.attr2,
+      "font-size",
+      $Stylesheets.numberToString,
+      $Stylesheets.unitsToString,
+      valueA,
+      valueB);
+   });
+   _elm.Style.CssHelpers.values = {_op: _op
+                                  ,fontSize: fontSize
+                                  ,fontWeight: fontWeight
+                                  ,fontFamily: fontFamily
+                                  ,textAlign: textAlign
+                                  ,borderBottomColor: borderBottomColor
+                                  ,borderTopColor: borderTopColor
+                                  ,borderTopWidth: borderTopWidth
+                                  ,borderRightWidth: borderRightWidth
+                                  ,borderBottomWidth: borderBottomWidth
+                                  ,borderLeftWidth: borderLeftWidth
+                                  ,content: content
+                                  ,position: position
+                                  ,borderStyle: borderStyle
+                                  ,borderColor: borderColor
+                                  ,left: left
+                                  ,right: right
+                                  ,margin2: margin2};
+   return _elm.Style.CssHelpers.values;
+};
+Elm.Style = Elm.Style || {};
+Elm.Style.PrintStyle = Elm.Style.PrintStyle || {};
+Elm.Style.PrintStyle.make = function (_elm) {
+   "use strict";
+   _elm.Style = _elm.Style || {};
+   _elm.Style.PrintStyle = _elm.Style.PrintStyle || {};
+   if (_elm.Style.PrintStyle.values)
+   return _elm.Style.PrintStyle.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Style.PrintStyle",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Json$Encode = Elm.Json.Encode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var stylesheet = function (exports) {
+      return A2($Html.div,
+      _L.fromArray([A2($Html$Attributes.property,
+      "innerHTML",
+      $Json$Encode.string(A2($Basics._op["++"],
+      "<style>",
+      A2($Basics._op["++"],
+      A2($Stylesheets.prettyPrint,
+      4,
+      exports),
+      "</style>"))))]),
+      _L.fromArray([]));
+   };
+   _elm.Style.PrintStyle.values = {_op: _op
+                                  ,stylesheet: stylesheet};
+   return _elm.Style.PrintStyle.values;
+};
+Elm.Style = Elm.Style || {};
+Elm.Style.SharedStyles = Elm.Style.SharedStyles || {};
+Elm.Style.SharedStyles.make = function (_elm) {
+   "use strict";
+   _elm.Style = _elm.Style || {};
+   _elm.Style.SharedStyles = _elm.Style.SharedStyles || {};
+   if (_elm.Style.SharedStyles.values)
+   return _elm.Style.SharedStyles.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Style.SharedStyles",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style$CssHelpers = Elm.Style.CssHelpers.make(_elm),
+   $Style$SharedValues = Elm.Style.SharedValues.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var ProgrammingHeader = {ctor: "ProgrammingHeader"};
+   var ProgrammingContainer = {ctor: "ProgrammingContainer"};
+   var TeachingFooter = {ctor: "TeachingFooter"};
+   var TeachingArrow = {ctor: "TeachingArrow"};
+   var TeachingImgArea = {ctor: "TeachingImgArea"};
+   var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
+   var TeachingCallToAction = {ctor: "TeachingCallToAction"};
+   var TeachingImgTakafumi = {ctor: "TeachingImgTakafumi"};
+   var TeachingBioAndCallToAction = {ctor: "TeachingBioAndCallToAction"};
+   var TeachingHeaderDesc = {ctor: "TeachingHeaderDesc"};
+   var TeachingHeaderTitle = {ctor: "TeachingHeaderTitle"};
+   var TeachingHeaderInner = {ctor: "TeachingHeaderInner"};
+   var TeachingHeader = {ctor: "TeachingHeader"};
+   var WritingPost = {ctor: "WritingPost"};
+   var WritingHeaderDesc = {ctor: "WritingHeaderDesc"};
+   var WritingHeaderTitle = {ctor: "WritingHeaderTitle"};
+   var WritingHeaderInner = {ctor: "WritingHeaderInner"};
+   var WritingHeader = {ctor: "WritingHeader"};
+   var WritingContainer = {ctor: "WritingContainer"};
+   var HomeMainBody = {ctor: "HomeMainBody"};
+   var HomeMainBodyPre = {ctor: "HomeMainBodyPre"};
+   var HomePaddedContainer = {ctor: "HomePaddedContainer"};
+   var HomeIntroImageBorder = {ctor: "HomeIntroImageBorder"};
+   var HomeIntroImage = {ctor: "HomeIntroImage"};
+   var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
+   var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
+   var HomeHeaderInner = {ctor: "HomeHeaderInner"};
+   var HomeHeader = {ctor: "HomeHeader"};
+   var HomeContainer = {ctor: "HomeContainer"};
+   var BootstrapAccordion = {ctor: "BootstrapAccordion"};
+   var NoticesNotLive = {ctor: "NoticesNotLive"};
+   var NavBarIconBar = {ctor: "NavBarIconBar"};
+   var NavBarSpace = {ctor: "NavBarSpace"};
+   var NavBarTop = {ctor: "NavBarTop"};
+   var NavBar = {ctor: "NavBar"};
+   var exports = A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|%|"],
+   $Stylesheets.css,
+   $Stylesheets.body),
+   A2($Stylesheets.marginTop,
+   0,
+   $Stylesheets.px)),
+   $Stylesheets.color($Style$SharedValues.colorHeading)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorBodyBackground)),
+   $Style$CssHelpers.fontFamily("Verdana, \'Bitstream Vera Sans\', sans-serif")),
+   NavBar),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorNavBarBackground)),
+   $Stylesheets.color($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   NavBarTop),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.height,
+   $Style$SharedValues.heightNavBarTop,
+   $Stylesheets.px)),
+   NavBarSpace),
+   A2($Stylesheets.height,
+   $Style$SharedValues.heightNavBar,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   NavBarIconBar),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   NoticesNotLive),
+   $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
+   $Stylesheets.color($Stylesheets.hex("FFF"))),
+   $Style$CssHelpers.textAlign("center")),
+   A2($Stylesheets.paddingTop,
+   10,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   10,
+   $Stylesheets.px)),
+   $Style$CssHelpers.fontWeight("bold")),
+   HomeContainer),
+   HomeIntroImageBorder),
+   A2($Stylesheets.padding,
+   5,
+   $Stylesheets.px)),
+   A2($Stylesheets.margin,
+   10,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
+   HomeIntroImage),
+   A2($Stylesheets.height,
+   300,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Stylesheets.hex("454545"))),
+   HomeMainBodyPre),
+   A2($Stylesheets.paddingTop,
+   10,
+   $Stylesheets.px)),
+   HomeMainBody),
+   A2($Stylesheets.padding,
+   30,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingTop,
+   50,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
+   HomeHeader),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   30,
+   $Stylesheets.px)),
+   HomeHeaderInner),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   HomeHeaderTitle),
+   A2($Stylesheets.marginTop,
+   50,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.fontSize,
+   60,
+   $Stylesheets.px)),
+   $Style$CssHelpers.fontWeight("normal")),
+   HomeHeaderDesc),
+   A2($Style$CssHelpers.fontSize,
+   20,
+   $Stylesheets.px)),
+   $Stylesheets.color($Style$SharedValues.colorSubHeading)),
+   HomePaddedContainer),
+   A2($Stylesheets.margin,
+   10,
+   $Stylesheets.px)),
+   WritingContainer),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
+   A2($Stylesheets.marginTop,
+   20,
+   $Stylesheets.px)),
+   WritingPost),
+   A2($Stylesheets.padding,
+   $Style$SharedValues.postPadding,
+   $Stylesheets.px)),
+   TeachingHeader),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   $Style$SharedValues.widthBoarder,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   $Style$SharedValues.widthBoarder,
+   $Stylesheets.px)),
+   TeachingHeaderInner),
+   A2($Stylesheets.paddingTop,
+   $Style$SharedValues.spaceHeaderInner,
+   $Stylesheets.px)),
+   A2($Stylesheets.height,
+   $Style$SharedValues.heightTeachingHeader,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   $Style$CssHelpers.textAlign("center")),
+   TeachingHeaderTitle),
+   A2($Stylesheets.marginTop,
+   0,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   0,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.fontSize,
+   $Style$SharedValues.sizeHeaderTitleText,
+   $Stylesheets.px)),
+   $Style$CssHelpers.fontWeight("normal")),
+   TeachingHeaderDesc),
+   A2($Style$CssHelpers.fontSize,
+   $Style$SharedValues.sizeHeaderDescText,
+   $Stylesheets.px)),
+   $Stylesheets.color($Style$SharedValues.colorSubHeading)),
+   TeachingBioAndCallToAction),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   20,
+   $Stylesheets.px)),
+   TeachingImgTakafumi),
+   A2($Stylesheets.marginTop,
+   40,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginBottom,
+   40,
+   $Stylesheets.px)),
+   TeachingCallToAction),
+   A2($Stylesheets.marginTop,
+   20,
+   $Stylesheets.px)),
+   TeachingContainerHeader),
+   $Style$CssHelpers.borderBottomColor($Style$SharedValues.colorHighlight)),
+   TeachingImgArea),
+   TeachingArrow),
+   $Style$CssHelpers.borderStyle("solid")),
+   $Style$CssHelpers.borderColor("transparent")),
+   $Style$CssHelpers.borderTopColor($Style$SharedValues.colorHighlight)),
+   A2($Style$CssHelpers.borderTopWidth,
+   22,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.borderRightWidth,
+   28,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.borderBottomWidth,
+   0,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.borderLeftWidth,
+   28,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.left,
+   0,
+   $Stylesheets.px)),
+   A2($Style$CssHelpers.right,
+   0,
+   $Stylesheets.px)),
+   $Style$CssHelpers.content("")),
+   $Style$CssHelpers.margin2("auto")),
+   A2($Stylesheets.width,
+   0,
+   $Stylesheets.px)),
+   TeachingFooter),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.height,
+   60,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginTop,
+   40,
+   $Stylesheets.px)),
+   ProgrammingContainer),
+   A2($Stylesheets.marginTop,
+   50,
+   $Stylesheets.px)),
+   ProgrammingHeader),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.paddingTop,
+   20,
+   $Stylesheets.px)),
+   A2($Stylesheets.paddingBottom,
+   30,
+   $Stylesheets.px)),
+   BootstrapAccordion),
+   $Stylesheets.color($Style$SharedValues.colorStandardText));
+   _elm.Style.SharedStyles.values = {_op: _op
+                                    ,NavBar: NavBar
+                                    ,NavBarTop: NavBarTop
+                                    ,NavBarSpace: NavBarSpace
+                                    ,NavBarIconBar: NavBarIconBar
+                                    ,NoticesNotLive: NoticesNotLive
+                                    ,BootstrapAccordion: BootstrapAccordion
+                                    ,HomeContainer: HomeContainer
+                                    ,HomeHeader: HomeHeader
+                                    ,HomeHeaderInner: HomeHeaderInner
+                                    ,HomeHeaderTitle: HomeHeaderTitle
+                                    ,HomeHeaderDesc: HomeHeaderDesc
+                                    ,HomeIntroImage: HomeIntroImage
+                                    ,HomeIntroImageBorder: HomeIntroImageBorder
+                                    ,HomePaddedContainer: HomePaddedContainer
+                                    ,HomeMainBodyPre: HomeMainBodyPre
+                                    ,HomeMainBody: HomeMainBody
+                                    ,WritingContainer: WritingContainer
+                                    ,WritingHeader: WritingHeader
+                                    ,WritingHeaderInner: WritingHeaderInner
+                                    ,WritingHeaderTitle: WritingHeaderTitle
+                                    ,WritingHeaderDesc: WritingHeaderDesc
+                                    ,WritingPost: WritingPost
+                                    ,TeachingHeader: TeachingHeader
+                                    ,TeachingHeaderInner: TeachingHeaderInner
+                                    ,TeachingHeaderTitle: TeachingHeaderTitle
+                                    ,TeachingHeaderDesc: TeachingHeaderDesc
+                                    ,TeachingBioAndCallToAction: TeachingBioAndCallToAction
+                                    ,TeachingImgTakafumi: TeachingImgTakafumi
+                                    ,TeachingCallToAction: TeachingCallToAction
+                                    ,TeachingContainerHeader: TeachingContainerHeader
+                                    ,TeachingImgArea: TeachingImgArea
+                                    ,TeachingArrow: TeachingArrow
+                                    ,TeachingFooter: TeachingFooter
+                                    ,ProgrammingContainer: ProgrammingContainer
+                                    ,ProgrammingHeader: ProgrammingHeader
+                                    ,exports: exports};
+   return _elm.Style.SharedStyles.values;
+};
+Elm.Style = Elm.Style || {};
+Elm.Style.SharedValues = Elm.Style.SharedValues || {};
+Elm.Style.SharedValues.make = function (_elm) {
+   "use strict";
+   _elm.Style = _elm.Style || {};
+   _elm.Style.SharedValues = _elm.Style.SharedValues || {};
+   if (_elm.Style.SharedValues.values)
+   return _elm.Style.SharedValues.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Style.SharedValues",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Stylesheets = Elm.Stylesheets.make(_elm);
+   var postPadding = 30;
+   var sizeHeaderDescText = 20;
+   var sizeHeaderTitleText = 60;
+   var arrowHeight = 30;
+   var widthBoarder = 15;
+   var heightHpBrowser = 639;
+   var heightHpScreen = 768;
+   var heightAsusBrowser = 951;
+   var heightAsusScreen = 1080;
+   var heightNavBarTop = 5;
+   var heightNavBar = 50 + heightNavBarTop;
+   var heightTeachingHeader = heightHpBrowser - heightNavBar - 2 * widthBoarder - arrowHeight;
+   var spaceHeaderInner = $Basics.round(heightTeachingHeader / 2 - (sizeHeaderTitleText + sizeHeaderDescText) / 2);
+   var colorSubHeading = $Stylesheets.hex("BBB");
+   var colorHeading = $Stylesheets.hex("333");
+   var colorStandardText = colorHeading;
+   var colorContentBackground = $Stylesheets.hex("FFF");
+   var colorNavBarBackground = $Stylesheets.hex("FFF");
+   var colorBodyBackground = $Stylesheets.hex("DDD");
+   var colorHighlight = $Stylesheets.hex("C62B2B");
+   var colorHighlightBlue = $Stylesheets.hex("2B74C6");
+   _elm.Style.SharedValues.values = {_op: _op
+                                    ,colorHighlightBlue: colorHighlightBlue
+                                    ,colorHighlight: colorHighlight
+                                    ,colorBodyBackground: colorBodyBackground
+                                    ,colorNavBarBackground: colorNavBarBackground
+                                    ,colorContentBackground: colorContentBackground
+                                    ,colorHeading: colorHeading
+                                    ,colorSubHeading: colorSubHeading
+                                    ,colorStandardText: colorStandardText
+                                    ,heightNavBarTop: heightNavBarTop
+                                    ,heightNavBar: heightNavBar
+                                    ,heightAsusScreen: heightAsusScreen
+                                    ,heightAsusBrowser: heightAsusBrowser
+                                    ,heightHpScreen: heightHpScreen
+                                    ,heightHpBrowser: heightHpBrowser
+                                    ,widthBoarder: widthBoarder
+                                    ,arrowHeight: arrowHeight
+                                    ,heightTeachingHeader: heightTeachingHeader
+                                    ,sizeHeaderTitleText: sizeHeaderTitleText
+                                    ,sizeHeaderDescText: sizeHeaderDescText
+                                    ,spaceHeaderInner: spaceHeaderInner
+                                    ,postPadding: postPadding};
+   return _elm.Style.SharedValues.values;
 };
 Elm.Stylesheets = Elm.Stylesheets || {};
 Elm.Stylesheets.make = function (_elm) {
@@ -14781,7 +14817,54 @@ Elm.Writing.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Writing",
    $Basics = Elm.Basics.make(_elm),
-   $EntryOne = Elm.EntryOne.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $WritingLibrary = Elm.WritingLibrary.make(_elm);
+   var content = "\n\n\n### Blog Posts\n\n* [What I Am Doing With My Life](/dist/html/writing/what-i-am-doing-with-my-life.html)\n\n### Reviews\n  \n* [Cross Game](/dist/html/writing/cross-game.html)\n\n### Picks\n\n- Nothing\n\n";
+   var links = _L.fromArray([]);
+   var view = function (model) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([A3($WritingLibrary.writing,
+      model,
+      links,
+      content)]));
+   };
+   var model = {_: {}
+               ,currentPage: "Writing"};
+   var main = view(model);
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   A2($Basics._op["++"],
+   model.currentPage,
+   " | BJW"));
+   _elm.Writing.values = {_op: _op
+                         ,main: main
+                         ,model: model
+                         ,view: view
+                         ,links: links
+                         ,content: content};
+   return _elm.Writing.values;
+};
+Elm.WritingLibrary = Elm.WritingLibrary || {};
+Elm.WritingLibrary.make = function (_elm) {
+   "use strict";
+   _elm.WritingLibrary = _elm.WritingLibrary || {};
+   if (_elm.WritingLibrary.values)
+   return _elm.WritingLibrary.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "WritingLibrary",
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
    $Footer = Elm.Footer.make(_elm),
    $Header = Elm.Header.make(_elm),
    $Html = Elm.Html.make(_elm),
@@ -14790,34 +14873,37 @@ Elm.Writing.make = function (_elm) {
    $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
-   $PrintStyle = Elm.PrintStyle.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $SharedStyles = Elm.SharedStyles.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
-   var bestWayToTeach = "\n  [13:39] <EmptyMemory> pattern recognition can only take you so far when learning\n  [13:40] <lostinmetro> pattern recognition is literally all i know how to do\n  [13:42] <EmptyMemory> i think concept definition coupled with examples (i.e. pattern recognition) is the best way to teach\n  [13:42] <EmptyMemory> i should write a blog post about that\n  ";
-   var picks = _L.fromArray(["Brandon Sanderson Books"
-                            ," "]);
-   var ventingMarkdown = "\n  Venting\n  =======\n  July-02-12: 11:44pm\n  -------------------\n  Usually I\'m not the type to go blabbing about my problems to all my friends, but lately I\'ve felt the need to vent a lot. Recently, I\'ve felt the need to enlighten most of my close friends about the shit-show that is my current relationship standing with my father. I mean, I just did it to my cousin five minutes ago. Perhaps this is a better place to vent though. Sure, it\'s the internet, and sure, everyone can access it, but I want to learn HTML and webdesign anyway; I can kill two birds with one stone. And honestly, if you\'re this interested in my personal life to come to this site (if you can even call it that, I mean I\'m currently running this off Dropbox,) by all means, listen.\n  ";
-   var entry = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
-   _L.fromArray([$Markdown.toHtml($EntryOne.entry)]));
-   var sideBar = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-sm-3 col-sm-offset-1")]),
-   _L.fromArray([]));
-   var writingPosts = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
-   _L.fromArray([entry]));
-   var writing = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([writingPosts
-                ,sideBar]))]));
-   var links = _L.fromArray([]);
-   var view = function (model) {
+   $Signal = Elm.Signal.make(_elm),
+   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
+   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
+   var timeToString = function (time) {
+      return A2($Basics._op["++"],
+      $Basics.toString(time.hour),
+      A2($Basics._op["++"],
+      ":",
+      A2($Basics._op["++"],
+      $Basics.toString(time.minute),
+      time.notation)));
+   };
+   var Time = F3(function (a,b,c) {
+      return {_: {}
+             ,hour: a
+             ,minute: b
+             ,notation: c};
+   });
+   var Date = F3(function (a,b,c) {
+      return {_: {}
+             ,day: c
+             ,month: b
+             ,year: a};
+   });
+   var writing = F3(function (model,
+   links,
+   content) {
       return A2($Html.div,
       _L.fromArray([]),
-      _L.fromArray([$PrintStyle.stylesheet($SharedStyles.exports)
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
                    ,A2($NavBar.navBar,
                    model.currentPage,
                    links)
@@ -14826,33 +14912,112 @@ Elm.Writing.make = function (_elm) {
                    "Home",
                    "The Depository",
                    "Yeah, there\'s only one blog entry here so far.")
-                   ,writing
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([$Markdown.toHtml(content)]))]))]))
                    ,$Footer.footer("Teaching")]));
-   };
-   var model = {_: {}
-               ,currentPage: "Writing"};
+   });
    var Model = function (a) {
       return {_: {}
              ,currentPage: a};
    };
-   var main = view(model);
-   var title = Elm.Native.Port.make(_elm).outbound("title",
-   function (v) {
-      return v;
-   },
-   "Writing | BJW");
-   _elm.Writing.values = {_op: _op
-                         ,main: main
-                         ,Model: Model
-                         ,model: model
-                         ,view: view
-                         ,links: links
-                         ,writing: writing
-                         ,writingPosts: writingPosts
-                         ,sideBar: sideBar
-                         ,entry: entry
-                         ,ventingMarkdown: ventingMarkdown
-                         ,picks: picks
-                         ,bestWayToTeach: bestWayToTeach};
-   return _elm.Writing.values;
+   _op["=>"] = F2(function (v0,
+   v1) {
+      return {ctor: "_Tuple2"
+             ,_0: v0
+             ,_1: v1};
+   });
+   var months = $Dict.fromList(_L.fromArray([A2(_op["=>"],
+                                            1,
+                                            "Jan")
+                                            ,A2(_op["=>"],2,"Feb")
+                                            ,A2(_op["=>"],3,"Mar")
+                                            ,A2(_op["=>"],4,"Apr")
+                                            ,A2(_op["=>"],5,"May")
+                                            ,A2(_op["=>"],6,"June")
+                                            ,A2(_op["=>"],7,"July")
+                                            ,A2(_op["=>"],8,"Aug")
+                                            ,A2(_op["=>"],9,"Sep")
+                                            ,A2(_op["=>"],10,"Oct")
+                                            ,A2(_op["=>"],11,"Nov")
+                                            ,A2(_op["=>"],12,"Dec")]));
+   var dateToString = function (date) {
+      return function () {
+         var _v0 = A2($Dict.get,
+         date.month,
+         months);
+         switch (_v0.ctor)
+         {case "Just":
+            return A2($Basics._op["++"],
+              $Basics.toString(date.day),
+              A2($Basics._op["++"],
+              " ",
+              A2($Basics._op["++"],
+              _v0._0,
+              A2($Basics._op["++"],
+              " ",
+              $Basics.toString(date.year)))));
+            case "Nothing":
+            return $Debug.crash("invalid date");}
+         _U.badCase($moduleName,
+         "between lines 93 and 98");
+      }();
+   };
+   var postInfo = F2(function (date,
+   time) {
+      return A2($Basics._op["++"],
+      "Posted On: ",
+      A2($Basics._op["++"],
+      dateToString(date),
+      A2($Basics._op["++"],
+      " - ",
+      timeToString(time))));
+   });
+   var post = F4(function (title,
+   date,
+   time,
+   body) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   "",
+                   _L.fromArray([]))
+                   ,$NavBar.navBarSpace
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
+                   _L.fromArray([A2($Html.h1,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(title)]))
+                                ,A2($Html.h6,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(A2(postInfo,
+                                date,
+                                time))]))
+                                ,A2($Html.div,
+                                _L.fromArray([]),
+                                body)]))]))]))]))
+                   ,$Footer.footer("Teaching")]));
+   });
+   _elm.WritingLibrary.values = {_op: _op
+                                ,Model: Model
+                                ,writing: writing
+                                ,post: post
+                                ,postInfo: postInfo
+                                ,Date: Date
+                                ,dateToString: dateToString
+                                ,months: months
+                                ,Time: Time
+                                ,timeToString: timeToString};
+   return _elm.WritingLibrary.values;
 };

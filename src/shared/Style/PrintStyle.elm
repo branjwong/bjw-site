@@ -1,4 +1,4 @@
-module PrintStyle where
+module Style.PrintStyle (stylesheet) where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

@@ -2,7 +2,7 @@
 
 ## Links & Proxies
 
-- ./ website
+- ./ -> home page
 - ./git/ -> github
 - ./linkedin -> linkedin
 

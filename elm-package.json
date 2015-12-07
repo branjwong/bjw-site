@@ -1,15 +1,12 @@
 {
-    "version": "0.5.0",
+    "version": "1.0.0",
     "summary": "A landing site for all things Brandon J Wong.",
     "repository": "https://github.com/branjwong/bjw-site.git",
     "license": "BSD3",
     "source-directories": [
-        "src/pages",
         "src/shared",
-        "src/style",
         "elm-new/elm-stylesheets/src",
-        "resources/markdown/review/120713",
-        "resources/markdown/blog/151120"
+        "elm-new/elm-css/src"
     ],
     "exposed-modules": [],
     "dependencies": {

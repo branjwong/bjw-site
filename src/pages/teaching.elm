@@ -3,6 +3,11 @@ module Teaching where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+import Style.PrintStyle exposing (stylesheet)
+import Style.SharedStyles exposing (exports)
+import Style.SharedValues exposing (colorHighlight)
+import Stylesheets exposing (colorToString)
+
 import NavBar
 import Markdown
 import Bootstrap
@@ -11,16 +16,14 @@ import Notices
 import Header
 import Footer
 
-import Stylesheets
-import SharedStyles
-import PrintStyle
-
 import Lorem
+
 
 ----------------------------------------------------------------------------------------------------------------
 
+
 port title: String
-port title =  "Teaching | BJW"
+port title =  model.currentPage ++ " | BJW"
 
 
 type alias Model =
@@ -40,7 +43,9 @@ type alias Panel =
   , content     : Html
   }
 
+
 ----------------------------------------------------------------------------------------------------------------
+
 
 main : Html
 main =
@@ -57,7 +62,7 @@ view : Model -> Html
 view model =
   div
     []
-    [ PrintStyle.stylesheet SharedStyles.exports
+    [ stylesheet exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , Notices.notLive
@@ -66,7 +71,9 @@ view model =
     , Footer.footer "Teaching"
     ]
 
+
 ----------------------------------------------------------------------------------------------------------------
+
 
 links : List Html
 links =
@@ -81,20 +88,23 @@ links =
 
 ----------------------------------------------------------------------------------------------------------------
 
+
 teachingContainer : Html
 teachingContainer =
   div
     [ class "container TeachingContainer" ]
-    [ arrow (Stylesheets.colorToString SharedStyles.colorHighlight)
+    [ arrow (colorToString colorHighlight)
     , bioAndCallToAction
-    , imgTakafumi
     , advertise
+    , imgTakafumi
     , subjects
     , area
     , contactMe
     ]
 
+
 ----------------------------------------------------------------------------------------------------------------
+
 
 arrow color =
   let
@@ -105,7 +115,7 @@ arrow color =
     div
       [ class "row" ]
       [ div
-        [ class "col-md-12" ]
+        [ class "col-sm-12" ]
         [ div 
           [ class "TeachingArrow"
           , addedColor
@@ -117,13 +127,16 @@ arrow color =
 
 ----------------------------------------------------------------------------------------------------------------
 
+
 imgTakafumi : Html
 imgTakafumi = 
   div 
     [ class "TeachingImgTakafumi" ]
     [ Bootstrap.image (Paths.resources ++ "takafumi_1170x658.jpg") ]
 
+
 ----------------------------------------------------------------------------------------------------------------
+
 
 bioAndCallToAction : Html
 bioAndCallToAction =
@@ -140,11 +153,11 @@ bioAccordion : Html
 bioAccordion =
   let
     acName = "bio"
-    class = "col-md-10"
+    class = "col-sm-10"
   in
     Bootstrap.accordion acName class
       [ Bootstrap.panelHeading acName 1 bio1.title
-      , Bootstrap.panelBody acName 1 True bio1.content
+      , Bootstrap.panelBody acName 1 False bio1.content
       , Bootstrap.panelHeading acName 2 bio2.title
       , Bootstrap.panelBody acName 2 False bio2.content
       ]
@@ -153,7 +166,7 @@ bioAccordion =
 callToAction : Html
 callToAction =
   div 
-    [ class "col-md-2" ] 
+    [ class "col-sm-2" ] 
     [ p []
       [ button
         [ class "TeachingCallToAction"
@@ -176,7 +189,8 @@ bio1 =
     { title = "Personal Profile"
     , content = Markdown.toHtml string
     }
- 
+
+
 bio2 : Panel
 bio2 = 
   let
@@ -191,22 +205,22 @@ bio2 =
         [ div
           [ class "row" ]
           [ div
-            [ class "col-md-9" ]
+            [ class "col-sm-9" ]
             [ text "Oxford Learning" ]
           , div
-            [ class "col-md-3" ]
+            [ class "col-sm-3" ]
             [ text "Aug 2014 – Present" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12" ]
+            [ class "col-sm-12" ]
             [ text "Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12" ]
+            [ class "col-sm-12" ]
             [ Markdown.toHtml oxfordText ]
           ]
         ]
@@ -221,22 +235,22 @@ bio2 =
         [ div
           [ class "row" ]
           [ div
-            [ class "col-md-9" ]
+            [ class "col-sm-9" ]
             [ text "Magee Secondary School" ]
           , div
-            [ class "col-md-3" ]
-            [ text "February 2013 – July 2013" ]
+            [ class "col-sm-3" ]
+            [ text "Feb 2013 – Jul 2013" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12" ]
+            [ class "col-sm-12" ]
             [ text "Calculus Tutor" ]
           ]
         , div
           [ class "row" ]
           [ div
-            [ class "col-md-12" ]
+            [ class "col-sm-12" ]
             [ Markdown.toHtml mageeText ]
           ]
         ]
@@ -249,6 +263,7 @@ bio2 =
     { title = "Experience"
     , content = resume
     }
+
 
 bio3 : Panel
 bio3 =
@@ -276,27 +291,43 @@ advertise =
   div 
     [ class "row" ]
     [ div
-      [ class "col-md-6" ]
-      [ Markdown.toHtml foundations.content ]
+      [ class "col-sm-4" ]
+      [ p [] [ text foundations.title ]
+      , p [] [ text foundations.content ]
+      ]
     , div
-      [ class "col-md-6" ]
-      [ Markdown.toHtml approaches.content ]
+      [ class "col-sm-4" ]
+      [ p [] [ text approaches.title ]
+      , p [] [ text approaches.content ]
+      ]
+    , div
+      [ class "col-sm-4" ]
+      [ p [] [ text personable.title ]
+      , p [] [ text personable.content ]
+      ]
     ]
 
 
 foundations : AdvPoint
 foundations = 
-  { title = "Building Foundations"
+  { title = "Builds Foundations"
   , image = ""
-  , content = loremipsum
+  , content = "It's nigh impossible for students to tackle concepts that they are currently learning if they hav holes in their understanding of previously learned material. I make sure to assess and teach what students are missing so that they can return better prepared to the concepts at hand."
   }
 
 
 approaches : AdvPoint
 approaches = 
-  { title = "Approaching from all Angles"
+  { title = "Approaches from all Angles"
   , image = ""
-  , content = loremipsum
+  , content = "Not all students learn the same way. Some students prefer visual cues, learning by example, conceptual definition, practical applications, learning abstractly or through concrete examples. I can make sure that students understand all aspects of concept so that it can be approached confidently."
+  }
+
+personable : AdvPoint
+personable =
+  { title = "Personable"
+  , image = ""
+  , content = "At the prime age of 22, I am able to relate to students of all age groups. I am diverse in interests, so I can always ensure that I can connect to my students on some level. I have travelled, I ski, I play soccer, I program, I game, ... and the list goes on."
   }
 
 ----------------------------------------------------------------------------------------------------------------
@@ -315,7 +346,7 @@ subjects =
 
 subjectsAccordion : Html
 subjectsAccordion = 
-  Bootstrap.accordion "subj" "col-md-12"
+  Bootstrap.accordion "subj" "col-sm-12"
     [ Bootstrap.panelHeading "subj" 1 math10.title
     , Bootstrap.panelBody "subj" 1 False math10.content
     , Bootstrap.panelHeading "subj" 2 math11.title
@@ -445,7 +476,7 @@ area =
       , div
         [ class "row" ]
         [ div 
-          [ class "col-md-12" ]
+          [ class "col-sm-12" ]
           [ div 
             [ class "TeachingImgArea" ]
             [ imgArea ]
@@ -463,7 +494,7 @@ contactMe =
     , div
       [ class "row" ]
       [ div 
-        [ class "col-md-12" ]
+        [ class "col-sm-12" ]
         [ Markdown.toHtml contactAdv.content ]
       ]
     ]

@@ -1,33 +1,28 @@
--- Needs to be longer so that there is a scroll bar on the right.
--- http://getbootstrap.com/examples/cover/
-
 module Home where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+import Style.SharedStyles exposing (..)
+import Style.PrintStyle exposing (..)
+
+import Title
 import NavBar
 import Header
 import Notices
 import Footer
 
-import SharedStyles
-import PrintStyle
 import Bootstrap
-
 import Lorem
 
 
-----------------------------------------------------------------------------------------------------------------
-
 port title : String
-port title = "Home | BJW"
+port title = Title.home
 
 type alias Model =
   { currentPage : String
   }
 
-----------------------------------------------------------------------------------------------------------------
 
 model : Model
 model =
@@ -42,7 +37,7 @@ view : Model -> Html
 view model =
   div 
     []
-    [ PrintStyle.stylesheet SharedStyles.exports
+    [ stylesheet exports
     , NavBar.navBar model.currentPage []
     , NavBar.navBarSpace
     , Notices.notLive
