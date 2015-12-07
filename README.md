@@ -1,4 +1,6 @@
-# Personal Website
+Personal Website
+================
+
 
 ## Development Environment Requirements
 
@@ -21,10 +23,11 @@
 
 - Teaching
 	- teaching services advertising
-	- 
+
 - Programming
 	- visual programming portfolio
 	- latest blog about the making of this site
+
 - Writing
 	- blog
 		- blogging about the making of this site
@@ -33,7 +36,7 @@
 	- guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
 	- favourite quotes
 
-- my own space?
+- My Own SPace?
 
 
 ## Design Decisions
@@ -54,6 +57,6 @@
 
 ## Version Numbers
 
-Version numbers are essentially SemVer, except that I use semantic names, for the version roles, e.g. “[Breaking.Feature.Fix][1]” instead of “Major.Minor.Patch”.
+Version numbers are essentially SemVer, except that I use semantic names, for the version roles, e.g. “[Breaking.Feature.Fix][ver]” instead of “Major.Minor.Patch”.
 
-[1] https://medium.com/javascript-scene/software-versions-are-broken-3d2dc0da0783#.qgkp9dimp
+[ver]: https://medium.com/javascript-scene/software-versions-are-broken-3d2dc0da0783#.qgkp9dimp
