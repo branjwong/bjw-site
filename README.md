@@ -21,34 +21,31 @@ Personal Website
 
 ## Content
 
-- Teaching
+##### Teaching
 	- teaching services advertising
 
-- Programming
+##### Programming
 	- visual programming portfolio
 	- latest blog about the making of this site
 
-- Writing
+##### Writing
 	- blog
 		- blogging about the making of this site
 		- book talk
 		- article share
 	- guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
-	- favourite quotes
-
-- My Own SPace?
-
+  - favourite quotes
 
 ## Design Decisions
 
-#### Friend Feedback
+##### Friend Feedback
 
 - David: Color -> Bad
 - Sam: Font -> Bad
 - Both: daringfireball -> college kid feeling
 - David: bootstrap.com -> more professional feeling
 
-## Development Decisions
+##### Development Decisions
 
 - purely client-side driven app
 - elm to html/js compilation
