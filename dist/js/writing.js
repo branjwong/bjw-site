@@ -12233,7 +12233,7 @@ Elm.Notices.make = function (_elm) {
       _L.fromArray([$Html.text(string)]))]))]));
    }();
    var earlyVer = function () {
-      var string = "This is an early, minimal version of this page! I know it\'s ugly, but at least it works.";
+      var string = "This is an early, minimal version of this page! I know it\'s lackluster, but at least it works.";
       return A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("row")]),
       _L.fromArray([A2($Html.div,

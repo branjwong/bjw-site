@@ -19,7 +19,7 @@ notLive =
 
 earlyVer =
   let
-    string = "This is an early, minimal version of this page! I know it's ugly, but at least it works."
+    string = "This is an early, minimal version of this page! I know it's lackluster, but at least it works."
   in
     div
       [ class "row" ] 
