@@ -33,7 +33,7 @@ writing model links content =
     [ stylesheet exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
-    , Header.header "Home" "The Depository" "Yeah, there's only one blog entry here so far."
+    , Header.header "Home" "The Depository" "Where the archive of all my written work resides."
     , div
       [ class "container WritingContainer" ]
       [ div
@@ -43,7 +43,7 @@ writing model links content =
           [ Markdown.toHtml content ]
         ]
       ]
-    , Footer.footer "Teaching"
+    , Footer.footer ""
     ]
 
 
@@ -71,7 +71,7 @@ post title date time body =
           ]
         ]
       ]
-    , Footer.footer "Teaching"
+    , Footer.footer ""
     ]
 
 postInfo : Date -> Time -> String

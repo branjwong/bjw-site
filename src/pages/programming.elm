@@ -41,9 +41,9 @@ view model =
     [ stylesheet exports
     , NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
-    , Header.header "Home" "The Laboratory" "Where my Programming experience is here for viewing."
+    , Header.header "Home" "The Laboratory" "Where my programming experience is here for viewing."
     , programming
-    , Footer.footer "Teaching"
+    , Footer.footer ""
     ]
 
 

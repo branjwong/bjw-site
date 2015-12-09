@@ -2919,12 +2919,10 @@ Elm.Home.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Home",
    $Basics = Elm.Basics.make(_elm),
-   $Bootstrap = Elm.Bootstrap.make(_elm),
    $Footer = Elm.Footer.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
-   $Lorem = Elm.Lorem.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $NavBar = Elm.NavBar.make(_elm),
    $Notices = Elm.Notices.make(_elm),
@@ -2933,49 +2931,78 @@ Elm.Home.make = function (_elm) {
    $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
    $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm),
    $Title = Elm.Title.make(_elm);
-   var home = function () {
-      var col = function (string) {
-         return A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class("col-sm-4")]),
-         _L.fromArray([$Html.text(string)]));
-      };
+   var block = F2(function (title,
+   link) {
       return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container HomeMainBodyPre")]),
+      _L.fromArray([$Html$Attributes.$class("BlockDiv")]),
       _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("HomeMainBody")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")]),
-      _L.fromArray([col($Lorem.ipsum)
-                   ,col($Lorem.ipsum)
-                   ,col($Lorem.ipsum)]))]))]));
-   }();
-   var trifecta = function () {
-      var col = function (string) {
-         return A2($Html.div,
-         _L.fromArray([$Html$Attributes.$class("col-sm-4")]),
-         _L.fromArray([$Html.text(string)]));
-      };
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("HomePaddedContainer")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")]),
-      _L.fromArray([col($Lorem.$short)
-                   ,col($Lorem.$short)
-                   ,col($Lorem.$short)]))]))]));
-   }();
-   var introImage = A2($Html.div,
+                   _L.fromArray([$Html$Attributes.style(_L.fromArray([{ctor: "_Tuple2"
+                                                                      ,_0: "text-align"
+                                                                      ,_1: "center"}]))]),
+                   _L.fromArray([A2($Html.a,
+                   _L.fromArray([$Html$Attributes.href(link)]),
+                   _L.fromArray([$Html.text(title)]))]))
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("BlockRim")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("Block")]),
+                   _L.fromArray([]))]))]));
+   });
+   var home = A2($Html.div,
    _L.fromArray([$Html$Attributes.$class("container")]),
    _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("HomeIntroImageBorder")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("HomeIntroImage")]),
-   _L.fromArray([$Bootstrap.image("")]))]))]))]))]));
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2 col-sm-offset-3")]),
+                             _L.fromArray([A2(block,
+                             "Teaching",
+                             "/dist/html/teaching.html")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2")]),
+                             _L.fromArray([A2(block,
+                             "Programming",
+                             "/dist/html/programming.html")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2")]),
+                             _L.fromArray([A2(block,
+                             "Writing",
+                             "/dist/html/writing.html")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2 col-sm-offset-3")]),
+                             _L.fromArray([A2(block,
+                             "Latest Guide",
+                             "/dist/html/writing/guide/latest")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2")]),
+                             _L.fromArray([A2(block,
+                             "Site Code",
+                             "https://github.com/branjwong/bjw-site")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2")]),
+                             _L.fromArray([A2(block,
+                             "Latest Blog",
+                             "/dist/html/writing/what-i-am-doing-with-my-life.html")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2 col-sm-offset-5")]),
+                             _L.fromArray([A2(block,
+                             "Megaman Game",
+                             "/dist/html/programming/megaman/megaman.html")]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-2")]),
+                             _L.fromArray([A2(block,
+                             "Latest Review",
+                             "/dist/html/writing/cross-game.html")]))]))
+                ,A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("row")]),
+                _L.fromArray([A2($Html.div,
+                _L.fromArray([$Html$Attributes.$class("col-sm-2 col-sm-offset-7")]),
+                _L.fromArray([A2(block,
+                "Latest Pick",
+                "/dist/html/writing.html")]))]))]));
    var view = function (model) {
       return A2($Html.div,
       _L.fromArray([]),
@@ -2984,9 +3011,7 @@ Elm.Home.make = function (_elm) {
                    model.currentPage,
                    _L.fromArray([]))
                    ,$NavBar.navBarSpace
-                   ,$Notices.notLive
-                   ,introImage
-                   ,trifecta
+                   ,$Notices.earlyVer
                    ,home
                    ,$Footer.footer("Teaching")]));
    };
@@ -3007,9 +3032,8 @@ Elm.Home.make = function (_elm) {
                       ,model: model
                       ,main: main
                       ,view: view
-                      ,introImage: introImage
-                      ,trifecta: trifecta
-                      ,home: home};
+                      ,home: home
+                      ,block: block};
    return _elm.Home.values;
 };
 Elm.Html = Elm.Html || {};
@@ -12326,18 +12350,43 @@ Elm.Notices.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var nothing = function () {
+      var string = "";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("Notices")
+                   ,$Html$Attributes.style(_L.fromArray([{ctor: "_Tuple2"
+                                                         ,_0: "height"
+                                                         ,_1: "40Xpx"}]))]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([$Html.text(string)]))]))]));
+   }();
+   var earlyVer = function () {
+      var string = "This is an early, minimal version of this page! I know it\'s ugly, but at least it works.";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("Notices")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([$Html.text(string)]))]))]));
+   }();
    var notLive = function () {
       var string = "This page has yet to go live! Do not be surprised by dummy text or things that are not looking right.";
       return A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("row")]),
       _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("NoticesNotLive")]),
+      _L.fromArray([$Html$Attributes.$class("Notices")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("container")]),
       _L.fromArray([$Html.text(string)]))]))]));
    }();
    _elm.Notices.values = {_op: _op
-                         ,notLive: notLive};
+                         ,notLive: notLive
+                         ,earlyVer: earlyVer
+                         ,nothing: nothing};
    return _elm.Notices.values;
 };
 Elm.Result = Elm.Result || {};
@@ -13065,9 +13114,12 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Style$CssHelpers = Elm.Style.CssHelpers.make(_elm),
    $Style$SharedValues = Elm.Style.SharedValues.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
+   var BlockRim = {ctor: "BlockRim"};
+   var BlockDiv = {ctor: "BlockDiv"};
+   var Block = {ctor: "Block"};
+   var Footer = {ctor: "Footer"};
    var ProgrammingHeader = {ctor: "ProgrammingHeader"};
    var ProgrammingContainer = {ctor: "ProgrammingContainer"};
-   var TeachingFooter = {ctor: "TeachingFooter"};
    var TeachingArrow = {ctor: "TeachingArrow"};
    var TeachingImgArea = {ctor: "TeachingImgArea"};
    var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
@@ -13095,7 +13147,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    var HomeHeader = {ctor: "HomeHeader"};
    var HomeContainer = {ctor: "HomeContainer"};
    var BootstrapAccordion = {ctor: "BootstrapAccordion"};
-   var NoticesNotLive = {ctor: "NoticesNotLive"};
+   var Notices = {ctor: "Notices"};
    var NavBarIconBar = {ctor: "NavBarIconBar"};
    var NavBarSpace = {ctor: "NavBarSpace"};
    var NavBarTop = {ctor: "NavBarTop"};
@@ -13104,12 +13156,20 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
@@ -13238,7 +13298,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
    NavBarIconBar),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   NoticesNotLive),
+   Notices),
    $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
    $Stylesheets.color($Stylesheets.hex("FFF"))),
    $Style$CssHelpers.textAlign("center")),
@@ -13395,14 +13455,6 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets.width,
    0,
    $Stylesheets.px)),
-   TeachingFooter),
-   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   A2($Stylesheets.height,
-   60,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginTop,
-   40,
-   $Stylesheets.px)),
    ProgrammingContainer),
    A2($Stylesheets.marginTop,
    50,
@@ -13416,13 +13468,35 @@ Elm.Style.SharedStyles.make = function (_elm) {
    30,
    $Stylesheets.px)),
    BootstrapAccordion),
-   $Stylesheets.color($Style$SharedValues.colorStandardText));
+   $Stylesheets.color($Style$SharedValues.colorStandardText)),
+   Footer),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.height,
+   60,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginTop,
+   40,
+   $Stylesheets.px)),
+   Block),
+   A2($Stylesheets.height,
+   80,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   BlockRim),
+   A2($Stylesheets.padding,
+   5,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
+   BlockDiv),
+   A2($Stylesheets.marginTop,
+   10,
+   $Stylesheets.px));
    _elm.Style.SharedStyles.values = {_op: _op
                                     ,NavBar: NavBar
                                     ,NavBarTop: NavBarTop
                                     ,NavBarSpace: NavBarSpace
                                     ,NavBarIconBar: NavBarIconBar
-                                    ,NoticesNotLive: NoticesNotLive
+                                    ,Notices: Notices
                                     ,BootstrapAccordion: BootstrapAccordion
                                     ,HomeContainer: HomeContainer
                                     ,HomeHeader: HomeHeader
@@ -13450,9 +13524,12 @@ Elm.Style.SharedStyles.make = function (_elm) {
                                     ,TeachingContainerHeader: TeachingContainerHeader
                                     ,TeachingImgArea: TeachingImgArea
                                     ,TeachingArrow: TeachingArrow
-                                    ,TeachingFooter: TeachingFooter
                                     ,ProgrammingContainer: ProgrammingContainer
                                     ,ProgrammingHeader: ProgrammingHeader
+                                    ,Footer: Footer
+                                    ,Block: Block
+                                    ,BlockDiv: BlockDiv
+                                    ,BlockRim: BlockRim
                                     ,exports: exports};
    return _elm.Style.SharedStyles.values;
 };

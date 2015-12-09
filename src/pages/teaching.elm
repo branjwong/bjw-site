@@ -68,7 +68,7 @@ view model =
     , Notices.notLive
     , Header.header "Teaching" "The Classroom" "Don't hesitate. I'm here to educate."
     , teachingContainer
-    , Footer.footer "Teaching"
+    , Footer.footer ""
     ]
 
 

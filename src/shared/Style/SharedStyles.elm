@@ -10,7 +10,7 @@ type CssClasses
     | NavBarSpace
     | NavBarIconBar
 
-    | NoticesNotLive
+    | Notices
 
     | BootstrapAccordion
 
@@ -42,10 +42,15 @@ type CssClasses
     | TeachingContainerHeader
     | TeachingImgArea
     | TeachingArrow
-    | TeachingFooter
 
     | ProgrammingContainer
     | ProgrammingHeader
+
+    | Footer
+
+    | Block
+    | BlockDiv
+    | BlockRim
 
 
 exports =
@@ -76,7 +81,7 @@ exports =
 
 ---------------------------------------------------------------------------------------------------------
 
-        |.| NoticesNotLive
+        |.| Notices
             |-| backgroundColor (hex "333")
             |-| color (hex "FFF")
             |-| textAlign "center"
@@ -212,13 +217,6 @@ exports =
             |-| width 0 px
             --|-| position "absolute"
 
-        |.| TeachingFooter
-            |-| backgroundColor colorHighlight
-            |-| height 60 px
-            |-| marginTop 40 px
-            --|-| paddingTop widthBoarder px
-            --|-| paddingBottom widthBoarder px
-
 ---------------------------------------------------------------------------------------------------------
 
         |.| ProgrammingContainer
@@ -233,3 +231,23 @@ exports =
 
         |.| BootstrapAccordion 
             |-| color colorStandardText
+
+---------------------------------------------------------------------------------------------------------
+
+        |.| Footer
+            |-| backgroundColor colorHighlight
+            |-| height 60 px
+            |-| marginTop 40 px
+
+---------------------------------------------------------------------------------------------------------
+
+        |.| Block
+            |-| height 80 px
+            |-| backgroundColor colorHighlight
+
+        |.| BlockRim
+            |-| padding 5 px
+            |-| backgroundColor colorContentBackground
+
+        |.| BlockDiv
+            |-| marginTop 10 px

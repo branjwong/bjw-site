@@ -12219,18 +12219,43 @@ Elm.Notices.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
+   var nothing = function () {
+      var string = "";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("Notices")
+                   ,$Html$Attributes.style(_L.fromArray([{ctor: "_Tuple2"
+                                                         ,_0: "height"
+                                                         ,_1: "40Xpx"}]))]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([$Html.text(string)]))]))]));
+   }();
+   var earlyVer = function () {
+      var string = "This is an early, minimal version of this page! I know it\'s ugly, but at least it works.";
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("Notices")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("container")]),
+      _L.fromArray([$Html.text(string)]))]))]));
+   }();
    var notLive = function () {
       var string = "This page has yet to go live! Do not be surprised by dummy text or things that are not looking right.";
       return A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("row")]),
       _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("NoticesNotLive")]),
+      _L.fromArray([$Html$Attributes.$class("Notices")]),
       _L.fromArray([A2($Html.div,
       _L.fromArray([$Html$Attributes.$class("container")]),
       _L.fromArray([$Html.text(string)]))]))]));
    }();
    _elm.Notices.values = {_op: _op
-                         ,notLive: notLive};
+                         ,notLive: notLive
+                         ,earlyVer: earlyVer
+                         ,nothing: nothing};
    return _elm.Notices.values;
 };
 Elm.Paths = Elm.Paths || {};
@@ -12981,9 +13006,12 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Style$CssHelpers = Elm.Style.CssHelpers.make(_elm),
    $Style$SharedValues = Elm.Style.SharedValues.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
+   var BlockRim = {ctor: "BlockRim"};
+   var BlockDiv = {ctor: "BlockDiv"};
+   var Block = {ctor: "Block"};
+   var Footer = {ctor: "Footer"};
    var ProgrammingHeader = {ctor: "ProgrammingHeader"};
    var ProgrammingContainer = {ctor: "ProgrammingContainer"};
-   var TeachingFooter = {ctor: "TeachingFooter"};
    var TeachingArrow = {ctor: "TeachingArrow"};
    var TeachingImgArea = {ctor: "TeachingImgArea"};
    var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
@@ -13011,7 +13039,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    var HomeHeader = {ctor: "HomeHeader"};
    var HomeContainer = {ctor: "HomeContainer"};
    var BootstrapAccordion = {ctor: "BootstrapAccordion"};
-   var NoticesNotLive = {ctor: "NoticesNotLive"};
+   var Notices = {ctor: "Notices"};
    var NavBarIconBar = {ctor: "NavBarIconBar"};
    var NavBarSpace = {ctor: "NavBarSpace"};
    var NavBarTop = {ctor: "NavBarTop"};
@@ -13020,12 +13048,20 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
@@ -13154,7 +13190,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
    NavBarIconBar),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   NoticesNotLive),
+   Notices),
    $Stylesheets.backgroundColor($Stylesheets.hex("333"))),
    $Stylesheets.color($Stylesheets.hex("FFF"))),
    $Style$CssHelpers.textAlign("center")),
@@ -13311,14 +13347,6 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets.width,
    0,
    $Stylesheets.px)),
-   TeachingFooter),
-   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   A2($Stylesheets.height,
-   60,
-   $Stylesheets.px)),
-   A2($Stylesheets.marginTop,
-   40,
-   $Stylesheets.px)),
    ProgrammingContainer),
    A2($Stylesheets.marginTop,
    50,
@@ -13332,13 +13360,35 @@ Elm.Style.SharedStyles.make = function (_elm) {
    30,
    $Stylesheets.px)),
    BootstrapAccordion),
-   $Stylesheets.color($Style$SharedValues.colorStandardText));
+   $Stylesheets.color($Style$SharedValues.colorStandardText)),
+   Footer),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   A2($Stylesheets.height,
+   60,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginTop,
+   40,
+   $Stylesheets.px)),
+   Block),
+   A2($Stylesheets.height,
+   80,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
+   BlockRim),
+   A2($Stylesheets.padding,
+   5,
+   $Stylesheets.px)),
+   $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
+   BlockDiv),
+   A2($Stylesheets.marginTop,
+   10,
+   $Stylesheets.px));
    _elm.Style.SharedStyles.values = {_op: _op
                                     ,NavBar: NavBar
                                     ,NavBarTop: NavBarTop
                                     ,NavBarSpace: NavBarSpace
                                     ,NavBarIconBar: NavBarIconBar
-                                    ,NoticesNotLive: NoticesNotLive
+                                    ,Notices: Notices
                                     ,BootstrapAccordion: BootstrapAccordion
                                     ,HomeContainer: HomeContainer
                                     ,HomeHeader: HomeHeader
@@ -13366,9 +13416,12 @@ Elm.Style.SharedStyles.make = function (_elm) {
                                     ,TeachingContainerHeader: TeachingContainerHeader
                                     ,TeachingImgArea: TeachingImgArea
                                     ,TeachingArrow: TeachingArrow
-                                    ,TeachingFooter: TeachingFooter
                                     ,ProgrammingContainer: ProgrammingContainer
                                     ,ProgrammingHeader: ProgrammingHeader
+                                    ,Footer: Footer
+                                    ,Block: Block
+                                    ,BlockDiv: BlockDiv
+                                    ,BlockRim: BlockRim
                                     ,exports: exports};
    return _elm.Style.SharedStyles.values;
 };
@@ -14911,7 +14964,7 @@ Elm.WritingLibrary.make = function (_elm) {
                    ,A3($Header.header,
                    "Home",
                    "The Depository",
-                   "Yeah, there\'s only one blog entry here so far.")
+                   "Where the archive of all my written work resides.")
                    ,A2($Html.div,
                    _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
                    _L.fromArray([A2($Html.div,
@@ -14919,7 +14972,7 @@ Elm.WritingLibrary.make = function (_elm) {
                    _L.fromArray([A2($Html.div,
                    _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
                    _L.fromArray([$Markdown.toHtml(content)]))]))]))
-                   ,$Footer.footer("Teaching")]));
+                   ,$Footer.footer("")]));
    });
    var Model = function (a) {
       return {_: {}
@@ -15007,7 +15060,7 @@ Elm.WritingLibrary.make = function (_elm) {
                                 ,A2($Html.div,
                                 _L.fromArray([]),
                                 body)]))]))]))]))
-                   ,$Footer.footer("Teaching")]));
+                   ,$Footer.footer("")]));
    });
    _elm.WritingLibrary.values = {_op: _op
                                 ,Model: Model
