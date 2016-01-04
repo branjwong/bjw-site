@@ -60,3 +60,13 @@ Personal Website
 Version numbers are essentially SemVer, except that I use semantic names, for the version roles, e.g. “[Breaking.Feature.Fix][ver]” instead of “Major.Minor.Patch”.
 
 [ver]: https://medium.com/javascript-scene/software-versions-are-broken-3d2dc0da0783#.qgkp9dimp
+
+## TODO
+
+1. Finish Teaching Page
+1. Finish Home Page
+1. Search Engine Optimization
+1. Update Elm Version
+1. Create a Backend
+1. Routing
+1. Forms - Contact Me

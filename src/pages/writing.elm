@@ -47,6 +47,10 @@ content = """
 
 * [What I Am Doing With My Life](/dist/html/writing/what-i-am-doing-with-my-life.html)
 
+### Guides
+
+* [Factoring Trinomials](/dist/html/writing/factoring-trinomials.html)
+
 ### Reviews
   
 * [Cross Game](/dist/html/writing/cross-game.html)

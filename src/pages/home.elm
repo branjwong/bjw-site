@@ -42,7 +42,7 @@ view model =
     , NavBar.navBarSpace
     , Notices.earlyVer
     , home
-    , Footer.footer "Teaching"
+    , Footer.footer
     ]
 
 home : Html

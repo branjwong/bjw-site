@@ -9,7 +9,7 @@ import Stylesheets exposing (..)
 
 colorHighlightBlue = hex "2B74C6"
 colorHighlight = hex "C62B2B"
-colorBodyBackground = hex "DDD"
+colorBodyBackground = hex "EEE"
 colorNavBarBackground = hex "FFF"
 colorContentBackground = hex "FFF"
 
@@ -36,8 +36,12 @@ heightTeachingHeader = heightHpBrowser - heightNavBar - 2*widthBoarder - arrowHe
 
 sizeHeaderTitleText = 60
 sizeHeaderDescText = 20
+sizeHeaderButton = 50
 
 spaceHeaderInner = round(heightTeachingHeader/2 - (sizeHeaderTitleText + sizeHeaderDescText)/2)
+marginHeaderWithButton = round(heightHpBrowser/2 - (sizeHeaderDescText + sizeHeaderTitleText + sizeHeaderButton))
+marginHeader = round(heightHpBrowser/2 - (sizeHeaderDescText + sizeHeaderTitleText))
+
 
 postPadding = 30
 

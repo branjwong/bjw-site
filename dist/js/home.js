@@ -1956,15 +1956,21 @@ Elm.Footer.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
-   var footer = function (pageName) {
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
-      pageName,
-      "Footer"))]),
-      _L.fromArray([]));
-   };
+   var link = F2(function (title,
+   url) {
+      return A2($Html.a,
+      _L.fromArray([$Html$Attributes.href(url)]),
+      _L.fromArray([$Html.text(title)]));
+   });
+   var footer = A2($Html.div,
+   _L.fromArray([$Html$Attributes.id("Footer")
+                ,A2($Html$Attributes.attribute,
+                "role",
+                "footer")]),
+   _L.fromArray([]));
    _elm.Footer.values = {_op: _op
-                        ,footer: footer};
+                        ,footer: footer
+                        ,link: link};
    return _elm.Footer.values;
 };
 Elm.Graphics = Elm.Graphics || {};
@@ -3013,7 +3019,7 @@ Elm.Home.make = function (_elm) {
                    ,$NavBar.navBarSpace
                    ,$Notices.earlyVer
                    ,home
-                   ,$Footer.footer("Teaching")]));
+                   ,$Footer.footer]));
    };
    var model = {_: {}
                ,currentPage: "Home"};
@@ -13114,12 +13120,14 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Style$CssHelpers = Elm.Style.CssHelpers.make(_elm),
    $Style$SharedValues = Elm.Style.SharedValues.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
+   var Footer = {ctor: "Footer"};
    var BlockRim = {ctor: "BlockRim"};
    var BlockDiv = {ctor: "BlockDiv"};
    var Block = {ctor: "Block"};
-   var Footer = {ctor: "Footer"};
    var ProgrammingHeader = {ctor: "ProgrammingHeader"};
    var ProgrammingContainer = {ctor: "ProgrammingContainer"};
+   var TeachingAdvertiseContent = {ctor: "TeachingAdvertiseContent"};
+   var TeachingAdvertiseTitle = {ctor: "TeachingAdvertiseTitle"};
    var TeachingArrow = {ctor: "TeachingArrow"};
    var TeachingImgArea = {ctor: "TeachingImgArea"};
    var TeachingContainerHeader = {ctor: "TeachingContainerHeader"};
@@ -13141,11 +13149,11 @@ Elm.Style.SharedStyles.make = function (_elm) {
    var HomePaddedContainer = {ctor: "HomePaddedContainer"};
    var HomeIntroImageBorder = {ctor: "HomeIntroImageBorder"};
    var HomeIntroImage = {ctor: "HomeIntroImage"};
-   var HomeHeaderDesc = {ctor: "HomeHeaderDesc"};
-   var HomeHeaderTitle = {ctor: "HomeHeaderTitle"};
-   var HomeHeaderInner = {ctor: "HomeHeaderInner"};
-   var HomeHeader = {ctor: "HomeHeader"};
    var HomeContainer = {ctor: "HomeContainer"};
+   var DefaultHeaderDesc = {ctor: "DefaultHeaderDesc"};
+   var DefaultHeaderTitle = {ctor: "DefaultHeaderTitle"};
+   var DefaultHeaderInner = {ctor: "DefaultHeaderInner"};
+   var DefaultHeader = {ctor: "DefaultHeader"};
    var BootstrapAccordion = {ctor: "BootstrapAccordion"};
    var Notices = {ctor: "Notices"};
    var NavBarIconBar = {ctor: "NavBarIconBar"};
@@ -13163,29 +13171,11 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|#|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
@@ -13198,6 +13188,30 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
@@ -13207,10 +13221,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
-   A2($Stylesheets._op["|-|"],
-   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
    A2($Stylesheets._op["|-|"],
@@ -13335,7 +13346,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    50,
    $Stylesheets.px)),
    $Stylesheets.backgroundColor($Style$SharedValues.colorContentBackground)),
-   HomeHeader),
+   DefaultHeader),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
    A2($Stylesheets.paddingTop,
    20,
@@ -13343,9 +13354,9 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets.paddingBottom,
    30,
    $Stylesheets.px)),
-   HomeHeaderInner),
+   DefaultHeaderInner),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   HomeHeaderTitle),
+   DefaultHeaderTitle),
    A2($Stylesheets.marginTop,
    50,
    $Stylesheets.px)),
@@ -13356,7 +13367,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    60,
    $Stylesheets.px)),
    $Style$CssHelpers.fontWeight("normal")),
-   HomeHeaderDesc),
+   DefaultHeaderDesc),
    A2($Style$CssHelpers.fontSize,
    20,
    $Stylesheets.px)),
@@ -13376,21 +13387,14 @@ Elm.Style.SharedStyles.make = function (_elm) {
    $Stylesheets.px)),
    TeachingHeader),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
-   A2($Stylesheets.paddingTop,
-   $Style$SharedValues.widthBoarder,
-   $Stylesheets.px)),
-   A2($Stylesheets.paddingBottom,
-   $Style$SharedValues.widthBoarder,
-   $Stylesheets.px)),
    TeachingHeaderInner),
-   A2($Stylesheets.paddingTop,
-   $Style$SharedValues.spaceHeaderInner,
-   $Stylesheets.px)),
-   A2($Stylesheets.height,
-   $Style$SharedValues.heightTeachingHeader,
-   $Stylesheets.px)),
-   $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
    $Style$CssHelpers.textAlign("center")),
+   A2($Stylesheets.marginBottom,
+   $Style$SharedValues.marginHeader,
+   $Stylesheets.px)),
+   A2($Stylesheets.marginTop,
+   $Style$SharedValues.marginHeader,
+   $Stylesheets.px)),
    TeachingHeaderTitle),
    A2($Stylesheets.marginTop,
    0,
@@ -13406,7 +13410,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Style$CssHelpers.fontSize,
    $Style$SharedValues.sizeHeaderDescText,
    $Stylesheets.px)),
-   $Stylesheets.color($Style$SharedValues.colorSubHeading)),
+   $Stylesheets.color($Stylesheets.hex("6793B6"))),
    TeachingBioAndCallToAction),
    A2($Stylesheets.paddingTop,
    20,
@@ -13455,6 +13459,12 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets.width,
    0,
    $Stylesheets.px)),
+   TeachingAdvertiseTitle),
+   $Style$CssHelpers.fontWeight("bold")),
+   $Style$CssHelpers.textAlign("center")),
+   TeachingAdvertiseContent),
+   $Style$CssHelpers.textAlign("center")),
+   $Stylesheets.color($Stylesheets.hex("78909C"))),
    ProgrammingContainer),
    A2($Stylesheets.marginTop,
    50,
@@ -13498,11 +13508,11 @@ Elm.Style.SharedStyles.make = function (_elm) {
                                     ,NavBarIconBar: NavBarIconBar
                                     ,Notices: Notices
                                     ,BootstrapAccordion: BootstrapAccordion
+                                    ,DefaultHeader: DefaultHeader
+                                    ,DefaultHeaderInner: DefaultHeaderInner
+                                    ,DefaultHeaderTitle: DefaultHeaderTitle
+                                    ,DefaultHeaderDesc: DefaultHeaderDesc
                                     ,HomeContainer: HomeContainer
-                                    ,HomeHeader: HomeHeader
-                                    ,HomeHeaderInner: HomeHeaderInner
-                                    ,HomeHeaderTitle: HomeHeaderTitle
-                                    ,HomeHeaderDesc: HomeHeaderDesc
                                     ,HomeIntroImage: HomeIntroImage
                                     ,HomeIntroImageBorder: HomeIntroImageBorder
                                     ,HomePaddedContainer: HomePaddedContainer
@@ -13524,12 +13534,14 @@ Elm.Style.SharedStyles.make = function (_elm) {
                                     ,TeachingContainerHeader: TeachingContainerHeader
                                     ,TeachingImgArea: TeachingImgArea
                                     ,TeachingArrow: TeachingArrow
+                                    ,TeachingAdvertiseTitle: TeachingAdvertiseTitle
+                                    ,TeachingAdvertiseContent: TeachingAdvertiseContent
                                     ,ProgrammingContainer: ProgrammingContainer
                                     ,ProgrammingHeader: ProgrammingHeader
-                                    ,Footer: Footer
                                     ,Block: Block
                                     ,BlockDiv: BlockDiv
                                     ,BlockRim: BlockRim
+                                    ,Footer: Footer
                                     ,exports: exports};
    return _elm.Style.SharedStyles.values;
 };
@@ -13553,11 +13565,14 @@ Elm.Style.SharedValues.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
    var postPadding = 30;
+   var sizeHeaderButton = 50;
    var sizeHeaderDescText = 20;
    var sizeHeaderTitleText = 60;
    var arrowHeight = 30;
    var widthBoarder = 15;
    var heightHpBrowser = 639;
+   var marginHeaderWithButton = $Basics.round(heightHpBrowser / 2 - (sizeHeaderDescText + sizeHeaderTitleText + sizeHeaderButton));
+   var marginHeader = $Basics.round(heightHpBrowser / 2 - (sizeHeaderDescText + sizeHeaderTitleText));
    var heightHpScreen = 768;
    var heightAsusBrowser = 951;
    var heightAsusScreen = 1080;
@@ -13570,7 +13585,7 @@ Elm.Style.SharedValues.make = function (_elm) {
    var colorStandardText = colorHeading;
    var colorContentBackground = $Stylesheets.hex("FFF");
    var colorNavBarBackground = $Stylesheets.hex("FFF");
-   var colorBodyBackground = $Stylesheets.hex("DDD");
+   var colorBodyBackground = $Stylesheets.hex("EEE");
    var colorHighlight = $Stylesheets.hex("C62B2B");
    var colorHighlightBlue = $Stylesheets.hex("2B74C6");
    _elm.Style.SharedValues.values = {_op: _op
@@ -13593,7 +13608,10 @@ Elm.Style.SharedValues.make = function (_elm) {
                                     ,heightTeachingHeader: heightTeachingHeader
                                     ,sizeHeaderTitleText: sizeHeaderTitleText
                                     ,sizeHeaderDescText: sizeHeaderDescText
+                                    ,sizeHeaderButton: sizeHeaderButton
                                     ,spaceHeaderInner: spaceHeaderInner
+                                    ,marginHeaderWithButton: marginHeaderWithButton
+                                    ,marginHeader: marginHeader
                                     ,postPadding: postPadding};
    return _elm.Style.SharedValues.values;
 };

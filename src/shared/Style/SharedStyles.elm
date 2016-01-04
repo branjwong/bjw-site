@@ -13,12 +13,13 @@ type CssClasses
     | Notices
 
     | BootstrapAccordion
+    
+    | DefaultHeader
+    | DefaultHeaderInner
+    | DefaultHeaderTitle
+    | DefaultHeaderDesc
 
     | HomeContainer
-    | HomeHeader
-    | HomeHeaderInner
-    | HomeHeaderTitle
-    | HomeHeaderDesc
     | HomeIntroImage
     | HomeIntroImageBorder
     | HomePaddedContainer
@@ -42,16 +43,18 @@ type CssClasses
     | TeachingContainerHeader
     | TeachingImgArea
     | TeachingArrow
+    | TeachingAdvertiseTitle
+    | TeachingAdvertiseContent
 
     | ProgrammingContainer
     | ProgrammingHeader
-
-    | Footer
 
     | Block
     | BlockDiv
     | BlockRim
 
+type CssIds
+    = Footer
 
 exports =
     css
@@ -110,21 +113,21 @@ exports =
             |-| paddingTop 50 px
             |-| backgroundColor colorContentBackground
 
-        |.| HomeHeader
+        |.| DefaultHeader
             |-| backgroundColor colorHighlight
             |-| paddingTop 20 px
             |-| paddingBottom 30 px
 
-        |.| HomeHeaderInner
+        |.| DefaultHeaderInner
             |-| backgroundColor colorHighlight
 
-        |.| HomeHeaderTitle
+        |.| DefaultHeaderTitle
             |-| marginTop 50 px
             |-| marginBottom 0 px
             |-| fontSize 60 px
             |-| fontWeight "normal"
 
-        |.| HomeHeaderDesc
+        |.| DefaultHeaderDesc
             |-| fontSize 20 px
             |-| color colorSubHeading
 
@@ -166,14 +169,12 @@ exports =
 
         |.| TeachingHeader
             |-| backgroundColor colorHighlight
-            |-| paddingTop widthBoarder px
-            |-| paddingBottom widthBoarder px
 
         |.| TeachingHeaderInner
-            |-| paddingTop spaceHeaderInner px
-            |-| height heightTeachingHeader px
-            |-| backgroundColor colorHighlight
+            --|-| backgroundColor colorHighlight
             |-| textAlign "center"
+            |-| marginBottom marginHeader px
+            |-| marginTop marginHeader px
 
         |.| TeachingHeaderTitle 
             |-| marginTop 0 px
@@ -183,7 +184,7 @@ exports =
 
         |.| TeachingHeaderDesc 
             |-| fontSize sizeHeaderDescText px
-            |-| color colorSubHeading
+            |-| color (hex "6793B6")
 
         |.| TeachingBioAndCallToAction
             |-| paddingTop 20 px
@@ -217,6 +218,14 @@ exports =
             |-| width 0 px
             --|-| position "absolute"
 
+        |.| TeachingAdvertiseTitle
+            |-| fontWeight "bold"
+            |-| textAlign "center"
+
+        |.| TeachingAdvertiseContent
+            |-| textAlign "center"
+            |-| color (hex "78909C")
+
 ---------------------------------------------------------------------------------------------------------
 
         |.| ProgrammingContainer
@@ -234,7 +243,7 @@ exports =
 
 ---------------------------------------------------------------------------------------------------------
 
-        |.| Footer
+        |#| Footer
             |-| backgroundColor colorHighlight
             |-| height 60 px
             |-| marginTop 40 px

@@ -270,6 +270,144 @@ Elm.Basics.make = function (_elm) {
                         ,GT: GT};
    return _elm.Basics.values;
 };
+Elm.Bootstrap = Elm.Bootstrap || {};
+Elm.Bootstrap.make = function (_elm) {
+   "use strict";
+   _elm.Bootstrap = _elm.Bootstrap || {};
+   if (_elm.Bootstrap.values)
+   return _elm.Bootstrap.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Bootstrap",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var pageHeader = F2(function (styleCust,
+   title) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(A2($Basics._op["++"],
+      "page-header ",
+      styleCust))]),
+      _L.fromArray([A2($Html.h1,
+      _L.fromArray([]),
+      _L.fromArray([$Html.text(title)]))]))]))]));
+   });
+   var image = function (path) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("row")]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("col-md-12")]),
+      _L.fromArray([A2($Html.img,
+      _L.fromArray([$Html$Attributes.src(path)
+                   ,$Html$Attributes.$class("img-responsive")]),
+      _L.fromArray([]))]))]));
+   };
+   var panelBody = F4(function (acName,
+   pnID,
+   panelHide,
+   panelContent) {
+      return function () {
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return _U.eq(panelHide,
+         true) ? A2($Html.div,
+         _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                      "collapse",
+                      pnName))
+                      ,$Html$Attributes.$class("panel-collapse collapse in")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-body")]),
+         _L.fromArray([panelContent]))])) : A2($Html.div,
+         _L.fromArray([$Html$Attributes.id(A2($Basics._op["++"],
+                      "collapse",
+                      pnName))
+                      ,$Html$Attributes.$class("panel-collapse collapse")]),
+         _L.fromArray([A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-body")]),
+         _L.fromArray([panelContent]))]));
+      }();
+   });
+   var panelHeading = F3(function (acName,
+   pnID,
+   panelTitle) {
+      return function () {
+         var newAcName = acName;
+         var pnName = A2($Basics._op["++"],
+         acName,
+         $Basics.toString(pnID));
+         return A2($Html.div,
+         _L.fromArray([$Html$Attributes.$class("panel-heading")
+                      ,$Html$Attributes.id(A2($Basics._op["++"],
+                      "heading",
+                      pnName))]),
+         _L.fromArray([A2($Html.h4,
+         _L.fromArray([$Html$Attributes.$class("panel-title")]),
+         _L.fromArray([A2($Html.a,
+         _L.fromArray([$Html$Attributes.href(A2($Basics._op["++"],
+                      "#collapse",
+                      pnName))
+                      ,A2($Html$Attributes.attribute,
+                      "data-toggle",
+                      "collapse")
+                      ,A2($Html$Attributes.attribute,
+                      "data-parent",
+                      A2($Basics._op["++"],
+                      "#accordion",
+                      newAcName))]),
+         _L.fromArray([$Html.text(panelTitle)]))]))]));
+      }();
+   });
+   var panel = F5(function (acName,
+   pnID,
+   panelTitle,
+   panelHide,
+   panelContent) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([A3(panelHeading,
+                   acName,
+                   pnID,
+                   panelTitle)
+                   ,A4(panelBody,
+                   acName,
+                   pnID,
+                   panelHide,
+                   panelContent)]));
+   });
+   var accordion = F3(function (acName,
+   column,
+   panels) {
+      return A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class(column)]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel-group BootstrapAccordion")
+                   ,$Html$Attributes.id(A2($Basics._op["++"],
+                   "accordion",
+                   acName))]),
+      _L.fromArray([A2($Html.div,
+      _L.fromArray([$Html$Attributes.$class("panel panel-default")]),
+      panels)]))]));
+   });
+   _elm.Bootstrap.values = {_op: _op
+                           ,accordion: accordion
+                           ,panelHeading: panelHeading
+                           ,panelBody: panelBody
+                           ,image: image
+                           ,pageHeader: pageHeader
+                           ,panel: panel};
+   return _elm.Bootstrap.values;
+};
 Elm.Char = Elm.Char || {};
 Elm.Char.make = function (_elm) {
    "use strict";
@@ -3631,6 +3769,69 @@ Elm.Html.Attributes.make = function (_elm) {
                                  ,attribute: attribute};
    return _elm.Html.Attributes.values;
 };
+Elm.Japanese = Elm.Japanese || {};
+Elm.Japanese.make = function (_elm) {
+   "use strict";
+   _elm.Japanese = _elm.Japanese || {};
+   if (_elm.Japanese.values)
+   return _elm.Japanese.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Japanese",
+   $Basics = Elm.Basics.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $NavBar = Elm.NavBar.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
+   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm),
+   $Teaching$Helper = Elm.Teaching.Helper.make(_elm);
+   var subjectInfo = A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
+   _L.fromArray([A2($Html.div,
+   _L.fromArray([$Html$Attributes.$class("row")]),
+   _L.fromArray([$Markdown.toHtml(function (_) {
+      return _.learningOutcome;
+   }($Teaching$Helper.japanese))]))]));
+   var main = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                ,A2($NavBar.navBar,
+                "",
+                _L.fromArray([]))
+                ,$NavBar.navBarSpace
+                ,A3($Header.header,
+                "Default",
+                "Learning Outcomes",
+                function (_) {
+                   return _.title;
+                }($Teaching$Helper.japanese))
+                ,subjectInfo
+                ,$Footer.footer]));
+   var tytle = function (_) {
+      return _.title;
+   }($Teaching$Helper.japanese);
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   A2($Basics._op["++"],
+   tytle,
+   " | BJW"));
+   _elm.Japanese.values = {_op: _op
+                          ,tytle: tytle
+                          ,main: main
+                          ,subjectInfo: subjectInfo};
+   return _elm.Japanese.values;
+};
 Elm.Json = Elm.Json || {};
 Elm.Json.Decode = Elm.Json.Decode || {};
 Elm.Json.Decode.make = function (_elm) {
@@ -4133,6 +4334,33 @@ Elm.List.make = function (_elm) {
                       ,sortBy: sortBy
                       ,sortWith: sortWith};
    return _elm.List.values;
+};
+Elm.Lorem = Elm.Lorem || {};
+Elm.Lorem.make = function (_elm) {
+   "use strict";
+   _elm.Lorem = _elm.Lorem || {};
+   if (_elm.Lorem.values)
+   return _elm.Lorem.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Lorem",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var subheader = "Ut enim ad minim";
+   var header = "Duis Aute Irure Dolor";
+   var $short = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+   var ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+   _elm.Lorem.values = {_op: _op
+                       ,ipsum: ipsum
+                       ,$short: $short
+                       ,header: header
+                       ,subheader: subheader};
+   return _elm.Lorem.values;
 };
 Elm.Markdown = Elm.Markdown || {};
 Elm.Markdown.make = function (_elm) {
@@ -12207,132 +12435,28 @@ Elm.NavBar.make = function (_elm) {
                         ,outsideLinks: outsideLinks};
    return _elm.NavBar.values;
 };
-Elm.Notices = Elm.Notices || {};
-Elm.Notices.make = function (_elm) {
+Elm.Paths = Elm.Paths || {};
+Elm.Paths.make = function (_elm) {
    "use strict";
-   _elm.Notices = _elm.Notices || {};
-   if (_elm.Notices.values)
-   return _elm.Notices.values;
+   _elm.Paths = _elm.Paths || {};
+   if (_elm.Paths.values)
+   return _elm.Paths.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "Notices",
+   $moduleName = "Paths",
    $Basics = Elm.Basics.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
-   var nothing = function () {
-      var string = "";
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("Notices")
-                   ,$Html$Attributes.style(_L.fromArray([{ctor: "_Tuple2"
-                                                         ,_0: "height"
-                                                         ,_1: "40Xpx"}]))]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([$Html.text(string)]))]))]));
-   }();
-   var earlyVer = function () {
-      var string = "This is an early, minimal version of this page! I know it\'s lackluster, but at least it works.";
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("Notices")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([$Html.text(string)]))]))]));
-   }();
-   var notLive = function () {
-      var string = "This page has yet to go live! Do not be surprised by dummy text or things that are not looking right.";
-      return A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("row")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("Notices")]),
-      _L.fromArray([A2($Html.div,
-      _L.fromArray([$Html$Attributes.$class("container")]),
-      _L.fromArray([$Html.text(string)]))]))]));
-   }();
-   _elm.Notices.values = {_op: _op
-                         ,notLive: notLive
-                         ,earlyVer: earlyVer
-                         ,nothing: nothing};
-   return _elm.Notices.values;
-};
-Elm.Programming = Elm.Programming || {};
-Elm.Programming.make = function (_elm) {
-   "use strict";
-   _elm.Programming = _elm.Programming || {};
-   if (_elm.Programming.values)
-   return _elm.Programming.values;
-   var _op = {},
-   _N = Elm.Native,
-   _U = _N.Utils.make(_elm),
-   _L = _N.List.make(_elm),
-   $moduleName = "Programming",
-   $Basics = Elm.Basics.make(_elm),
-   $Footer = Elm.Footer.make(_elm),
-   $Header = Elm.Header.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
-   $Maybe = Elm.Maybe.make(_elm),
-   $NavBar = Elm.NavBar.make(_elm),
-   $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
-   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
-   var richardFeldmanQuote = "\n  One of my coworkers had a great term for this. She said that learning a particular framework is horizontal growth. You get more familiar with that framework but it doesn\'t enrich your understanding of programming, give you more techniques that you can use in other places. But learning a different paradigm like functional programming is vertical growth. Because not only does it teach you how to use this new particular tool but it also gives you new tools that you can use then bring to other projects with different frameworks, different languages, et cetera. And it\'s definitely been true in my experience.\n  ";
-   var body = "\n\n[This Site\'s Source Code](https://github.com/branjwong/bjw-site)\n=========================\n\nLanguages: [Elm](http://elm-lang.org/), HTML, CSS  \nFront-end Framework: [Bootstrap](http://getbootstrap.com/)  \nTools Used: [Grunt](http://gruntjs.com/)  \nInitial Commit: September 29th, 2015  \n\n* * *\n\n[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)\n=======\n\nLanguage: [Elm](http://elm-lang.org/)  \nSource Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  \nInstructor: [Pragmatic Studios](https://pragmaticstudio.com/)  \nFinish Date: September 24th, 2015  \n\n### Description\n\n- An web application that enables the user to play bingo.\n- Designed for use in a meeting where buzzwords are thrown about.\n- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.\n\n* * *\n\n[Megaman Project](/dist/html/programming/megaman/megaman.html)\n=================\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Reduce Metalman\'s HP to 0  \n- Use A/S/D/W to move Left/Down/Right/Up  \n- Press the up button to fire your buster  \n- Hold the up button to charge your buster  \n- Move to avoid Metalman\'s attacks  \n\n* * *\n\n[Zelda Project](/dist/html/programming/zelda/zelda.html)\n===============\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Navigate through Hyrule and find the Triforce  \n- Click on arrow buttons to navigate  \n- Click on enemies to defeat them before they attack you  \n\n* * *\n\n[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)\n===============\n\nIT 11  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 11 - Highschool  \n\n### How To Play\n\n- Goal: Shoot ducks by clicking on them with the mouse\n- Don\'t let the dog laugh at you for sucking\n\n* * *\n\n[The Rest of the Portfolio](https://github.com/branjwong/portfolio)\n===========================\n\n- C\n    - Build a Shell\n    - Extended Producer-Consumer Problem\n    - POSIX Threads and Producer-Consumer\n    - Codility Demo Problem\n- C#\n    - Megaman\n- C++\n    - Waiting in Line\n    - Word\n    - Trees\n    - Hash Tables and the Dictionary ADT\n- Elm\n    - Bingo\n    - Online Resume and Portfolio Website\n        - github.com/branjwong/website\n- Fireworks\n    - Personal Logo\n    - Sasaki Logo\n- HTML/CSS\n    - Awesome Domain\n- Java\n    - Wizards, Witches, and Horcruxes\n- Python\n    - Wumpas World\n\n  ";
-   var programming = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([$Markdown.toHtml(body)]))]));
-   var links = _L.fromArray([]);
-   var view = function (model) {
-      return A2($Html.div,
-      _L.fromArray([]),
-      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
-                   ,A2($NavBar.navBar,
-                   model.currentPage,
-                   links)
-                   ,$NavBar.navBarSpace
-                   ,A3($Header.header,
-                   "Default",
-                   "The Laboratory",
-                   "Where my programming experience is here for viewing.")
-                   ,programming
-                   ,$Footer.footer]));
-   };
-   var model = {_: {}
-               ,currentPage: "Programming"};
-   var Model = function (a) {
-      return {_: {}
-             ,currentPage: a};
-   };
-   var main = view(model);
-   var title = Elm.Native.Port.make(_elm).outbound("title",
-   function (v) {
-      return v;
-   },
-   "Programming | BJW");
-   _elm.Programming.values = {_op: _op
-                             ,main: main
-                             ,Model: Model
-                             ,model: model
-                             ,view: view
-                             ,links: links
-                             ,programming: programming
-                             ,body: body
-                             ,richardFeldmanQuote: richardFeldmanQuote};
-   return _elm.Programming.values;
+   var writing = "../../dist/html/writing/";
+   var resources = "../../resources/";
+   _elm.Paths.values = {_op: _op
+                       ,resources: resources
+                       ,writing: writing};
+   return _elm.Paths.values;
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
@@ -14704,6 +14828,233 @@ Elm.Task.make = function (_elm) {
                       ,spawn: spawn
                       ,sleep: sleep};
    return _elm.Task.values;
+};
+Elm.Teaching = Elm.Teaching || {};
+Elm.Teaching.Helper = Elm.Teaching.Helper || {};
+Elm.Teaching.Helper.make = function (_elm) {
+   "use strict";
+   _elm.Teaching = _elm.Teaching || {};
+   _elm.Teaching.Helper = _elm.Teaching.Helper || {};
+   if (_elm.Teaching.Helper.values)
+   return _elm.Teaching.Helper.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Teaching.Helper",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Lorem = Elm.Lorem.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Teaching$Resume = Elm.Teaching.Resume.make(_elm);
+   var loremipsum = $Lorem.ipsum;
+   var contactAdv = {_: {}
+                    ,content: "\n\nName: Brandon J Wong  \nPhone: 778-996-1593  \nEmail: <bjwteaching@gmail.com>\n\n      "
+                    ,image: ""
+                    ,title: "Contact Me"};
+   var japanese = function () {
+      var string = "\n\nAs an former exchange of Kansai Gaidai University, I teach from the same curriculum and textbook that their professors developed. This textbook and curriculum has done so well that it has been adopted in classes all over the world. I have seen it with my own eyes being used in classrooms at Simon Fraser University.\n\nhttp://genki.japantimes.co.jp/wp-content/uploads/genki_syllabus_en.jpg  \nhttp://wpgenki.whitebase.co.jp/wp-content/uploads/06text_img1.jpg\n\n";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/japanese.html"
+             ,title: "Japanese"};
+   }();
+   var phys12 = function () {
+      var string = "\n\nExperiments and Graphical Methods\n- Conduct appropriate experiments\n- Use graphical methods to analyse results of experiements\n\nVectors\n- Perform vector analysis in one or two dimensions\n\nKinematics\n- Apply vector analysis to solve practical navigation problems\n- Apply the concepts of motion to various situations where acceleration is constant\n\nDynamics\n- Apply Newton\'s laws of motion to solve problems involving acceleration, gravitational field strength, and friction\n- Apply the concepts of dynamics to analyse one-dimensional or two-dimensional situations\n\nWork, Energy, and Power\n- Analyse the relationships work, energy, and power\n\nMomentum\n- Use knowledge of momentum and impulse to analyse situations in one dimension\n- Use knowledge of momentum and impulse to analyse siutations in two dimension\n\nEquilibrium\n- Use knowledge of force, torque, and equilibrium to analyse various situations\n\nCircular Motion\n- Use knowledge of univorm circular motion to analyse various situations\n\nGravitation\n- Analyse the gravitational attraction between masses\n\nElectrostatics\n- Apply Coulomb\'s law to analyse electric forces\n- Analyse electric fields and their effects on charged objects\n- Calculate electric potential energy and change in electric potential energy\n- Apply the concept of electric potential to analyse situations involving point charges\n- Apply the principles of electrostatics to a variety of situations\n\nElectric Circuits\n- Apply Ohm\'s law and Kirchhoff\'s laws to direct current circuits\n- Relate efficiency to electric power, electric potential difference, current, and resistance\n\nElectromagnetism\n- Analyse electromagnetism, with reference to magnetic fields and their effects on moving charges\n- Analyse the process of electromagnetic induction\n\n    ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/phys12.html"
+             ,title: "Physics 12"};
+   }();
+   var phys11 = function () {
+      var string = "\n\nSkills, Methods, and the Nature of Physics\n- Describe the nature of physics\n- Apply the skills and methods of physics\n\nWave Motion and Geometrical Optics\n- Analyse the behaviour of light and other waves under various conditions, with reference to the properties of waves and using the universal wave equation\n- Use ray diagrams to analyse situations in which light reflects from plane and curved mirrors\n- Analyse siutations in which light is refracted\n\nKinematics\n- Apply knowledge of the relationships between time, displacement, distance, velocity, and speed to situations involving objects in one dimension\n- Apply knowledge of the relationships between time, velocity, displacement, and acceleration to situations involving objects in one dimension\n\nForces\n- Solve problems involving the force of gravity\n- Analyse situations involving the force due to friction\n- Apply Hooke\'s law to the deformation of materials\n\nNewton\'s Laws\n- Solve problems that involve the application of Newton\'s Laws of motion in one dimension\n- Apply the concept of momentum in one dimension\n\nEnergy \n- Perform calculations inolving work, force, and displacement\n- Solve problems involving different forms of energy\n- Analyse the relationships between work and energy, with reference to the law of convervation of energy\n- Solve problems involving power and efficiency\n\nSpecial Relativity\n- Explain the fundamental principles of special relativity\n\nNuclear Fission and Fusion\n- Analyse nuclear processes\n\n    ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/phys11.html"
+             ,title: "Physics 11"};
+   }();
+   var precalc12 = function () {
+      var string = "\n\nTrigonometry\n- Demonstrate an understanding of angles in standard position, expressed in degrees and radians\n- Develop and apply the equation of the unit circle\n- Solve problems, using the six trigonometric ratios for angles expressed in radians and degrees\n- Graph and analyse the trigonometric functions sine, cosine and tangent to solve problems\n- Solve, algebraically and graphically, first and second degree trigonometric equations with the domain expressed in degrees and radians\n- Prove trigonometric identities, using: \n  - reciprocal identities\n  - quotient identities \n  - Pythagorean identities\n  - sum or difference identities (restricted to sine, cosine and tangent) \n  - double-angle identities (restricted to sine, cosine and tangent)\n\nRelations and Functions\n- Demonstrate an understanding of operations on, and compositions of, functions\n- Demonstrate an understanding of the effects of horizontal and vertical translations on the graphs of functions and their related equations\n- Demonstrate an understanding of the effects of horizontal and vertical stretches on the graphs of functions and their related equations\n- Apply translations and stretches to the graphs and equations of functions\n- Demonstrate an understanding of the effects of reflections on the graphs of functions and their related equations, including reflections through the: \n   - x-axis \n   - y-axis \n   - line y = x \n- Demonstrate an understanding of inverses of relations\n- Demonstrate an understanding of logarithms\n- Demonstrate an understanding of the product, quotient and power laws of logarithms\n- Graph and analyse exponential and logarithmic functions\n- Solve problems that involve exponential and logarithmic equations\n- Demonstrate an understanding of factoring polynomials of degree greater than 2 (limited to polynomials of degree ≤ 5 with integral coefficients)\n- Graph and analyse polynomial functions (limited to polynomial functions of degree 5)\n- Graph and analyse radical functions (limited to functions involving one radical)\n- Graph and analyse rational functions (limited to numerators and denominators that are monomials, binomials or trinomials)\n\nPermutations, Combinations and Binomial Theorem \n- Apply the fundamental counting principle to solve problems\n- Determine the number of permutations of n elements taken r at a time to solve problems\n- Determine the number of combinations of n different elements taken r at a time to solve problems\n- Expand powers of a binomial in a variety of ways, including using the binomial theorem (restricted to exponents that are natural numbers)\n\n    ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/precalc12.html"
+             ,title: "Pre-calculus 12"};
+   }();
+   var precalc11 = function () {
+      var string = "\n\nAlgebra and Number\n- Demonstrate an understanding of the absolute value of real numbers\n- Problems that involve operations on radicals and radical expressions with numerical and variable radicands. \n- Problems that involve radical equations\n- Determine equivalent forms of rational expressions\n- Perform operations on rational expressions\n- Solve problems that involve rational equations\n\nTrigonometry\n- Demonstrate an understanding of angles in standard position\n- Solve problems, using the three primary trigonometric ratios for angles from 0° to 360° in standard position\n- Solve problems, using the cosine law and sine law, including the ambiguous case\n\nRelations and Functions\n- Factor polynomial expressions\n- Graph and analyse absolute value functions to solve problems\n- Analyze quadratic functions and determine the vertex, domain and range, direction of opening, axis of symmetry, x- and y-intercepts\n- Solve problems that involve quadratic equations\n- Solve, algebraically and graphically, problems that involve systems of linear-quadratic and quadratic equations in two variables\n- Solve problems that involve linear and quadratic inequalities in two variables\n- Solve problems that involve quadratic inequalities in one variable\n- Analyze arithmetic sequences and series to solve problems\n- Analyze geometric sequences and series to solve problems\n- Graph and analyse reciprocal functions (limited to the reciprocal of linear and quadratic functions)\n\n\n      ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/precalc11.html"
+             ,title: "Pre-calculus 11"};
+   }();
+   var math11 = function () {
+      var string = "\n\nMeasurement\n- Problems that involve the application of rates\n- Problems that involve scale diagrams, using proportional reasoning\n- Relationships among scale factors, areas, surface areas, and volumes of similar 2D and 3D shapes\n\nGeometry\n- Proofs and problems that involve the properties of angles and triangles\n- Proofs and problems that involve the properties of angles and triangles, the cosine law, and the sine law\n\nLogical Reasoning\n- Analyze and prove conjectures, using inductive and deductive reasoning\n- Analyze puzzles and games that involve spatial reasoning, using problem-solving strategies\n\nStatistics\n- Normal distributions, standard deviation, z-scores\n- Interpret statistical data using confidence intervals, confidence levels, and margins of error\n\nRelations and Functions\n- Model and solve problems that involve systems of linear inequalities in two variables\n- Demonstrate an understanding of the characteristics of quadratic functions, including vertex, intercepts, domain and range, axis of symmetry\n\n      ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/math11.html"
+             ,title: "Foundations of Mathematics 11"};
+   }();
+   var math10 = function () {
+      var string = "\n\nMeasurement\n- Unit conversion\n- Surface Area and Volume of common shapes\n- Primary Trigonometric Relations\n\nAlgebra and Number\n- Prime Factors, Greast Common Factor, Least Comon Multiple\n- Understanding Number Systems\n  - Natural and Whole Numbers, Integers, Rational, Irrational, and Real Numbers\n- Powers with Integral and Rational Exponents\n- Polynomial Expressions\n  - Expanding\n  - Factoring\n\nRelations and Functions\n- Relationships among data, graphs, and situations\n- Slope\n- Representation of linear relations using words, ordered pairs, tables of values, graphs, and equations\n- Characteristics of the graphs of linear relations including intercepts, slope, domain, and range.\n- Different forms of expressing linear relations\n  - slope-intercept form\n  - general form\n  - slope-point form\n- Determining the equation of a linear relation given limited information\n- Function notation\n- Problem solving that are linear in nature graphically and algebraically\n\n      ";
+      return {_: {}
+             ,cost: 0
+             ,experience: ""
+             ,learningOutcome: string
+             ,link: "/dist/html/teaching/math10.html"
+             ,title: "Foundations of Mathematics and Pre-calculus 10"};
+   }();
+   var personable = {_: {}
+                    ,content: "I am able to relate to students of all age groups. I am diverse in interests, so I can always ensure that I can connect to my students on some level."
+                    ,image: ""
+                    ,title: "Personable"};
+   var approaches = {_: {}
+                    ,content: "Not all students learn the same way. I make sure that students understand all aspects of concept so that it can be approached confidently."
+                    ,image: ""
+                    ,title: "Approaches from all Angles"};
+   var foundations = {_: {}
+                     ,content: "I make sure to assess and teach what students are missing so that they can return better prepared to the concepts at hand."
+                     ,image: ""
+                     ,title: "Builds Foundations"};
+   var bio2 = {_: {}
+              ,html: $Teaching$Resume.exports
+              ,title: "Experience"};
+   var bio1 = function () {
+      var string = "\n\nBrandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.\n\n      ";
+      return {_: {}
+             ,html: $Markdown.toHtml(string)
+             ,title: "Personal Profile"};
+   }();
+   var Subject = F5(function (a,
+   b,
+   c,
+   d,
+   e) {
+      return {_: {}
+             ,cost: d
+             ,experience: c
+             ,learningOutcome: b
+             ,link: e
+             ,title: a};
+   });
+   var Panel = F2(function (a,b) {
+      return {_: {}
+             ,html: b
+             ,title: a};
+   });
+   var AdvPoint = F3(function (a,
+   b,
+   c) {
+      return {_: {}
+             ,content: c
+             ,image: b
+             ,title: a};
+   });
+   _elm.Teaching.Helper.values = {_op: _op
+                                 ,AdvPoint: AdvPoint
+                                 ,Panel: Panel
+                                 ,Subject: Subject
+                                 ,bio1: bio1
+                                 ,bio2: bio2
+                                 ,foundations: foundations
+                                 ,approaches: approaches
+                                 ,personable: personable
+                                 ,math10: math10
+                                 ,math11: math11
+                                 ,precalc11: precalc11
+                                 ,precalc12: precalc12
+                                 ,phys11: phys11
+                                 ,phys12: phys12
+                                 ,japanese: japanese
+                                 ,contactAdv: contactAdv
+                                 ,loremipsum: loremipsum};
+   return _elm.Teaching.Helper.values;
+};
+Elm.Teaching = Elm.Teaching || {};
+Elm.Teaching.Resume = Elm.Teaching.Resume || {};
+Elm.Teaching.Resume.make = function (_elm) {
+   "use strict";
+   _elm.Teaching = _elm.Teaching || {};
+   _elm.Teaching.Resume = _elm.Teaching.Resume || {};
+   if (_elm.Teaching.Resume.values)
+   return _elm.Teaching.Resume.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Teaching.Resume",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var mageeText = "\n- Dug deep to find out the root cause of the difficulties his students were having.\n- Challenged the students who were succeeding.\n";
+   var oxfordText = "  \n- Develop appropriate curricula to supplement what students are currently learning at school\n- Train students to understanding the underlying concepts before trying to apply the mechanics\n- Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently\n";
+   var exports = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([A2($Html.div,
+                _L.fromArray([]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                                          _L.fromArray([$Html$Attributes.$class("col-sm-9")]),
+                                          _L.fromArray([$Html.text("Oxford Learning")]))
+                                          ,A2($Html.div,
+                                          _L.fromArray([$Html$Attributes.$class("col-sm-3")]),
+                                          _L.fromArray([$Html.text("Aug 2014 – Present")]))]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                             _L.fromArray([$Html.text("Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English")]))]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                             _L.fromArray([$Markdown.toHtml(oxfordText)]))]))]))
+                ,A2($Html.div,
+                _L.fromArray([]),
+                _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                                          _L.fromArray([$Html$Attributes.$class("col-sm-9")]),
+                                          _L.fromArray([$Html.text("Magee Secondary School")]))
+                                          ,A2($Html.div,
+                                          _L.fromArray([$Html$Attributes.$class("col-sm-3")]),
+                                          _L.fromArray([$Html.text("Feb 2013 – Jul 2013")]))]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                             _L.fromArray([$Html.text("Calculus Tutor")]))]))
+                             ,A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("row")]),
+                             _L.fromArray([A2($Html.div,
+                             _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                             _L.fromArray([$Markdown.toHtml(mageeText)]))]))]))]));
+   _elm.Teaching.Resume.values = {_op: _op
+                                 ,exports: exports
+                                 ,oxfordText: oxfordText
+                                 ,mageeText: mageeText};
+   return _elm.Teaching.Resume.values;
 };
 Elm.Text = Elm.Text || {};
 Elm.Text.make = function (_elm) {

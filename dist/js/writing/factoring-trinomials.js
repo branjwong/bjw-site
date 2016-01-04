@@ -1800,6 +1800,50 @@ Elm.Dict.make = function (_elm) {
                       ,fromList: fromList};
    return _elm.Dict.values;
 };
+Elm.FactoringTrinomials = Elm.FactoringTrinomials || {};
+Elm.FactoringTrinomials.make = function (_elm) {
+   "use strict";
+   _elm.FactoringTrinomials = _elm.FactoringTrinomials || {};
+   if (_elm.FactoringTrinomials.values)
+   return _elm.FactoringTrinomials.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "FactoringTrinomials",
+   $Basics = Elm.Basics.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $WritingLibrary = Elm.WritingLibrary.make(_elm);
+   var content = "\n\n## Core Ideas:\n\nThe Distributive Law  \n`a(b + c) = ab + bc`  \nFactoring <-- --> Expanding  \n\nExpanding is the opposite of factoring.  \n\n* * *\n\n## Factoring Trinomials of the form x<sup>2</sup> + Bx + C\n\nB and C are constants (or non-varying numbers, or numbers that are not variables) that would have been given to you in the problem.\nFactoring trinomials of this form is as simple as taking these two easy steps.\n\n1. Find constants p,q such that:\n  - `p + q = B`\n  - `pq = C`\n1. set `x^2 + Bx + C = (x + p)(x + q)`\n\n### Proof.\n\n````\n(x + p)(x + q)  \n= x(x + q) + p(x + q)   [1]\n= x^2 + qx + px + pq    [2]\n= x^2 + x(p + q) + pq   [3]\n= x^2 + Bx + C          [4]\n````\n[1]: by the Distributive Law (Expanding)  \n[2]: by the Distributive Law (Expanding)  \n[3]: by the Distributive Law (Factoring)  \n[4]: since p + q = B && pq = C\n\n* * *\n\n\n### Example 1: Factor x<sup>2</sup> + 10x + 21.\n\nSince `B = 10`, `C = 21`, we must find p,q such that\n````\np + q = 10 = B\npq = 21 = C\n````\n\n> ProTip: First thinking of two numbers that multiply to C is much easier than thinking of two numbers that sum to B. This is because there are only a finite, or limited, number of two-integer-combinations that multiply to C, while there are an infinite number of two-integer-combinations that sum to B. \n\n**Think:**  \nIf `C = 21 = 21*1`, then `22 = 21+1 =/= B`, and this doesn\'t work for our values.  \nHowever, if `C = 21 = 7*3`, then `7+3 = 10 = B`, and this **does** work for our values.  \nSo we say that `p = 7` and `q = 3`.  \n\n> Note: The order of p and q doesn\'t matter, since the order of addition and multiplication doesn\'t change anything. \n````\np + q <=> q + p\npq <=> qp\n(x + p)(x + q) <=> (x + q)(x + p)\n````\n\nSince we found `p = 7` and `q = 3`, we say that:\n````\nx^2 + 10x + 21\n= (x + 7)(x + 3) <- factored form\n````\n\n* * *\n\n### Example 2: Factor a<sup>2</sup> + 4a - 32.\n\n**Think:**  \n`C = -32 = -8 * 4` but `-8 + 4 = -4 =/= B`  \n`C = -32 = 8 * -4` and `8 - 4 = 4 = B`  \n\n````\na^2 + 4a - 32\n= (a + 8)(a - 4)\n````\n\n* * *\n\n### Example 3: Factor a<sup>2</sup> + 3ab - 18b<sup>2</sup>.\n\nThough this trinomial looks as if it is different from our x<sup>2</sup> + Bx + C form that we\'re used to, we can actually look at this trinomial in such a way that it conforms to our strategy.\n\n*Let:*\n````\nx = a\nB = 3b\nC = -18b^2,\n````\nThen we get:\n````\na^2 + 3ab - 18b^2\n= (a)^2 + (3b)(a) + (-18b^2)\n= x^2 = Bx + C,\n````\nwhich is what we are used to! And so we can use our strategy from before.  \nSo we **still** need:\n````\np + q = 3b = B\npq = -18b^2 = C,\n````\nwhich means that p and q must be multiples of b,  \ni.e.: they must be of the form Qb, where Q is a constant.  \n\n**Think:**  \n`C = -18b^2 = -9b * 2b` but `-9b + 2b = -7b =/= B`  \n`C = -18b^2 = 6b * (-3b)` and `6b + (-3b) = 3b =/= B`,  \nso `p = 6b` and `q = -3b`\n\n\n````\na^2 + 3ab + 18b^2\n= (a + 6b)(a - 3b)\n````\n\n* * *\n\n## Factoring Trinomials of the form Ax<sup>2</sup> + Bx + C, A =/= 1, 0\n\nFactoring trinomials in this way is extremely similiar. It is only slightly more involved.\n\n1. Find constants p,q such that:\n  - `p + q = B`\n  - `pq = AC`\n1. set `Ax^2 + Bx + C = Ax^2 + px + qx + C`\n1. factor `Ax^2 + px` separately from `qx  + C`\n1. factor everything\n\n### Example 1: Factor 2x<sup>2</sup> + 7x + 5.\n\n````\n2x^2 + 7x + 5\n= 2x^2 + 5x + 2x + 5\n= x(2x + 5) + 1(2x + 5)\n= (2x + 5)(x + 1)\n````\n\n> Note: The order still doesn\'t matter here either.\n\n````\n2x^2 + 7x + 5\n= 2x^2 + 2x + 5x + 5\n= 2x(x + 1) + 5(x + 1)\n= (x + 1)(2x + 5)\n````\n\n";
+   var postTitle = "Factoring Trinomials";
+   var main = A4($WritingLibrary.post,
+   postTitle,
+   A3($WritingLibrary.Date,
+   2015,
+   12,
+   8),
+   A3($WritingLibrary.Time,
+   1,
+   40,
+   "pm"),
+   _L.fromArray([$Markdown.toHtml(content)]));
+   var title = Elm.Native.Port.make(_elm).outbound("title",
+   function (v) {
+      return v;
+   },
+   A2($Basics._op["++"],
+   postTitle,
+   " | BJW"));
+   _elm.FactoringTrinomials.values = {_op: _op
+                                     ,postTitle: postTitle
+                                     ,main: main
+                                     ,content: content};
+   return _elm.FactoringTrinomials.values;
+};
 Elm.Footer = Elm.Footer || {};
 Elm.Footer.make = function (_elm) {
    "use strict";
@@ -12264,75 +12308,28 @@ Elm.Notices.make = function (_elm) {
                          ,nothing: nothing};
    return _elm.Notices.values;
 };
-Elm.Programming = Elm.Programming || {};
-Elm.Programming.make = function (_elm) {
+Elm.Paths = Elm.Paths || {};
+Elm.Paths.make = function (_elm) {
    "use strict";
-   _elm.Programming = _elm.Programming || {};
-   if (_elm.Programming.values)
-   return _elm.Programming.values;
+   _elm.Paths = _elm.Paths || {};
+   if (_elm.Paths.values)
+   return _elm.Paths.values;
    var _op = {},
    _N = Elm.Native,
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
-   $moduleName = "Programming",
+   $moduleName = "Paths",
    $Basics = Elm.Basics.make(_elm),
-   $Footer = Elm.Footer.make(_elm),
-   $Header = Elm.Header.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
-   $Markdown = Elm.Markdown.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $NavBar = Elm.NavBar.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
-   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
-   var richardFeldmanQuote = "\n  One of my coworkers had a great term for this. She said that learning a particular framework is horizontal growth. You get more familiar with that framework but it doesn\'t enrich your understanding of programming, give you more techniques that you can use in other places. But learning a different paradigm like functional programming is vertical growth. Because not only does it teach you how to use this new particular tool but it also gives you new tools that you can use then bring to other projects with different frameworks, different languages, et cetera. And it\'s definitely been true in my experience.\n  ";
-   var body = "\n\n[This Site\'s Source Code](https://github.com/branjwong/bjw-site)\n=========================\n\nLanguages: [Elm](http://elm-lang.org/), HTML, CSS  \nFront-end Framework: [Bootstrap](http://getbootstrap.com/)  \nTools Used: [Grunt](http://gruntjs.com/)  \nInitial Commit: September 29th, 2015  \n\n* * *\n\n[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)\n=======\n\nLanguage: [Elm](http://elm-lang.org/)  \nSource Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  \nInstructor: [Pragmatic Studios](https://pragmaticstudio.com/)  \nFinish Date: September 24th, 2015  \n\n### Description\n\n- An web application that enables the user to play bingo.\n- Designed for use in a meeting where buzzwords are thrown about.\n- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.\n\n* * *\n\n[Megaman Project](/dist/html/programming/megaman/megaman.html)\n=================\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Reduce Metalman\'s HP to 0  \n- Use A/S/D/W to move Left/Down/Right/Up  \n- Press the up button to fire your buster  \n- Hold the up button to charge your buster  \n- Move to avoid Metalman\'s attacks  \n\n* * *\n\n[Zelda Project](/dist/html/programming/zelda/zelda.html)\n===============\n\nIT 12  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 12 - Highschool  \n\n### How To Play\n\n- Goal: Navigate through Hyrule and find the Triforce  \n- Click on arrow buttons to navigate  \n- Click on enemies to defeat them before they attack you  \n\n* * *\n\n[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)\n===============\n\nIT 11  \nLanguage: ActionScript  \nSoftware Platform: Adobe Flash  \nInstructor: Blair Yeung-Meadows  \nTime: Year 11 - Highschool  \n\n### How To Play\n\n- Goal: Shoot ducks by clicking on them with the mouse\n- Don\'t let the dog laugh at you for sucking\n\n* * *\n\n[The Rest of the Portfolio](https://github.com/branjwong/portfolio)\n===========================\n\n- C\n    - Build a Shell\n    - Extended Producer-Consumer Problem\n    - POSIX Threads and Producer-Consumer\n    - Codility Demo Problem\n- C#\n    - Megaman\n- C++\n    - Waiting in Line\n    - Word\n    - Trees\n    - Hash Tables and the Dictionary ADT\n- Elm\n    - Bingo\n    - Online Resume and Portfolio Website\n        - github.com/branjwong/website\n- Fireworks\n    - Personal Logo\n    - Sasaki Logo\n- HTML/CSS\n    - Awesome Domain\n- Java\n    - Wizards, Witches, and Horcruxes\n- Python\n    - Wumpas World\n\n  ";
-   var programming = A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("container ProgrammingContainer")]),
-   _L.fromArray([A2($Html.div,
-   _L.fromArray([$Html$Attributes.$class("row")]),
-   _L.fromArray([$Markdown.toHtml(body)]))]));
-   var links = _L.fromArray([]);
-   var view = function (model) {
-      return A2($Html.div,
-      _L.fromArray([]),
-      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
-                   ,A2($NavBar.navBar,
-                   model.currentPage,
-                   links)
-                   ,$NavBar.navBarSpace
-                   ,A3($Header.header,
-                   "Default",
-                   "The Laboratory",
-                   "Where my programming experience is here for viewing.")
-                   ,programming
-                   ,$Footer.footer]));
-   };
-   var model = {_: {}
-               ,currentPage: "Programming"};
-   var Model = function (a) {
-      return {_: {}
-             ,currentPage: a};
-   };
-   var main = view(model);
-   var title = Elm.Native.Port.make(_elm).outbound("title",
-   function (v) {
-      return v;
-   },
-   "Programming | BJW");
-   _elm.Programming.values = {_op: _op
-                             ,main: main
-                             ,Model: Model
-                             ,model: model
-                             ,view: view
-                             ,links: links
-                             ,programming: programming
-                             ,body: body
-                             ,richardFeldmanQuote: richardFeldmanQuote};
-   return _elm.Programming.values;
+   $Signal = Elm.Signal.make(_elm);
+   var writing = "../../dist/html/writing/";
+   var resources = "../../resources/";
+   _elm.Paths.values = {_op: _op
+                       ,resources: resources
+                       ,writing: writing};
+   return _elm.Paths.values;
 };
 Elm.Result = Elm.Result || {};
 Elm.Result.make = function (_elm) {
@@ -14922,4 +14919,174 @@ Elm.VirtualDom.make = function (_elm) {
                             ,lazy3: lazy3
                             ,Options: Options};
    return _elm.VirtualDom.values;
+};
+Elm.WritingLibrary = Elm.WritingLibrary || {};
+Elm.WritingLibrary.make = function (_elm) {
+   "use strict";
+   _elm.WritingLibrary = _elm.WritingLibrary || {};
+   if (_elm.WritingLibrary.values)
+   return _elm.WritingLibrary.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "WritingLibrary",
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Footer = Elm.Footer.make(_elm),
+   $Header = Elm.Header.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Markdown = Elm.Markdown.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $NavBar = Elm.NavBar.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Style$PrintStyle = Elm.Style.PrintStyle.make(_elm),
+   $Style$SharedStyles = Elm.Style.SharedStyles.make(_elm);
+   var timeToString = function (time) {
+      return A2($Basics._op["++"],
+      $Basics.toString(time.hour),
+      A2($Basics._op["++"],
+      ":",
+      A2($Basics._op["++"],
+      $Basics.toString(time.minute),
+      time.notation)));
+   };
+   var Time = F3(function (a,b,c) {
+      return {_: {}
+             ,hour: a
+             ,minute: b
+             ,notation: c};
+   });
+   var Date = F3(function (a,b,c) {
+      return {_: {}
+             ,day: c
+             ,month: b
+             ,year: a};
+   });
+   var writing = F3(function (model,
+   links,
+   content) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   model.currentPage,
+                   links)
+                   ,$NavBar.navBarSpace
+                   ,A3($Header.header,
+                   "Default",
+                   "The Depository",
+                   "Where the archive of all my written work resides.")
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([$Markdown.toHtml(content)]))]))]))
+                   ,$Footer.footer]));
+   });
+   var Model = function (a) {
+      return {_: {}
+             ,currentPage: a};
+   };
+   _op["=>"] = F2(function (v0,
+   v1) {
+      return {ctor: "_Tuple2"
+             ,_0: v0
+             ,_1: v1};
+   });
+   var months = $Dict.fromList(_L.fromArray([A2(_op["=>"],
+                                            1,
+                                            "Jan")
+                                            ,A2(_op["=>"],2,"Feb")
+                                            ,A2(_op["=>"],3,"Mar")
+                                            ,A2(_op["=>"],4,"Apr")
+                                            ,A2(_op["=>"],5,"May")
+                                            ,A2(_op["=>"],6,"June")
+                                            ,A2(_op["=>"],7,"July")
+                                            ,A2(_op["=>"],8,"Aug")
+                                            ,A2(_op["=>"],9,"Sep")
+                                            ,A2(_op["=>"],10,"Oct")
+                                            ,A2(_op["=>"],11,"Nov")
+                                            ,A2(_op["=>"],12,"Dec")]));
+   var dateToString = function (date) {
+      return function () {
+         var _v0 = A2($Dict.get,
+         date.month,
+         months);
+         switch (_v0.ctor)
+         {case "Just":
+            return A2($Basics._op["++"],
+              $Basics.toString(date.day),
+              A2($Basics._op["++"],
+              " ",
+              A2($Basics._op["++"],
+              _v0._0,
+              A2($Basics._op["++"],
+              " ",
+              $Basics.toString(date.year)))));
+            case "Nothing":
+            return $Debug.crash("invalid date");}
+         _U.badCase($moduleName,
+         "between lines 93 and 98");
+      }();
+   };
+   var postInfo = F2(function (date,
+   time) {
+      return A2($Basics._op["++"],
+      "Posted On: ",
+      A2($Basics._op["++"],
+      dateToString(date),
+      A2($Basics._op["++"],
+      " - ",
+      timeToString(time))));
+   });
+   var post = F4(function (title,
+   date,
+   time,
+   body) {
+      return A2($Html.div,
+      _L.fromArray([]),
+      _L.fromArray([$Style$PrintStyle.stylesheet($Style$SharedStyles.exports)
+                   ,A2($NavBar.navBar,
+                   "",
+                   _L.fromArray([]))
+                   ,$NavBar.navBarSpace
+                   ,A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("container WritingContainer")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("row")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("col-sm-12")]),
+                   _L.fromArray([A2($Html.div,
+                   _L.fromArray([$Html$Attributes.$class("WritingPost")]),
+                   _L.fromArray([A2($Html.h1,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(title)]))
+                                ,A2($Html.h6,
+                                _L.fromArray([]),
+                                _L.fromArray([$Html.text(A2(postInfo,
+                                date,
+                                time))]))
+                                ,A2($Html.div,
+                                _L.fromArray([]),
+                                body)]))]))]))]))
+                   ,$Footer.footer]));
+   });
+   _elm.WritingLibrary.values = {_op: _op
+                                ,Model: Model
+                                ,writing: writing
+                                ,post: post
+                                ,postInfo: postInfo
+                                ,Date: Date
+                                ,dateToString: dateToString
+                                ,months: months
+                                ,Time: Time
+                                ,timeToString: timeToString};
+   return _elm.WritingLibrary.values;
 };

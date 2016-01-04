@@ -10,6 +10,9 @@ hr {
   border-color: #808080;
 }
 
+.TeachingHeader {
+  background: #76857F url('/resources/takafumi.jpg') no-repeat scroll center top;
+}
 
 /*
  * For BootstrapIcons
