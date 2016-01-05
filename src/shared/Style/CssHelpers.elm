@@ -53,3 +53,6 @@ right valueA valueB =
  --Overloaded Function
 margin2 value =
   attr1 "margin" (\a -> a) value
+
+textShadow2 value =
+  attr1 "text-shadow" (\a -> a) value

@@ -172,6 +172,7 @@ exports =
 
         |.| TeachingHeaderInner
             --|-| backgroundColor colorHighlight
+            |-| textShadow2 "1px 1px #111"
             |-| textAlign "center"
             |-| marginBottom marginHeader px
             |-| marginTop marginHeader px

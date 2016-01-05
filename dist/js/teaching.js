@@ -12960,6 +12960,14 @@ Elm.Style.CssHelpers.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Stylesheets = Elm.Stylesheets.make(_elm);
+   var textShadow2 = function (value) {
+      return A3($Stylesheets.attr1,
+      "text-shadow",
+      function (a) {
+         return a;
+      },
+      value);
+   };
    var margin2 = function (value) {
       return A3($Stylesheets.attr1,
       "margin",
@@ -13114,7 +13122,8 @@ Elm.Style.CssHelpers.make = function (_elm) {
                                   ,borderColor: borderColor
                                   ,left: left
                                   ,right: right
-                                  ,margin2: margin2};
+                                  ,margin2: margin2
+                                  ,textShadow2: textShadow2};
    return _elm.Style.CssHelpers.values;
 };
 Elm.Style = Elm.Style || {};
@@ -13275,6 +13284,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|.|"],
+   A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
    A2($Stylesheets._op["|-|"],
@@ -13445,6 +13455,7 @@ Elm.Style.SharedStyles.make = function (_elm) {
    TeachingHeader),
    $Stylesheets.backgroundColor($Style$SharedValues.colorHighlight)),
    TeachingHeaderInner),
+   $Style$CssHelpers.textShadow2("1px 1px #111")),
    $Style$CssHelpers.textAlign("center")),
    A2($Stylesheets.marginBottom,
    $Style$SharedValues.marginHeader,
