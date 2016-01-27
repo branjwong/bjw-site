@@ -64,9 +64,18 @@ Version numbers are essentially SemVer, except that I use semantic names, for th
 ## TODO
 
 1. Finish Teaching Page
+  - Prices?
+  - Related Experience: Years teaching that course.
+  - School grade in that course.
+  - My SFU Transcript
 1. Finish Home Page
 1. Search Engine Optimization
 1. Update Elm Version
 1. Create a Backend
 1. Routing
 1. Forms - Contact Me
+1. Logo
+  - Similar to Evan's Elm Logo - Tangrams
+  - Maybe use Origami instead.
+  - Make a B shape out of them for Brandon related stuff.
+  - Make a T shape for teaching related stuff.
