@@ -53,40 +53,40 @@ home =
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-3"]
-        [ block "Teaching" "/dist/html/teaching.html" ]
+        [ block "Teaching" "/teaching.html" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Programming" "/dist/html/programming.html" ]
+        [ block "Programming" "/programming.html" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Writing" "/dist/html/writing.html" ]
+        [ block "Writing" "/writing.html" ]
       ]
     , div
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-3"]
-        [ block "Latest Guide" "/dist/html/writing/guide/latest" ]
+        [ block "Latest Guide" "/writing/guide/latest" ]
       , div
         [ class "col-sm-2" ]
         [ block "Site Code" "https://github.com/branjwong/bjw-site" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Latest Blog" "/dist/html/writing/what-i-am-doing-with-my-life.html" ]
+        [ block "Latest Blog" "writing/blog/latest" ]
       ]
     , div
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-5"]
-        [ block "Megaman Game" "/dist/html/programming/megaman/megaman.html" ]
+        [ block "Megaman Game" "programming/megaman/megaman.html" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Latest Review" "/dist/html/writing/cross-game.html" ]
+        [ block "Latest Review" "/writing/reviews/latest" ]
       ]
     , div
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-7"]
-        [ block "Latest Pick" "/dist/html/writing.html" ]
+        [ block "Latest Pick" "/writing/picks/latest" ]
       ]
     ]
 
