@@ -1,25 +1,33 @@
 Personal Website
 ================
 
+bjw-site is a site for Brandon J Wong built primarily with Elm.
 
-## Development Environment Requirements
+Installation
+------------
 
+## Environment Requirements
+
+1. [elm](http://elm-lang.org/install) - [installation tutorial](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
 1. [npm](https://www.npmjs.com/) - [usage tutorial](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
-2. [elm](http://elm-lang.org/install) - [installation tutorial](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
-3. [grunt](http://gruntjs.com/) - [usage tutorial](https://www.youtube.com/watch?v=TMKj0BxzVgw)
 
-## Setup
+#### Using git (recommended)
 
-1. Make sure npm and elm are installed on your system.
-2. Clone this to a directory of your choosing.
-3. Run `npm install`.
-4. Run `elm make`.
-5. Run `grunt elm`.
-6. Open `dist/html/index.html`.
-7. ????
-8. PROFIT!!!
+```sh
+git clone https://github.com/branjwong/bjw-site.git
+sh install.sh
+```
 
-## Content
+Usage
+-----
+
+```sh
+sh build-elm.sh
+sh run-backend.sh
+```
+
+Content
+-------
 
 ##### Teaching
 
@@ -39,7 +47,8 @@ Personal Website
 - guides on math topics (e.g. factoring trionimals, completing the square, learning style in general)
 - favourite quotes
 
-## Design Decisions
+Design Decisions
+----------------
 
 ##### Friend Feedback
 
@@ -61,7 +70,8 @@ Version numbers are essentially SemVer, except that I use semantic names, for th
 
 [ver]: https://medium.com/javascript-scene/software-versions-are-broken-3d2dc0da0783#.qgkp9dimp
 
-## TODO
+TODO
+----
 
 1. Finish Teaching Page
   - Prices?
@@ -79,3 +89,13 @@ Version numbers are essentially SemVer, except that I use semantic names, for th
   - Maybe use Origami instead.
   - Make a B shape out of them for Brandon related stuff.
   - Make a T shape for teaching related stuff.
+
+License
+-------
+
+[MIT](LICENSE)
+
+Author
+------
+
+Brandon J Wong
