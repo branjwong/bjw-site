@@ -6,7 +6,7 @@ bjw-site is a site for Brandon J Wong built primarily with Elm.
 Installation
 ------------
 
-## Environment Requirements
+#### Environment Requirements
 
 1. [elm](http://elm-lang.org/install) - [installation tutorial](http://alphydan.svbtle.com/elm-lang-on-ubuntu-14-04)
 1. [npm](https://www.npmjs.com/) - [usage tutorial](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
