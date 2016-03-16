@@ -6,8 +6,7 @@
     "license": "BSD3",
     "source-directories": [
         "src/shared",
-        "elm-new/elm-stylesheets/src",
-        "elm-css/src"
+        "src/shared/Style/elm-css/src"
     ],
     "exposed-modules": [],
     "dependencies": {
