@@ -40,6 +40,13 @@ route('/writing/blog/latest', '/dist/html/writing/what-i-am-doing-with-my-life.h
 route('/writing/reviews/latest', '/dist/html/writing/cross-game.html');
 route('/writing/guide/latest', '/dist/html/writing/factoring-trinomials.html');
 
+// Comment this out for production.
 app.listen(8000, function() {
   console.log("App listening on port 8000!")
 });
+
+// Uncomment this for production.
+// I know this is a huge security flaw but w/e for now.
+// app.listen(80, function() {
+//   console.log("App listening on port 80!")
+// });
