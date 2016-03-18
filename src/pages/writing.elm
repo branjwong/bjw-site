@@ -3,9 +3,6 @@ module Writing where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-
 import WritingLibrary
 
 

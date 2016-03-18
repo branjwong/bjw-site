@@ -1,3 +1,4 @@
+
 var express = require("express");
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(process.cwd() + '/dist/html/'));
 app.use('/dist/html', express.static(process.cwd() + '/dist/html/'));
 app.use('/dist/js', express.static(process.cwd() + '/dist/js/'));
 app.use('/node_modules/bootstrap/dist/css/bootstrap.min.css', express.static(process.cwd() + '/node_modules/bootstrap/dist/css/bootstrap.min.css'));
+app.use('/node_modules/bootstrap/dist/js/bootstrap.min.js', express.static(process.cwd() + '/node_modules/bootstrap/dist/js/bootstrap.min.js'));
 app.use('/resources', express.static(process.cwd() + '/resources/'));
 app.use('/assets', express.static(process.cwd() + '/assets/'));
 
@@ -46,7 +48,7 @@ app.listen(8000, function() {
 });
 
 // Uncomment this for production.
-// I know this is a huge security flaw but w/e for now.
+// https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps
 // app.listen(80, function() {
 //   console.log("App listening on port 80!")
 // });

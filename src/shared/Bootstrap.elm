@@ -3,8 +3,9 @@ module Bootstrap where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-----------------------------------------------------------------------------------------------------------------
-
+{-
+accordion "bio" "col-sm-12" (List Html)
+-}
 accordion : String -> String -> List Html -> Html
 accordion acName column panels =
   div
@@ -18,25 +19,24 @@ accordion acName column panels =
         panels
       ]
     ]
-
-
-
+{-
+panelHeading bio 1 "Title"
+-}
 panelHeading : String -> Int -> String -> Html
 panelHeading acName pnID panelTitle = 
   let 
     pnName = acName ++ (toString pnID)
-    newAcName = acName
   in
     div
       [ class "panel-heading"
-      , id ("heading" ++ pnName )
+      , id ("heading" ++ pnName)
       ]
       [ h4
         [ class "panel-title" ]
         [ a
           [ href ("#collapse" ++ pnName)
-          , attribute "data-toggle" "collapse"
-          , attribute "data-parent" ("#accordion" ++ newAcName)
+          , attribute "data-toggle" ("collapse")
+          , attribute "data-parent" ("#accordion" ++ acName)
           ]
           [ text panelTitle ]
         ]

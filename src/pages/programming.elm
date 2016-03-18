@@ -5,9 +5,6 @@ import Html.Attributes exposing (..)
 
 import Markdown
 
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-
 import NavBar
 import Notices
 import Header
@@ -38,8 +35,7 @@ view : Model -> Html
 view model =
   div
     [ ]
-    [ stylesheet exports
-    , NavBar.navBar model.currentPage links
+    [ NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , Header.header "Default" "The Laboratory" "Where my programming experience is here for viewing."
     , programming

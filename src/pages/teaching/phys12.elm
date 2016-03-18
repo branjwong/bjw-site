@@ -4,9 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-
 import Teaching.Helper
 
 import NavBar
@@ -25,9 +22,8 @@ tytle = .title Teaching.Helper.phys12
 main : Html
 main = 
  div
-    [ ]
-    [ stylesheet exports
-    , NavBar.navBar "" []
+    []
+    [ NavBar.navBar "" []
     , NavBar.navBarSpace
     , Header.header "Default" "Learning Outcomes" (.title Teaching.Helper.phys12) 
     , subjectInfo

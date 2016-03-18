@@ -26,9 +26,8 @@ tytle = .title Teaching.Helper.precalc12
 main : Html
 main = 
  div
-    [ ]
-    [ stylesheet exports
-    , NavBar.navBar "" []
+    []
+    [ NavBar.navBar "" []
     , NavBar.navBarSpace
     , Header.header "Default" "Learning Outcomes" (.title Teaching.Helper.precalc12) 
     , subjectInfo

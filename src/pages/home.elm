@@ -3,9 +3,6 @@ module Home where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Style.SharedStyles exposing (..)
-import Style.PrintStyle exposing (..)
-
 import Title
 import NavBar
 import Header
@@ -14,7 +11,6 @@ import Footer
 
 import Bootstrap
 import Lorem
-
 
 port title : String
 port title = Title.home
@@ -37,10 +33,8 @@ view : Model -> Html
 view model =
   div 
     []
-    [ stylesheet exports
-    , NavBar.navBar model.currentPage []
+    [ NavBar.navBar model.currentPage []
     , NavBar.navBarSpace
-    , Notices.earlyVer
     , home
     , Footer.footer
     ]
@@ -48,7 +42,7 @@ view model =
 home : Html
 home =
   div 
-    [ class "container" ]
+    [ class "container HomeContainer" ]
     [ div
       [ class "row" ]
       [ div
@@ -87,6 +81,12 @@ home =
       [ div
         [ class "col-sm-2 col-sm-offset-7"]
         [ block "Latest Pick" "/writing/picks/latest" ]
+      ]
+    , div 
+      [ class "row" ]
+      [ div
+        [ class "HomeExtraSpace" ]
+        []
       ]
     ]
 

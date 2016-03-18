@@ -2,13 +2,9 @@ module Teaching where
 
 import Teaching.Helper
 
+
 import Html exposing (..)
 import Html.Attributes exposing (..)
-
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-import Style.SharedValues exposing (colorHighlight)
-import Stylesheets exposing (colorToString)
 
 import NavBar
 import Markdown
@@ -20,9 +16,6 @@ import Footer
 
 
 
-----------------------------------------------------------------------------------------------------------------
-
-
 port title: String
 port title =  model.currentPage ++ " | BJW"
 
@@ -30,9 +23,6 @@ port title =  model.currentPage ++ " | BJW"
 type alias Model =
   { currentPage : String
   }
-
-
-----------------------------------------------------------------------------------------------------------------
 
 
 main : Html
@@ -50,8 +40,7 @@ view : Model -> Html
 view model =
   div
     []
-    [ stylesheet exports
-    , NavBar.navBar model.currentPage links
+    [ NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , header 
         "Teaching" 

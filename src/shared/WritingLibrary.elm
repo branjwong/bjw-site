@@ -6,9 +6,6 @@ import Debug
 import Html exposing (..)
 import Html.Attributes as Attr exposing (..)
 
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-
 import NavBar
 import Header
 import Notices
@@ -30,8 +27,7 @@ writing : Model -> List Html -> String -> Html
 writing model links content =
   div 
     []
-    [ stylesheet exports
-    , NavBar.navBar model.currentPage links
+    [ NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , Header.header "Default" "The Depository" "Where the archive of all my written work resides."
     , div
@@ -52,8 +48,7 @@ post : String -> Date -> Time -> List Html -> Html
 post title date time body =
   div 
     []
-    [ stylesheet exports
-    , NavBar.navBar "" []
+    [ NavBar.navBar "" []
     , NavBar.navBarSpace
     , div
       [ class "container WritingContainer" ]
