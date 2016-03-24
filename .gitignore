@@ -1,7 +1,10 @@
 dist/js
+
+resources/drafts
+resources/favicon
+
+assets/style.css
+
 node_modules
 elm-stuff
 npm-debug.log
-resources/drafts
-resources/favicon
-bjw-site.sublime*
