@@ -6,13 +6,13 @@ import Debug
 import Html exposing (..)
 import Html.Attributes as Attr exposing (..)
 
+import Markdown
+
 import NavBar
 import Header
 import Notices
 import Footer
-import Paths
-
-import Markdown
+import Disqus
 
 
 (=>) = (,)
@@ -30,19 +30,21 @@ writing model links content =
     [ NavBar.navBar model.currentPage links
     , NavBar.navBarSpace
     , Header.header "Default" "The Depository" "Where the archive of all my written work resides."
-    , div
-      [ class "container WritingContainer" ]
-      [ div
-        [ class "row" ]
-        [ div
-          [ class "col-sm-12" ]
-          [ Markdown.toHtml content ]
-        ]
-      ]
+    , container content
     , Footer.footer
     ]
 
-
+container : String -> Html
+container content = 
+  div
+    [ class "container WritingContainer" ]
+    [ div
+      [ class "row" ]
+      [ div
+        [ class "col-sm-12" ]
+        [ Markdown.toHtml content ]
+      ]
+    ]
 
 post : String -> Date -> Time -> List Html -> Html
 post title date time body =
@@ -65,6 +67,7 @@ post title date time body =
             ]
           ]
         ]
+      , Disqus.exports
       ]
     , Footer.footer 
     ]

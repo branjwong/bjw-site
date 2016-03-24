@@ -8,6 +8,7 @@ http://webdesign.tutsplus.com/tutorials/6-beginner-safety-first-color-guidelines
 
 -- Background Colors
 
+colorA = hex "27AA93"
 colorHighlight = hex "360909"
 --colorHighlight = hex "601010"
 colorBodyBackground = hex "1B1717"

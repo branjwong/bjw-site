@@ -10,6 +10,7 @@ import Notices
 import Header
 import Footer
 
+import Disqus
 
 port title: String
 port title =  "Programming | BJW"
@@ -55,7 +56,8 @@ programming =
     ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml body ]
+      [ Markdown.toHtml body
+      ]
     ]
 
 body =

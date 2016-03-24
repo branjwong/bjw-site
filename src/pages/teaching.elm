@@ -2,14 +2,12 @@ module Teaching where
 
 import Teaching.Helper
 
-
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
 import NavBar
 import Markdown
 import Bootstrap
-import Paths
 import Notices
 import Header
 import Footer
@@ -238,7 +236,7 @@ subjectPanelHtml subject =
 area : Html
 area = 
   let 
-    imgArea = Bootstrap.image  (Paths.resources ++ "metrovan.fw.png")
+    imgArea = Bootstrap.image  ("/resources/pages/teaching/metrovan.fw.png")
     string = """
 
 **Neighborhoods**
@@ -299,4 +297,4 @@ imgTakafumi : Html
 imgTakafumi = 
   div 
     [ class "TeachingImgTakafumi" ]
-    [ Bootstrap.image (Paths.resources ++ "takafumi_1170x658.jpg") ]
+    [ Bootstrap.image ("takafumi.jpg") ]

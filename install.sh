@@ -5,7 +5,7 @@
 
 ## uncomment line below if elm is not yet installed #
 # sudo npm install elm -g &&
-npm install -g elm-css
+sudo npm install -g elm-css
 npm install bootstrap
 npm install express
 yes | elm package install

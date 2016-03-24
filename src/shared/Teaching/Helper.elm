@@ -7,7 +7,6 @@ import Html.Attributes exposing (..)
 
 import Markdown
 import Bootstrap
-import Paths
 
 import Lorem
 

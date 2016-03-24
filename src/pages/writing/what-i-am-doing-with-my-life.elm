@@ -7,7 +7,6 @@ import Markdown
 
 import WritingLibrary
 
-
 port title : String
 port title =
   postTitle ++ " | BJW"

@@ -17,7 +17,7 @@ css =
         , fontFamilies ["Verdana", "Bitstream Vera Sans", .value sansSerif]
         ]
     , a
-        [ color colorHeading
+        [ color colorA
         ]
     , hr
         [ borderColor (hex "808080")
