@@ -6,37 +6,26 @@ import Css exposing (..)
 http://webdesign.tutsplus.com/tutorials/6-beginner-safety-first-color-guidelines-for-the-web--cms-21462
  -}
 
--- Background Colors
+-- Old Background Colors
 
-colorA = hex "27AA93"
-colorHighlight = hex "360909"
---colorHighlight = hex "601010"
-colorBodyBackground = hex "1B1717"
-colorContentBackground = hex "FFF"
+colorAccent = hex "922A2A"
+colorBlack = hex "323232"
+colorGrey = hex "EEE"
+colorWhite = hex "FFF"
+colorLightRed = hex "C82A2A"
 
-colorNavBarBackground = colorBodyBackground
+colorA = colorLightRed
+colorHighlight = colorAccent
+colorBodyBackground = colorGrey
+colorContentBackground = colorWhite
+
+colorNavBarBackground = colorBlack
 
 -- Text Colors Against Site Background
 
-colorHeading = hex "E1E1E1"
+colorHeading = hex "333"
 colorSubHeading = hex "BBB"
 colorStandardText = colorHeading
-
-
-{-| Teaching Background Colors
--}
-
-colorHighlightTeaching = hex "C62B2B"
-colorBodyBackgroundTeaching = hex "EEE"
-colorContentBackgroundTeaching = hex "FFF"
-
-colorNavBarBackgroundTeaching = colorContentBackgroundTeaching
-
--- Text Colors Against Site Background
-
-colorHeadingTeaching = hex "333"
-colorSubHeadingTeaching = hex "BBB"
-colorStandardTextTeaching = colorHeadingTeaching
 
 
 {-| Dimensions, Lengths, Heights
@@ -65,19 +54,42 @@ marginHeader = (heightHpBrowser/2 - (sizeHeaderDescText + sizeHeaderTitleText))
 
 postPadding = 30
 
-{-| Old Background Colors
+{-| 
 
-colorHighlightBlue = hex "2B74C6"
-colorHighlight = hex "C62B2B"
-colorBodyBackground = hex "EEE"
+
+-- Background Colors
+
+colorA = hex "27AA93"
+colorHighlight = hex "360909"
+--colorHighlight = hex "601010"
+colorBodyBackground = hex "1B1717"
 colorContentBackground = hex "FFF"
+--colorHighlightBlue = hex "2B74C6"
 
-colorNavBarBackground = colorContentBackground
+
+
+colorNavBarBackground = colorBodyBackground
 
 -- Text Colors Against Site Background
 
-colorHeading = hex "333"
+colorHeading = hex "E1E1E1"
 colorSubHeading = hex "BBB"
 colorStandardText = colorHeading
+
+
+{-| Teaching Background Colors
+-}
+
+colorHighlightTeaching = hex "C62B2B"
+colorBodyBackgroundTeaching = hex "EEE"
+colorContentBackgroundTeaching = hex "FFF"
+
+colorNavBarBackgroundTeaching = colorContentBackgroundTeaching
+
+-- Text Colors Against Site Background
+
+colorHeadingTeaching = hex "333"
+colorSubHeadingTeaching = hex "BBB"
+colorStandardTextTeaching = colorHeadingTeaching
 
 -}

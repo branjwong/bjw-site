@@ -1,12 +1,17 @@
 body {
     margin-top: 0px;
-    color: #E1E1E1;
-    background-color: #1B1717;
+    color: #333;
+    background-color: #EEE;
     font-family: Verdana, Bitstream Vera Sans, sans-serif;
 }
 
 a {
-    color: #27AA93;
+    color: #C82A2A;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #323232;
 }
 
 hr {
@@ -14,23 +19,23 @@ hr {
 }
 
 .NavBar {
-    background-color: #1B1717;
-    color: #360909;
+    background-color: #323232;
+    color: #922A2A;
     margin-bottom: 0px;
 }
 
 .NavBarTop {
-    background-color: #360909;
+    background-color: #922A2A;
     height: 5px;
 }
 
 .NavBarSpace {
     height: 55px;
-    background-color: #360909;
+    background-color: #922A2A;
 }
 
 .NavBarIconBar {
-    background-color: #360909;
+    background-color: #922A2A;
 }
 
 .Notices {
@@ -76,7 +81,7 @@ hr {
 }
 
 .DefaultHeader {
-    background-color: #360909;
+    background-color: #922A2A;
     padding-top: 20px;
     padding-bottom: 30px;
 }
@@ -105,7 +110,7 @@ hr {
 }
 
 .TeachingHeader {
-    background-color: #C62B2B;
+    background-color: #922A2A;
 }
 
 .TeachingHeaderInner {
@@ -141,13 +146,13 @@ hr {
 }
 
 .TeachingContainerHeader {
-    border-bottom-color: #C62B2B;
+    border-bottom-color: #922A2A;
 }
 
 .TeachingArrow {
     border-style: solid;
     border-color: transparent;
-    border-top-color: #C62B2B;
+    border-top-color: #922A2A;
     border-top-width: 22px;
     border-right-width: 28px;
     border-bottom-width: 0px;
@@ -174,24 +179,24 @@ hr {
 }
 
 .ProgrammingHeader {
-    background-color: #360909;
+    background-color: #922A2A;
     padding-top: 20px;
     padding-bottom: 30px;
 }
 
 .BootstrapAccordion {
-    color: #E1E1E1;
+    color: #333;
 }
 
 #Footer {
-    background-color: #360909;
+    background-color: #922A2A;
     height: 60px;
     margin-top: 40px;
 }
 
 .Block {
     height: 80px;
-    background-color: #360909;
+    background-color: #922A2A;
 }
 
 .BlockRim {

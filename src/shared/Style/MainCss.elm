@@ -18,6 +18,10 @@ css =
         ]
     , a
         [ color colorA
+        , hover
+            [ textDecoration none
+            , color colorBlack
+             ]
         ]
     , hr
         [ borderColor (hex "808080")
@@ -98,7 +102,7 @@ css =
         [ padding (px postPadding)
         ]
     , ((.) TeachingHeader )
-        [ backgroundColor colorHighlightTeaching
+        [ backgroundColor colorHighlight
         ]
     , ((.) TeachingHeaderInner ) 
         [ textShadow3 (px 1) (px 1) (hex "111")
@@ -128,12 +132,12 @@ css =
         [ marginTop (px 20)
         ]
     , ((.) TeachingContainerHeader )
-        [ borderBottomColor colorHighlightTeaching
+        [ borderBottomColor colorHighlight
         ]
     , ((.) TeachingArrow )
         [ borderStyle solid
         , borderColor transparent
-        , borderTopColor colorHighlightTeaching
+        , borderTopColor colorHighlight
         , borderTopWidth (px 22)
         , borderRightWidth (px 28)
         , borderBottomWidth (px 0)
