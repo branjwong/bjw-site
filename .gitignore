@@ -3,7 +3,6 @@ dist/js
 resources/drafts
 resources/favicon
 
-assets/style.css
 
 node_modules
 elm-stuff

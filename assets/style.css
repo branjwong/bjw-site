@@ -1,0 +1,204 @@
+body {
+    margin-top: 0px;
+    color: #E1E1E1;
+    background-color: #1B1717;
+    font-family: Verdana, Bitstream Vera Sans, sans-serif;
+}
+
+a {
+    color: #27AA93;
+}
+
+hr {
+    border-color: #808080;
+}
+
+.NavBar {
+    background-color: #1B1717;
+    color: #360909;
+    margin-bottom: 0px;
+}
+
+.NavBarTop {
+    background-color: #360909;
+    height: 5px;
+}
+
+.NavBarSpace {
+    height: 55px;
+    background-color: #360909;
+}
+
+.NavBarIconBar {
+    background-color: #360909;
+}
+
+.Notices {
+    background-color: #333;
+    color: #FFF;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.NoticesNoText {
+    height: 20px;
+}
+
+.HomeContainer {
+    padding-top: 120px;
+}
+
+.HomeIntroImageBorder {
+    padding: 5px;
+    margin: 10px;
+    background-color: #FFF;
+}
+
+.HomeIntroImage {
+    height: 300px;
+    background-color: #454545;
+}
+
+.HomeMainBodyPre {
+    padding-top: 10px;
+}
+
+.HomeMainBody {
+    padding: 30px;
+    padding-top: 50px;
+    background-color: #FFF;
+}
+
+.HomeExtraSpace {
+    height: 300px;
+}
+
+.DefaultHeader {
+    background-color: #360909;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.DefaultHeaderTitle {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+
+.DefaultHeaderDesc {
+    font-size: 20px;
+    color: #BBB;
+}
+
+.HomePaddedContainer {
+    margin: 10px;
+}
+
+.WritingContainer {
+    margin-top: 20px;
+}
+
+.WritingPost {
+    padding: 30px;
+}
+
+.TeachingHeader {
+    background-color: #C62B2B;
+}
+
+.TeachingHeaderInner {
+    text-shadow: 1px 1px #111;
+    text-align: center;
+    margin-bottom: 239.5px;
+    margin-top: 239.5px;
+}
+
+.TeachingHeaderTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+
+.TeachingHeaderDesc {
+    font-size: 20px;
+    color: #6793B6;
+}
+
+.TeachingBioAndCallToAction {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.TeachingImgTakafumi {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.TeachingCallToAction {
+    margin-top: 20px;
+}
+
+.TeachingContainerHeader {
+    border-bottom-color: #C62B2B;
+}
+
+.TeachingArrow {
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #C62B2B;
+    border-top-width: 22px;
+    border-right-width: 28px;
+    border-bottom-width: 0px;
+    border-left-width: 28px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 0px;
+    position: absolute;
+}
+
+.TeachingAdvertiseTitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.TeachingAdvertiseContent {
+    color: #78909C;
+    text-align: center;
+}
+
+.ProgrammingContainer {
+    margin-top: 50px;
+}
+
+.ProgrammingHeader {
+    background-color: #360909;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.BootstrapAccordion {
+    color: #E1E1E1;
+}
+
+#Footer {
+    background-color: #360909;
+    height: 60px;
+    margin-top: 40px;
+}
+
+.Block {
+    height: 80px;
+    background-color: #360909;
+}
+
+.BlockRim {
+    padding: 5px;
+    background-color: #FFF;
+}
+
+.BlockDiv {
+    margin-top: 10px;
+}
