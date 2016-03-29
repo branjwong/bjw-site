@@ -5,8 +5,8 @@ import Html.Attributes exposing (..)
 
 -- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
 
-navBar : String -> List Html -> Html
-navBar currentName currentLinks =
+navBar : String -> Html
+navBar currentName =
   nav
     [ class "navbar navbar-fixed-top NavBar" --navbar-inverse
     , id "top"
@@ -19,7 +19,7 @@ navBar currentName currentLinks =
       [ class "container"
       ]
       [ navbarCollapseComponent
-      , navbarExpandComponent currentName currentLinks
+      , navbarExpandComponent currentName []
       ]
     ]
 

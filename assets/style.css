@@ -109,6 +109,10 @@ hr {
     padding: 30px;
 }
 
+.WritingExtraSpace {
+    height: 550px;
+}
+
 .TeachingHeader {
     background-color: #922A2A;
 }
@@ -196,7 +200,7 @@ hr {
 
 .Block {
     height: 80px;
-    background-color: #922A2A;
+    background-color: #323232;
 }
 
 .BlockRim {

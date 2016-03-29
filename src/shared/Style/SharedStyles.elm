@@ -32,6 +32,7 @@ type CssClasses
     | WritingHeaderTitle
     | WritingHeaderDesc
     | WritingPost
+    | WritingExtraSpace
 
     | TeachingHeader
     | TeachingHeaderInner

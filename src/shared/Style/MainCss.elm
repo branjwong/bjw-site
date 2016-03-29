@@ -31,18 +31,18 @@ css =
         , color colorHighlight
         , marginBottom (px 0)
         ]
-    , ((.) NavBarTop )
+    , ((.) NavBarTop)
         [ backgroundColor colorHighlight 
         , height (px heightNavBarTop)
         ]
-    , ((.) NavBarSpace )
+    , ((.) NavBarSpace)
         [ height (px heightNavBar)
         , backgroundColor colorHighlight
         ]
-    , ((.) NavBarIconBar )
+    , ((.) NavBarIconBar)
         [ backgroundColor colorHighlight
         ]
-    , ((.) Notices )
+    , ((.) Notices)
         [ backgroundColor (hex "333")
         , color (hex "FFF")
         , textAlign center
@@ -50,91 +50,94 @@ css =
         , paddingBottom (px 10)
         , fontWeight bold
         ]
-    , ((.) NoticesNoText )
+    , ((.) NoticesNoText)
         [ height (px 20)
         ]
-    , ((.) HomeContainer )
+    , ((.) HomeContainer)
         [ paddingTop (px 120)
         ]
-    , ((.) HomeIntroImageBorder )
+    , ((.) HomeIntroImageBorder)
         [ padding (px 5)
         , margin (px 10) 
         , backgroundColor colorContentBackground
         ]
-    , ((.) HomeIntroImage )
+    , ((.) HomeIntroImage)
         [ height (px 300)
         , backgroundColor (hex "454545")
         ]
-    , ((.) HomeMainBodyPre )
+    , ((.) HomeMainBodyPre)
         [ paddingTop (px 10)
         ]
-    , ((.) HomeMainBody )
+    , ((.) HomeMainBody)
         [ padding (px 30)
         , paddingTop (px 50)
         , backgroundColor colorContentBackground
         ]
-    , ((.) HomeExtraSpace )
+    , ((.) HomeExtraSpace)
         [ height (px 300)
         ]
-    , ((.) DefaultHeader )
+    , ((.) DefaultHeader)
         [ backgroundColor colorHighlight
         , paddingTop (px 20)
         , paddingBottom (px 30)
         ]
-    , ((.) DefaultHeaderTitle )
+    , ((.) DefaultHeaderTitle)
         [ marginTop (px 50)
         , marginBottom (px 0)
         , fontSize (px 60)
         --, fontWeight normal
         ]
-    , ((.) DefaultHeaderDesc )
+    , ((.) DefaultHeaderDesc)
         [ fontSize (px 20)
         , color colorSubHeading
         ]
-    , ((.) HomePaddedContainer )
+    , ((.) HomePaddedContainer)
         [ margin (px 10)
         ]
-    , ((.) WritingContainer )
+    , ((.) WritingContainer)
         [ marginTop (px 20)
         --, backgroundColor colorContentBackground
         ]
-    , ((.) WritingPost )
+    , ((.) WritingPost)
         [ padding (px postPadding)
         ]
-    , ((.) TeachingHeader )
+    , ((.) WritingExtraSpace)
+        [ height (px 550)
+        ]
+    , ((.) TeachingHeader)
         [ backgroundColor colorHighlight
         ]
-    , ((.) TeachingHeaderInner ) 
+    , ((.) TeachingHeaderInner) 
         [ textShadow3 (px 1) (px 1) (hex "111")
         , textAlign center
         , marginBottom (px marginHeader)
         , marginTop (px marginHeader)
         ]
-    , ((.) TeachingHeaderTitle )  
+    , ((.) TeachingHeaderTitle)  
         [ marginTop (px 0)
         , marginBottom (px 0)
         , fontSize (px sizeHeaderTitleText)
         --, fontWeight normal
         ]
-    , ((.) TeachingHeaderDesc )
+    , ((.) TeachingHeaderDesc)
         [ fontSize (px sizeHeaderDescText)
         , color (hex "6793B6")
         ]
-    , ((.) TeachingBioAndCallToAction )
+    , ((.) TeachingBioAndCallToAction)
         [ paddingTop (px 20)
         , paddingBottom (px 20)
         ]
-    , ((.) TeachingImgTakafumi )
+    , ((.) TeachingImgTakafumi)
         [ marginTop (px 40)
         , marginBottom (px 40)
         ]
-    , ((.) TeachingCallToAction )
+    , ((.) TeachingCallToAction)
         [ marginTop (px 20)
         ]
-    , ((.) TeachingContainerHeader )
+    , ((.) TeachingContainerHeader)
         [ borderBottomColor colorHighlight
         ]
-    , ((.) TeachingArrow )
+    , ((.) TeachingArrow)
         [ borderStyle solid
         , borderColor transparent
         , borderTopColor colorHighlight
@@ -149,39 +152,39 @@ css =
         , width (px 0)
         , position absolute
         ]
-    , ((.) TeachingAdvertiseTitle )
+    , ((.) TeachingAdvertiseTitle)
         [ fontWeight bold
         , textAlign center
         ]
-    , ((.) TeachingAdvertiseContent )
+    , ((.) TeachingAdvertiseContent)
         [ color (hex "78909C")
         , textAlign center
         ]
-    , ((.) ProgrammingContainer )
+    , ((.) ProgrammingContainer)
         [ marginTop (px 50)
         ]
-    , ((.) ProgrammingHeader )
+    , ((.) ProgrammingHeader)
         [ backgroundColor colorHighlight
         , paddingTop (px 20)
         , paddingBottom (px 30)
         ]
-    , ((.) BootstrapAccordion )
+    , ((.) BootstrapAccordion)
         [ color colorStandardText
         ]
-    , ((#) Footer )
+    , ((#) Footer)
         [ backgroundColor colorHighlight
         , height (px 60)
         , marginTop (px 40)
         ]
-    , ((.) Block )
+    , ((.) Block)
         [ height (px 80)
-        , backgroundColor colorHighlight
+        , backgroundColor colorBlack
         ]
-    , ((.) BlockRim )
+    , ((.) BlockRim)
         [ padding (px 5)
         , backgroundColor colorContentBackground
         ]
-    , ((.) BlockDiv )
+    , ((.) BlockDiv)
         [ marginTop (px 10)
         ]
     ]

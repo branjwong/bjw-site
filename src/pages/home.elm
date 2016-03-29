@@ -3,7 +3,6 @@ module Home where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Title
 import NavBar
 import Header
 import Notices
@@ -13,27 +12,13 @@ import Bootstrap
 import Lorem
 
 port title : String
-port title = Title.home
-
-type alias Model =
-  { currentPage : String
-  }
-
-
-model : Model
-model =
-  { currentPage = "Home"
-  }
+port title = "Home"
 
 main : Html
 main =
-  view model
-
-view : Model -> Html
-view model =
   div 
     []
-    [ NavBar.navBar model.currentPage []
+    [ NavBar.navBar "Home"
     , NavBar.navBarSpace
     , home
     , Footer.footer

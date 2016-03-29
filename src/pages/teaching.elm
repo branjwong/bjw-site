@@ -15,7 +15,7 @@ import Footer
 
 
 port title: String
-port title =  model.currentPage ++ " | BJW"
+port title = "Teaching" ++ " | BJW"
 
 
 type alias Model =
@@ -25,20 +25,9 @@ type alias Model =
 
 main : Html
 main =
-  view model
-
-
-model : Model
-model =
-  { currentPage = "Teaching"
-  }
-
-
-view : Model -> Html
-view model =
   div
     []
-    [ NavBar.navBar model.currentPage links
+    [ NavBar.navBar "Teaching"
     , NavBar.navBarSpace
     , header 
         "Teaching" 

@@ -4,7 +4,7 @@ import Dict
 import Debug
 
 import Html exposing (..)
-import Html.Attributes as Attr exposing (..)
+import Html.Attributes exposing (..)
 
 import Markdown
 
@@ -18,16 +18,11 @@ import Disqus
 (=>) = (,)
 
 
-type alias Model =
-    { currentPage : String
-    }
-
-
-writing : Model -> List Html -> String -> Html
-writing model links content =
+writing : String -> String -> Html
+writing currentPage content =
   div 
     []
-    [ NavBar.navBar model.currentPage links
+    [ NavBar.navBar currentPage 
     , NavBar.navBarSpace
     , Header.header "Default" "The Depository" "Where the archive of all my written work resides."
     , container content
@@ -36,21 +31,28 @@ writing model links content =
 
 container : String -> Html
 container content = 
-  div
-    [ class "container WritingContainer" ]
-    [ div
-      [ class "row" ]
+  let
+    extraSpace =
+      div
+        [ class "WritingExtraSpace" ]
+        []
+  in
+    div
+      [ class "container WritingContainer" ]
       [ div
-        [ class "col-sm-12" ]
-        [ Markdown.toHtml content ]
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ Markdown.toHtml content ]
+        , extraSpace
+        ]
       ]
-    ]
 
 post : String -> Date -> Time -> List Html -> Html
 post title date time body =
   div 
     []
-    [ NavBar.navBar "" []
+    [ NavBar.navBar ""
     , NavBar.navBarSpace
     , div
       [ class "container WritingContainer" ]

@@ -18,35 +18,14 @@ port title =  "Programming | BJW"
 
 main : Html
 main =
-  view model
-
-
-type alias Model =
-  { currentPage : String
-  }
-
-
-model : Model
-model =
-  { currentPage = "Programming"
-  }
-
-
-view : Model -> Html
-view model =
   div
     [ ]
-    [ NavBar.navBar model.currentPage links
+    [ NavBar.navBar "Programming"
     , NavBar.navBarSpace
     , Header.header "Default" "The Laboratory" "Where my programming experience is here for viewing."
     , programming
     , Footer.footer
     ]
-
-
-links : List Html
-links =
-  []
 
 
 programming : Html

@@ -7,27 +7,15 @@ import WritingLibrary
 
 
 port title: String
-port title =  model.currentPage ++ " | BJW"
+port title =  "Writing" ++ " | BJW"
 
 
 main : Html
 main =
-  view model
-
-
-model : WritingLibrary.Model
-model =
-  { currentPage = "Writing"
-  }
-
-
-view : WritingLibrary.Model -> Html
-view model =
   div 
     []
     [ WritingLibrary.writing
-        model
-        links
+        "Writing"
         content
     ]
 
