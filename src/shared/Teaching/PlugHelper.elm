@@ -1,4 +1,4 @@
-module Teaching.Helper where
+module Teaching.PlugHelper where
 
 import Teaching.Resume
 

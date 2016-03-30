@@ -18,12 +18,12 @@ elm make ./src/pages/writing/cross-game.elm --output ./dist/js/writing/cross-gam
 elm make ./src/pages/writing/factoring-trinomials.elm --output ./dist/js/writing/factoring-trinomials.js &&
 
 # Teaching
-elm make ./src/pages/teaching/japanese.elm --output ./dist/js/teaching/japanese.js &&
-elm make ./src/pages/teaching/phys12.elm --output ./dist/js/teaching/phys12.js &&
-elm make ./src/pages/teaching/phys11.elm --output ./dist/js/teaching/phys11.js &&
-elm make ./src/pages/teaching/precalc11.elm --output ./dist/js/teaching/precalc11.js &&
-elm make ./src/pages/teaching/math11.elm --output ./dist/js/teaching/math11.js &&
-elm make ./src/pages/teaching/math10.elm --output ./dist/js/teaching/math10.js &&
+elm make ./src/pages/teaching/tutor-plug/japanese.elm --output ./dist/js/teaching/tutor-plug/japanese.js &&
+elm make ./src/pages/teaching/tutor-plug/phys12.elm --output ./dist/js/teaching/tutor-plug/phys12.js &&
+elm make ./src/pages/teaching/tutor-plug/phys11.elm --output ./dist/js/teaching/tutor-plug/phys11.js &&
+elm make ./src/pages/teaching/tutor-plug/precalc11.elm --output ./dist/js/teaching/tutor-plug/precalc11.js &&
+elm make ./src/pages/teaching/tutor-plug/math11.elm --output ./dist/js/teaching/tutor-plug/math11.js &&
+elm make ./src/pages/teaching/tutor-plug/math10.elm --output ./dist/js/teaching/tutor-plug/math10.js &&
 
 # Main Pages
 elm make ./src/pages/programming.elm --output ./dist/js/programming.js &&
