@@ -9,7 +9,6 @@ import Notices
 import Footer
 
 import Bootstrap
-import Lorem
 
 port title : String
 port title = "Home"

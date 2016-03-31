@@ -1,6 +1,6 @@
 module TutorPlug where
 
-import Teaching.Helper
+import Teaching.PlugHelper
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -146,10 +146,10 @@ bioAccordion =
     class = "col-sm-12"
   in
     Bootstrap.accordion acName class
-      [ Bootstrap.panelHeading acName 1 (.title Teaching.Helper.bio1)
-      , Bootstrap.panelBody acName 1 False (.html Teaching.Helper.bio1)
-      , Bootstrap.panelHeading acName 2 (.title Teaching.Helper.bio2)
-      , Bootstrap.panelBody acName 2 False (.html Teaching.Helper.bio2)
+      [ Bootstrap.panelHeading acName 1 (.title Teaching.PlugHelper.bio1)
+      , Bootstrap.panelBody acName 1 False (.html Teaching.PlugHelper.bio1)
+      , Bootstrap.panelHeading acName 2 (.title Teaching.PlugHelper.bio2)
+      , Bootstrap.panelBody acName 2 False (.html Teaching.PlugHelper.bio2)
       ]
 
 
@@ -162,18 +162,18 @@ advertise =
     [ class "row" ]
     [ div
       [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.Helper.foundations) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.Helper.foundations) ]
+      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.PlugHelper.foundations) ]
+      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.PlugHelper.foundations) ]
       ]
     , div
       [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.Helper.approaches) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.Helper.approaches) ]
+      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.PlugHelper.approaches) ]
+      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.PlugHelper.approaches) ]
       ]
     , div
       [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.Helper.personable) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.Helper.personable) ]
+      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title Teaching.PlugHelper.personable) ]
+      , p [ class "TeachingAdvertiseContent" ] [ text (.content Teaching.PlugHelper.personable) ]
       ]
     ]
 
@@ -195,23 +195,23 @@ subjects =
 subjectsAccordion : Html
 subjectsAccordion = 
   Bootstrap.accordion "subj" "col-sm-12"
-    [ Bootstrap.panelHeading "subj" 1 (.title Teaching.Helper.math10)
-    , Bootstrap.panelBody "subj" 1 False (subjectPanelHtml Teaching.Helper.math10)
-    , Bootstrap.panelHeading "subj" 2 (.title Teaching.Helper.math11)
-    , Bootstrap.panelBody "subj" 2 False (subjectPanelHtml Teaching.Helper.math11)
-    , Bootstrap.panelHeading "subj" 3 (.title Teaching.Helper.precalc11)
-    , Bootstrap.panelBody "subj" 3 False (subjectPanelHtml Teaching.Helper.precalc11)
-    , Bootstrap.panelHeading "subj" 4 (.title Teaching.Helper.precalc12)
-    , Bootstrap.panelBody "subj" 4 False (subjectPanelHtml Teaching.Helper.precalc12)
-    , Bootstrap.panelHeading "subj" 5 (.title Teaching.Helper.phys11)
-    , Bootstrap.panelBody "subj" 5 False (subjectPanelHtml Teaching.Helper.phys11)
-    , Bootstrap.panelHeading "subj" 6 (.title Teaching.Helper.phys12)
-    , Bootstrap.panelBody "subj" 6 False (subjectPanelHtml Teaching.Helper.phys12)
-    , Bootstrap.panelHeading "subj" 7 (.title Teaching.Helper.japanese)
-    , Bootstrap.panelBody "subj" 7 False (subjectPanelHtml Teaching.Helper.japanese)
+    [ Bootstrap.panelHeading "subj" 1 (.title Teaching.PlugHelper.math10)
+    , Bootstrap.panelBody "subj" 1 False (subjectPanelHtml Teaching.PlugHelper.math10)
+    , Bootstrap.panelHeading "subj" 2 (.title Teaching.PlugHelper.math11)
+    , Bootstrap.panelBody "subj" 2 False (subjectPanelHtml Teaching.PlugHelper.math11)
+    , Bootstrap.panelHeading "subj" 3 (.title Teaching.PlugHelper.precalc11)
+    , Bootstrap.panelBody "subj" 3 False (subjectPanelHtml Teaching.PlugHelper.precalc11)
+    , Bootstrap.panelHeading "subj" 4 (.title Teaching.PlugHelper.precalc12)
+    , Bootstrap.panelBody "subj" 4 False (subjectPanelHtml Teaching.PlugHelper.precalc12)
+    , Bootstrap.panelHeading "subj" 5 (.title Teaching.PlugHelper.phys11)
+    , Bootstrap.panelBody "subj" 5 False (subjectPanelHtml Teaching.PlugHelper.phys11)
+    , Bootstrap.panelHeading "subj" 6 (.title Teaching.PlugHelper.phys12)
+    , Bootstrap.panelBody "subj" 6 False (subjectPanelHtml Teaching.PlugHelper.phys12)
+    , Bootstrap.panelHeading "subj" 7 (.title Teaching.PlugHelper.japanese)
+    , Bootstrap.panelBody "subj" 7 False (subjectPanelHtml Teaching.PlugHelper.japanese)
     ]
 
-subjectPanelHtml : Teaching.Helper.Subject -> Html
+subjectPanelHtml : Teaching.PlugHelper.Subject -> Html
 subjectPanelHtml subject =
   div []
     [ p [] [ a [ href subject.link ] [ text "Expected Learning Outcomes" ] ]
@@ -267,12 +267,12 @@ contactMe : Html
 contactMe =
   div
     [ id "Contact Me" ]
-    [ Bootstrap.pageHeader "TeachingContainerHeader" (.title Teaching.Helper.contactAdv)
+    [ Bootstrap.pageHeader "TeachingContainerHeader" (.title Teaching.PlugHelper.contactAdv)
     , div
       [ class "row" ]
       [ div 
         [ class "col-sm-12" ]
-        [ Markdown.toHtml (.content Teaching.Helper.contactAdv) ]
+        [ Markdown.toHtml (.content Teaching.PlugHelper.contactAdv) ]
       ]
     ]
 

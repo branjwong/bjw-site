@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
-import Teaching.Helper
+import Teaching.PlugHelper
 
 import NavBar
 import Header
@@ -16,16 +16,16 @@ port title =
   tytle ++ " | BJW"
 
 
-tytle = .title Teaching.Helper.math10
+tytle = .title Teaching.PlugHelper.math10
 
 
 main : Html
 main = 
  div
     [ ]
-    [ NavBar.navBar "" []
+    [ NavBar.navBar ""
     , NavBar.navBarSpace
-    , Header.header "Default" "Learning Outcomes" (.title Teaching.Helper.math10) 
+    , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.math10) 
     , subjectInfo
     , Footer.footer
     ]
@@ -38,5 +38,5 @@ subjectInfo =
     ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.Helper.math10) ]
+      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.math10) ]
     ]

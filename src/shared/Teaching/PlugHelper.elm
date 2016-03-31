@@ -8,8 +8,6 @@ import Html.Attributes exposing (..)
 import Markdown
 import Bootstrap
 
-import Lorem
-
 type alias AdvPoint =
   { title           : String
   , image           : String
@@ -399,8 +397,3 @@ Email: <bjwteaching@gmail.com>
 
       """
   }
-
-
-
-loremipsum : String
-loremipsum = Lorem.ipsum

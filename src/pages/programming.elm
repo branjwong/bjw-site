@@ -19,7 +19,7 @@ port title =  "Programming | BJW"
 main : Html
 main =
   div
-    [ ]
+    []
     [ NavBar.navBar "Programming"
     , NavBar.navBarSpace
     , Header.header "Default" "The Laboratory" "Where my programming experience is here for viewing."

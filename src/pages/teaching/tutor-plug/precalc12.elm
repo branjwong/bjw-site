@@ -8,7 +8,7 @@ import Markdown
 import Style.PrintStyle exposing (stylesheet)
 import Style.SharedStyles exposing (exports)
 
-import Teaching.Helper
+import Teaching.PlugHelper
 
 import NavBar
 import Header
@@ -20,16 +20,16 @@ port title =
   tytle ++ " | BJW"
 
 
-tytle = .title Teaching.Helper.precalc12
+tytle = .title Teaching.PlugHelper.precalc12
 
 
 main : Html
 main = 
  div
     []
-    [ NavBar.navBar "" []
+    [ NavBar.navBar ""
     , NavBar.navBarSpace
-    , Header.header "Default" "Learning Outcomes" (.title Teaching.Helper.precalc12) 
+    , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.precalc12) 
     , subjectInfo
     , Footer.footer
     ]
@@ -42,5 +42,5 @@ subjectInfo =
     ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.Helper.precalc12) ]
+      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.precalc12) ]
     ]
