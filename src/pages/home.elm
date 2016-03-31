@@ -31,13 +31,13 @@ home =
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-3"]
-        [ block "Teaching" "/teaching.html" ]
+        [ block "Teaching" "/teaching" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Programming" "/programming.html" ]
+        [ block "Programming" "/programming" ]
       , div
         [ class "col-sm-2" ]
-        [ block "Writing" "/writing.html" ]
+        [ block "Writing" "/writing" ]
       ]
     , div
       [ class "row" ]
@@ -55,7 +55,7 @@ home =
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-5"]
-        [ block "Megaman Game" "programming/megaman/megaman.html" ]
+        [ block "Megaman Game" "/megaman" ]
       , div
         [ class "col-sm-2" ]
         [ block "Latest Review" "/writing/reviews/latest" ]

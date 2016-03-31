@@ -42,8 +42,8 @@ teaching =
 body =
   """
 
-* [Factoring Trinomials Lesson](/dist/html/teaching/factoring-trinomials.html)
-* [Trinomial Worksheet Generator](/dist/html/teaching/trinomial-generator.html)
-* [Brandon Tutors! Check out his advertisement.](/dist/html/teaching/tutor-plug.html)
+* [Factoring Trinomials Lesson](/factoring-trinomials)
+* [Trinomial Worksheet Generator](/trinomial-generator-worksheet)
+* [Brandon Tutors! Check out his advertisement.](/tutor-plug)
 
   """

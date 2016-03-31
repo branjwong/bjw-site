@@ -1,4 +1,4 @@
-module WhatAmIDoingWithMyLife where
+module WhatIAmDoingWithMyLife where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

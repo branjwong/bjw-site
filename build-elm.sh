@@ -15,7 +15,7 @@ elm make ./src/pages/writing/what-i-am-doing-with-my-life.elm --output ./dist/js
 elm make ./src/pages/writing/cross-game.elm --output ./dist/js/writing/cross-game.js &&
 
 # Teaching
-elm make ./src/pages/teaching/trinomial-generator.elm --output ./dist/js/teaching/trinomial-generator.js &&
+elm make ./src/pages/teaching/trinomial-generator-worksheet.elm --output ./dist/js/teaching/trinomial-generator-worksheet.js &&
 elm make ./src/pages/teaching/factoring-trinomials.elm --output ./dist/js/teaching/factoring-trinomials.js &&
 elm make ./src/pages/teaching/tutor-plug.elm --output ./dist/js/teaching/tutor-plug.js &&
 

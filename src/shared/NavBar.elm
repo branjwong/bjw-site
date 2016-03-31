@@ -41,7 +41,7 @@ navbarCollapseComponent =
       , span [ class "icon-bar NavBarIconBar" ] []
       , span [ class "icon-bar NavBarIconBar" ] []
       ]
-    , a [ class "navbar-brand", href "/dist/html/index.html" ] [ text "BJW" ]
+    , a [ class "navbar-brand", href "/" ] [ text "BJW" ]
     ]
 
 
@@ -59,9 +59,9 @@ navbarTabs : String -> List Html -> Html
 navbarTabs currentName currentLinks =
   ul
     [ class "nav navbar-nav navbar-right" ]
-    [ tab currentName currentLinks "Teaching" "/dist/html/teaching.html"
-    , tab currentName currentLinks "Programming" "/dist/html/programming.html"
-    , tab currentName currentLinks "Writing" "/dist/html/writing.html"
+    [ tab currentName currentLinks "Teaching" "/teaching"
+    , tab currentName currentLinks "Programming" "/programming"
+    , tab currentName currentLinks "Writing" "/writing"
     ]
 
 

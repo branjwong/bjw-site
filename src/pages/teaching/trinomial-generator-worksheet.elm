@@ -1,4 +1,4 @@
-module TrinomialGenerator where
+module TrinomialGeneratorWorksheet where
 
 import StartApp.Simple as StartApp
 import Html exposing (..)
@@ -7,6 +7,7 @@ import Html.Attributes exposing (class)
 import Signal exposing (Address, Mailbox)
 import Random exposing (Seed)
 import Time exposing (Time)
+import Char
 
 import Header
 import NavBar
@@ -125,38 +126,90 @@ view address model =
   , Footer.footer
   ]
 
+type Params
+  = Both
+  | First
+  | Second
 
 page : Address Action -> Model -> Html
 page address model =
   let
     (a',b',c') = model.trinomial
-    (a, b, c) = (toString a', toString b', toString c')
+    abString n = toString (abs n)
+    
+    a = toString a' ++ "x²"
 
-    problem = 
-      case (b'==0,c'==0) of
+    (b,c) =
+      case (b'==0, c'==0) of
         (True, False) ->
-          case c'<0 of
-            True            -> "Factor " ++ a ++ "x^2" ++ b ++ "x"
-            False           -> "Factor " ++ a ++ "x^2+" ++ b ++ "x"
+          case c'>0 of
+            True            -> ("", " + " ++ toString c')
+            False           -> ("", " - " ++ abString c')
         (False, True) ->  
-          case b'<0 of
-            True            -> "Factor " ++ a ++ "x^2" ++ b ++ "x"
-            False           -> "Factor " ++ a ++ "x^2+" ++ b ++ "x"
+          case b'>0 of
+            True            -> (" + " ++ toString b' ++ "x" , "")
+            False           -> (" - " ++ abString b' ++ "x" , "")
         (_,_) ->
-          case (b'<0, c'<0) of
-            (True, True)    -> "Factor " ++ a ++ "x^2" ++ b ++ "x" ++ c
-            (True, False)   -> "Factor " ++ a ++ "x^2" ++ b ++ "x+" ++ c
-            (False, True)   -> "Factor " ++ a ++ "x^2+" ++ b ++ "x" ++ c
-            (_, _)          -> "Factor " ++ a ++ "x^2+" ++ b ++ "x+" ++ c
+          case (b'>0, c'>0) of
+            (True, True)    -> (" + " ++ toString b' ++ "x" , " + " ++ toString c')
+            (True, False)   -> (" + " ++ toString b' ++ "x" , " - " ++ abString c')
+            (False, True)   -> (" - " ++ abString b' ++ "x" , " + " ++ toString c')
+            (False, False)  -> (" - " ++ abString b' ++ "x" , " - " ++ abString c')
+    problem = 
+      -- Factor: [Ax^2][ + Bx][ + C]
+        "Factor: " ++ a ++ b ++ c
+
 
     (p', q', r', s') = model.factored
-    (p, q, r, s) = (toString p', toString q', toString r', toString s')
     answer = 
-      case (q'<0, s'<0) of
-        (True,True)   -> "(" ++ p ++ "x" ++ q ++ ")(" ++ r ++ "x" ++ s ++ ")"
-        (True,False)  -> "(" ++ p ++ "x" ++ q ++ ")(" ++ r ++ "x+" ++ s ++ ")"
-        (False,True)  -> "(" ++ p ++ "x+" ++ q ++ ")(" ++ r ++ "x" ++ s ++ ")"
-        (_,_)         -> "(" ++ p ++ "x+" ++ q ++ ")(" ++ r ++ "x+" ++ s ++ ")"
+      let
+        p = 
+          case p' of
+            1 -> "x"
+            _ -> toString p' ++ "x"
+        r = 
+          case p' of
+            1 -> "x"
+            _ -> toString r' ++ "x"
+        
+
+      --Check if ()' are necessary
+        params = 
+          case (q'==0, s'==0) of
+            (False, False)  -> Both
+            (False, True)   -> First
+            (True, False)   -> Second
+            (_, _)          -> Both -- Shouldn't happen
+
+        (pA, pB, pC, pD) = 
+          case params of
+            Both    -> ("( ", " )", "( ", " )")
+            First   -> ("( ", " )", "", "")
+            Second  -> ("", "", "( ", " )")
+        
+        (q, s) =
+          case (q'==0,s'==0) of
+            (True, False) ->
+              case s'>0 of
+                True            -> ("", " + " ++ toString s')
+                False           -> ("", " - " ++ abString s')
+            (False, True) ->  
+              case q'>0 of
+                True            -> (" + " ++ toString q', "")
+                False           -> (" - " ++ abString q', "")
+            (_,_) ->
+              case (q'>0, s'>0) of
+                (True, True)    -> (" + " ++ toString q', " + " ++ toString s')
+                (True, False)   -> (" + " ++ toString q', " - " ++ abString s')
+                (False, True)   -> (" - " ++ abString q', " + " ++ toString s')
+                (False, False)  -> (" - " ++ abString q', " - " ++ abString s')
+
+          
+      in
+      -- Answer: x ( 3x + 4 )
+      -- Answer: ( x + 2 ) ( 3x + 4 )
+      -- Answer: [( ][Px][ + Q][ )] [( ][Rx][ + S][ )]
+      "Answer : " ++ pA ++ p ++ q ++ pB ++ " " ++ pC ++ r ++ s ++ pD
 
     app = 
       case model.answer of
