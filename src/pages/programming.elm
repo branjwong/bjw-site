@@ -20,7 +20,7 @@ main : Html
 main =
   div
     []
-    [ NavBar.navBar "Programming"
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , Header.header "Default" "The Laboratory" "Where my programming experience is here for viewing."
     , programming
@@ -52,7 +52,7 @@ Initial Commit: September 29th, 2015
 
 * * *
 
-[Buzzword Bingo](/dist/html/programming/bingo/bingo.html)
+[Buzzword Bingo](/bingo)
 =======
 
 Language: [Elm](http://elm-lang.org/)  
@@ -68,7 +68,7 @@ Finish Date: September 24th, 2015
 
 * * *
 
-[Megaman Project](/dist/html/programming/megaman/megaman.html)
+[Megaman Project](/megaman)
 =================
 
 IT 12  
@@ -87,7 +87,7 @@ Time: Year 12 - Highschool
 
 * * *
 
-[Zelda Project](/dist/html/programming/zelda/zelda.html)
+[Zelda Project](/zelda)
 ===============
 
 IT 12  

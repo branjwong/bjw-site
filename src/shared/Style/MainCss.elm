@@ -74,7 +74,7 @@ css =
         , backgroundColor colorContentBackground
         ]
     , ((.) HomeExtraSpace)
-        [ height (px 300)
+        [ height (px 200)
         ]
     , ((.) DefaultHeader)
         [ backgroundColor colorHighlight

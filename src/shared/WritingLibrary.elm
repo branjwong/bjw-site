@@ -18,11 +18,11 @@ import Disqus
 (=>) = (,)
 
 
-writing : String -> String -> Html
-writing currentPage content =
+writing : String -> Html
+writing content =
   div 
     []
-    [ NavBar.navBar currentPage 
+    [ NavBar.navBar 
     , NavBar.navBarSpace
     , Header.header "Default" "The Depository" "Where the archive of all my written work resides."
     , container content
@@ -52,7 +52,7 @@ post : String -> Date -> Time -> List Html -> Html
 post title date time body =
   div 
     []
-    [ NavBar.navBar ""
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , div
       [ class "container WritingContainer" ]
@@ -126,4 +126,6 @@ type alias Time =
 
 timeToString : Time -> String
 timeToString time =
-  toString time.hour ++ ":" ++ toString time.minute ++ time.notation
+  case (time.minute < 10) of
+    True -> toString time.hour ++ ":0" ++ toString time.minute ++ time.notation
+    False -> toString time.hour ++ ":" ++ toString time.minute ++ time.notation

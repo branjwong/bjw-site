@@ -17,7 +17,7 @@ main : Html
 main =
   div 
     []
-    [ NavBar.navBar "Home"
+    [ NavBar.navBar 
     , NavBar.navBarSpace
     , home
     , Footer.footer
@@ -64,7 +64,7 @@ home =
       [ class "row" ]
       [ div
         [ class "col-sm-2 col-sm-offset-7"]
-        [ block "Latest Pick" "/writing/picks/latest" ]
+        [ block "Latest Pick" "/" ]
       ]
     , div 
       [ class "row" ]

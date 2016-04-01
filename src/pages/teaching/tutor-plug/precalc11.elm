@@ -24,7 +24,7 @@ main : Html
 main = 
  div
     []
-    [ NavBar.navBar ""
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.precalc11) 
     , subjectInfo

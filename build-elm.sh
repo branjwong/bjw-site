@@ -11,6 +11,7 @@ elm-css src/shared/Style/Stylesheets.elm --output ./assets &&
 elm make src/pages/programming/bingo/Bingo.elm --output dist/js/programming/bingo/bingo.js &&
 
 # Writing
+elm make ./src/pages/writing/moving-back-to-japan.elm --output ./dist/js/writing/moving-back-to-japan.js &&
 elm make ./src/pages/writing/what-i-am-doing-with-my-life.elm --output ./dist/js/writing/what-i-am-doing-with-my-life.js &&
 elm make ./src/pages/writing/cross-game.elm --output ./dist/js/writing/cross-game.js &&
 

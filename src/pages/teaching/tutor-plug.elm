@@ -23,7 +23,7 @@ main : Html
 main =
   div
     []
-    [ NavBar.navBar "Teaching"
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , header 
         "Teaching" 

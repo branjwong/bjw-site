@@ -5,12 +5,11 @@ import Html.Attributes exposing (..)
 
 -- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
 
-navBar : String -> Html
-navBar currentName =
+navBar : Html
+navBar =
   nav
     [ class "navbar navbar-fixed-top NavBar" --navbar-inverse
     , id "top"
-    --, attribute "role" "banner"
     ]
     [ div
       [ class "NavBarTop" ]
@@ -19,7 +18,7 @@ navBar currentName =
       [ class "container"
       ]
       [ navbarCollapseComponent
-      , navbarExpandComponent currentName []
+      , navbarExpandComponent
       ]
     ]
 
@@ -32,11 +31,8 @@ navbarCollapseComponent =
       , class "navbar-toggle collapsed"
       , attribute "data-toggle" "collapse"
       , attribute "data-target" "#navbar"
-      --, attribute "aria-expanded" "false"
-      --, attribute "aria-controls" "navbar"
       ]
       [ span [ class "sr-only" ] [ text "Toggle navigation" ]
-      --, span [ class "glyphicon glyphicon-hand-down" ] []
       , span [ class "icon-bar NavBarIconBar" ] []
       , span [ class "icon-bar NavBarIconBar" ] []
       , span [ class "icon-bar NavBarIconBar" ] []
@@ -45,28 +41,28 @@ navbarCollapseComponent =
     ]
 
 
-navbarExpandComponent : String -> List Html -> Html
-navbarExpandComponent currentName currentLinks =
+navbarExpandComponent : Html
+navbarExpandComponent =
   div
     [ id "navbar"
     , class "navbar-collapse collapse"
     ]
-    [ navbarTabs currentName currentLinks
+    [ navbarTabs
     ]
 
 
-navbarTabs : String -> List Html -> Html
-navbarTabs currentName currentLinks =
+navbarTabs : Html
+navbarTabs =
   ul
     [ class "nav navbar-nav navbar-right" ]
-    [ tab currentName currentLinks "Teaching" "/teaching"
-    , tab currentName currentLinks "Programming" "/programming"
-    , tab currentName currentLinks "Writing" "/writing"
+    [ tab "Teaching" "/teaching"
+    , tab "Programming" "/programming"
+    , tab "Writing" "/writing"
     ]
 
 
-tab : String -> List Html -> String -> String -> Html
-tab currentName currentLinks name link =
+tab : String -> String -> Html
+tab name link =
   --if currentName == name then
   --  li
   --    [ class "dropdown" ]

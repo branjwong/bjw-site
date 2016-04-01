@@ -20,7 +20,7 @@ main : Html
 main =
   div
     [ ]
-    [ NavBar.navBar "Programming"
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , Header.header "Default" "The Library" "Bunch of learning goodness."
     , teaching

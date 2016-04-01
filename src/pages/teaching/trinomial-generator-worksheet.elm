@@ -119,7 +119,7 @@ view : Address Action -> Model -> Html
 view address model =
   div
   [ ]
-  [ NavBar.navBar ""
+  [ NavBar.navBar
   , NavBar.navBarSpace
   , Header.header "Default" "Trinomial Problem Generator" "Here's a new problem for you to try!"
   , page address model

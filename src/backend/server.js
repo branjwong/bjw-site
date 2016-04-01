@@ -51,7 +51,7 @@ app.use('/resources', express.static(process.cwd() + '/resources/'));
 app.use('/assets', express.static(process.cwd() + '/assets/'));
 
 route('/bootstrap.min.css', '/node_modules/bootstrap/dist/css/bootstrap.min.css');
-route('/bootstrap.min.js', '/node_modules/bootstrap/dist/css/bootstrap.min.css');
+route('/bootstrap.min.js', '/node_modules/bootstrap/dist/js/bootstrap.min.js');
 route('/home.js', 'dist/js/home.js');
 route('/teaching', 'dist/html/teaching.html');
 route('/teaching.js', 'dist/js/teaching.js');
@@ -60,11 +60,12 @@ route('/programming.js', 'dist/js/programming.js');
 route('/writing', 'dist/html/writing.html');
 route('/writing.js', 'dist/js/writing.js');
 
-route('/bingo', 'dist/html/programming/bingo.html');
-route('/bingo.js', 'dist/js/programming/bingo.js');
-route('/megaman', 'dist/html/programming/megaman.html');
-route('/duckhunt', 'dist/html/programming/duckhunt.html');
-route('/zelda', 'dist/html/programming/zelda.html');
+route('/bingo', 'dist/html/programming/bingo/bingo.html');
+route('/bingo.js', 'dist/js/programming/bingo/bingo.js');
+route('/bingo.css', 'dist/html/programming/bingo/bingo.css');
+route('/megaman', 'dist/html/programming/megaman/megaman.html');
+route('/duckhunt', 'dist/html/programming/duckhunt/duckhunt.html');
+route('/zelda', 'dist/html/programming/zelda/zelda.html');
 
 route('/factoring-trinomials', 'dist/html/teaching/factoring-trinomials.html');
 route('/factoring-trinomials.js', 'dist/js/teaching/factoring-trinomials.js');
@@ -73,14 +74,16 @@ route('/trinomial-generator-worksheet.js', 'dist/js/teaching/trinomial-generator
 route('/tutor-plug', 'dist/html/teaching/tutor-plug.html');
 route('/tutor-plug.js', 'dist/js/teaching/tutor-plug.js');
 
+route('/moving-back-to-japan', 'dist/html/writing/moving-back-to-japan.html');
+route('/moving-back-to-japan.js', 'dist/js/writing/moving-back-to-japan.js');
 route('/cross-game', 'dist/html/writing/cross-game.html');
 route('/cross-game.js', 'dist/js/writing/cross-game.js');
 route('/what-i-am-doing-with-my-life', 'dist/html/writing/what-i-am-doing-with-my-life.html');
 route('/what-i-am-doing-with-my-life.js', 'dist/js/writing/what-i-am-doing-with-my-life.js');
 
-route('/writing/blog/latest', '/dist/html/writing/what-i-am-doing-with-my-life.html');
+route('/writing/blog/latest', '/dist/html/writing/moving-back-to-japan.html');
 route('/writing/reviews/latest', '/dist/html/writing/cross-game.html');
-route('/writing/guide/latest', '/dist/html/writing/factoring-trinomials.html');
+route('/writing/guide/latest', 'dist/html/teaching/factoring-trinomials.html');
 
 
 // Comment this out for production.
