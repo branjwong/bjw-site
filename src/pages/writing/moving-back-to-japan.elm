@@ -24,7 +24,7 @@ main =
 
 content = """
 
-Fuck it, I am going back to Japan.
+Fuck it, I am moving back to Japan.
 
 もう良いです、日本には帰ります。
 
@@ -50,7 +50,7 @@ Leave a comment below with any parting messages or plans to get together if you 
 
 下でコメントおねがいします。
 
-###### Last Edited: Friday, April 1st: 11:34am
+###### Last Edited: Friday, April 1st: 12:53pm
 
 """
 
