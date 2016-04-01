@@ -4,8 +4,6 @@
 # When adding a new page, make sure the the script entry is added as well.
 # Needs '&&' so that the script stops when it hits a compiler error.
 
-# CSS
-elm-css src/shared/Style/Stylesheets.elm --output ./assets &&
 
 # Programming
 elm make src/pages/programming/bingo/Bingo.elm --output dist/js/programming/bingo/bingo.js &&

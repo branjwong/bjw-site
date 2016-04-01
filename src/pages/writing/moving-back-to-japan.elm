@@ -33,7 +33,7 @@ My flight leaves September 3rd! I have been secretly planning this for awhile. M
 週発は９月３日です。しばらくの間、秘密で計画していました。英語の熟達でウェブプログラミングの仕事を見つけようと思っています。家庭教師のバイとのお金で、収入が五ヶ月なかっても大丈夫です。悩みが来たら、日本にいる友達は僕を助けると良いんですけどね。（エバン？さやか？＊はるな？）どのぐらい日本にいるかまだ分かりません。
 
 
-* I mean both Sayaka Takeuchi and Sayaka Katou.
+* There's more than one, and you both know who you are.
 * さやかは二人がいますね。お前たちが自分の事をしている。
 
 
