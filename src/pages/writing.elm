@@ -30,6 +30,7 @@ content = """
 Blog Posts
 ==========
 
+* [2016/04/01 - April Fools](/april-fools)
 * [2016/04/01 - Moving Back To Japan](/moving-back-to-japan)
 * [2015/11/20 - What I Am Doing With My Life](/what-i-am-doing-with-my-life)
 

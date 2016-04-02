@@ -74,6 +74,8 @@ route('/trinomial-generator-worksheet.js', 'dist/js/teaching/trinomial-generator
 route('/tutor-plug', 'dist/html/teaching/tutor-plug.html');
 route('/tutor-plug.js', 'dist/js/teaching/tutor-plug.js');
 
+route('/april-fools', 'dist/html/writing/april-fools.html');
+route('/april-fools.js', 'dist/js/writing/april-fools.js');
 route('/moving-back-to-japan', 'dist/html/writing/moving-back-to-japan.html');
 route('/moving-back-to-japan.js', 'dist/js/writing/moving-back-to-japan.js');
 route('/cross-game', 'dist/html/writing/cross-game.html');
@@ -81,7 +83,7 @@ route('/cross-game.js', 'dist/js/writing/cross-game.js');
 route('/what-i-am-doing-with-my-life', 'dist/html/writing/what-i-am-doing-with-my-life.html');
 route('/what-i-am-doing-with-my-life.js', 'dist/js/writing/what-i-am-doing-with-my-life.js');
 
-route('/writing/blog/latest', '/dist/html/writing/moving-back-to-japan.html');
+route('/writing/blog/latest', '/dist/html/writing/april-fools.html');
 route('/writing/reviews/latest', '/dist/html/writing/cross-game.html');
 route('/writing/guide/latest', 'dist/html/teaching/factoring-trinomials.html');
 

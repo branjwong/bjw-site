@@ -18,7 +18,7 @@ main =
   WritingLibrary.post
     postTitle
     (WritingLibrary.Date 2016 4 1)
-    (WritingLibrary.Time 1 08 "am")
+    (WritingLibrary.Time 11 13 "pm")
     [ Markdown.toHtml content ]
 
 
@@ -50,7 +50,7 @@ Leave a comment below with any parting messages or plans to get together if you 
 
 下でコメントおねがいします。
 
-###### Last Edited: Friday, April 1st: 12:53pm
+###### Last Edited: Friday, April 1st: 11:13pm
 
 """
 
