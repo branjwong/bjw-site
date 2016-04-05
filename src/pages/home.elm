@@ -2,26 +2,51 @@ module Home where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Window
 
 import NavBar
 import Header
 import Notices
 import Footer
-
 import Bootstrap
 
 port title : String
 port title = "Home"
 
-main : Html
+type alias Model = Int
+
+model : Signal Model
+model = Window.height
+
+main : Signal Html
 main =
+  Signal.map view model
+
+view : Model -> Html
+view model =
   div 
     []
     [ NavBar.navBar 
     , NavBar.navBarSpace
     , home
+    , space model
     , Footer.footer
     ]
+
+space : Model -> Html
+space model = 
+  let 
+    spaceTakenSoFar = 754
+    result =
+      if model - spaceTakenSoFar > 0 then
+        model - spaceTakenSoFar
+      else
+        0
+  in
+    div 
+      [ style [ ("height" , toString result ++ "px" ) ] ]
+      []
+
 
 home : Html
 home =
@@ -66,12 +91,14 @@ home =
         [ class "col-sm-2 col-sm-offset-7"]
         [ block "Latest Pick" "/" ]
       ]
+    {-
     , div 
       [ class "row" ]
       [ div
         [ class "HomeExtraSpace" ]
         []
       ]
+    -}
     ]
 
 block : String -> String -> Html
