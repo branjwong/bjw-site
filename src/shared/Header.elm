@@ -5,20 +5,14 @@ import Html.Attributes exposing (..)
 
 header : String -> String -> String -> Html
 header pageName headText subText =
-  div 
-    [ class "row" ]
-    [ div 
-      [ class "col-sm-12" ]
-      [ div
-        [ class (pageName ++ "Header") ]
-        [ div 
-          [ class "container" ]
-          [ div
-            [ class (pageName ++ "HeaderInner") ]
-            [ h1 [ class (pageName ++ "HeaderTitle") ] [ text headText ]
-            , p [ class ("lead " ++ pageName ++ "HeaderDesc") ] [ text subText ]
-            ]
-          ]
-        ]
+  div
+  [ class ("Header") ]
+  [ div 
+    [ class "container" ]
+    [ div
+      [ class ("HeaderInner") ]
+      [ h1 [ class ("HeaderTitle") ] [ text headText ]
+      , p [ class ("lead " ++ "HeaderDesc") ] [ text subText ]
       ]
     ]
+  ]

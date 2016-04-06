@@ -2,27 +2,63 @@ module Writing where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Markdown
+import Window
 
-import WritingLibrary
-
+import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
+import NavBar
+import Header
+import Footer
 
 port title: String
 port title =  "Writing" ++ " | BJW"
 
+type alias Model = Int
 
-main : Html
+model : Signal Model
+model = Window.height
+
+main : Signal Html
 main =
+  Signal.map view model
+
+view : Model -> Html
+view model =
   div 
     []
-    [ WritingLibrary.writing
-        content
+    [ NavBar.navBar 
+    , NavBar.navBarSpace
+    , Header.header "Default" "Writing" "Where the archive of all my written work resides."
+    , div
+      [ class "container" ]
+      [ div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ div 
+            [ class "Markdown" ]
+            [ Markdown.toHtml content ]
+          ]
+        ]
+      ]
+    , space model
+    , Footer.footer
     ]
 
-
-links =
-  [
-  ]
-
+space : Model -> Html
+space model = 
+  let 
+    heightContainer = 536
+    spaceTakenSoFar = heightNavBar + heightHeader + heightContainer + heightFooter
+    result =
+      if model - spaceTakenSoFar > 0 then
+        model - spaceTakenSoFar + 1
+      else
+        0
+  in
+    div 
+      [ style [ ("height" , toString result ++ "px" ) ] ]
+      []
 
 content = """
 

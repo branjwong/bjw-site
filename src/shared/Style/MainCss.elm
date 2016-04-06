@@ -2,7 +2,6 @@ module Style.MainCss (css) where
 
 import Css exposing (..)
 import Css.Elements exposing (..)
---import Css.Namespace exposing (namespace)
 import Style.SharedStyles exposing (..)
 import Style.SharedValues exposing (..)
 
@@ -50,6 +49,10 @@ css =
         , paddingBottom (px 10)
         , fontWeight bold
         ]
+    , ((.) Markdown)
+        [ paddingTop (px 40)
+        , paddingBottom (px 40)
+        ]
     , ((.) NoticesNoText)
         [ height (px 20)
         ]
@@ -73,55 +76,26 @@ css =
         , paddingTop (px 50)
         , backgroundColor colorContentBackground
         ]
-    , ((.) HomeExtraSpace)
-        [ height (px 200)
-        ]
-    , ((.) DefaultHeader)
+    , ((.) Header)
         [ backgroundColor colorHighlight
         , paddingTop (px 20)
         , paddingBottom (px 30)
         ]
-    , ((.) DefaultHeaderTitle)
+    , ((.) HeaderTitle)
         [ marginTop (px 50)
         , marginBottom (px 0)
         , fontSize (px 60)
         --, fontWeight normal
         ]
-    , ((.) DefaultHeaderDesc)
+    , ((.) HeaderDesc)
         [ fontSize (px 20)
         , color colorSubHeading
         ]
     , ((.) HomePaddedContainer)
         [ margin (px 10)
         ]
-    , ((.) WritingContainer)
-        [ marginTop (px 20)
-        --, backgroundColor colorContentBackground
-        ]
     , ((.) WritingPost)
         [ padding (px postPadding)
-        ]
-    , ((.) WritingExtraSpace)
-        [ height (px 550)
-        ]
-    , ((.) TeachingHeader)
-        [ backgroundColor colorHighlight
-        ]
-    , ((.) TeachingHeaderInner) 
-        [ textShadow3 (px 1) (px 1) (hex "111")
-        , textAlign center
-        , marginBottom (px marginHeader)
-        , marginTop (px marginHeader)
-        ]
-    , ((.) TeachingHeaderTitle)  
-        [ marginTop (px 0)
-        , marginBottom (px 0)
-        , fontSize (px sizeHeaderTitleText)
-        --, fontWeight normal
-        ]
-    , ((.) TeachingHeaderDesc)
-        [ fontSize (px sizeHeaderDescText)
-        , color (hex "6793B6")
         ]
     , ((.) TeachingBioAndCallToAction)
         [ paddingTop (px 20)
@@ -133,9 +107,6 @@ css =
         ]
     , ((.) TeachingCallToAction)
         [ marginTop (px 20)
-        ]
-    , ((.) TeachingContainerHeader)
-        [ borderBottomColor colorHighlight
         ]
     , ((.) TeachingArrow)
         [ borderStyle solid
@@ -163,18 +134,12 @@ css =
     , ((.) ProgrammingContainer)
         [ marginTop (px 50)
         ]
-    , ((.) ProgrammingHeader)
-        [ backgroundColor colorHighlight
-        , paddingTop (px 20)
-        , paddingBottom (px 30)
-        ]
     , ((.) BootstrapAccordion)
         [ color colorStandardText
         ]
     , ((#) Footer)
         [ backgroundColor colorHighlight
         , height (px 60)
-        , marginTop (px 40)
         ]
     , ((.) Block)
         [ height (px 80)
@@ -189,3 +154,30 @@ css =
         ]
     ]
 
+    --, ((.) TeachingContainerHeader)
+    --    [ borderBottomColor colorHighlight
+    --    ]
+    --, ((.) TeachingHeader)
+    --    [ backgroundColor colorHighlight
+    --    ]
+    --, ((.) TeachingHeaderInner) 
+    --    [ textShadow3 (px 1) (px 1) (hex "111")
+    --    , textAlign center
+    --    , marginBottom (px marginHeader)
+    --    , marginTop (px marginHeader)
+    --    ]
+    --, ((.) TeachingHeaderTitle)  
+    --    [ marginTop (px 0)
+    --    , marginBottom (px 0)
+    --    , fontSize (px sizeHeaderTitleText)
+    --    --, fontWeight normal
+    --    ]
+    --, ((.) TeachingHeaderDesc)
+    --    [ fontSize (px sizeHeaderDescText)
+    --    , color (hex "6793B6")
+    --    ]
+    --, ((.) ProgrammingHeader)
+    --    [ backgroundColor colorHighlight
+    --    , paddingTop (px 20)
+    --    , paddingBottom (px 30)
+    --    ]

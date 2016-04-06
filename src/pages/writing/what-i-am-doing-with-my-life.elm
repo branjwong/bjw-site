@@ -5,7 +5,7 @@ import Html.Attributes exposing (..)
 
 import Markdown
 
-import WritingLibrary
+import Writing.Post
 
 port title : String
 port title =
@@ -15,10 +15,10 @@ port title =
 postTitle = "What Am I Doing With My Life"
 
 main =
-  WritingLibrary.post
+  Writing.Post.post
     postTitle
-    (WritingLibrary.Date 2015 11 20)
-    (WritingLibrary.Time 12 25 "pm")
+    (Writing.Post.Date 2015 11 20)
+    (Writing.Post.Time 12 25 "pm")
     [ Markdown.toHtml content ]
 
 

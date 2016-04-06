@@ -9,7 +9,7 @@ import Disqus
 import NavBar
 
 
-import WritingLibrary exposing (Date, Time, postInfo)
+import Writing.Post exposing (Date, Time, postInfo)
 
 port title : String
 port title =
@@ -21,8 +21,8 @@ postTitle = "April Fools!"
 main =
   post
     postTitle
-    (WritingLibrary.Date 2016 4 1)
-    (WritingLibrary.Time 1 08 "am")
+    (Writing.Post.Date 2016 4 1)
+    (Writing.Post.Time 1 08 "am")
     [ Markdown.toHtml content ]
 
 post : String -> Date -> Time -> List Html -> Html

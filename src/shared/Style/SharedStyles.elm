@@ -11,12 +11,14 @@ type CssClasses
     | Notices
     | NoticesNoText
 
+    | Markdown
+    
     | BootstrapAccordion
     
-    | DefaultHeader
-    | DefaultHeaderInner
-    | DefaultHeaderTitle
-    | DefaultHeaderDesc
+    | Header
+    | HeaderInner
+    | HeaderTitle
+    | HeaderDesc
 
     | HomeContainer
     | HomeIntroImage
@@ -26,18 +28,17 @@ type CssClasses
     | HomeMainBody
     | HomeExtraSpace
 
-    | WritingContainer
-    | WritingHeader
-    | WritingHeaderInner
-    | WritingHeaderTitle
-    | WritingHeaderDesc
+    --| WritingHeader
+    --| WritingHeaderInner
+    --| WritingHeaderTitle
+    --| WritingHeaderDesc
     | WritingPost
     | WritingExtraSpace
 
-    | TeachingHeader
-    | TeachingHeaderInner
-    | TeachingHeaderTitle
-    | TeachingHeaderDesc
+    --| TeachingHeader
+    --| TeachingHeaderInner
+    --| TeachingHeaderTitle
+    --| TeachingHeaderDesc
     | TeachingBioAndCallToAction
     | TeachingImgTakafumi
     | TeachingCallToAction

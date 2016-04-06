@@ -51,11 +51,18 @@ spaceHeaderInner = (heightTeachingHeader/2 - (sizeHeaderTitleText + sizeHeaderDe
 marginHeaderWithButton = (heightHpBrowser/2 - (sizeHeaderDescText + sizeHeaderTitleText + sizeHeaderButton))
 marginHeader = (heightHpBrowser/2 - (sizeHeaderDescText + sizeHeaderTitleText))
 
-
 postPadding = 30
 
-{-| 
+{- Added Window Space Notes
+-}
 
+heightHeader = 214
+heightFooter = 60
+
+
+
+
+{-| 
 
 -- Background Colors
 

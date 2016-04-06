@@ -22,7 +22,7 @@ main =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "The Laboratory" "Where my programming experience is here for viewing."
+    , Header.header "Default" "Programming" "Where my programming experience is here for viewing."
     , programming
     , Footer.footer
     ]
@@ -31,11 +31,12 @@ main =
 programming : Html
 programming =
   div
-    [ class "container ProgrammingContainer"
-    ]
+    [ class "container" ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml body
+      [ div 
+        [ class "Markdown" ]
+        [ Markdown.toHtml body ]
       ]
     ]
 

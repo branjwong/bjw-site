@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Window
 
+import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import NavBar
 import Header
 import Notices
@@ -36,10 +37,11 @@ view model =
 space : Model -> Html
 space model = 
   let 
-    spaceTakenSoFar = 754
+    heightContainer = 600
+    spaceTakenSoFar = heightNavBar + heightContainer + heightFooter
     result =
       if model - spaceTakenSoFar > 0 then
-        model - spaceTakenSoFar
+        model - spaceTakenSoFar + 1
       else
         0
   in
@@ -51,54 +53,57 @@ space model =
 home : Html
 home =
   div 
-    [ class "container HomeContainer" ]
+    [ class "container" ]
     [ div
-      [ class "row" ]
+      [ class "HomeContainer" ]
       [ div
-        [ class "col-sm-2 col-sm-offset-3"]
-        [ block "Teaching" "/teaching" ]
+        [ class "row" ]
+        [ div
+          [ class "col-sm-2 col-sm-offset-3"]
+          [ block "Teaching" "/teaching" ]
+        , div
+          [ class "col-sm-2" ]
+          [ block "Programming" "/programming" ]
+        , div
+          [ class "col-sm-2" ]
+          [ block "Writing" "/writing" ]
+        ]
       , div
-        [ class "col-sm-2" ]
-        [ block "Programming" "/programming" ]
+        [ class "row" ]
+        [ div
+          [ class "col-sm-2 col-sm-offset-3"]
+          [ block "Latest Guide" "/writing/guide/latest" ]
+        , div
+          [ class "col-sm-2" ]
+          [ block "Site Code" "https://github.com/branjwong/bjw-site" ]
+        , div
+          [ class "col-sm-2" ]
+          [ block "Latest Blog" "writing/blog/latest" ]
+        ]
       , div
-        [ class "col-sm-2" ]
-        [ block "Writing" "/writing" ]
-      ]
-    , div
-      [ class "row" ]
-      [ div
-        [ class "col-sm-2 col-sm-offset-3"]
-        [ block "Latest Guide" "/writing/guide/latest" ]
+        [ class "row" ]
+        [ div
+          [ class "col-sm-2 col-sm-offset-5"]
+          [ block "Megaman Game" "/megaman" ]
+        , div
+          [ class "col-sm-2" ]
+          [ block "Latest Review" "/writing/reviews/latest" ]
+        ]
       , div
-        [ class "col-sm-2" ]
-        [ block "Site Code" "https://github.com/branjwong/bjw-site" ]
-      , div
-        [ class "col-sm-2" ]
-        [ block "Latest Blog" "writing/blog/latest" ]
+        [ class "row" ]
+        [ div
+          [ class "col-sm-2 col-sm-offset-7"]
+          [ block "Latest Pick" "/" ]
+        ]
+      {-
+      , div 
+        [ class "row" ]
+        [ div
+          [ class "HomeExtraSpace" ]
+          []
+        ]
+      -}
       ]
-    , div
-      [ class "row" ]
-      [ div
-        [ class "col-sm-2 col-sm-offset-5"]
-        [ block "Megaman Game" "/megaman" ]
-      , div
-        [ class "col-sm-2" ]
-        [ block "Latest Review" "/writing/reviews/latest" ]
-      ]
-    , div
-      [ class "row" ]
-      [ div
-        [ class "col-sm-2 col-sm-offset-7"]
-        [ block "Latest Pick" "/" ]
-      ]
-    {-
-    , div 
-      [ class "row" ]
-      [ div
-        [ class "HomeExtraSpace" ]
-        []
-      ]
-    -}
     ]
 
 block : String -> String -> Html

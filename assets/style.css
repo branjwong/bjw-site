@@ -47,6 +47,11 @@ hr {
     font-weight: bold;
 }
 
+.Markdown {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .NoticesNoText {
     height: 20px;
 }
@@ -76,23 +81,19 @@ hr {
     background-color: #FFF;
 }
 
-.HomeExtraSpace {
-    height: 200px;
-}
-
-.DefaultHeader {
+.Header {
     background-color: #922A2A;
     padding-top: 20px;
     padding-bottom: 30px;
 }
 
-.DefaultHeaderTitle {
+.HeaderTitle {
     margin-top: 50px;
     margin-bottom: 0px;
     font-size: 60px;
 }
 
-.DefaultHeaderDesc {
+.HeaderDesc {
     font-size: 20px;
     color: #BBB;
 }
@@ -101,38 +102,8 @@ hr {
     margin: 10px;
 }
 
-.WritingContainer {
-    margin-top: 20px;
-}
-
 .WritingPost {
     padding: 30px;
-}
-
-.WritingExtraSpace {
-    height: 550px;
-}
-
-.TeachingHeader {
-    background-color: #922A2A;
-}
-
-.TeachingHeaderInner {
-    text-shadow: 1px 1px #111;
-    text-align: center;
-    margin-bottom: 239.5px;
-    margin-top: 239.5px;
-}
-
-.TeachingHeaderTitle {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 60px;
-}
-
-.TeachingHeaderDesc {
-    font-size: 20px;
-    color: #6793B6;
 }
 
 .TeachingBioAndCallToAction {
@@ -147,10 +118,6 @@ hr {
 
 .TeachingCallToAction {
     margin-top: 20px;
-}
-
-.TeachingContainerHeader {
-    border-bottom-color: #922A2A;
 }
 
 .TeachingArrow {
@@ -182,12 +149,6 @@ hr {
     margin-top: 50px;
 }
 
-.ProgrammingHeader {
-    background-color: #922A2A;
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-
 .BootstrapAccordion {
     color: #333;
 }
@@ -195,7 +156,6 @@ hr {
 #Footer {
     background-color: #922A2A;
     height: 60px;
-    margin-top: 40px;
 }
 
 .Block {

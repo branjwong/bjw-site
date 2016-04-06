@@ -5,7 +5,7 @@ import Html.Attributes exposing (..)
 
 import Markdown
 
-import WritingLibrary
+import Writing.Post
 
 
 port title : String
@@ -16,11 +16,11 @@ port title =
 postTitle = "Factoring Trinomials"
 
 main =
-  WritingLibrary.post
-  --WritingLibrary.guide
+  Writing.Post.post
+  --Writing.Post.guide
     postTitle
-    (WritingLibrary.Date 2015 12 8)
-    (WritingLibrary.Time 1 40 "pm")
+    (Writing.Post.Date 2015 12 8)
+    (Writing.Post.Time 1 40 "pm")
     [ Markdown.toHtml content ]
 
 
