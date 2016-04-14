@@ -5,9 +5,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
-import Style.PrintStyle exposing (stylesheet)
-import Style.SharedStyles exposing (exports)
-
 import Teaching.PlugHelper
 
 import NavBar
@@ -38,9 +35,11 @@ main =
 subjectInfo : Html
 subjectInfo =
   div
-    [ class "container ProgrammingContainer" --TODO: Fix
-    ]
+    [ class "container" ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.precalc12) ]
+      [ div 
+        [ class "Markdown" ]
+        [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.precalc12) ]
+      ]
     ]

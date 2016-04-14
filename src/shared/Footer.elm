@@ -1,15 +1,90 @@
+-- https://www.iconfinder.com/iconsets/black-white-social-media
+-- need to shout this out
+
 module Footer where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Markdown
+
 
 footer : Html
 footer =
+  boring
+
+boring : Html
+boring = 
+  let 
+    myStyle =
+      style [ ("height" , "60px") ]
+  in
+    div
+      [ id "Footer", myStyle ]
+      []
+
+first : Html
+first =
+  let
+    path = "/resources/shared/Footer/face.png"
+  in
+    div
+      [ id "Footer" ]
+      [ div 
+        [ class "container" ]
+        [ div 
+          [ class "row" ]
+          [ div
+            [ class "col-sm-2" ]
+            [ img [ src path ] [] ]
+          , div 
+            [ class "col-sm-8" ]
+            [ Markdown.toHtml whoIAm ]
+          , div
+            [ class "col-sm-2" ]
+            [ links ]
+          ]
+        ]
+      ]
+
+second : Html
+second =
   div
-  [ id "Footer"
-  , attribute "role" "footer"
-  ]
-  [ 
+    [ id "Footer" ]
+    [ div 
+      [ class "container" ]
+      [ div 
+        [ class "row" ]
+        [ div 
+          [ class "col-sm-12" ]
+          [ links ]
+        ]
+      ]
+    ]
+
+
+
+whoIAm : String
+whoIAm = """
+
+Brandon J Wong is a programmer, an educator, a dog and cat owner, and a soccer player, among other things. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.
+
+"""
+
+links : Html
+links =
+  let 
+    icon path =
+      div
+        [ class "Icon" ]
+        [ img [ src path ] [] ]
+  in 
+    div
+      []
+      [ icon "/resources/shared/Footer/email.svg"
+      , icon "/resources/shared/Footer/twitter.svg"
+      , icon "/resources/shared/Footer/facebook.svg"
+      ]
+
 
   {- div
     [ class "row" ]
@@ -30,9 +105,9 @@ footer =
         [ text "© branjwong. 2015."]
       ]
     ]
+  ]
   -}
 
-  ]
 
 link title url =
   a [ href url ] [ text title ]

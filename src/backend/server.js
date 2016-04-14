@@ -74,6 +74,27 @@ route('/trinomial-generator-worksheet.js', 'dist/js/teaching/trinomial-generator
 route('/tutor-plug', 'dist/html/teaching/tutor-plug.html');
 route('/tutor-plug.js', 'dist/js/teaching/tutor-plug.js');
 
+route('/japanese', 'dist/html/teaching/tutor-plug/japanese.html');
+route('/japanese.js', 'dist/js/teaching/tutor-plug/japanese.js');
+
+route('/math10', 'dist/html/teaching/tutor-plug/math10.html');
+route('/math10.js', 'dist/js/teaching/tutor-plug/math10.js');
+
+route('/math11', 'dist/html/teaching/tutor-plug/math11.html');
+route('/math11.js', 'dist/js/teaching/tutor-plug/math11.js');
+
+route('/phys11', 'dist/html/teaching/tutor-plug/phys11.html');
+route('/phys11.js', 'dist/js/teaching/tutor-plug/phys11.js');
+
+route('/phys12', 'dist/html/teaching/tutor-plug/phys12.html');
+route('/phys12.js', 'dist/js/teaching/tutor-plug/phys12.js');
+
+route('/precalc11', 'dist/html/teaching/tutor-plug/precalc11.html');
+route('/precalc11.js', 'dist/js/teaching/tutor-plug/precalc11.js');
+
+route('/precalc12', 'dist/html/teaching/tutor-plug/precalc12.html');
+route('/precalc12.js', 'dist/js/teaching/tutor-plug/precalc12.js');
+
 route('/april-fools', 'dist/html/writing/april-fools.html');
 route('/april-fools.js', 'dist/js/writing/april-fools.js');
 route('/moving-back-to-japan', 'dist/html/writing/moving-back-to-japan.html');

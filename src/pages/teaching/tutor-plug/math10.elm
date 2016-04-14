@@ -30,13 +30,14 @@ main =
     , Footer.footer
     ]
 
-
 subjectInfo : Html
 subjectInfo =
   div
-    [ class "container ProgrammingContainer" --TODO: Fix
-    ]
+    [ class "container" ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.math10) ]
+      [ div 
+        [ class "Markdown" ]
+        [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.math10) ]
+      ]
     ]

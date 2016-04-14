@@ -1,11 +1,11 @@
 module Stylesheets (..) where
 
 import Css.File exposing (..)
-import Style.MainCss as Main
+import Style.CssStyle as Style
 
 
 port files : CssFileStructure
 port files =
   toFileStructure
-    [ ( "style.css", compile Main.css ) 
+    [ ( "style.css", compile Style.css ) 
     ]

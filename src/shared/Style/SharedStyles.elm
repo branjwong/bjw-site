@@ -35,18 +35,19 @@ type CssClasses
     | WritingPost
     | WritingExtraSpace
 
-    --| TeachingHeader
-    --| TeachingHeaderInner
-    --| TeachingHeaderTitle
-    --| TeachingHeaderDesc
+    | TeachingHeader
+    | TeachingHeaderInner
+    | TeachingHeaderTitle
+    | TeachingHeaderDesc
+    | TeachingContainerHeader
     | TeachingBioAndCallToAction
     | TeachingImgTakafumi
     | TeachingCallToAction
-    | TeachingContainerHeader
     | TeachingImgArea
     | TeachingArrow
     | TeachingAdvertiseTitle
     | TeachingAdvertiseContent
+    | TeachingStrengths
 
     | ProgrammingContainer
     | ProgrammingHeader
@@ -54,6 +55,8 @@ type CssClasses
     | Block
     | BlockDiv
     | BlockRim
+
+    | Icon
 
 type CssIds
     = Footer

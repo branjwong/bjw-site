@@ -35,9 +35,11 @@ main =
 subjectInfo : Html
 subjectInfo =
   div
-    [ class "container ProgrammingContainer" --TODO: Fix
-    ]
+    [ class "container" ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.precalc11) ]
+      [ div 
+        [ class "Markdown" ]
+        [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.precalc11) ]
+      ]
     ]

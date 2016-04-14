@@ -72,7 +72,7 @@ home =
         [ class "row" ]
         [ div
           [ class "col-sm-2 col-sm-offset-3"]
-          [ block "Latest Guide" "/writing/guide/latest" ]
+          [ block "Tutor Plug" "/tutor-plug" ]
         , div
           [ class "col-sm-2" ]
           [ block "Site Code" "https://github.com/branjwong/bjw-site" ]

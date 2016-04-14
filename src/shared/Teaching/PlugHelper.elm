@@ -8,17 +8,7 @@ import Html.Attributes exposing (..)
 import Markdown
 import Bootstrap
 
-type alias AdvPoint =
-  { title           : String
-  , image           : String
-  , content         : String
-  }
 
-
-type alias Panel =
-  { title           : String
-  , html            : Html
-  }
 
 type alias Subject = 
   { title           : String
@@ -26,54 +16,6 @@ type alias Subject =
   , experience      : String
   , cost            : Int
   , link            : String
-  }
-
-
-bio1 : Panel
-bio1 =
-  let
-    string = """
-
-Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.
-
-      """  
-
-  in  
-    { title = "Personal Profile"
-    , html = Markdown.toHtml string
-    }
-
-
-bio2 : Panel
-bio2 = 
-  { title = "Experience"
-  , html = Teaching.Resume.exports
-  }
-
-
-foundations : AdvPoint
-foundations = 
-  { title = "Builds Foundations"
-  , image = ""
-  , content = "I make sure to assess and teach what students are missing so that they can return better prepared to the concepts at hand."
-  -- It's nigh impossible for students to tackle concepts that they are currently learning if they have holes in their understanding of previously learned material.
-  }
-
-
-approaches : AdvPoint
-approaches = 
-  { title = "Approaches from all Angles"
-  , image = ""
-  , content = "Not all students learn the same way. I make sure that students understand all aspects of concept so that it can be approached confidently."
-  --  Some students prefer visual cues, learning by example, conceptual definition, practical applications, learning abstractly or through concrete examples.
-  }
-
-personable : AdvPoint
-personable =
-  { title = "Personable"
-  , image = ""
-  , content = "I am able to relate to students of all age groups. I am diverse in interests, so I can always ensure that I can connect to my students on some level."
-  -- I have travelled, I ski, I play soccer, I program, I game, ... and the list goes on.
   }
 
 -- http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf
@@ -116,10 +58,10 @@ Relations and Functions
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/math10.html"
+    , link = "/math10"
     }
 
-
+    
 -- http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations11.pdf
 math11 : Subject
 math11 =
@@ -154,7 +96,7 @@ Relations and Functions
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/math11.html"
+    , link = "/math11"
     }
 
 
@@ -196,7 +138,7 @@ Relations and Functions
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/precalc11.html"
+    , link = "/precalc11"
     }
 
 precalc12 : Subject
@@ -249,7 +191,7 @@ Permutations, Combinations and Binomial Theorem
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/precalc12.html"
+    , link = "/precalc12"
     }
 
 
@@ -299,7 +241,7 @@ Nuclear Fission and Fusion
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/phys11.html"
+    , link = "/phys11"
     }
 
 
@@ -360,7 +302,7 @@ Electromagnetism
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/phys12.html"
+    , link = "/phys12"
     }
 
 japanese : Subject
@@ -380,20 +322,5 @@ http://wpgenki.whitebase.co.jp/wp-content/uploads/06text_img1.jpg
     , learningOutcome = string
     , experience = ""
     , cost = 0
-    , link = "/dist/html/teaching/japanese.html"
+    , link = "/japanese"
     }
-
-
-contactAdv : AdvPoint
-contactAdv =
-  { title = "Contact Me"
-  , image = ""
-  , content =
-      """
-
-Name: Brandon J Wong  
-Phone: 778-996-1593  
-Email: <bjwteaching@gmail.com>
-
-      """
-  }

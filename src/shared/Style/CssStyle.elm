@@ -1,4 +1,4 @@
-module Style.MainCss (css) where
+module Style.CssStyle (css) where
 
 import Css exposing (..)
 import Css.Elements exposing (..)
@@ -14,6 +14,7 @@ css =
         , color colorHeading
         , backgroundColor colorBodyBackground
         , fontFamilies ["Verdana", "Bitstream Vera Sans", .value sansSerif]
+        , fontSize (px 14)
         ]
     , a
         [ color colorA
@@ -108,6 +109,29 @@ css =
     , ((.) TeachingCallToAction)
         [ marginTop (px 20)
         ]
+    , ((.) TeachingContainerHeader)
+        [ borderBottomColor colorHighlight
+        ]
+    , ((.) TeachingHeader)
+        [ backgroundColor colorHighlight
+        , marginBottom (px 20)
+        ]
+    , ((.) TeachingHeaderInner) 
+        [ textShadow3 (px 1) (px 1) (hex "111")
+        , textAlign center
+        , marginBottom (px marginHeader)
+        , marginTop (px marginHeader)
+        ]
+    , ((.) TeachingHeaderTitle)  
+        [ marginTop (px 0)
+        , marginBottom (px 0)
+        , fontSize (px sizeHeaderTitleText)
+        --, fontWeight normal
+        ]
+    , ((.) TeachingHeaderDesc)
+        [ fontSize (px sizeHeaderDescText)
+        , color (hex "6793B6")
+        ]
     , ((.) TeachingArrow)
         [ borderStyle solid
         , borderColor transparent
@@ -122,6 +146,10 @@ css =
         , margin auto
         , width (px 0)
         , position absolute
+        ]
+    , ((.) TeachingStrengths)
+        [ marginTop (px 20)
+        , marginBottom (px 20)
         ]
     , ((.) TeachingAdvertiseTitle)
         [ fontWeight bold
@@ -139,7 +167,7 @@ css =
         ]
     , ((#) Footer)
         [ backgroundColor colorHighlight
-        , height (px 60)
+        --, height (px 60)
         ]
     , ((.) Block)
         [ height (px 80)
@@ -152,30 +180,12 @@ css =
     , ((.) BlockDiv)
         [ marginTop (px 10)
         ]
+    , ((.) Icon)
+        [ height (px 40)
+        , width (px 40)
+        ]
     ]
 
-    --, ((.) TeachingContainerHeader)
-    --    [ borderBottomColor colorHighlight
-    --    ]
-    --, ((.) TeachingHeader)
-    --    [ backgroundColor colorHighlight
-    --    ]
-    --, ((.) TeachingHeaderInner) 
-    --    [ textShadow3 (px 1) (px 1) (hex "111")
-    --    , textAlign center
-    --    , marginBottom (px marginHeader)
-    --    , marginTop (px marginHeader)
-    --    ]
-    --, ((.) TeachingHeaderTitle)  
-    --    [ marginTop (px 0)
-    --    , marginBottom (px 0)
-    --    , fontSize (px sizeHeaderTitleText)
-    --    --, fontWeight normal
-    --    ]
-    --, ((.) TeachingHeaderDesc)
-    --    [ fontSize (px sizeHeaderDescText)
-    --    , color (hex "6793B6")
-    --    ]
     --, ((.) ProgrammingHeader)
     --    [ backgroundColor colorHighlight
     --    , paddingTop (px 20)

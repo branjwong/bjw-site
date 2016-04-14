@@ -3,6 +3,7 @@ body {
     color: #333;
     background-color: #EEE;
     font-family: Verdana, Bitstream Vera Sans, sans-serif;
+    font-size: 14px;
 }
 
 a {
@@ -120,6 +121,33 @@ hr {
     margin-top: 20px;
 }
 
+.TeachingContainerHeader {
+    border-bottom-color: #922A2A;
+}
+
+.TeachingHeader {
+    background-color: #922A2A;
+    margin-bottom: 20px;
+}
+
+.TeachingHeaderInner {
+    text-shadow: 1px 1px #111;
+    text-align: center;
+    margin-bottom: 239.5px;
+    margin-top: 239.5px;
+}
+
+.TeachingHeaderTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+
+.TeachingHeaderDesc {
+    font-size: 20px;
+    color: #6793B6;
+}
+
 .TeachingArrow {
     border-style: solid;
     border-color: transparent;
@@ -133,6 +161,11 @@ hr {
     margin: auto;
     width: 0px;
     position: absolute;
+}
+
+.TeachingStrengths {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .TeachingAdvertiseTitle {
@@ -155,7 +188,6 @@ hr {
 
 #Footer {
     background-color: #922A2A;
-    height: 60px;
 }
 
 .Block {
@@ -170,4 +202,9 @@ hr {
 
 .BlockDiv {
     margin-top: 10px;
+}
+
+.Icon {
+    height: 40px;
+    width: 40px;
 }

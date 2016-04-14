@@ -1,7 +1,5 @@
 module TutorPlug where
 
-import Teaching.PlugHelper as PlugHelper
-
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
@@ -11,6 +9,8 @@ import Bootstrap
 import Notices
 import Header
 import Footer
+
+import Teaching.Resume
 
 port title: String
 port title = "Teaching" ++ " | BJW"
@@ -33,7 +33,6 @@ main =
     , Footer.footer
     ]
 
-----------------------------------------------------------------------------------------------------------------
 
 header : String -> String -> String -> Html
 header pageName headText subText =
@@ -56,7 +55,7 @@ header pageName headText subText =
       ]
     ]
 
-
+{-
 callToAction : Html
 callToAction =
   button
@@ -66,28 +65,20 @@ callToAction =
     , href "#ContactMe"
     ]
     [ text "Contact Me!" ]
-
-
-
-----------------------------------------------------------------------------------------------------------------
-
+-}
 
 teachingContainer : Html
 teachingContainer =
   div
     [ class "container TeachingContainer" ]
-    [ bioDiv
-    , advertise
-    --, imgTakafumi
+    [ strengths
+    , bioAccordion
     , subjects
     , area
     , contactMe
     ]
 
-
-----------------------------------------------------------------------------------------------------------------
-
-
+{-
 arrow color =
   let
     addedColor =
@@ -105,109 +96,90 @@ arrow color =
           []
         ]
       ]
-
-
-----------------------------------------------------------------------------------------------------------------
-
-
-bioDiv : Html
-bioDiv =
-  div
-    [ class "row TeachingBioAndCallToAction"
-    , id "Bio"
-    ]
-    [ bioAccordion
-    ]
-
+-}
 
 bioAccordion : Html
 bioAccordion =
   let
     acName = "bio"
-    class = "col-sm-12"
+    myClass = "col-sm-12"
   in
-    Bootstrap.accordion acName class
-      [ Bootstrap.panelHeading acName 1 (.title PlugHelper.bio1)
-      , Bootstrap.panelBody acName 1 False (.html PlugHelper.bio1)
-      , Bootstrap.panelHeading acName 2 (.title PlugHelper.bio2)
-      , Bootstrap.panelBody acName 2 False (.html PlugHelper.bio2)
+    div
+      [ class "row TeachingBioAndCallToAction"
+      , id "Bio"
+      ]
+      [ Bootstrap.accordion acName myClass
+        [ Bootstrap.panelHeading acName 1 (.title bio1)
+        , Bootstrap.panelBody acName 1 False (.html bio1)
+        , Bootstrap.panelHeading acName 2 (.title bio2)
+        , Bootstrap.panelBody acName 2 False (.html bio2)
+        , Bootstrap.panelHeading acName 3 (.title bio3)
+        , Bootstrap.panelBody acName 3 False (.html bio3)
+        ]
       ]
 
 
-
-----------------------------------------------------------------------------------------------------------------
-
-advertise : Html
-advertise =
+strengths : Html
+strengths =
   div 
     [ class "row" ]
     [ div
-      [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title PlugHelper.foundations) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content PlugHelper.foundations) ]
-      ]
-    , div
-      [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title PlugHelper.approaches) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content PlugHelper.approaches) ]
-      ]
-    , div
-      [ class "col-sm-4" ]
-      [ p [ class "TeachingAdvertiseTitle" ] [ text (.title PlugHelper.personable) ]
-      , p [ class "TeachingAdvertiseContent" ] [ text (.content PlugHelper.personable) ]
+      [ class "TeachingStrengths" ]
+      [ div
+        [ class "col-sm-4" ]
+        [ p [ class "TeachingAdvertiseTitle" ] [ text (.title foundations) ]
+        , p [ class "TeachingAdvertiseContent" ] [ text (.content foundations) ]
+        ]
+      , div
+        [ class "col-sm-4" ]
+        [ p [ class "TeachingAdvertiseTitle" ] [ text (.title approaches) ]
+        , p [ class "TeachingAdvertiseContent" ] [ text (.content approaches) ]
+        ]
+      , div
+        [ class "col-sm-4" ]
+        [ p [ class "TeachingAdvertiseTitle" ] [ text (.title personable) ]
+        , p [ class "TeachingAdvertiseContent" ] [ text (.content personable) ]
+        ]
       ]
     ]
 
-
-----------------------------------------------------------------------------------------------------------------
 
 subjects : Html
 subjects = 
+  let
+    subjectsText = 
+      Markdown.toHtml """
+
+[Foundations of Mathematics and Pre-calculus 10](/math10)  
+[Foundations of Mathematics 11](/math11)  
+[Pre-calculus 11](/precalc11)  
+[Pre-calculus 12](/precalc12)  
+[Physics 11](/phys11)  
+[Physics 12](/phys12)  
+[Japanese](/japanese)
+    
+    """
+
+  in
   div []
   [ Bootstrap.pageHeader "TeachingContainerHeader" "Subjects Offered" 
   , div
-    [ class "row"
-    , id "Subjects"
+    [ class "row", id "Subjects" ]
+    [ div
+      [ class "panel panel-default" ]
+      [ div
+        [ class "panel-body" ]
+        [ subjectsText ]
+      ] 
     ]
-    [ subjectsAccordion ]
   ]
 
-
-subjectsAccordion : Html
-subjectsAccordion = 
-  Bootstrap.accordion "subj" "col-sm-12"
-    [ Bootstrap.panelHeading "subj" 1 (.title PlugHelper.math10)
-    , Bootstrap.panelBody "subj" 1 False (subjectPanelHtml PlugHelper.math10)
-    , Bootstrap.panelHeading "subj" 2 (.title PlugHelper.math11)
-    , Bootstrap.panelBody "subj" 2 False (subjectPanelHtml PlugHelper.math11)
-    , Bootstrap.panelHeading "subj" 3 (.title PlugHelper.precalc11)
-    , Bootstrap.panelBody "subj" 3 False (subjectPanelHtml PlugHelper.precalc11)
-    , Bootstrap.panelHeading "subj" 4 (.title PlugHelper.precalc12)
-    , Bootstrap.panelBody "subj" 4 False (subjectPanelHtml PlugHelper.precalc12)
-    , Bootstrap.panelHeading "subj" 5 (.title PlugHelper.phys11)
-    , Bootstrap.panelBody "subj" 5 False (subjectPanelHtml PlugHelper.phys11)
-    , Bootstrap.panelHeading "subj" 6 (.title PlugHelper.phys12)
-    , Bootstrap.panelBody "subj" 6 False (subjectPanelHtml PlugHelper.phys12)
-    , Bootstrap.panelHeading "subj" 7 (.title PlugHelper.japanese)
-    , Bootstrap.panelBody "subj" 7 False (subjectPanelHtml PlugHelper.japanese)
-    ]
-
-subjectPanelHtml : PlugHelper.Subject -> Html
-subjectPanelHtml subject =
-  div []
-    [ p [] [ a [ href subject.link ] [ text "Expected Learning Outcomes" ] ]
-    --, p [] [ text ("Relevant Experience: " ++ subject.experience) ]
-    --, p [] [ text ("Base Cost: " ++ (toString subject.cost) ++ "per hour.") ]
-    ]
-
-
-----------------------------------------------------------------------------------------------------------------
 
 area : Html
 area = 
   let 
     imgArea = Bootstrap.image  ("/resources/pages/teaching/metrovan.fw.png")
-    string = """
+    string = Markdown.toHtml """
 
 **Neighborhoods**
 - Marpole
@@ -234,37 +206,120 @@ area =
           ]
         , div
           [ class "col-sm-6" ]
-          [ div 
-            []
-            [ Markdown.toHtml string
+          [ div
+            [ class "row", id "Subjects" ]
+            [ div
+              [ class "panel panel-default" ]
+              [ div
+                [ class "panel-body" ]
+                [ string ]
+              ] 
             ]
           ]
         ]
       ]
 
-----------------------------------------------------------------------------------------------------------------
-
 contactMe : Html
 contactMe =
   div
     [ id "Contact Me" ]
-    [ Bootstrap.pageHeader "TeachingContainerHeader" (.title PlugHelper.contactAdv)
+    [ Bootstrap.pageHeader "TeachingContainerHeader" (.title contactAdv)
     , div
       [ class "row" ]
       [ div 
         [ class "col-sm-12" ]
-        [ Markdown.toHtml (.content PlugHelper.contactAdv) ]
+        [ div
+          [ style [ ("margin-bottom" , "20px" ) ] ]
+          [ Markdown.toHtml (.content contactAdv) ]
+        ]
       ]
     ]
 
+type alias AdvPoint =
+  { title           : String
+  , image           : String
+  , content         : String
+  }
 
-----------------------------------------------------------------------------------------------------------------
--- UNUSED
-----------------------------------------------------------------------------------------------------------------
+type alias Panel =
+  { title           : String
+  , html            : Html
+  }
+
+bio1 : Panel
+bio1 =
+  let
+    string = """
+
+Brandon is currently a 5th year Simon Fraser University on the path of completing a joint major in both Computing Science and Business. Having recently completed a year of studying abroad in Japan, and he aims to continue his learning of the Japanese language, and to develop his technical skill set through the hackathons that he has began to take part in, and personal projects that he has recently started. While still pushing towards his other career goals, he wishes to keep teaching as a pivotal part of his life. Once finished with schooling, and after acquiring some experience, he aspires to develop web applications that enrich the aspects of life he is most fond of.
+
+      """  
+
+  in  
+    { title = "Personal Profile"
+    , html = Markdown.toHtml string
+    }
 
 
-imgTakafumi : Html
-imgTakafumi = 
-  div 
-    [ class "TeachingImgTakafumi" ]
-    [ Bootstrap.image ("takafumi.jpg") ]
+bio2 : Panel
+bio2 = 
+  { title = "Experience"
+  , html = Teaching.Resume.exports
+  }
+
+bio3 : Panel
+bio3 =
+  { title = "Pricing from $25/session!"
+  , html = Markdown.toHtml """
+
+4+ sessions/wk -> $25/session  
+3  sessions/wk -> $30/session  
+2  sessions/wk -> $35/session  
+   irregular   -> $40/session  
+
+* if classes are to take place outside of my home, there will be additional cost for travel  
+* home is located near the corner of West 65th Avenue and Granville St.
+
+  """
+  }
+
+
+foundations : AdvPoint
+foundations = 
+  { title = "Builds Foundations"
+  , image = ""
+  , content = "I make sure to assess and teach what students are missing so that they can return better prepared to the concepts at hand."
+  -- It's nigh impossible for students to tackle concepts that they are currently learning if they have holes in their understanding of previously learned material.
+  }
+
+
+approaches : AdvPoint
+approaches = 
+  { title = "Approaches from all Angles"
+  , image = ""
+  , content = "Not all students learn the same way. I make sure that students understand all aspects of concept so that it can be approached confidently."
+  --  Some students prefer visual cues, learning by example, conceptual definition, practical applications, learning abstractly or through concrete examples.
+  }
+
+personable : AdvPoint
+personable =
+  { title = "Personable"
+  , image = ""
+  , content = "I am able to relate to students of all age groups. I am diverse in interests, so I can always ensure that I can connect to my students on some level."
+  -- I have travelled, I ski, I play soccer, I program, I game, ... and the list goes on.
+  }
+
+
+contactAdv : AdvPoint
+contactAdv =
+  { title = "Contact Me"
+  , image = ""
+  , content =
+      """
+
+Name: Brandon J Wong  
+Phone: 778-996-1593  
+Email: <bjwteaching@gmail.com>
+
+      """
+  }

@@ -23,6 +23,7 @@ elm make ./src/pages/teaching/tutor-plug/japanese.elm --output ./dist/js/teachin
 elm make ./src/pages/teaching/tutor-plug/phys12.elm --output ./dist/js/teaching/tutor-plug/phys12.js &&
 elm make ./src/pages/teaching/tutor-plug/phys11.elm --output ./dist/js/teaching/tutor-plug/phys11.js &&
 elm make ./src/pages/teaching/tutor-plug/precalc11.elm --output ./dist/js/teaching/tutor-plug/precalc11.js &&
+elm make ./src/pages/teaching/tutor-plug/precalc12.elm --output ./dist/js/teaching/tutor-plug/precalc12.js &&
 elm make ./src/pages/teaching/tutor-plug/math11.elm --output ./dist/js/teaching/tutor-plug/math11.js &&
 elm make ./src/pages/teaching/tutor-plug/math10.elm --output ./dist/js/teaching/tutor-plug/math10.js &&
 

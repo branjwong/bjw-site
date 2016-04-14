@@ -1,4 +1,4 @@
-module PhysTwelve where
+module MathEleven where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -34,9 +34,11 @@ main =
 subjectInfo : Html
 subjectInfo =
   div
-    [ class "container ProgrammingContainer" --TODO: Fix
-    ]
+    [ class "container" ]
     [ div
       [ class "row" ]
-      [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.phys12) ]
+      [ div 
+        [ class "Markdown" ]
+        [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.math11) ]
+      ]
     ]

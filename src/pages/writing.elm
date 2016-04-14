@@ -79,9 +79,18 @@ Japan
 * [2013/05/07 - Accepted](https://braninjapan.wordpress.com/2013/05/07/accepted-for-real-this-time/)
 * [2013/06/09 - Blisters, Bonfires, and Big Life Decisions](https://braninjapan.wordpress.com/2013/06/09/blisters-bonfires-and-big-life-decisions/)
 * [2013/07/09 - What Should I Become](https://braninjapan.wordpress.com/2013/07/09/what-should-i-become/)
+* [Goodbyes](https://braninjapan.wordpress.com/2013/08/20/goodbyes/)
+* [Foolishly Fearless](https://braninjapan.wordpress.com/2013/08/22/day-1-august-22-foolishly-fearless/)
+* [Me Time](https://braninjapan.wordpress.com/2013/08/23/day-2-august-23/)
+* [Miscommunication](https://braninjapan.wordpress.com/2013/08/24/day-3-august-24-miscommunication/)
+* [Stood Up?](https://braninjapan.wordpress.com/2013/08/25/day-4/)
+* [Marathon](https://braninjapan.wordpress.com/2013/08/26/day-5-august-26/)
+* [2013/08/27 - Segregation](https://braninjapan.wordpress.com/2013/08/27/day-6-august-27-segregation/)
+* [2013/08/28 - Friends](https://braninjapan.wordpress.com/2013/08/28/day-7-august-28-friends/)
+* [2013/08/29 - Fountain](https://braninjapan.wordpress.com/2013/08/29/day-8-august-29/)
+* [2013/08/30 - Kyoto](https://braninjapan.wordpress.com/2013/08/30/day-9-august-30-kyoto/)
 * [2013/08/31 - Osaka-shi](https://braninjapan.wordpress.com/2013/08/31/day-10-august-31-osaka-shi/)
-* (https://braninjapan.wordpress.com/2013/08/30/day-9-august-30-kyoto/)
-* (https://braninjapan.wordpress.com/2013/08/29/day-8-august-29/)
+
 
 
 
