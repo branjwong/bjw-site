@@ -4,8 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
-import Teaching.PlugHelper
-
 import NavBar
 import Header
 import Footer

@@ -5,7 +5,6 @@ import Html.Attributes exposing (..)
 import Markdown
 import Window
 
-import Teaching.PlugHelper
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 
 import NavBar

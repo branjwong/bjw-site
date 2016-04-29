@@ -4,8 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
-import Teaching.PlugHelper
-
 import NavBar
 import Header
 import Footer
@@ -16,7 +14,7 @@ port title =
   tytle ++ " | BJW"
 
 
-tytle = .title Teaching.PlugHelper.precalc12
+tytle = "Pre-calculus 12"
 
 
 main : Html
@@ -25,7 +23,7 @@ main =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Learning Outcomes" (.title Teaching.PlugHelper.precalc12) 
+    , Header.header "Learning Outcomes" tytle
     , subjectInfo
     , Footer.footer
     ]
