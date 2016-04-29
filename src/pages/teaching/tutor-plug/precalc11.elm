@@ -1,6 +1,5 @@
 module PrecalcEleven where
 
-
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
@@ -26,7 +25,7 @@ main =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.precalc11) 
+    , Header.header "Learning Outcomes" (.title Teaching.PlugHelper.precalc11) 
     , subjectInfo
     , Footer.footer
     ]

@@ -30,7 +30,7 @@ view model =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "Teaching" "A bunch of learning goodness."
+    , Header.header "Teaching" "A bunch of learning goodness."
     , teaching
     , space model
     , Footer.footer
@@ -67,8 +67,21 @@ teaching =
 body =
   """
 
+[Brandon Tutors! More Info Here](/tutor-plug)
+================================
+
+* * *
+
+Lessons
+=======
+
 * [Factoring Trinomials Lesson](/factoring-trinomials)
+
+* * *
+
+Helpful Applications
+====================
+  
 * [Trinomial Worksheet Generator](/trinomial-generator-worksheet)
-* [Brandon Tutors! Check out his advertisement.](/tutor-plug)
 
   """

@@ -10,8 +10,6 @@ import Notices
 import Header
 import Footer
 
-import Teaching.Resume
-
 port title: String
 port title = "Teaching" ++ " | BJW"
 
@@ -264,7 +262,7 @@ Brandon is currently a 5th year Simon Fraser University on the path of completin
 bio2 : Panel
 bio2 = 
   { title = "Experience"
-  , html = Teaching.Resume.exports
+  , html = resume
   }
 
 bio3 : Panel
@@ -323,3 +321,67 @@ Email: <bjwteaching@gmail.com>
 
       """
   }
+
+
+resume =
+  div []
+    [ div []
+      [ div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-9" ]
+          [ text "Oxford Learning" ]
+        , div
+          [ class "col-sm-3" ]
+          [ text "Aug 2014 – Apr 2016" ]
+        ]
+      , div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ text "Tutor for Grade 10-12: Math, Physics, Chemistry, and K-12 English" ]
+        ]
+      , div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ Markdown.toHtml oxfordText ]
+        ]
+      ]
+    , div []
+      [ div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-9" ]
+          [ text "Magee Secondary School" ]
+        , div
+          [ class "col-sm-3" ]
+          [ text "Feb 2013 – Jul 2013" ]
+        ]
+      , div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ text "Calculus Tutor" ]
+        ]
+      , div
+        [ class "row" ]
+        [ div
+          [ class "col-sm-12" ]
+          [ Markdown.toHtml mageeText ]
+        ]
+      ]
+    ]
+    
+oxfordText = """  
+- Develop appropriate curricula to supplement what students are currently learning at school
+- Train students to understanding the underlying concepts before trying to apply the mechanics
+- Communicate effectively with other teachers and education directors in order to be able to solve problems rationally and efficiently
+"""
+    
+mageeText = """
+- Dug deep to find out the root cause of the difficulties his students were having.
+- Challenged the students who were succeeding.
+"""
+
+

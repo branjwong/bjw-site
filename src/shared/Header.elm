@@ -3,8 +3,8 @@ module Header where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-header : String -> String -> String -> Html
-header pageName headText subText =
+header : String -> String -> Html
+header headText subText =
   div
   [ class ("Header") ]
   [ div 

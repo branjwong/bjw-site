@@ -22,7 +22,7 @@ main =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "Programming" "Where my programming experience is here for viewing."
+    , Header.header "Programming" "Where my programming experience is here for viewing."
     , programming
     , Footer.footer
     ]

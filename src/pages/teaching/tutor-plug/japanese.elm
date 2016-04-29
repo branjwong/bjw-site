@@ -17,7 +17,7 @@ port title : String
 port title =
   tytle ++ " | BJW"
 
-tytle = .title Teaching.PlugHelper.japanese
+tytle = "Japanese"
 
 type alias Model = Int
 
@@ -34,7 +34,7 @@ view model =
     [ ]
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.japanese) 
+    , Header.header "Learning Outcomes" tytle
     , subjectInfo
     , space model
     , Footer.footer
@@ -63,6 +63,20 @@ subjectInfo =
       [ class "row" ]
       [ div 
         [ class "Markdown" ]
-        [ Markdown.toHtml (.learningOutcome Teaching.PlugHelper.japanese) ]
+        [ body ]
       ]
     ]
+
+body = 
+  Markdown.toHtml """
+
+As an former exchange of Kansai Gaidai University, I teach from the same curriculum and textbook that their professors developed. This textbook and curriculum has done so well that it has been adopted in classes all over the world. I have seen it with my own eyes being used in classrooms at Simon Fraser University.
+
+http://genki.japantimes.co.jp/wp-content/uploads/genki_syllabus_en.jpg  
+http://wpgenki.whitebase.co.jp/wp-content/uploads/06text_img1.jpg
+
+  """
+
+
+
+

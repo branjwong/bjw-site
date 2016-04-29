@@ -25,7 +25,7 @@ main =
     []
     [ NavBar.navBar
     , NavBar.navBarSpace
-    , Header.header "Default" "Learning Outcomes" (.title Teaching.PlugHelper.phys12) 
+    , Header.header "Learning Outcomes" (.title Teaching.PlugHelper.phys12) 
     , subjectInfo
     , Footer.footer
     ]

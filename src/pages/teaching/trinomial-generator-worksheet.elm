@@ -121,7 +121,7 @@ view address model =
   [ ]
   [ NavBar.navBar
   , NavBar.navBarSpace
-  , Header.header "Default" "Trinomial Problem Generator" "Here's a new problem for you to try!"
+  , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
   , page address model
   , Footer.footer
   ]
