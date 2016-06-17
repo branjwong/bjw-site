@@ -23,11 +23,11 @@ type alias Model = Int
 model : Signal Model
 model = Window.height
 
-main : Signal Html
+main : Signal Html msg
 main =
   Signal.map view model
 
-view : Model -> Html
+view : Model -> Html msg
 view model =
  div
     [ ]
@@ -39,7 +39,7 @@ view model =
     , Footer.footer
     ]
 
-space : Model -> Html
+space : Model -> Html msg
 space model = 
   let 
     heightContainer = 180
@@ -54,7 +54,7 @@ space model =
       [ style [ ("height" , toString result ++ "px" ) ] ]
       []
 
-subjectInfo : Html
+subjectInfo : Html msg
 subjectInfo =
   div
     [ class "container" ]

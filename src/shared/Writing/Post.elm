@@ -1,4 +1,4 @@
-module Writing.Post where
+module Writing.Post exposing (..) --where
 
 import Dict
 import Debug
@@ -17,7 +17,7 @@ import Disqus
 
 (=>) = (,)
 
-post : String -> Date -> Time -> List Html -> Html
+post : String -> Date -> Time -> String -> Html msg
 post title date time body =
   div 
     []
@@ -35,8 +35,7 @@ post title date time body =
               [ class "WritingPost" ]
               [ h1 [] [ text title ]
               , h6 [] [ text (postInfo date time) ]
-              , div []
-                body
+              , Markdown.toHtml [] body
               ]
             ]
           ]

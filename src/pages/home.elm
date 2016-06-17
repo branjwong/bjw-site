@@ -1,8 +1,9 @@
-module Home where
+module Home exposing (..) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Window
+import Html.App as Html
+import Window exposing (Size)
 
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import NavBar
@@ -11,37 +12,50 @@ import Notices
 import Footer
 import Bootstrap
 
-port title : String
-port title = "Home"
+--port title = "Home"
 
-type alias Model = Int
-
-model : Signal Model
-model = Window.height
-
-main : Signal Html
 main =
-  Signal.map view model
+  Html.program
+    { init = (Size 0 0, Cmd.none)
+    , update = update
+    , subscriptions = subscriptions
+    , view = view
+    }
 
-view : Model -> Html
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  Window.resizes Resize
+
+type alias Model = Size
+
+type Msg
+  = Resize Size
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    Resize size ->
+      (size,  Cmd.none)
+
+view : Model -> Html msg
 view model =
   div 
     []
     [ NavBar.navBar 
     , NavBar.navBarSpace
     , home
-    , space model
+    , space model.height
     , Footer.footer
     ]
 
-space : Model -> Html
-space model = 
+space : Int -> Html msg
+space height = 
   let 
     heightContainer = 600
     spaceTakenSoFar = heightNavBar + heightContainer + heightFooter
     result =
-      if model - spaceTakenSoFar > 0 then
-        model - spaceTakenSoFar + 1
+      if height - spaceTakenSoFar > 0 then
+        height - spaceTakenSoFar + 1
       else
         0
   in
@@ -50,7 +64,7 @@ space model =
       []
 
 
-home : Html
+home : Html msg
 home =
   div 
     [ class "container" ]
@@ -106,7 +120,7 @@ home =
       ]
     ]
 
-block : String -> String -> Html
+block : String -> String -> Html msg
 block title link = 
   div
     [ class "BlockDiv" ]

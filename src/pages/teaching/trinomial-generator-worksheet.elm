@@ -115,7 +115,7 @@ port title : String
 port title =
   "Trinomial Problem Generator" ++ " | BJW"
 
-view : Address Action -> Model -> Html
+view : Address Action -> Model -> Html msg
 view address model =
   div
   [ ]
@@ -131,7 +131,7 @@ type Params
   | First
   | Second
 
-page : Address Action -> Model -> Html
+page : Address Action -> Model -> Html msg
 page address model =
   let
     (a',b',c') = model.trinomial
@@ -269,7 +269,7 @@ model : Signal Model
 model =
   Signal.foldp update init updates
 
-main : Signal Html
+main : Signal Html msg
 main =
   Signal.map (view actions.address) model   
 

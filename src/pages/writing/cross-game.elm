@@ -1,16 +1,14 @@
-module CrossGame where
+module CrossGame exposing (..) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Markdown
-
 import Writing.Post
 
 
-port title : String
-port title =
-  postTitle ++ " | BJW"
+--port title : String
+--port title =
+--  postTitle ++ " | BJW"
 
 
 postTitle = "Cross Game"
@@ -20,7 +18,7 @@ main =
     postTitle
     (Writing.Post.Date 2013 7 12)
     (Writing.Post.Time 12 47 "pm")
-    [ Markdown.toHtml content ]
+    content
 
 
 content = """

@@ -1,11 +1,11 @@
-module NavBar where
+module NavBar exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
 -- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
 
-navBar : Html
+navBar : Html msg
 navBar =
   nav
     [ class "navbar navbar-fixed-top NavBar" --navbar-inverse
@@ -22,7 +22,7 @@ navBar =
       ]
     ]
 
-navbarCollapseComponent : Html
+navbarCollapseComponent : Html msg
 navbarCollapseComponent =
   div
     [ class "navbar-header" ]
@@ -41,7 +41,7 @@ navbarCollapseComponent =
     ]
 
 
-navbarExpandComponent : Html
+navbarExpandComponent : Html msg
 navbarExpandComponent =
   div
     [ id "navbar"
@@ -51,7 +51,7 @@ navbarExpandComponent =
     ]
 
 
-navbarTabs : Html
+navbarTabs : Html msg
 navbarTabs =
   ul
     [ class "nav navbar-nav navbar-right" ]
@@ -61,7 +61,7 @@ navbarTabs =
     ]
 
 
-tab : String -> String -> Html
+tab : String -> String -> Html msg
 tab name link =
   --if currentName == name then
   --  li
@@ -86,7 +86,7 @@ tab name link =
       ]
 
 
-navBarSpace : Html
+navBarSpace : Html msg
 navBarSpace = 
   div 
     [ id "Landing"
@@ -95,7 +95,7 @@ navBarSpace =
     []
 
 -- Currently Unused
-outsideLinks : Html
+outsideLinks : Html msg
 outsideLinks =
   li
     [ class "dropdown" ]

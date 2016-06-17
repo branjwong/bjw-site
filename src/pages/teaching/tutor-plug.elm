@@ -17,7 +17,7 @@ type alias Model =
   { currentPage : String
   }
 
-main : Html
+main : Html msg
 main =
   div
     []
@@ -32,7 +32,7 @@ main =
     ]
 
 
-header : String -> String -> String -> Html
+header : String -> String -> String -> Html msg
 header pageName headText subText =
   div 
     [ class "row" ]
@@ -54,7 +54,7 @@ header pageName headText subText =
     ]
 
 {-
-callToAction : Html
+callToAction : Html msg
 callToAction =
   button
     [ class "TeachingCallToAction"
@@ -65,7 +65,7 @@ callToAction =
     [ text "Contact Me!" ]
 -}
 
-teachingContainer : Html
+teachingContainer : Html msg
 teachingContainer =
   div
     [ class "container TeachingContainer" ]
@@ -96,7 +96,7 @@ arrow color =
       ]
 -}
 
-bioAccordion : Html
+bioAccordion : Html msg
 bioAccordion =
   let
     acName = "bio"
@@ -117,7 +117,7 @@ bioAccordion =
       ]
 
 
-strengths : Html
+strengths : Html msg
 strengths =
   div 
     [ class "row" ]
@@ -142,7 +142,7 @@ strengths =
     ]
 
 
-subjects : Html
+subjects : Html msg
 subjects = 
   let
     subjectsText = 
@@ -173,7 +173,7 @@ subjects =
   ]
 
 
-area : Html
+area : Html msg
 area = 
   let 
     imgArea = Bootstrap.image  ("/resources/pages/teaching/metrovan.fw.png")
@@ -217,7 +217,7 @@ area =
         ]
       ]
 
-contactMe : Html
+contactMe : Html msg
 contactMe =
   div
     [ id "Contact Me" ]

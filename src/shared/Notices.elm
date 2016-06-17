@@ -1,4 +1,4 @@
-module Notices where
+module Notices exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

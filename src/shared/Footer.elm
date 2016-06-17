@@ -1,18 +1,18 @@
 -- https://www.iconfinder.com/iconsets/black-white-social-media
 -- need to shout this out
 
-module Footer where
+module Footer exposing (..) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
 
 
-footer : Html
+footer : Html msg
 footer =
   boring
 
-boring : Html
+boring : Html msg
 boring = 
   let 
     myStyle =
@@ -22,7 +22,7 @@ boring =
       [ id "Footer", myStyle ]
       []
 
-first : Html
+first : Html msg
 first =
   let
     path = "/resources/shared/Footer/face.png"
@@ -36,9 +36,7 @@ first =
           [ div
             [ class "col-sm-2" ]
             [ img [ src path ] [] ]
-          , div 
-            [ class "col-sm-8" ]
-            [ Markdown.toHtml whoIAm ]
+          , Markdown.toHtml [ class "col-sm-8" ] whoIAm 
           , div
             [ class "col-sm-2" ]
             [ links ]
@@ -46,7 +44,7 @@ first =
         ]
       ]
 
-second : Html
+second : Html msg
 second =
   div
     [ id "Footer" ]
@@ -70,7 +68,7 @@ Brandon J Wong is a programmer, an educator, a dog and cat owner, and a soccer p
 
 """
 
-links : Html
+links : Html msg
 links =
   let 
     icon path =

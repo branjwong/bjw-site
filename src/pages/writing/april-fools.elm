@@ -25,7 +25,7 @@ main =
     (Writing.Post.Time 1 08 "am")
     [ Markdown.toHtml content ]
 
-post : String -> Date -> Time -> List Html -> Html
+post : String -> Date -> Time -> List Html -> Html msg
 post title date time body =
   div 
     []

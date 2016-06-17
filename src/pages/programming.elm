@@ -1,4 +1,4 @@
-module Programming where
+module Programming exposing (main) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -9,14 +9,12 @@ import NavBar
 import Notices
 import Header
 import Footer
-
 import Disqus
 
-port title: String
-port title =  "Programming | BJW"
+--port title =  "Programming | BJW"
 
 
-main : Html
+main : Html msg
 main =
   div
     []
@@ -28,18 +26,17 @@ main =
     ]
 
 
-programming : Html
+programming : Html msg
 programming =
   div
     [ class "container" ]
     [ div
       [ class "row" ]
-      [ div 
-        [ class "Markdown" ]
-        [ Markdown.toHtml body ]
+      [ Markdown.toHtml [ class "Markdown" ] body
       ]
     ]
 
+body : String
 body =
   """
 

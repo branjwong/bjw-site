@@ -1,4 +1,4 @@
-module Bootstrap where
+module Bootstrap exposing (..) -- where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -6,7 +6,7 @@ import Html.Attributes exposing (..)
 {-
 accordion "bio" "col-sm-12" (List Html)
 -}
-accordion : String -> String -> List Html -> Html
+accordion : String -> String -> List (Html msg) -> Html msg
 accordion acName column panels =
   div
     [ class column ]
@@ -22,7 +22,7 @@ accordion acName column panels =
 {-
 panelHeading bio 1 "Title"
 -}
-panelHeading : String -> Int -> String -> Html
+panelHeading : String -> Int -> String -> Html msg
 panelHeading acName pnID panelTitle = 
   let 
     pnName = acName ++ (toString pnID)
@@ -42,7 +42,7 @@ panelHeading acName pnID panelTitle =
         ]
       ]
 
-panelBody : String -> Int -> Bool -> Html -> Html
+panelBody : String -> Int -> Bool -> Html msg -> Html msg
 panelBody acName pnID panelHide panelContent =
   let 
     pnName = acName ++ (toString pnID)

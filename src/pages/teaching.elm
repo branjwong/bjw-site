@@ -1,8 +1,9 @@
-module Teaching where
+module Teaching exposing (main) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Window
+import Html.App as Html
+import Window exposing (Size)
 import Markdown
 
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
@@ -12,19 +13,32 @@ import Header
 import Footer
 import Disqus
 
-port title: String
-port title =  "Teaching | BJW"
+--port title =  "Teaching | BJW"
 
-type alias Model = Int
-
-model : Signal Model
-model = Window.height
-
-main : Signal Html
 main =
-  Signal.map view model
+  Html.program
+    { init = (Size 0 0, Cmd.none)
+    , update = update
+    , subscriptions = subscriptions
+    , view = view
+    }
 
-view : Model -> Html
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  Window.resizes Resize
+
+type alias Model = Size
+
+type Msg
+  = Resize Size
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    Resize size ->
+      (size,  Cmd.none)
+
+view : Model -> Html msg
 view model =
   div
     []
@@ -32,19 +46,18 @@ view model =
     , NavBar.navBarSpace
     , Header.header "Teaching" "A bunch of learning goodness."
     , teaching
-    , space model
+    , space model.height
     , Footer.footer
     ]
 
-
-space : Model -> Html
-space model = 
+space : Int -> Html msg
+space height = 
   let 
     heightContainer = 150
     spaceTakenSoFar = heightNavBar + heightHeader + heightContainer + heightFooter
     result =
-      if model - spaceTakenSoFar > 0 then
-        model - spaceTakenSoFar + 1
+      if height - spaceTakenSoFar > 0 then
+        height - spaceTakenSoFar + 1
       else
         0
   in
@@ -52,20 +65,17 @@ space model =
       [ style [ ("height" , toString result ++ "px" ) ] ]
       []
 
-teaching : Html
+teaching : Html msg
 teaching =
   div
     [ class "container" ]
     [ div
       [ class "row" ]
-      [ div 
-          [ class "Markdown" ]
-          [ Markdown.toHtml body ]
+      [ Markdown.toHtml [ class "Markdown" ] body 
       ]
     ]
 
-body =
-  """
+body = """
 
 [Brandon Tutors! More Info Here](/tutor-plug)
 ================================

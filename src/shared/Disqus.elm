@@ -1,9 +1,9 @@
-module Disqus (exports) where
+module Disqus exposing (exports)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-exports : Html
+exports : Html msg
 exports =
   div
     [ id "disqus_thread" ]

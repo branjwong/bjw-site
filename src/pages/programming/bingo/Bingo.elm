@@ -1,8 +1,9 @@
-module Bingo where
+module Bingo exposing (..) -- where
 
 import Debug
 
 import Html exposing (..)
+import Html.app exposing (beginnerProgram) as Html
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
@@ -133,7 +134,7 @@ update action model =
 
 -- VIEW
 
-title : String -> Int -> Html
+title : String -> Int -> Html msg
 title message times =
     message ++ " "
         |> toUpper
@@ -141,20 +142,20 @@ title message times =
         |> trimRight
         |> text
 
-link : Html
+link : Html msg
 link =
     a [ href "https://pragmaticstudios.com"] [ text "The Pragmatic Studio"]
 
-pageHeader : Html
+pageHeader : Html msg
 pageHeader =
     h1 [ ] [title "bingo!" 3]
 
-pageFooter : Html
+pageFooter : Html msg
 pageFooter =
     footer [ ] [ link ]
 
 
-entryItem : Address Action -> Entry -> Html
+entryItem : Address Action -> Entry -> Html msg
 entryItem address entry =
     li
         [ classList [ ("highlight", entry.wasSpoken) ]
@@ -181,7 +182,7 @@ totalPoints entries =
         --|> List.sum
         |> List.foldl (\e sum -> sum + e.points) 0
 
-totalItem : Int -> Html
+totalItem : Int -> Html msg
 totalItem total =
     li
         [ class "total" ]
@@ -189,7 +190,7 @@ totalItem total =
         , span [ class "points" ] [ text (toString total) ]
         ]
 
-entryList : Address Action -> List Entry -> Html
+entryList : Address Action -> List Entry -> Html msg
 entryList address entries =
     let
         entryItems =
@@ -198,7 +199,7 @@ entryList address entries =
     in
         ul [ ] items
 
-entryForm : Address Action -> Model -> Html
+entryForm : Address Action -> Model -> Html msg
 entryForm address model =
     div [ ]
         [ input
@@ -226,7 +227,7 @@ entryForm address model =
 
 
 
-view : Address Action -> Model -> Html
+view : Address Action -> Model -> Html msg
 view address model =
      div
         [ id "container" ]
@@ -240,13 +241,9 @@ view address model =
 
 -- WIRE IT ALL TOGETHER
 
-main : Signal Html
 main =
-    --initialModel
-    --    |> update Sort
-    --    |> view
-    StartApp.start
-    { model = initialModel
-    , view = view
-    , update = update
-    }
+    Html.beginnerProgram
+        { model = initialModel
+        , view = view
+        , update = update
+        }

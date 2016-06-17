@@ -1,8 +1,8 @@
-module Style.SharedValues where
+module Style.SharedValues exposing (..) --where
 
 import Css exposing (..)
 
-{-| COLOUR
+{- COLOUR
 http://webdesign.tutsplus.com/tutorials/6-beginner-safety-first-color-guidelines-for-the-web--cms-21462
  -}
 
@@ -28,7 +28,7 @@ colorSubHeading = hex "BBB"
 colorStandardText = colorHeading
 
 
-{-| Dimensions, Lengths, Heights
+{- Dimensions, Lengths, Heights
 -}
 
 heightNavBarTop = 5
@@ -62,9 +62,7 @@ heightFooter = 60
 
 
 
-{-| 
-
--- Background Colors
+{- Background Colors
 
 colorA = hex "27AA93"
 colorHighlight = hex "360909"
@@ -83,9 +81,10 @@ colorHeading = hex "E1E1E1"
 colorSubHeading = hex "BBB"
 colorStandardText = colorHeading
 
-
-{-| Teaching Background Colors
 -}
+
+{- Teaching Background Colors
+
 
 colorHighlightTeaching = hex "C62B2B"
 colorBodyBackgroundTeaching = hex "EEE"

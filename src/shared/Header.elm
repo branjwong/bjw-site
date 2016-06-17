@@ -1,9 +1,9 @@
-module Header where
+module Header exposing (header)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-header : String -> String -> Html
+header : String -> String -> Html msg
 header headText subText =
   div
   [ class ("Header") ]

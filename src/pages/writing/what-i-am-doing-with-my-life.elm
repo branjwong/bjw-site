@@ -1,15 +1,13 @@
-module WhatIAmDoingWithMyLife where
+module WhatIAmDoingWithMyLife exposing (..) --where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Markdown
-
 import Writing.Post
 
-port title : String
-port title =
-  postTitle ++ " | BJW"
+--port title : String
+--port title =
+--  postTitle ++ " | BJW"
 
 
 postTitle = "What Am I Doing With My Life"
@@ -19,7 +17,7 @@ main =
     postTitle
     (Writing.Post.Date 2015 11 20)
     (Writing.Post.Time 12 25 "pm")
-    [ Markdown.toHtml content ]
+    content
 
 
 content = """
