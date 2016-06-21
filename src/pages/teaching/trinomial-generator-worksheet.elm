@@ -1,10 +1,9 @@
-module TrinomialGeneratorWorksheet where
+module TrinomialGeneratorWorksheet exposing (..)
 
-import StartApp.Simple as StartApp
+import Html.App as Html
 import Html exposing (..)
 import Html.Events exposing (onClick)
 import Html.Attributes exposing (class)
-import Signal exposing (Address, Mailbox)
 import Random exposing (Seed)
 import Time exposing (Time)
 import Char
@@ -29,7 +28,7 @@ type alias Model =
 generateFactoredAnswer : Seed -> Model
 generateFactoredAnswer seed =
   let
-    generateInt min max seed = Random.generate (Random.int min max) seed
+    generateInt min max seed = Random.step (Random.int min max) seed
     (a, seed') = generateInt 1 10 seed
     (b, seed'') = generateInt -10 10 seed'
     (c, seed''') = generateInt 1 10 seed''
@@ -95,44 +94,45 @@ init =
     }
 -- UPDATE
 
-type Action
-  = NoOp
-  | New
+type Msg
+  = New
   | Show
+  --| Tick Time
   --| Submit (Int, Int, Int, Int)
 
-update : (Seed, Action) -> Model -> Model
-update (seed, action) model =
-  case action of
-    NoOp -> model
-    New -> generateFactoredAnswer seed
-    Show -> { model | answer = Shown }
+--update : (Seed, Action) -> Model -> Model
+--update (seed, action) model =
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    New -> (generateFactoredAnswer model.seed)
+    Show -> ({ model | answer = Shown })
     --Submit (a,b,c,d) ->
 
 -- VIEW
 
-port title : String
-port title =
-  "Trinomial Problem Generator" ++ " | BJW"
+--port title : String
+--port title =
+--  "Trinomial Problem Generator" ++ " | BJW"
 
-view : Address Action -> Model -> Html msg
-view address model =
+view : Model -> Html Msg
+view model =
   div
-  [ ]
-  [ NavBar.navBar
-  , NavBar.navBarSpace
-  , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
-  , page address model
-  , Footer.footer
-  ]
+    []
+    [ NavBar.navBar
+    , NavBar.navBarSpace
+    , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
+    , page model
+    , Footer.footer
+    ]
 
 type Params
   = Both
   | First
   | Second
 
-page : Address Action -> Model -> Html msg
-page address model =
+page : Model -> Html Msg
+page model =
   let
     (a',b',c') = model.trinomial
     abString n = toString (abs n)
@@ -220,10 +220,10 @@ page address model =
                 []
                 [ text problem ]
             , button
-                [ onClick address New ]
+                [ onClick New ]
                 [ text "Get a New Problem!" ]
             , button
-                [ onClick address Show ]
+                [ onClick Show ]
                 [ text "Show Answer" ]
             ]
         Shown ->
@@ -233,7 +233,7 @@ page address model =
                   []
                   [ text problem ]
               , button
-                  [ onClick address New ]
+                  [ onClick New ]
                   [ text "Get a New Problem!" ]
               , div
                   []
@@ -249,29 +249,31 @@ page address model =
 
 -- SIGNALS
 
-actions : Mailbox Action
-actions =
-  Signal.mailbox New
+--actions : Mailbox Action
+--actions =
+--  Signal.mailbox New
 
-seeds : Signal Seed
-seeds =
-  Time.every Time.millisecond
-  |> Signal.sampleOn actions.signal
-  |> Signal.map Time.inMilliseconds
-  |> Signal.map round
-  |> Signal.map Random.initialSeed
+--seeds : Signal Seed
+--seeds =
+--  Time.every Time.millisecond
+--  |> Signal.sampleOn actions.signal
+--  |> Signal.map Time.inMilliseconds
+--  |> Signal.map round
+--  |> Signal.map Random.initialSeed
 
-updates : Signal (Seed, Action)
-updates =
-  Signal.map2 (,) seeds actions.signal
+--updates : Signal (Seed, Action)
+--updates =
+--  Signal.map2 (,) seeds actions.signal
 
-model : Signal Model
-model =
-  Signal.foldp update init updates
+--model : Signal Model
+--model =
+--  Signal.foldp update init updates
 
-main : Signal Html msg
 main =
-  Signal.map (view actions.address) model   
-
-
+  --Signal.map (view actions.address) model   
+  Html.beginnerProgram
+    { model = init
+    , update = update
+    , view = view
+    }
 

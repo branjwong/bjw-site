@@ -70,8 +70,13 @@ route('/bingo', 'dist/html/programming/bingo/bingo.html');
 // route('/bingo.js', 'dist/js/programming/bingo/bingo.js');
 // route('/bingo.css', 'dist/html/programming/bingo/bingo.css');
 route('/megaman', 'dist/html/programming/megaman/megaman.html');
+route('/megaman.swf', 'dist/html/programming/megaman/megaman.swf');
+
 route('/duckhunt', 'dist/html/programming/duckhunt/duckhunt.html');
+route('/duckhunt.swf', 'dist/html/programming/duckhunt/duckhunt.swf');
+
 route('/zelda', 'dist/html/programming/zelda/zelda.html');
+route('/zelda.swf', 'dist/html/programming/zelda/zelda.swf');
 
 route('/factoring-trinomials', 'dist/html/teaching/factoring-trinomials.html');
 // route('/factoring-trinomials.js', 'dist/js/teaching/factoring-trinomials.js');

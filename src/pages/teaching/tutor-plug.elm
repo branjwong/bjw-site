@@ -1,4 +1,4 @@
-module TutorPlug where
+module TutorPlug exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -10,8 +10,8 @@ import Notices
 import Header
 import Footer
 
-port title: String
-port title = "Teaching" ++ " | BJW"
+--port title: String
+--port title = "Teaching" ++ " | BJW"
 
 type alias Model =
   { currentPage : String
@@ -146,7 +146,7 @@ subjects : Html msg
 subjects = 
   let
     subjectsText = 
-      Markdown.toHtml """
+      Markdown.toHtml [] """
 
 [Foundations of Mathematics and Pre-calculus 10](/math10)  
 [Foundations of Mathematics 11](/math11)  
@@ -177,7 +177,7 @@ area : Html msg
 area = 
   let 
     imgArea = Bootstrap.image  ("/resources/pages/teaching/metrovan.fw.png")
-    string = Markdown.toHtml """
+    string = Markdown.toHtml [] """
 
 **Neighborhoods**
 - Marpole
@@ -226,9 +226,9 @@ contactMe =
       [ class "row" ]
       [ div 
         [ class "col-sm-12" ]
-        [ div
+        [ Markdown.toHtml
           [ style [ ("margin-bottom" , "20px" ) ] ]
-          [ Markdown.toHtml (.content contactAdv) ]
+          (.content contactAdv)
         ]
       ]
     ]
@@ -239,12 +239,12 @@ type alias AdvPoint =
   , content         : String
   }
 
-type alias Panel =
-  { title           : String
-  , html            : Html
-  }
+--type alias Panel =
+--  { title           : String
+--  , html            : Html msg
+--  }
 
-bio1 : Panel
+--bio1 : Panel
 bio1 =
   let
     string = """
@@ -255,20 +255,20 @@ Brandon is currently a 5th year Simon Fraser University on the path of completin
 
   in  
     { title = "Personal Profile"
-    , html = Markdown.toHtml string
+    , html = Markdown.toHtml [] string
     }
 
 
-bio2 : Panel
+--bio2 : Panel
 bio2 = 
   { title = "Experience"
   , html = resume
   }
 
-bio3 : Panel
+--bio3 : Panel
 bio3 =
   { title = "Pricing from $25/session!"
-  , html = Markdown.toHtml """
+  , html = Markdown.toHtml [] """
 
 4+ sessions/wk -> $25/session  
 3  sessions/wk -> $30/session  
@@ -343,9 +343,9 @@ resume =
         ]
       , div
         [ class "row" ]
-        [ div
+        [ Markdown.toHtml
           [ class "col-sm-12" ]
-          [ Markdown.toHtml oxfordText ]
+          oxfordText
         ]
       ]
     , div []
@@ -366,9 +366,9 @@ resume =
         ]
       , div
         [ class "row" ]
-        [ div
+        [ Markdown.toHtml
           [ class "col-sm-12" ]
-          [ Markdown.toHtml mageeText ]
+          mageeText
         ]
       ]
     ]

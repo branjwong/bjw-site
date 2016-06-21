@@ -1,4 +1,4 @@
-module AprilFools where
+module AprilFools exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -11,22 +11,22 @@ import NavBar
 
 import Writing.Post exposing (Date, Time, postInfo)
 
-port title : String
-port title =
-  postTitle ++ " | BJW"
+--port title : String
+--port title =
+--  postTitle ++ " | BJW"
 
 
 postTitle = "April Fools!"
 
 main =
-  post
+  aprilFoolsPost
     postTitle
     (Writing.Post.Date 2016 4 1)
     (Writing.Post.Time 1 08 "am")
-    [ Markdown.toHtml content ]
+    content
 
-post : String -> Date -> Time -> List Html -> Html msg
-post title date time body =
+aprilFoolsPost : String -> Date -> Time -> String -> Html msg
+aprilFoolsPost title date time body =
   div 
     []
     [ NavBar.navBar
@@ -41,19 +41,15 @@ post title date time body =
             [ class "WritingPost" ]
             [ h1 [] [ text title ]
             , h6 [] [ text (postInfo date time) ]
-            , div
-                []
-                [ Markdown.toHtml beforeNote ]
-            , div 
+            , Markdown.toHtml [] beforeNote 
+            , Markdown.toHtml 
                 [ style
                   [ ("font-size", "50px")
                   , ("color", "rgb(146, 42, 42)")
                   ]
-                ]
+                ] 
                 body
-            , div
-                []
-                [ Markdown.toHtml afterNote ]
+            , Markdown.toHtml [] afterNote 
             ]
           ]
         ]

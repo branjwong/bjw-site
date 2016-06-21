@@ -1,4 +1,4 @@
-module MovingBackToJapan where
+module MovingBackToJapan exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -7,10 +7,9 @@ import Markdown
 
 import Writing.Post
 
-port title : String
-port title =
-  postTitle ++ " | BJW"
-
+--port title : String
+--port title =
+--  postTitle ++ " | BJW"
 
 postTitle = "Moving Back To Japan"
 
@@ -19,7 +18,7 @@ main =
     postTitle
     (Writing.Post.Date 2016 4 1)
     (Writing.Post.Time 11 13 "pm")
-    [ Markdown.toHtml content ]
+    content
 
 
 content = """

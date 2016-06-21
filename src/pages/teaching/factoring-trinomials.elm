@@ -1,4 +1,4 @@
-module FactoringTrinomials where
+module FactoringTrinomials exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -8,9 +8,9 @@ import Markdown
 import Writing.Post
 
 
-port title : String
-port title =
-  postTitle ++ " | BJW"
+--port title : String
+--port title =
+--  postTitle ++ " | BJW"
 
 
 postTitle = "Factoring Trinomials"
@@ -21,7 +21,7 @@ main =
     postTitle
     (Writing.Post.Date 2015 12 8)
     (Writing.Post.Time 1 40 "pm")
-    [ Markdown.toHtml content ]
+    content
 
 
 content = """

@@ -1,4 +1,4 @@
-module CrossGame exposing (..) --where
+module CrossGame exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
