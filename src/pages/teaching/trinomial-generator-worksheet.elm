@@ -3,30 +3,59 @@ module TrinomialGeneratorWorksheet exposing (..)
 import Html.App as Html
 import Html exposing (..)
 import Html.Events exposing (onClick)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, style)
 import Random exposing (Seed)
 import Time exposing (Time)
 import Char
+import Task
+import Window exposing (Size)
 
+import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import Header
 import NavBar
 import Footer
 
--- MODEL
+main =
+  Html.program
+    { init = 
+        (init
+        , Cmd.batch 
+            [ Task.perform Tick Tick Time.now
+            , Task.perform Resize Resize Window.size
+            ]
+        )
+    , update = update
+    , subscriptions = \_ -> Sub.none
+    , view = view
+    }
 
-type Display 
-  = Hidden
-  | Shown
+-- MODEL
 
 type alias Model =
   { factored  : (Int, Int, Int, Int)
   , trinomial : (Int, Int, Int)
   , seed : Seed
   , answer : Display
+  , windowSize : Size
   }
 
-generateFactoredAnswer : Seed -> Model
-generateFactoredAnswer seed =
+init = 
+  let 
+    fact = (1,2,3,4)
+  in
+    { factored = fact
+    , trinomial = expand fact
+    , seed = Random.initialSeed 0
+    , answer = Hidden
+    , windowSize = Size 0 0
+    }
+
+type Display 
+  = Hidden
+  | Shown
+
+generateModelWithSeed : Seed -> Size -> Model
+generateModelWithSeed seed size =
   let
     generateInt min max seed = Random.step (Random.int min max) seed
     (a, seed') = generateInt 1 10 seed
@@ -38,7 +67,8 @@ generateFactoredAnswer seed =
     { factored = fact
     , trinomial = expand fact
     , seed = seed''''
-    , answer = Hidden  
+    , answer = Hidden
+    , windowSize = size
     }
 
 expand : (Int, Int, Int, Int) -> (Int, Int, Int)
@@ -83,31 +113,30 @@ discriminant (a, b, c) =
     --  (_, _)        -> RadFactorable
 -}
 
-init = 
-  let 
-    fact = (1,2,3,4)
-  in
-    { factored = fact
-    , trinomial = expand fact
-    , seed = Random.initialSeed 0
-    , answer = Hidden
-    }
+
+
+
 -- UPDATE
 
 type Msg
   = New
   | Show
-  --| Tick Time
-  --| Submit (Int, Int, Int, Int)
+  | Tick Time
+  | Resize Size
 
---update : (Seed, Action) -> Model -> Model
---update (seed, action) model =
-update : Msg -> Model -> Model
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
-    New -> (generateFactoredAnswer model.seed)
-    Show -> ({ model | answer = Shown })
-    --Submit (a,b,c,d) ->
+    New -> 
+      (generateModelWithSeed model.seed model.windowSize, Cmd.none)
+    Show -> 
+      ({ model | answer = Shown }, Cmd.none)
+    Tick time -> 
+      (generateModelWithSeed (Random.initialSeed (round time)) model.windowSize, Cmd.none)
+    Resize size ->
+      ({ model | windowSize = size }, Cmd.none)
+
+  --Submit (a,b,c,d) ->
 
 -- VIEW
 
@@ -123,8 +152,24 @@ view model =
     , NavBar.navBarSpace
     , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
     , page model
+    , space model.windowSize.height
     , Footer.footer
     ]
+
+space : Int -> Html msg
+space height = 
+  let 
+    heightContainer = 45
+    spaceTakenSoFar = (Debug.log "heightNavBar" heightNavBar) + (Debug.log "heightHeader" heightHeader) + (Debug.log "heightContainer" heightContainer) + (Debug.log "heightFooter" heightFooter)
+    result =
+      if height - spaceTakenSoFar > 0 then
+        (Debug.log "height" height) - spaceTakenSoFar + 1
+      else
+        0
+  in
+    div 
+      [ style [ ("height" , toString (Debug.log "result" result) ++ "px" ) ] ]
+      []
 
 type Params
   = Both
@@ -245,35 +290,9 @@ page model =
     [ class "container ProgrammingContainer" ]
     [ app
     ]
-  
 
--- SIGNALS
+-- SUBSCRIPTIONS
 
---actions : Mailbox Action
---actions =
---  Signal.mailbox New
-
---seeds : Signal Seed
---seeds =
---  Time.every Time.millisecond
---  |> Signal.sampleOn actions.signal
---  |> Signal.map Time.inMilliseconds
---  |> Signal.map round
---  |> Signal.map Random.initialSeed
-
---updates : Signal (Seed, Action)
---updates =
---  Signal.map2 (,) seeds actions.signal
-
---model : Signal Model
---model =
---  Signal.foldp update init updates
-
-main =
-  --Signal.map (view actions.address) model   
-  Html.beginnerProgram
-    { model = init
-    , update = update
-    , view = view
-    }
-
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  Window.resizes Resize

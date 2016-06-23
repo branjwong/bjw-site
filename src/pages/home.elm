@@ -1,9 +1,10 @@
-module Home exposing (..) --where
+module Home exposing (main)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App as Html
 import Window exposing (Size)
+import Task
 
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import NavBar
@@ -16,7 +17,7 @@ import Bootstrap
 
 main =
   Html.program
-    { init = (Size 0 0, Cmd.none)
+    { init = (Size 0 0, Task.perform Resize Resize Window.size)
     , update = update
     , subscriptions = subscriptions
     , view = view
@@ -35,7 +36,7 @@ update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
     Resize size ->
-      (size,  Cmd.none)
+      (size, Cmd.none)
 
 view : Model -> Html msg
 view model =

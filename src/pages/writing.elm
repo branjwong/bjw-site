@@ -1,10 +1,11 @@
-module Writing exposing (main) --where
+module Writing exposing (main)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App as Html
 import Window exposing (Size)
 import Markdown
+import Task
 
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import NavBar
@@ -15,7 +16,7 @@ import Footer
 
 main =
   Html.program
-    { init = (Size 0 0, Cmd.none)
+    { init = (Size 0 0, Task.perform Resize Resize Window.size)
     , update = update
     , subscriptions = subscriptions
     , view = view

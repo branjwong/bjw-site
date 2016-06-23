@@ -40,32 +40,6 @@ body : String
 body =
   """
 
-[This Site's Source Code](https://github.com/branjwong/bjw-site)
-=========================
-
-Languages: [Elm](http://elm-lang.org/), HTML, CSS  
-Front-end Framework: [Bootstrap](http://getbootstrap.com/)  
-Tools Used: [Grunt](http://gruntjs.com/)  
-Initial Commit: September 29th, 2015  
-
-* * *
-
-[Buzzword Bingo](/bingo)
-=======
-
-Language: [Elm](http://elm-lang.org/)  
-Source Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  
-Instructor: [Pragmatic Studios](https://pragmaticstudio.com/)  
-Finish Date: September 24th, 2015  
-
-### Description
-
-- An web application that enables the user to play bingo.
-- Designed for use in a meeting where buzzwords are thrown about.
-- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.
-
-* * *
-
 [Megaman Project](/megaman)
 =================
 
@@ -82,6 +56,22 @@ Time: Year 12 - Highschool
 - Press the up button to fire your buster  
 - Hold the up button to charge your buster  
 - Move to avoid Metalman's attacks  
+
+* * *
+
+[Buzzword Bingo](/bingo)
+=======
+
+Language: [Elm](http://elm-lang.org/)  
+Source Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)  
+Instructor: [Pragmatic Studios](https://pragmaticstudio.com/)  
+Finish Date: September 24th, 2015  
+
+### Description
+
+- An web application that enables the user to play bingo.
+- Designed for use in a meeting where buzzwords are thrown about.
+- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.
 
 * * *
 
@@ -146,6 +136,16 @@ Time: Year 11 - Highschool
     - Wizards, Witches, and Horcruxes
 - Python
     - Wumpas World
+
+* * *
+
+[This Site's Source Code](https://github.com/branjwong/bjw-site)
+=========================
+
+Frontend: [Elm](http://elm-lang.org/), [Bootstrap](http://getbootstrap.com/)  
+Backend: [NodeJS](https://nodejs.org/en/)  
+Tools Used: [Grunt](http://gruntjs.com/)  
+Initial Commit: September 29th, 2015  
 
   """
 

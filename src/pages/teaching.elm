@@ -1,10 +1,11 @@
-module Teaching exposing (main) --where
+module Teaching exposing (main)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App as Html
 import Window exposing (Size)
 import Markdown
+import Task
 
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 import NavBar
@@ -17,7 +18,7 @@ import Disqus
 
 main =
   Html.program
-    { init = (Size 0 0, Cmd.none)
+    { init = (Size 0 0, Task.perform Resize Resize Window.size)
     , update = update
     , subscriptions = subscriptions
     , view = view
@@ -53,7 +54,7 @@ view model =
 space : Int -> Html msg
 space height = 
   let 
-    heightContainer = 150
+    heightContainer = 369
     spaceTakenSoFar = heightNavBar + heightHeader + heightContainer + heightFooter
     result =
       if height - spaceTakenSoFar > 0 then
