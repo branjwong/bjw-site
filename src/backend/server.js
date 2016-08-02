@@ -1,4 +1,3 @@
-
 var express = require("express");
 var app = express();
 
@@ -115,7 +114,7 @@ route('/cross-game', 'dist/html/writing/cross-game.html');
 route('/what-i-am-doing-with-my-life', 'dist/html/writing/what-i-am-doing-with-my-life.html');
 // route('/what-i-am-doing-with-my-life.js', 'dist/js/writing/what-i-am-doing-with-my-life.js');
 
-route('/writing/blog/latest', '/dist/html/writing/april-fools.html');
+route('/writing/blog/latest', '/dist/html/writing/moving-back-to-japan.html');
 route('/writing/reviews/latest', '/dist/html/writing/cross-game.html');
 route('/writing/guide/latest', 'dist/html/teaching/factoring-trinomials.html');
 

@@ -39,9 +39,9 @@ update msg model =
 
 view : Model -> Html msg
 view model =
-  div 
+  div
     []
-    [ NavBar.navBar 
+    [ NavBar.navBar
     , NavBar.navBarSpace
     , Header.header "Writing" "Where the archive of all my written work resides."
     , div
@@ -50,7 +50,7 @@ view model =
         [ class "row" ]
         [ div
           [ class "col-sm-12" ]
-          [ Markdown.toHtml [ class "Markdown" ] content 
+          [ Markdown.toHtml [ class "Markdown" ] content
           ]
         ]
       ]
@@ -58,8 +58,8 @@ view model =
     ]
 
 space : Int -> Html msg
-space height = 
-  let 
+space height =
+  let
     heightContainer = 536
     spaceTakenSoFar = heightNavBar + heightHeader + heightContainer + heightFooter
     result =
@@ -68,7 +68,7 @@ space height =
       else
         0
   in
-    div 
+    div
       [ style [ ("height" , toString result ++ "px" ) ] ]
       []
 
@@ -78,7 +78,6 @@ content = """
 Blog Posts
 ==========
 
-* [2016/04/01 - April Fools](/april-fools)
 * [2016/04/01 - Moving Back To Japan](/moving-back-to-japan)
 * [2015/11/20 - What I Am Doing With My Life](/what-i-am-doing-with-my-life)
 
@@ -116,7 +115,7 @@ Japan
 
 
 ### Reviews
-  
+
 * [2013/07/12 - Cross Game](/cross-game)
 
 """
