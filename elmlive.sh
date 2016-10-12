@@ -1,0 +1,1 @@
+elm-live src/App.elm --output=dist/js/app.js --dir=.

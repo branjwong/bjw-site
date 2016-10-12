@@ -1,78 +1,92 @@
-module Writing exposing (main)
+module Writing exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App as Html
-import Window exposing (Size)
-import Markdown
-import Task
-
+import Html.Events as Events exposing (onClick)
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
+
+
+--
+
+import Model exposing (..)
+import Update exposing (Msg(ChangePage))
+
+
+--
+
+import Markdown
 import NavBar
+import Notices
 import Header
 import Footer
+import Disqus
+
 
 --port title =  "Writing" ++ " | BJW"
+--main =
+--  Html.program
+--    { init = (Size 0 0, Task.perform Resize Resize Window.size)
+--    , update = update
+--    , subscriptions = subscriptions
+--    , view = view
+--    }
+--subscriptions : Model -> Sub Msg
+--subscriptions model =
+--  Window.resizes Resize
+--type alias Model = Size
+--type Msg
+--  = Resize Size
+--update : Msg -> Model -> (Model, Cmd Msg)
+--update msg model =
+--  case msg of
+--    Resize size ->
+--      (size,  Cmd.none)
 
-main =
-  Html.program
-    { init = (Size 0 0, Task.perform Resize Resize Window.size)
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Window.resizes Resize
-
-type alias Model = Size
-
-type Msg
-  = Resize Size
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    Resize size ->
-      (size,  Cmd.none)
-
-view : Model -> Html msg
+view : Model -> Html Msg
 view model =
-  div
-    []
-    [ NavBar.navBar
-    , NavBar.navBarSpace
-    , Header.header "Writing" "Where the archive of all my written work resides."
-    , div
-      [ class "container" ]
-      [ div
-        [ class "row" ]
-        [ div
-          [ class "col-sm-12" ]
-          [ Markdown.toHtml [ class "Markdown" ] content
-          ]
+    div
+        []
+        [ NavBar.navBar
+        , NavBar.navBarSpace
+        , Header.header "Writing" "Where the archive of all my written work resides."
+        , div
+            [ class "container" ]
+            [ div
+                [ class "row" ]
+                [ div
+                    [ class "col-sm-12" ]
+                    [ Markdown.toHtml [ class "Markdown" ] content
+                    ]
+                ]
+            ]
+        , Footer.footer
         ]
-      ]
-    , Footer.footer
-    ]
+
 
 space : Int -> Html msg
 space height =
-  let
-    heightContainer = 536
-    spaceTakenSoFar = heightNavBar + heightHeader + heightContainer + heightFooter
-    result =
-      if height - spaceTakenSoFar > 0 then
-        height - spaceTakenSoFar + 1
-      else
-        0
-  in
-    div
-      [ style [ ("height" , toString result ++ "px" ) ] ]
-      []
+    let
+        heightContainer =
+            536
 
-content = """
+        spaceTakenSoFar =
+            heightNavBar + heightHeader + heightContainer + heightFooter
+
+        result =
+            if height - spaceTakenSoFar > 0 then
+                height - spaceTakenSoFar + 1
+            else
+                0
+    in
+        div
+            [ style [ ( "height", toString result ++ "px" ) ] ]
+            []
+
+
+content =
+    """
 
 
 Blog Posts
@@ -119,8 +133,11 @@ Japan
 * [2013/07/12 - Cross Game](/cross-game)
 
 """
-{-
-### Picks
 
-- Nothing
+
+
+{-
+   ### Picks
+
+   - Nothing
 -}
