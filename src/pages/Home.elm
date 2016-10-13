@@ -10,7 +10,7 @@ import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 --
 
 import Model exposing (..)
-import Update exposing (Msg(ChangePage))
+import Update exposing (..)
 
 
 --
@@ -65,7 +65,7 @@ home =
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-3" ]
-                    [ block "Teaching" Home ]
+                    [ block "Teaching" Teaching ]
                 , div
                     [ class "col-sm-2" ]
                     [ block "Programming" Programming ]
@@ -128,7 +128,7 @@ block title page =
                 [ ( "text-align", "center" ) ]
             ]
             [ a
-                [ Events.onClick (ChangePage page) ]
+                [ href (toHash page) ]
                 [ text title ]
             ]
         , div

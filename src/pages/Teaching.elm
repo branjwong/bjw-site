@@ -3,10 +3,6 @@ module Teaching exposing (view)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App as Html
-
-
---
-
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 
 

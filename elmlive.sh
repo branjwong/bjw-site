@@ -1,1 +1,1 @@
-elm-live src/App.elm --output=dist/js/app.js --dir=.
+elm-live src/App.elm --output=dist/js/app.js --dir=. --open

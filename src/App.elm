@@ -2,8 +2,7 @@ module App exposing (main)
 
 -- ELM PACKAGES
 
-import Html exposing (Html, button, div, text)
-import Html.App as App
+import Navigation
 import Html.Events exposing (onClick)
 import Task exposing (andThen)
 import Window exposing (Size)
@@ -19,8 +18,9 @@ import Update exposing (..)
 
 main : Program Never
 main =
-    App.program
+    Navigation.program (Navigation.makeParser hashParser)
         { init = init
+        , urlUpdate = urlUpdate
         , update = Update.update
         , subscriptions = subscriptions
         , view = View.view
@@ -32,14 +32,9 @@ subscriptions model =
     Window.resizes Resize
 
 
-
---
-
-
-init =
-    ( Model Home (Size 0 0)
-    , Task.perform Resize Resize Window.size
-    )
+init : Result String Page -> ( Model, Cmd Msg )
+init result =
+    urlUpdate result (Model Home (Size 0 0))
 
 
 devInit =

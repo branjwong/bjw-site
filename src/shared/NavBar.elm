@@ -48,7 +48,7 @@ navbarCollapseComponent =
             , span [ class "icon-bar NavBarIconBar" ] []
             , span [ class "icon-bar NavBarIconBar" ] []
             ]
-        , a [ class "navbar-brand", Events.onClick (ChangePage Home) ] [ text "BJW" ]
+        , a [ class "navbar-brand", href (toHash Home) ] [ text "BJW" ]
         ]
 
 
@@ -75,7 +75,7 @@ navbarTabs =
 tab : String -> Page -> Html Msg
 tab name page =
     li []
-        [ a [ Events.onClick (ChangePage page) ] [ text name ]
+        [ a [ href (toHash page) ] [ text name ]
         ]
 
 
