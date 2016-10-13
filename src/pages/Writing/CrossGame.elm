@@ -1,27 +1,30 @@
-module CrossGame exposing (..)
+module Writing.CrossGame exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+
+--
+
 import Writing.Post
+import Model exposing (Model, Msg)
 
 
---port title : String
---port title =
---  postTitle ++ " | BJW"
+postTitle =
+    "Cross Game"
 
 
-postTitle = "Cross Game"
+view : Model -> Html Msg
+view model =
+    Writing.Post.post
+        postTitle
+        (Writing.Post.Date 2013 7 12)
+        (Writing.Post.Time 12 47 "pm")
+        content
 
-main =
-  Writing.Post.post
-    postTitle
-    (Writing.Post.Date 2013 7 12)
-    (Writing.Post.Time 12 47 "pm")
-    content
 
-
-content = """
+content =
+    """
 
 ![Cross Game](http://cdn.myanimelist.net/images/anime/6/22103l.jpg)
 

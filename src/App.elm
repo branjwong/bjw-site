@@ -1,19 +1,14 @@
 module App exposing (main)
 
--- ELM PACKAGES
-
 import Navigation
-import Html.Events exposing (onClick)
-import Task exposing (andThen)
 import Window exposing (Size)
-import Debug
 
 
--- PROJECT IMPORTS
+--
 
 import Model exposing (..)
-import View
 import Update exposing (..)
+import View
 
 
 main : Program Never
@@ -35,12 +30,3 @@ subscriptions model =
 init : Result String Page -> ( Model, Cmd Msg )
 init result =
     urlUpdate result (Model Home (Size 0 0))
-
-
-devInit =
-    ( Model Home (Size 0 0)
-    , Cmd.batch
-        [ Task.perform Resize Resize Window.size
-          --, Task.perform ChangePage ChangePage (Task.succeed Teaching)
-        ]
-    )

@@ -1,52 +1,53 @@
-module PrecalcTwelve where
+module Teaching.TutorPlug.PrecalcTwelve exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
-
 import NavBar
 import Header
 import Footer
 
 
-port title : String
-port title =
-  tytle ++ " | BJW"
+--
+
+import Model exposing (Model, Msg)
 
 
-tytle = "Pre-calculus 12"
+view : Model -> Html Msg
+view model =
+    div
+        []
+        [ NavBar.navBar
+        , NavBar.navBarSpace
+        , Header.header "Learning Outcomes" title
+        , subjectInfo
+        , Footer.footer
+        ]
 
 
-main : Html
-main = 
- div
-    []
-    [ NavBar.navBar
-    , NavBar.navBarSpace
-    , Header.header "Learning Outcomes" tytle
-    , subjectInfo
-    , Footer.footer
-    ]
-
-
-subjectInfo : Html
+subjectInfo : Html Msg
 subjectInfo =
-  div
-    [ class "container" ]
-    [ div
-      [ class "row" ]
-      [ div 
-        [ class "Markdown" ]
-        [ body ]
-      ]
-    ]
+    div
+        [ class "container" ]
+        [ div
+            [ class "row" ]
+            [ Markdown.toHtml
+                [ class "Markdown" ]
+                body
+            ]
+        ]
 
-body = 
-  Markdown.toHtml """
+
+title =
+    "Pre-calculus 12"
+
+
+body =
+    """
 
 Algebra and Number
 - Demonstrate an understanding of the absolute value of real numbers
-- Problems that involve operations on radicals and radical expressions with numerical and variable radicands. 
+- Problems that involve operations on radicals and radical expressions with numerical and variable radicands.
 - Problems that involve radical equations
 - Determine equivalent forms of rational expressions
 - Perform operations on rational expressions

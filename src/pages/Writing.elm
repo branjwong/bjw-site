@@ -10,38 +10,13 @@ import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 --
 
 import Model exposing (..)
-import Update exposing (Msg(ChangePage))
-
-
---
-
+import Update exposing (..)
 import Markdown
 import NavBar
 import Notices
 import Header
 import Footer
 import Disqus
-
-
---port title =  "Writing" ++ " | BJW"
---main =
---  Html.program
---    { init = (Size 0 0, Task.perform Resize Resize Window.size)
---    , update = update
---    , subscriptions = subscriptions
---    , view = view
---    }
---subscriptions : Model -> Sub Msg
---subscriptions model =
---  Window.resizes Resize
---type alias Model = Size
---type Msg
---  = Resize Size
---update : Msg -> Model -> (Model, Cmd Msg)
---update msg model =
---  case msg of
---    Resize size ->
---      (size,  Cmd.none)
 
 
 view : Model -> Html Msg
@@ -92,8 +67,8 @@ content =
 Blog Posts
 ==========
 
-* [2016/04/01 - Moving Back To Japan](/moving-back-to-japan)
-* [2015/11/20 - What I Am Doing With My Life](/what-i-am-doing-with-my-life)
+* [2016/04/01 - Moving Back To Japan](/#writing/moving-back-to-japan)
+* [2015/11/20 - What I Am Doing With My Life](/#writing/what-i-am-doing-with-my-life)
 
 Japan
 
@@ -130,7 +105,7 @@ Japan
 
 ### Reviews
 
-* [2013/07/12 - Cross Game](/cross-game)
+* [2013/07/12 - Cross Game](/#writing/cross-game)
 
 """
 

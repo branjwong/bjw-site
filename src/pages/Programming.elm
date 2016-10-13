@@ -8,10 +8,6 @@ import Html.Attributes exposing (..)
 
 import Model exposing (..)
 import Update exposing (..)
-
-
---
-
 import Markdown
 import NavBar
 import Notices

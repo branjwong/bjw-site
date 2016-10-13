@@ -1,21 +1,22 @@
-module Teaching exposing (view)
+module Teaching.TutorPlug.Japanese exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.App as Html
+import Markdown
+import Window
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 
 
 --
 
-import Model exposing (..)
-import Update exposing (..)
-import Markdown
+import Model exposing (Model, Msg)
 import NavBar
-import Notices
 import Header
 import Footer
-import Disqus
+
+
+title =
+    "Japanese"
 
 
 view : Model -> Html Msg
@@ -24,18 +25,18 @@ view model =
         []
         [ NavBar.navBar
         , NavBar.navBarSpace
-        , Header.header "Teaching" "A bunch of learning goodness."
-        , teaching
+        , Header.header "Learning Outcomes" title
+        , subjectInfo
         , space model.size.height
         , Footer.footer
         ]
 
 
-space : Int -> Html msg
+space : Int -> Html Msg
 space height =
     let
         heightContainer =
-            369
+            180
 
         spaceTakenSoFar =
             heightNavBar + heightHeader + heightContainer + heightFooter
@@ -51,13 +52,15 @@ space height =
             []
 
 
-teaching : Html msg
-teaching =
+subjectInfo : Html Msg
+subjectInfo =
     div
         [ class "container" ]
         [ div
             [ class "row" ]
-            [ Markdown.toHtml [ class "Markdown" ] body
+            [ Markdown.toHtml
+                [ class "Markdown" ]
+                body
             ]
         ]
 
@@ -65,21 +68,9 @@ teaching =
 body =
     """
 
-[Brandon Tutors! More Info Here](/#teaching/tutor/plug)
-================================
+As an former exchange of Kansai Gaidai University, I teach from the same curriculum and textbook that their professors developed. This textbook and curriculum has done so well that it has been adopted in classes all over the world. I have seen it with my own eyes being used in classrooms at Simon Fraser University.
 
-* * *
-
-Lessons
-=======
-
-* [Factoring Trinomials Lesson](/factoring-trinomials)
-
-* * *
-
-Helpful Applications
-====================
-
-* [Trinomial Worksheet Generator](/trinomial-generator-worksheet)
+http://genki.japantimes.co.jp/wp-content/uploads/genki_syllabus_en.jpg
+http://wpgenki.whitebase.co.jp/wp-content/uploads/06text_img1.jpg
 
   """

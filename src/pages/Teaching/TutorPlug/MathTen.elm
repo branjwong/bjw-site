@@ -1,48 +1,53 @@
-module MathTen where
+module Teaching.TutorPlug.MathTen exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
-
 import NavBar
 import Header
 import Footer
 
 
-port title : String
-port title =
-  tytle ++ " | BJW"
+--
+
+import Model exposing (Model, Msg)
 
 
-tytle = "Foundations of Mathematics and Pre-calculus 10"
+title =
+    "Foundations of Mathematics and Pre-calculus 10"
 
 
-main : Html
-main = 
- div
-    [ ]
-    [ NavBar.navBar
-    , NavBar.navBarSpace
-    , Header.header "Learning Outcomes" tytle
-    , subjectInfo
-    , Footer.footer
-    ]
+view : Model -> Html Msg
+view model =
+    div
+        []
+        [ NavBar.navBar
+        , NavBar.navBarSpace
+        , Header.header "Learning Outcomes" title
+        , subjectInfo
+        , Footer.footer
+        ]
 
-subjectInfo : Html
+
+subjectInfo : Html Msg
 subjectInfo =
-  div
-    [ class "container" ]
-    [ div
-      [ class "row" ]
-      [ div 
-        [ class "Markdown" ]
-        [ body ]
-      ]
-    ]
+    div
+        [ class "container" ]
+        [ div
+            [ class "row" ]
+            [ Markdown.toHtml
+                [ class "Markdown" ]
+                body
+            ]
+        ]
+
+
 
 -- http://www.bced.gov.bc.ca/irp/pdfs/mathematics/WNCPmath1012/2008math_foundations_precalc10.pdf
-body = 
-  Markdown.toHtml """
+
+
+body =
+    """
 
 Measurement
 - Unit conversion

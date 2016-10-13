@@ -66,9 +66,9 @@ navbarTabs : Html Msg
 navbarTabs =
     ul
         [ class "nav navbar-nav navbar-right" ]
-        [ tab "Teaching" Teaching
+        [ tab "Teaching" (Teaching TeachingHome)
         , tab "Programming" Programming
-        , tab "Writing" Writing
+        , tab "Writing" (Writing Archive)
         ]
 
 

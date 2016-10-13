@@ -1,48 +1,49 @@
-module PhysEleven where
+module Teaching.TutorPlug.PhysicsEleven exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
-
 import NavBar
 import Header
 import Footer
 
 
-port title : String
-port title =
-  tytle ++ " | BJW"
+--
+
+import Model exposing (Model, Msg)
 
 
-tytle = "Physics 11"
+view : Model -> Html Msg
+view model =
+    div
+        []
+        [ NavBar.navBar
+        , NavBar.navBarSpace
+        , Header.header "Learning Outcomes" title
+        , subjectInfo
+        , Footer.footer
+        ]
 
 
-main : Html
-main = 
- div
-    [ ]
-    [ NavBar.navBar
-    , NavBar.navBarSpace
-    , Header.header "Learning Outcomes" tytle
-    , subjectInfo
-    , Footer.footer
-    ]
-
-
-subjectInfo : Html
+subjectInfo : Html Msg
 subjectInfo =
-  div
-    [ class "container" ]
-    [ div
-      [ class "row" ]
-      [ div 
-        [ class "Markdown" ]
-        [ body ]
-      ]
-    ]
+    div
+        [ class "container" ]
+        [ div
+            [ class "row" ]
+            [ Markdown.toHtml
+                [ class "Markdown" ]
+                body
+            ]
+        ]
+
+
+title =
+    "Physics 11"
+
 
 body =
-  Markdown.toHtml """
+    """
 
 Skills, Methods, and the Nature of Physics
 - Describe the nature of physics
@@ -66,7 +67,7 @@ Newton's Laws
 - Solve problems that involve the application of Newton's Laws of motion in one dimension
 - Apply the concept of momentum in one dimension
 
-Energy 
+Energy
 - Perform calculations inolving work, force, and displacement
 - Solve problems involving different forms of energy
 - Analyse the relationships between work and energy, with reference to the law of convervation of energy

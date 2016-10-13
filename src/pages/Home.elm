@@ -11,11 +11,6 @@ import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 
 import Model exposing (..)
 import Update exposing (..)
-
-
---
-
-import Markdown
 import NavBar
 import Notices
 import Header
@@ -65,13 +60,13 @@ home =
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-3" ]
-                    [ block "Teaching" Teaching ]
+                    [ block "Teaching" (Teaching TeachingHome) ]
                 , div
                     [ class "col-sm-2" ]
                     [ block "Programming" Programming ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Writing" Writing ]
+                    [ block "Writing" (Writing Archive) ]
                   -- Writing ]
                 ]
             , div

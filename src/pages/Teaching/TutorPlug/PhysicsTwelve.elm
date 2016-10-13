@@ -1,48 +1,49 @@
-module PhysTwelve where
+module Teaching.TutorPlug.PhysicsTwelve exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
-
 import NavBar
 import Header
 import Footer
 
 
-port title : String
-port title =
-  tytle ++ " | BJW"
+--
+
+import Model exposing (Model, Msg)
 
 
-tytle = "Physics 12"
+view : Model -> Html Msg
+view model =
+    div
+        []
+        [ NavBar.navBar
+        , NavBar.navBarSpace
+        , Header.header "Learning Outcomes" title
+        , subjectInfo
+        , Footer.footer
+        ]
 
 
-main : Html
-main = 
- div
-    []
-    [ NavBar.navBar
-    , NavBar.navBarSpace
-    , Header.header "Learning Outcomes" tytle
-    , subjectInfo
-    , Footer.footer
-    ]
-
-
-subjectInfo : Html
+subjectInfo : Html Msg
 subjectInfo =
-  div
-    [ class "container" ]
-    [ div
-      [ class "row" ]
-      [ div 
-        [ class "Markdown" ]
-        [ body ]
-      ]
-    ]
+    div
+        [ class "container" ]
+        [ div
+            [ class "row" ]
+            [ Markdown.toHtml
+                [ class "Markdown" ]
+                body
+            ]
+        ]
 
-body = 
-  Markdown.toHtml """
+
+title =
+    "Physics 12"
+
+
+body =
+    """
 
 Experiments and Graphical Methods
 - Conduct appropriate experiments

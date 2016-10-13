@@ -1,27 +1,36 @@
-module MovingBackToJapan exposing (..)
+module Writing.MovingBackToJapan exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-import Markdown
 
+--
+
+import Model exposing (Model, Msg)
+import Markdown
 import Writing.Post
+
 
 --port title : String
 --port title =
 --  postTitle ++ " | BJW"
 
-postTitle = "Moving Back To Japan"
 
-main =
-  Writing.Post.post
-    postTitle
-    (Writing.Post.Date 2016 4 1)
-    (Writing.Post.Time 11 13 "pm")
-    content
+postTitle =
+    "Moving Back To Japan"
 
 
-content = """
+view : Model -> Html Msg
+view model =
+    Writing.Post.post
+        postTitle
+        (Writing.Post.Date 2016 4 1)
+        (Writing.Post.Time 11 13 "pm")
+        content
+
+
+content =
+    """
 
 Fuck it, I am moving back to Japan.
 
@@ -52,4 +61,3 @@ Leave a comment below with any parting messages or plans to get together if you 
 ###### Last Edited: Friday, April 1st: 11:13pm
 
 """
-
