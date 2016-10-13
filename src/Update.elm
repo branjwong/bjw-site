@@ -1,4 +1,4 @@
-module Update exposing (..)
+port module Update exposing (..)
 
 import Window exposing (Size)
 import Debug
@@ -13,15 +13,52 @@ import Task
 import Model exposing (..)
 
 
+port toTop : Bool -> Cmd msg
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case Debug.log "update: " msg of
+    --case Debug.log "update" msg of
+    case msg of
         NoOp ->
             model ! []
 
         Resize size ->
-            { model | size = size }
-                ! []
+            { model | size = size } ! []
+
+        ToTop arg ->
+            model ! [ toTop True ]
+
+
+{-| The URL is turned into a result. If the URL is valid, we just update our
+model to the new count. If it is not a valid URL, we modify the URL to make
+sense.
+-}
+urlUpdate : Result String Page -> Model -> ( Model, Cmd Msg )
+urlUpdate result model =
+    --case Debug.log "urlUpdate" result of
+    case result of
+        Err _ ->
+            ( model, Navigation.modifyUrl (toHash model.page) )
+
+        Ok page ->
+            let
+                resizePages =
+                    [ Home, Teaching TeachingHome ]
+
+                resizeTask =
+                    if List.foldr (||) False (List.map (\x -> x == page) resizePages) then
+                        [ Task.perform (\_ -> NoOp) Resize Window.size ]
+                    else
+                        []
+
+                toTopTask =
+                    [ Task.perform (\_ -> NoOp) ToTop (Task.succeed True) ]
+
+                batch =
+                    toTopTask ++ resizeTask
+            in
+                { model | page = page } ! batch
 
 
 toHash : Page -> String
@@ -118,36 +155,3 @@ writingParser =
         , format WhatIAmDoingWithMyLife (s "what-i-am-doing-with-my-life")
         , format MovingBackToJapan (s "moving-back-to-japan")
         ]
-
-
-{-| The URL is turned into a result. If the URL is valid, we just update our
-model to the new count. If it is not a valid URL, we modify the URL to make
-sense.
--}
-urlUpdate : Result String Page -> Model -> ( Model, Cmd Msg )
-urlUpdate result model =
-    case Debug.log "result" result of
-        Err _ ->
-            ( model, Navigation.newUrl (toHash model.page) )
-
-        Ok page ->
-            --case page of
-            --Home ->
-            --    { model
-            --        | page =
-            --            page
-            --    }
-            --        ! [ Task.perform Resize Resize Window.size ]
-            --Teaching teachingPage ->
-            --    { model
-            --        | page =
-            --            page
-            --    }
-            --        ! [ Task.perform Resize Resize Window.size ]
-            --_ ->
-            { model
-                | page =
-                    page
-            }
-                ! [ Task.perform Resize (\_ -> NoOp) Window.size
-                  ]

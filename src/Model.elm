@@ -42,3 +42,4 @@ type WritingPage
 type Msg
     = NoOp
     | Resize Size
+    | ToTop Bool
