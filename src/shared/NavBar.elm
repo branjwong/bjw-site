@@ -8,7 +8,7 @@ import Html.Events as Events exposing (..)
 --
 
 import Model exposing (..)
-import Update exposing (..)
+import Router
 
 
 -- TODO: Bullet O · ICONS FOR WHICH PAGE YOU ARE ON, AND A DOWN ARROW FOR DROPDOWN
@@ -48,7 +48,7 @@ navbarCollapseComponent =
             , span [ class "icon-bar NavBarIconBar" ] []
             , span [ class "icon-bar NavBarIconBar" ] []
             ]
-        , a [ class "navbar-brand", href (toHash Home) ] [ text "BJW" ]
+        , a [ class "navbar-brand", href (Router.toHash Home) ] [ text "BJW" ]
         ]
 
 
@@ -75,7 +75,7 @@ navbarTabs =
 tab : String -> Page -> Html Msg
 tab name page =
     li []
-        [ a [ href (toHash page) ] [ text name ]
+        [ a [ href (Router.toHash page) ] [ text name ]
         ]
 
 

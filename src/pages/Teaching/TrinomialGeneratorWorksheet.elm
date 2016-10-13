@@ -1,50 +1,22 @@
-module TrinomialGeneratorWorksheet exposing (..)
+module Teaching.TrinomialGeneratorWorksheet exposing (..)
 
 import Html.App as Html
 import Html exposing (..)
 import Html.Events exposing (onClick)
 import Html.Attributes exposing (class, style)
-import Random exposing (Seed)
-import Time exposing (Time)
 import Char
 import Task
 import Window exposing (Size)
 import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
+import Random exposing (Seed)
 
 
 --
 
+import Model exposing (..)
 import Header
 import NavBar
 import Footer
-
-
-main =
-    Html.program
-        { init =
-            ( init
-            , Cmd.batch
-                [ Task.perform Tick Tick Time.now
-                , Task.perform Resize Resize Window.size
-                ]
-            )
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        , view = view
-        }
-
-
-
--- MODEL
-
-
-type alias Worksheet =
-    { factored : ( Int, Int, Int, Int )
-    , trinomial : ( Int, Int, Int )
-    , seed : Seed
-    , answer : Display
-    , windowSize : Size
-    }
 
 
 init =
@@ -56,17 +28,11 @@ init =
         , trinomial = expand fact
         , seed = Random.initialSeed 0
         , answer = Hidden
-        , windowSize = Size 0 0
         }
 
 
-type Display
-    = Hidden
-    | Shown
-
-
-generateModelWithSeed : Seed -> Size -> Worksheet
-generateModelWithSeed seed size =
+generateWorksheetWithSeed : Seed -> Worksheet
+generateWorksheetWithSeed seed =
     let
         generateInt min max seed =
             Random.step (Random.int min max) seed
@@ -90,7 +56,6 @@ generateModelWithSeed seed size =
         , trinomial = expand fact
         , seed = seed''''
         , answer = Hidden
-        , windowSize = size
         }
 
 
@@ -142,50 +107,19 @@ expand ( a, b, c, d ) =
        --  (False, True) -> IntFactorable
        --  (_, _)        -> RadFactorable
 -}
--- UPDATE
-
-
-type Msg
-    = New
-    | Show
-    | Tick Time
-    | Resize Size
-
-
-update : Msg -> Worksheet -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        New ->
-            ( generateModelWithSeed model.seed model.windowSize, Cmd.none )
-
-        Show ->
-            ( { model | answer = Shown }, Cmd.none )
-
-        Tick time ->
-            ( generateModelWithSeed (Random.initialSeed (round time)) model.windowSize, Cmd.none )
-
-        Resize size ->
-            ( { model | windowSize = size }, Cmd.none )
-
-
-
 --Submit (a,b,c,d) ->
--- VIEW
---port title : String
---port title =
---  "Trinomial Problem Generator" ++ " | BJW"
 
 
-view : Worksheet -> Html Msg
+view : Model -> Html Msg
 view model =
     div
         []
         [ NavBar.navBar
         , NavBar.navBarSpace
         , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
-        , page model
-        , space model.windowSize.height
-        , Footer.footer
+        , page model.worksheet
+          --, space model.size.height
+          --, Footer.footer
         ]
 
 
@@ -196,16 +130,19 @@ space height =
             45
 
         spaceTakenSoFar =
-            (Debug.log "heightNavBar" heightNavBar) + (Debug.log "heightHeader" heightHeader) + (Debug.log "heightContainer" heightContainer) + (Debug.log "heightFooter" heightFooter)
+            heightNavBar
+                + heightHeader
+                + heightContainer
+                + heightFooter
 
         result =
             if height - spaceTakenSoFar > 0 then
-                (Debug.log "height" height) - spaceTakenSoFar + 1
+                height - spaceTakenSoFar + 1 - 50
             else
                 0
     in
         div
-            [ style [ ( "height", toString (Debug.log "result" result) ++ "px" ) ] ]
+            [ style [ ( "height", toString result ++ "px" ) ] ]
             []
 
 
@@ -216,10 +153,10 @@ type Params
 
 
 page : Worksheet -> Html Msg
-page model =
+page worksheet =
     let
         ( a', b', c' ) =
-            model.trinomial
+            worksheet.trinomial
 
         abString n =
             toString (abs n)
@@ -264,7 +201,7 @@ page model =
             "Factor: " ++ a ++ b ++ c
 
         ( p', q', r', s' ) =
-            model.factored
+            worksheet.factored
 
         answer =
             let
@@ -349,7 +286,7 @@ page model =
                 "Answer : " ++ pA ++ p ++ q ++ pB ++ " " ++ pC ++ r ++ s ++ pD
 
         app =
-            case model.answer of
+            case worksheet.answer of
                 Hidden ->
                     div
                         [ class "row" ]
@@ -357,10 +294,10 @@ page model =
                             []
                             [ text problem ]
                         , button
-                            [ onClick New ]
+                            [ onClick (WorksheetMsg New) ]
                             [ text "Get a New Problem!" ]
                         , button
-                            [ onClick Show ]
+                            [ onClick (WorksheetMsg Show) ]
                             [ text "Show Answer" ]
                         ]
 
@@ -371,7 +308,7 @@ page model =
                             []
                             [ text problem ]
                         , button
-                            [ onClick New ]
+                            [ onClick (WorksheetMsg New) ]
                             [ text "Get a New Problem!" ]
                         , div
                             []
@@ -382,12 +319,3 @@ page model =
             [ class "container ProgrammingContainer" ]
             [ app
             ]
-
-
-
--- SUBSCRIPTIONS
-
-
-subscriptions : Worksheet -> Sub Msg
-subscriptions model =
-    Window.resizes Resize

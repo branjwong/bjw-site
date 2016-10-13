@@ -11,6 +11,7 @@ import Style.SharedValues exposing (heightNavBar, heightHeader, heightFooter)
 
 import Model exposing (..)
 import Update exposing (..)
+import Router
 import NavBar
 import Notices
 import Header
@@ -123,7 +124,7 @@ block title page =
                 [ ( "text-align", "center" ) ]
             ]
             [ a
-                [ href (toHash page) ]
+                [ href (Router.toHash page) ]
                 [ text title ]
             ]
         , div

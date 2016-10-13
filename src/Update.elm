@@ -2,15 +2,17 @@ port module Update exposing (..)
 
 import Window exposing (Size)
 import Debug
-import UrlParser exposing (Parser, (</>), format, int, oneOf, s, string)
-import String
+import Time exposing (Time)
 import Navigation
 import Task
+import Random
 
 
 --
 
 import Model exposing (..)
+import Teaching.TrinomialGeneratorWorksheet exposing (..)
+import Router
 
 
 port toTop : Bool -> Cmd msg
@@ -18,8 +20,8 @@ port toTop : Bool -> Cmd msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    --case Debug.log "update" msg of
-    case msg of
+    case Debug.log "update" msg of
+        --case msg of
         NoOp ->
             model ! []
 
@@ -28,6 +30,33 @@ update msg model =
 
         ToTop arg ->
             model ! [ toTop True ]
+
+        WorksheetMsg msg' ->
+            case msg' of
+                New ->
+                    { model
+                        | worksheet = generateWorksheetWithSeed model.worksheet.seed
+                    }
+                        ! []
+
+                Show ->
+                    let
+                        worksheet =
+                            model.worksheet
+                    in
+                        { model
+                            | worksheet =
+                                { worksheet
+                                    | answer = Shown
+                                }
+                        }
+                            ! []
+
+                Tick time ->
+                    { model
+                        | worksheet = generateWorksheetWithSeed (Random.initialSeed (round time))
+                    }
+                        ! []
 
 
 {-| The URL is turned into a result. If the URL is valid, we just update our
@@ -39,12 +68,12 @@ urlUpdate result model =
     --case Debug.log "urlUpdate" result of
     case result of
         Err _ ->
-            ( model, Navigation.modifyUrl (toHash model.page) )
+            ( model, Navigation.modifyUrl (Router.toHash model.page) )
 
         Ok page ->
             let
                 resizePages =
-                    [ Home, Teaching TeachingHome ]
+                    [ Home, Teaching TeachingHome, Teaching TrinomialGeneratorWorksheet ]
 
                 resizeTask =
                     if List.foldr (||) False (List.map (\x -> x == page) resizePages) then
@@ -52,106 +81,15 @@ urlUpdate result model =
                     else
                         []
 
+                worksheetTask =
+                    [ Task.perform (\_ -> NoOp) (WorksheetMsg << Tick) Time.now
+                    , Task.perform (\_ -> NoOp) Resize Window.size
+                    ]
+
                 toTopTask =
                     [ Task.perform (\_ -> NoOp) ToTop (Task.succeed True) ]
 
                 batch =
-                    toTopTask ++ resizeTask
+                    toTopTask ++ resizeTask ++ worksheetTask
             in
                 { model | page = page } ! batch
-
-
-toHash : Page -> String
-toHash page =
-    case page of
-        Home ->
-            "#home"
-
-        Programming ->
-            "#programming"
-
-        Teaching TeachingHome ->
-            "#teaching/home"
-
-        Teaching (Tutor Plug) ->
-            "#teaching/tutor/plug"
-
-        Teaching (Tutor MathTen) ->
-            "#teaching/tutor/math10"
-
-        Teaching (Tutor MathEleven) ->
-            "#teaching/tutor/math11"
-
-        Teaching (Tutor PhysicsEleven) ->
-            "#teaching/tutor/physics11"
-
-        Teaching (Tutor PhysicsTwelve) ->
-            "#teaching/tutor/physics12"
-
-        Teaching (Tutor PrecalcEleven) ->
-            "#teaching/tutor/precalc11"
-
-        Teaching (Tutor PrecalcTwelve) ->
-            "#teaching/tutor/precalc12"
-
-        Teaching (Tutor Japanese) ->
-            "#teaching/tutor/japanese"
-
-        Writing Archive ->
-            "#writing/archive"
-
-        Writing CrossGame ->
-            "#writing/cross-game"
-
-        Writing WhatIAmDoingWithMyLife ->
-            "#writing/what-i-am-doing-with-my-life"
-
-        Writing MovingBackToJapan ->
-            "#writing/moving-back-to-japan"
-
-
-hashParser : Navigation.Location -> Result String Page
-hashParser location =
-    UrlParser.parse identity pageParser (String.dropLeft 1 location.hash)
-
-
-pageParser : Parser (Page -> a) a
-pageParser =
-    oneOf
-        [ format Home (s "home")
-        , format Programming (s "programming")
-        , format Teaching (s "teaching" </> teachingParser)
-        , format Writing (s "writing" </> writingParser)
-        ]
-
-
-teachingParser : Parser (TeachingPage -> a) a
-teachingParser =
-    oneOf
-        [ format TeachingHome (s "home")
-        , format Tutor (s "tutor" </> tutorParser)
-        ]
-
-
-tutorParser : Parser (TutorPage -> a) a
-tutorParser =
-    oneOf
-        [ format Plug (s "plug")
-        , format MathTen (s "math10")
-        , format MathEleven (s "math11")
-        , format PhysicsEleven (s "physics11")
-        , format PhysicsTwelve (s "physics12")
-        , format PrecalcEleven (s "precalc11")
-        , format PrecalcTwelve (s "precalc12")
-        , format Japanese (s "japanese")
-        ]
-
-
-writingParser : Parser (WritingPage -> a) a
-writingParser =
-    oneOf
-        [ format Archive (s "archive")
-        , format CrossGame (s "cross-game")
-        , format WhatIAmDoingWithMyLife (s "what-i-am-doing-with-my-life")
-        , format MovingBackToJapan (s "moving-back-to-japan")
-        ]

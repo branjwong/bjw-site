@@ -14,6 +14,8 @@ import Update exposing (..)
 import Home
 import Programming
 import Teaching
+import Teaching.FactoringTrinomials
+import Teaching.TrinomialGeneratorWorksheet
 import Teaching.TutorPlug
 import Teaching.TutorPlug.MathTen
 import Teaching.TutorPlug.MathEleven
@@ -39,6 +41,12 @@ view model =
 
         Teaching TeachingHome ->
             Teaching.view model
+
+        Teaching FactoringTrinomials ->
+            Teaching.FactoringTrinomials.view model
+
+        Teaching TrinomialGeneratorWorksheet ->
+            Teaching.TrinomialGeneratorWorksheet.view model
 
         Teaching (Tutor Plug) ->
             Teaching.TutorPlug.view model

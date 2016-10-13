@@ -73,13 +73,13 @@ body =
 Lessons
 =======
 
-* [Factoring Trinomials Lesson](/factoring-trinomials)
+* [Factoring Trinomials Lesson](/#teaching/factoring-trinomials)
 
 * * *
 
 Helpful Applications
 ====================
 
-* [Trinomial Worksheet Generator](/trinomial-generator-worksheet)
+* [Trinomial Worksheet Generator](/#teaching/trinomial-generator-worksheet)
 
   """

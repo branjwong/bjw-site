@@ -9,11 +9,13 @@ import Window exposing (Size)
 import Model exposing (..)
 import Update exposing (..)
 import View
+import Router
+import Teaching.TrinomialGeneratorWorksheet as Worksheet
 
 
 main : Program Never
 main =
-    Navigation.program (Navigation.makeParser hashParser)
+    Navigation.program (Navigation.makeParser Router.hashParser)
         { init = init
         , urlUpdate = urlUpdate
         , update = Update.update
@@ -29,4 +31,4 @@ subscriptions model =
 
 init : Result String Page -> ( Model, Cmd Msg )
 init result =
-    urlUpdate result (Model Home (Size 0 0))
+    urlUpdate result (Model Home (Size 0 0) Worksheet.init)
