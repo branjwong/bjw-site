@@ -34,8 +34,7 @@ programming =
         [ class "container" ]
         [ div
             [ class "row" ]
-            [ Markdown.toHtml [ class "Markdown" ] body
-            ]
+            [ Markdown.toHtml [ class "Markdown" ] body ]
         ]
 
 
@@ -46,109 +45,93 @@ body =
 [Megaman Project](/megaman)
 =================
 
-IT 12
-Language: ActionScript
-Software Platform: Adobe Flash
-Instructor: Blair Yeung-Meadows
-Time: Year 12 - Highschool
+* IT 12
+* Language: ActionScript
+* Software Platform: Adobe Flash
+* Instructor: Blair Yeung-Meadows
+* Time: Year 12 * Highschool
 
 ### How To Play
 
-- Goal: Reduce Metalman's HP to 0
-- Use A/S/D/W to move Left/Down/Right/Up
-- Press the up button to fire your buster
-- Hold the up button to charge your buster
-- Move to avoid Metalman's attacks
-
-* * *
-
-[Buzzword Bingo](/bingo)
-=======
-
-Language: [Elm](http://elm-lang.org/)
-Source Code @ [Github](https://github.com/branjwong/portfolio/tree/master/elm/bingo)
-Instructor: [Pragmatic Studios](https://pragmaticstudio.com/)
-Finish Date: September 24th, 2015
-
-### Description
-
-- An web application that enables the user to play bingo.
-- Designed for use in a meeting where buzzwords are thrown about.
-- To use: give yourself points whenever specific buzzwords are heard by clicking on the buzzword on your bingo app.
+* Goal: Reduce Metalman's HP to 0
+* Use A/S/D/W to move Left/Down/Right/Up
+* Press the up button to fire your buster
+* Hold the up button to charge your buster
+* Move to avoid Metalman's attacks
 
 * * *
 
 [Zelda Project](/zelda)
 ===============
 
-IT 12
-Language: ActionScript
-Software Platform: Adobe Flash
-Instructor: Blair Yeung-Meadows
-Time: Year 12 - Highschool
+* IT 12
+* Language: ActionScript
+* Software Platform: Adobe Flash
+* Instructor: Blair Yeung-Meadows
+* Time: Year 12 - Highschool
 
 ### How To Play
 
-- Goal: Navigate through Hyrule and find the Triforce
-- Click on arrow buttons to navigate
-- Click on enemies to defeat them before they attack you
+* Goal: Navigate through Hyrule and find the Triforce
+* Click on arrow buttons to navigate
+* Click on enemies to defeat them before they attack you
 
 * * *
 
-[Duckhunt Project](/dist/html/programming/duckhunt/duckhunt.html)
+[Duckhunt Project](/duckhunt)
 ===============
 
-IT 11
-Language: ActionScript
-Software Platform: Adobe Flash
-Instructor: Blair Yeung-Meadows
-Time: Year 11 - Highschool
+* IT 11
+* Language: ActionScript
+* Software Platform: Adobe Flash
+* Instructor: Blair Yeung-Meadows
+* Time: Year 11 - Highschool
 
 ### How To Play
 
-- Goal: Shoot ducks by clicking on them with the mouse
-- Don't let the dog laugh at you for sucking
+* Goal: Shoot ducks by clicking on them with the mouse
+* Don't let the dog laugh at you for sucking
 
 * * *
 
 [The Rest of the Portfolio](https://github.com/branjwong/portfolio)
 ===========================
 
-- C
-    - Build a Shell
-    - Extended Producer-Consumer Problem
-    - POSIX Threads and Producer-Consumer
-    - Codility Demo Problem
-- C#
-    - Megaman
-- C++
-    - Waiting in Line
-    - Word
-    - Trees
-    - Hash Tables and the Dictionary ADT
-- Elm
-    - Bingo
-    - Online Resume and Portfolio Website
-        - github.com/branjwong/website
-- Fireworks
-    - Personal Logo
-    - Sasaki Logo
-- HTML/CSS
-    - Awesome Domain
-- Java
-    - Wizards, Witches, and Horcruxes
-- Python
-    - Wumpas World
+* C
+    * Build a Shell
+    * Extended Producer-Consumer Problem
+    * POSIX Threads and Producer-Consumer
+    * Codility Demo Problem
+* C#
+    * Megaman
+* C++
+    * Waiting in Line
+    * Word
+    * Trees
+    * Hash Tables and the Dictionary ADT
+* Elm
+    * Bingo
+    * Online Resume and Portfolio Website
+        * github.com/branjwong/website
+* Fireworks
+    * Personal Logo
+    * Sasaki Logo
+* HTML/CSS
+    * Awesome Domain
+* Java
+    * Wizards, Witches, and Horcruxes
+* Python
+    * Wumpas World
 
 * * *
 
 [This Site's Source Code](https://github.com/branjwong/bjw-site)
 =========================
 
-Frontend: [Elm](http://elm-lang.org/), [Bootstrap](http://getbootstrap.com/)
-Backend: [NodeJS](https://nodejs.org/en/)
-Tools Used: [Grunt](http://gruntjs.com/)
-Initial Commit: September 29th, 2015
+* Frontend: [Elm](http://elm-lang.org/), [Bootstrap](http://getbootstrap.com/)
+* Backend: [NodeJS](https://nodejs.org/en/)
+* Tools Used: [Grunt](http://gruntjs.com/)
+* Initial Commit: September 29th, 2015
 
   """
 

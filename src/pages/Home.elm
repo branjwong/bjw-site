@@ -61,61 +61,47 @@ home =
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-3" ]
-                    [ block "Teaching" (Teaching TeachingHome) ]
+                    [ block "Teaching" (Router.toHash (Teaching TeachingHome)) ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Programming" Programming ]
+                    [ block "Programming" (Router.toHash Programming) ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Writing" (Writing Archive) ]
-                  -- Writing ]
+                    [ block "Writing" (Router.toHash (Writing Archive)) ]
                 ]
             , div
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-3" ]
-                    [ block "Tutor Plug" Home ]
-                  -- "/tutor-plug" ]
+                    [ block "Tutor Plug" (Router.toHash (Teaching (Tutor Plug))) ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Site Code" Home ]
-                  -- "https://github.com/branjwong/bjw-site" ]
+                    [ block "Site Code" "https://github.com/branjwong/bjw-site" ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Latest Blog" Home ]
-                  -- "writing/blog/latest" ]
+                    [ block "Latest Blog" (Router.toHash (Writing MovingBackToJapan)) ]
                 ]
             , div
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-5" ]
-                    [ block "Megaman Game" Home ]
-                  -- "/megaman" ]
+                    [ block "Megaman Game" "/megaman" ]
                 , div
                     [ class "col-sm-2" ]
-                    [ block "Latest Review" Home ]
-                  -- "/writing/reviews/latest" ]
+                    [ block "Latest Review" (Router.toHash (Writing CrossGame)) ]
                 ]
             , div
                 [ class "row" ]
                 [ div
                     [ class "col-sm-2 col-sm-offset-7" ]
-                    [ block "Latest Pick" Home ]
+                    [ block "Latest Pick" (Router.toHash Home) ]
                   -- "/" ]
                 ]
-              {-
-                 , div
-                   [ class "row" ]
-                   [ div
-                     [ class "HomeExtraSpace" ]
-                     []
-                   ]
-              -}
             ]
         ]
 
 
-block : String -> Page -> Html Msg
+block : String -> String -> Html Msg
 block title page =
     div
         [ class "BlockDiv" ]
@@ -124,7 +110,7 @@ block title page =
                 [ ( "text-align", "center" ) ]
             ]
             [ a
-                [ href (Router.toHash page) ]
+                [ href page ]
                 [ text title ]
             ]
         , div
