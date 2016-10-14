@@ -20,8 +20,8 @@ port toTop : Bool -> Cmd msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    --case Debug.log "update" msg of
-    case msg of
+    case Debug.log "update" msg of
+        --case msg of
         NoOp ->
             model ! []
 
@@ -60,6 +60,9 @@ update msg model =
                     }
                         ! []
 
+                Clear ->
+                    { model | problem = Nothing } ! []
+
 
 {-| The URL is turned into a result. If the URL is valid, we just update our
 model to the new count. If it is not a valid URL, we modify the URL to make
@@ -74,8 +77,11 @@ urlUpdate result model =
 
         Ok page ->
             let
+                toTopTask =
+                    [ Task.perform (\_ -> NoOp) ToTop (Task.succeed True) ]
+
                 resizePages =
-                    [ Home, Teaching TeachingHome, Teaching TrinomialGenerator ]
+                    [ Home, Teaching TeachingHome ]
 
                 resizeTask =
                     if List.foldr (||) False (List.map (\x -> x == page) resizePages) then
@@ -84,14 +90,9 @@ urlUpdate result model =
                         []
 
                 worksheetTask =
-                    [ Task.perform (\_ -> NoOp) (WorksheetMsg << Tick) Time.now
-                    , Task.perform (\_ -> NoOp) Resize Window.size
-                    ]
-
-                toTopTask =
-                    [ Task.perform (\_ -> NoOp) ToTop (Task.succeed True) ]
-
-                batch =
-                    toTopTask ++ resizeTask ++ worksheetTask
+                    if page == Teaching TrinomialGenerator then
+                        [ Task.perform (\_ -> NoOp) (\time -> WorksheetMsg (Tick time)) Time.now ]
+                    else
+                        [ Task.perform (\_ -> NoOp) (\_ -> WorksheetMsg Clear) (Task.succeed True) ]
             in
-                { model | page = page } ! batch
+                { model | page = page } ! (toTopTask ++ resizeTask ++ worksheetTask)

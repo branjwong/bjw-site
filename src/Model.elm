@@ -63,12 +63,13 @@ type alias Problem =
     }
 
 
-type Display
-    = Hidden
-    | Shown
-
-
 type WorksheetMsg'
     = New
     | Show
     | Tick Time
+    | Clear
+
+
+type Display
+    = Hidden
+    | Shown
