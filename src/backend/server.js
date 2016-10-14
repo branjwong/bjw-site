@@ -117,12 +117,12 @@ route('/zelda.swf', 'dist/html/programming/zelda/zelda.swf');
 
 
 // Comment this out for production.
-app.listen(8000, function() {
-  console.log("App listening on port 8000!")
-});
+// app.listen(8000, function() {
+//   console.log("App listening on port 8000!")
+// });
 
 // Uncomment this for production.
 // https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps
-// app.listen(80, function() {
-//   console.log("App listening on port 80!")
-// });
+app.listen(80, function() {
+  console.log("App listening on port 80!")
+});
