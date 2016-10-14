@@ -25,8 +25,8 @@ toHash page =
         Teaching FactoringTrinomials ->
             "#teaching/factoring-trinomials"
 
-        Teaching TrinomialGeneratorWorksheet ->
-            "#teaching/trinomial-generator-worksheet"
+        Teaching TrinomialGenerator ->
+            "#teaching/trinomial-generator"
 
         Teaching (Tutor Plug) ->
             "#teaching/tutor/plug"
@@ -85,7 +85,7 @@ teachingParser =
     oneOf
         [ format TeachingHome (s "home")
         , format FactoringTrinomials (s "factoring-trinomials")
-        , format TrinomialGeneratorWorksheet (s "trinomial-generator-worksheet")
+        , format TrinomialGenerator (s "trinomial-generator")
         , format Tutor (s "tutor" </> tutorParser)
         ]
 

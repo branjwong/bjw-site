@@ -11,7 +11,7 @@ import Random
 --
 
 import Model exposing (..)
-import Teaching.TrinomialGeneratorWorksheet exposing (..)
+import Teaching.TrinomialGenerator as TrinomialGenerator exposing (..)
 import Router
 
 
@@ -20,8 +20,8 @@ port toTop : Bool -> Cmd msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case Debug.log "update" msg of
-        --case msg of
+    --case Debug.log "update" msg of
+    case msg of
         NoOp ->
             model ! []
 
@@ -35,26 +35,28 @@ update msg model =
             case msg' of
                 New ->
                     { model
-                        | worksheet = generateWorksheetWithSeed model.worksheet.seed
+                        | problem = Just (generateProblemWithSeed (Maybe.withDefault TrinomialGenerator.init model.problem).seed)
                     }
                         ! []
 
                 Show ->
-                    let
-                        worksheet =
-                            model.worksheet
-                    in
-                        { model
-                            | worksheet =
-                                { worksheet
-                                    | answer = Shown
-                                }
-                        }
-                            ! []
+                    case model.problem of
+                        Just problem ->
+                            { model
+                                | problem =
+                                    Just
+                                        { problem
+                                            | answer = Shown
+                                        }
+                            }
+                                ! []
+
+                        Nothing ->
+                            model ! []
 
                 Tick time ->
                     { model
-                        | worksheet = generateWorksheetWithSeed (Random.initialSeed (round time))
+                        | problem = Just (generateProblemWithSeed (Random.initialSeed (round time)))
                     }
                         ! []
 
@@ -73,7 +75,7 @@ urlUpdate result model =
         Ok page ->
             let
                 resizePages =
-                    [ Home, Teaching TeachingHome, Teaching TrinomialGeneratorWorksheet ]
+                    [ Home, Teaching TeachingHome, Teaching TrinomialGenerator ]
 
                 resizeTask =
                     if List.foldr (||) False (List.map (\x -> x == page) resizePages) then

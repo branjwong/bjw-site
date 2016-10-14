@@ -10,7 +10,7 @@ import Model exposing (..)
 import Update exposing (..)
 import View
 import Router
-import Teaching.TrinomialGeneratorWorksheet as Worksheet
+import Teaching.TrinomialGenerator as TrinomialGenerator
 
 
 main : Program Never
@@ -31,4 +31,4 @@ subscriptions model =
 
 init : Result String Page -> ( Model, Cmd Msg )
 init result =
-    urlUpdate result (Model Home (Size 0 0) Worksheet.init)
+    urlUpdate result (Model Home (Size 0 0) (Just TrinomialGenerator.init))

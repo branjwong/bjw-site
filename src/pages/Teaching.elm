@@ -80,6 +80,6 @@ Lessons
 Helpful Applications
 ====================
 
-* [Trinomial Worksheet Generator](/#teaching/trinomial-generator-worksheet)
+* [Trinomial Worksheet Generator](/#teaching/trinomial-generator)
 
   """

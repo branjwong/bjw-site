@@ -8,7 +8,7 @@ import Time exposing (Time)
 type alias Model =
     { page : Page
     , size : Size
-    , worksheet : Worksheet
+    , problem : Maybe Problem
     }
 
 
@@ -22,7 +22,7 @@ type Page
 type TeachingPage
     = TeachingHome
     | FactoringTrinomials
-    | TrinomialGeneratorWorksheet
+    | TrinomialGenerator
     | Tutor TutorPage
 
 
@@ -55,7 +55,7 @@ type Msg
 -- Trinomial Generator Worksheet
 
 
-type alias Worksheet =
+type alias Problem =
     { factored : ( Int, Int, Int, Int )
     , trinomial : ( Int, Int, Int )
     , seed : Seed

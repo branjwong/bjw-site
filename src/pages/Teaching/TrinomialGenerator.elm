@@ -1,4 +1,4 @@
-module Teaching.TrinomialGeneratorWorksheet exposing (..)
+module Teaching.TrinomialGenerator exposing (..)
 
 import Html.App as Html
 import Html exposing (..)
@@ -31,8 +31,8 @@ init =
         }
 
 
-generateWorksheetWithSeed : Seed -> Worksheet
-generateWorksheetWithSeed seed =
+generateProblemWithSeed : Seed -> Problem
+generateProblemWithSeed seed =
     let
         generateInt min max seed =
             Random.step (Random.int min max) seed
@@ -112,15 +112,20 @@ expand ( a, b, c, d ) =
 
 view : Model -> Html Msg
 view model =
-    div
-        []
-        [ NavBar.navBar
-        , NavBar.navBarSpace
-        , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
-        , page model.worksheet
-          --, space model.size.height
-          --, Footer.footer
-        ]
+    case model.problem of
+        Just problem ->
+            div
+                []
+                [ NavBar.navBar
+                , NavBar.navBarSpace
+                , Header.header "Trinomial Problem Generator" "Here's a new problem for you to try!"
+                , page problem
+                  --, space model.size.height
+                  --, Footer.footer
+                ]
+
+        Nothing ->
+            text "No trinomial available!"
 
 
 space : Int -> Html msg
@@ -152,11 +157,11 @@ type Params
     | Second
 
 
-page : Worksheet -> Html Msg
-page worksheet =
+page : Problem -> Html Msg
+page problem =
     let
         ( a', b', c' ) =
-            worksheet.trinomial
+            problem.trinomial
 
         abString n =
             toString (abs n)
@@ -196,12 +201,12 @@ page worksheet =
                         ( False, False ) ->
                             ( " - " ++ abString b' ++ "x", " - " ++ abString c' )
 
-        problem =
+        problemText =
             -- Factor: [Ax^2][ + Bx][ + C]
             "Factor: " ++ a ++ b ++ c
 
         ( p', q', r', s' ) =
-            worksheet.factored
+            problem.factored
 
         answer =
             let
@@ -286,13 +291,13 @@ page worksheet =
                 "Answer : " ++ pA ++ p ++ q ++ pB ++ " " ++ pC ++ r ++ s ++ pD
 
         app =
-            case worksheet.answer of
+            case problem.answer of
                 Hidden ->
                     div
                         [ class "row" ]
                         [ div
                             []
-                            [ text problem ]
+                            [ text problemText ]
                         , button
                             [ onClick (WorksheetMsg New) ]
                             [ text "Get a New Problem!" ]
@@ -306,7 +311,7 @@ page worksheet =
                         [ class "row" ]
                         [ div
                             []
-                            [ text problem ]
+                            [ text problemText ]
                         , button
                             [ onClick (WorksheetMsg New) ]
                             [ text "Get a New Problem!" ]
