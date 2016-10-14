@@ -49,7 +49,7 @@ body =
 * Language: ActionScript
 * Software Platform: Adobe Flash
 * Instructor: Blair Yeung-Meadows
-* Time: Year 12 * Highschool
+* Time: Year 12 - Highschool
 
 ### How To Play
 
