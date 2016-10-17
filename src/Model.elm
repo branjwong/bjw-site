@@ -48,6 +48,7 @@ type Msg
     = NoOp
     | Resize Size
     | ToTop Bool
+    | Disqus (Maybe String)
     | WorksheetMsg WorksheetMsg'
 
 

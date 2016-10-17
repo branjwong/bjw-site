@@ -18,6 +18,9 @@ import Router
 port toTop : Bool -> Cmd msg
 
 
+port disqus : String -> Cmd msg
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case Debug.log "update" msg of
@@ -28,8 +31,16 @@ update msg model =
         Resize size ->
             { model | size = size } ! []
 
-        ToTop arg ->
+        ToTop _ ->
             model ! [ toTop True ]
+
+        Disqus str ->
+            case str of
+                Just str' ->
+                    model ! [ disqus str' ]
+
+                Nothing ->
+                    model ! [ disqus "" ]
 
         WorksheetMsg msg' ->
             case msg' of
@@ -89,10 +100,49 @@ urlUpdate result model =
                     else
                         []
 
+                disqusTask =
+                    if isDisqusPage page then
+                        let
+                            msg =
+                                page
+                                    |> Router.toHash
+                                    |> Just
+                        in
+                            [ Task.perform
+                                (\_ -> NoOp)
+                                Disqus
+                                (Task.succeed msg)
+                            ]
+                    else
+                        [ Task.perform (\_ -> NoOp) Disqus (Task.succeed Nothing) ]
+
                 worksheetTask =
                     if page == Teaching TrinomialGenerator then
-                        [ Task.perform (\_ -> NoOp) (\time -> WorksheetMsg (Tick time)) Time.now ]
+                        [ Task.perform
+                            (\_ -> NoOp)
+                            (\time -> WorksheetMsg (Tick time))
+                            Time.now
+                        ]
                     else
-                        [ Task.perform (\_ -> NoOp) (\_ -> WorksheetMsg Clear) (Task.succeed True) ]
+                        [ Task.perform
+                            (\_ -> NoOp)
+                            (\_ -> WorksheetMsg Clear)
+                            (Task.succeed True)
+                        ]
             in
-                { model | page = page } ! (toTopTask ++ resizeTask ++ worksheetTask)
+                { model | page = page } ! (toTopTask ++ resizeTask ++ worksheetTask ++ disqusTask)
+
+
+isDisqusPage : Page -> Bool
+isDisqusPage page =
+    let
+        disqusPage =
+            [ CrossGame
+            , WhatIAmDoingWithMyLife
+            , MovingBackToJapan
+            ]
+
+        matchPages =
+            List.map Writing disqusPage
+    in
+        List.any (\p -> p == page) matchPages
