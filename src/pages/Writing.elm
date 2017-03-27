@@ -100,7 +100,7 @@ Japan
 * [2013/10/21 - Honorific](https://braninjapan.wordpress.com/2013/10/21/week-9-october-20-26-honorific/)
 * [2013/11/02 - Matsuri!](https://braninjapan.wordpress.com/2013/11/02/week-10-october-27-november-2/)
 * TODO: Japan Conclusion
-* TODO: A Case for Exchance
+* TODO: A Case for Exchange
 
 
 ### Reviews
